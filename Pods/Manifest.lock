@@ -1,3 +1,32 @@
-PODFILE CHECKSUM: c33b120a7f9584f1df578d952ecb0d8a8550ec99
+PODS:
+  - Masonry (1.1.0)
+  - ReactiveObjC (3.1.0)
+  - WLBaseView (0.1.4):
+    - WLBaseView/Categorys (= 0.1.4)
+    - WLBaseView/Controllers (= 0.1.4)
+    - WLBaseView/Models (= 0.1.4)
+    - WLBaseView/ViewModels (= 0.1.4)
+    - WLBaseView/Views (= 0.1.4)
+  - WLBaseView/Categorys (0.1.4)
+  - WLBaseView/Controllers (0.1.4):
+    - WLBaseView/Categorys
+  - WLBaseView/Models (0.1.4)
+  - WLBaseView/ViewModels (0.1.4)
+  - WLBaseView/Views (0.1.4)
+  - WLIconFont (0.1.4)
+
+DEPENDENCIES:
+  - Masonry
+  - ReactiveObjC
+  - WLBaseView
+  - WLIconFont
+
+SPEC CHECKSUMS:
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  ReactiveObjC: 2a38ea15335de4119d8b17caf1db1484f61db902
+  WLBaseView: b9f5fc8f9d57f1f9c73ec1a62e8ed926cc1dfcf6
+  WLIconFont: 90d85045eac52306afc40647c58972e95007ca3a
+
+PODFILE CHECKSUM: 37626e1bd72c98c3f01e7060b8c11a003a83f54d
 
 COCOAPODS: 1.4.0

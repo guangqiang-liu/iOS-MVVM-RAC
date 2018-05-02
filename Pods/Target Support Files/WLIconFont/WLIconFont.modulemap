@@ -1,0 +1,6 @@
+framework module WLIconFont {
+  umbrella header "WLIconFont-umbrella.h"
+
+  export *
+  module * { export * }
+}

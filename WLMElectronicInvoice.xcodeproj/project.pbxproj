@@ -7,18 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		72BD1B3DD9AEB421E40405AD /* libPods-WLMElectronicInvoice.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4749688D98B2FE096B0473EF /* libPods-WLMElectronicInvoice.a */; };
+		50AA9FC5E70CCF584D47605D /* Pods_WLMElectronicInvoice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58614F4727A6F4189F29ACDC /* Pods_WLMElectronicInvoice.framework */; };
 		9C2646DA209994C8004A4551 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C2646D9209994C8004A4551 /* AppDelegate.m */; };
 		9C2646DD209994C8004A4551 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C2646DC209994C8004A4551 /* ViewController.m */; };
 		9C2646E0209994C8004A4551 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C2646DE209994C8004A4551 /* Main.storyboard */; };
 		9C2646E2209994C8004A4551 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C2646E1209994C8004A4551 /* Assets.xcassets */; };
 		9C2646E5209994C8004A4551 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C2646E3209994C8004A4551 /* LaunchScreen.storyboard */; };
 		9C2646E8209994C8004A4551 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C2646E7209994C8004A4551 /* main.m */; };
+		9C26470320999B59004A4551 /* WLBModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C2646F220999B59004A4551 /* WLBModel.m */; };
+		9C26470420999B59004A4551 /* WLBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C2646F720999B59004A4551 /* WLBViewController.m */; };
+		9C26470520999B59004A4551 /* WLBViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C2646FC20999B59004A4551 /* WLBViewModel.m */; };
+		9C26470620999B59004A4551 /* WLBViewModelServiceImp.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C2646FD20999B59004A4551 /* WLBViewModelServiceImp.m */; };
+		9C26470720999B59004A4551 /* WLBView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C26470220999B59004A4551 /* WLBView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0C58E3E41CE2B24BB6F43768 /* Pods-WLMElectronicInvoice.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WLMElectronicInvoice.release.xcconfig"; path = "Pods/Target Support Files/Pods-WLMElectronicInvoice/Pods-WLMElectronicInvoice.release.xcconfig"; sourceTree = "<group>"; };
-		4749688D98B2FE096B0473EF /* libPods-WLMElectronicInvoice.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WLMElectronicInvoice.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		58614F4727A6F4189F29ACDC /* Pods_WLMElectronicInvoice.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WLMElectronicInvoice.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8EC5F3AAC5E149448B9054F5 /* Pods-WLMElectronicInvoice.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WLMElectronicInvoice.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WLMElectronicInvoice/Pods-WLMElectronicInvoice.debug.xcconfig"; sourceTree = "<group>"; };
 		9C2646D5209994C8004A4551 /* WLMElectronicInvoice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WLMElectronicInvoice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C2646D8209994C8004A4551 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -30,6 +35,21 @@
 		9C2646E4209994C8004A4551 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9C2646E6209994C8004A4551 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9C2646E7209994C8004A4551 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		9C2646F220999B59004A4551 /* WLBModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WLBModel.m; sourceTree = "<group>"; };
+		9C2646F320999B59004A4551 /* WLBModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WLBModel.h; sourceTree = "<group>"; };
+		9C2646F520999B59004A4551 /* WLBViewControllerProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WLBViewControllerProtocol.h; sourceTree = "<group>"; };
+		9C2646F620999B59004A4551 /* WLBViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WLBViewController.h; sourceTree = "<group>"; };
+		9C2646F720999B59004A4551 /* WLBViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WLBViewController.m; sourceTree = "<group>"; };
+		9C2646F920999B59004A4551 /* WLBViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WLBViewModel.h; sourceTree = "<group>"; };
+		9C2646FA20999B59004A4551 /* WLBViewModelServiceImp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WLBViewModelServiceImp.h; sourceTree = "<group>"; };
+		9C2646FB20999B59004A4551 /* WLBViewModelProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WLBViewModelProtocol.h; sourceTree = "<group>"; };
+		9C2646FC20999B59004A4551 /* WLBViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WLBViewModel.m; sourceTree = "<group>"; };
+		9C2646FD20999B59004A4551 /* WLBViewModelServiceImp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WLBViewModelServiceImp.m; sourceTree = "<group>"; };
+		9C2646FE20999B59004A4551 /* WLBViewModelServiceProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WLBViewModelServiceProtocol.h; sourceTree = "<group>"; };
+		9C26470020999B59004A4551 /* WLBView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WLBView.h; sourceTree = "<group>"; };
+		9C26470120999B59004A4551 /* WLBViewProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WLBViewProtocol.h; sourceTree = "<group>"; };
+		9C26470220999B59004A4551 /* WLBView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WLBView.m; sourceTree = "<group>"; };
+		9C26470820999CB3004A4551 /* WLMElectronicInvoice.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WLMElectronicInvoice.pch; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,7 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				72BD1B3DD9AEB421E40405AD /* libPods-WLMElectronicInvoice.a in Frameworks */,
+				50AA9FC5E70CCF584D47605D /* Pods_WLMElectronicInvoice.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +94,9 @@
 		9C2646D7209994C8004A4551 /* WLMElectronicInvoice */ = {
 			isa = PBXGroup;
 			children = (
+				9C2646EF20999B35004A4551 /* Base */,
+				9C2646F020999B35004A4551 /* Resources */,
+				9C2646EE20999B35004A4551 /* Tools */,
 				9C2646D8209994C8004A4551 /* AppDelegate.h */,
 				9C2646D9209994C8004A4551 /* AppDelegate.m */,
 				9C2646DB209994C8004A4551 /* ViewController.h */,
@@ -83,14 +106,82 @@
 				9C2646E3209994C8004A4551 /* LaunchScreen.storyboard */,
 				9C2646E6209994C8004A4551 /* Info.plist */,
 				9C2646E7209994C8004A4551 /* main.m */,
+				9C26470820999CB3004A4551 /* WLMElectronicInvoice.pch */,
 			);
 			path = WLMElectronicInvoice;
+			sourceTree = "<group>";
+		};
+		9C2646EE20999B35004A4551 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		9C2646EF20999B35004A4551 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				9C2646F420999B59004A4551 /* Controllers */,
+				9C2646F120999B59004A4551 /* Models */,
+				9C2646F820999B59004A4551 /* ViewModels */,
+				9C2646FF20999B59004A4551 /* Views */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		9C2646F020999B35004A4551 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		9C2646F120999B59004A4551 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				9C2646F220999B59004A4551 /* WLBModel.m */,
+				9C2646F320999B59004A4551 /* WLBModel.h */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		9C2646F420999B59004A4551 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				9C2646F520999B59004A4551 /* WLBViewControllerProtocol.h */,
+				9C2646F620999B59004A4551 /* WLBViewController.h */,
+				9C2646F720999B59004A4551 /* WLBViewController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		9C2646F820999B59004A4551 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				9C2646F920999B59004A4551 /* WLBViewModel.h */,
+				9C2646FA20999B59004A4551 /* WLBViewModelServiceImp.h */,
+				9C2646FB20999B59004A4551 /* WLBViewModelProtocol.h */,
+				9C2646FC20999B59004A4551 /* WLBViewModel.m */,
+				9C2646FD20999B59004A4551 /* WLBViewModelServiceImp.m */,
+				9C2646FE20999B59004A4551 /* WLBViewModelServiceProtocol.h */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		9C2646FF20999B59004A4551 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9C26470020999B59004A4551 /* WLBView.h */,
+				9C26470120999B59004A4551 /* WLBViewProtocol.h */,
+				9C26470220999B59004A4551 /* WLBView.m */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		AE7C1BB297102048DF9B74F3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				4749688D98B2FE096B0473EF /* libPods-WLMElectronicInvoice.a */,
+				58614F4727A6F4189F29ACDC /* Pods_WLMElectronicInvoice.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -204,9 +295,18 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-WLMElectronicInvoice/Pods-WLMElectronicInvoice-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
+				"${BUILT_PRODUCTS_DIR}/ReactiveObjC/ReactiveObjC.framework",
+				"${BUILT_PRODUCTS_DIR}/WLBaseView/WLBaseView.framework",
+				"${BUILT_PRODUCTS_DIR}/WLIconFont/WLIconFont.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactiveObjC.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/WLBaseView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/WLIconFont.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -220,9 +320,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C26470520999B59004A4551 /* WLBViewModel.m in Sources */,
+				9C26470620999B59004A4551 /* WLBViewModelServiceImp.m in Sources */,
+				9C26470420999B59004A4551 /* WLBViewController.m in Sources */,
 				9C2646DD209994C8004A4551 /* ViewController.m in Sources */,
+				9C26470720999B59004A4551 /* WLBView.m in Sources */,
 				9C2646E8209994C8004A4551 /* main.m in Sources */,
 				9C2646DA209994C8004A4551 /* AppDelegate.m in Sources */,
+				9C26470320999B59004A4551 /* WLBModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -358,6 +463,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/WLMElectronicInvoice/WLMElectronicInvoice.pch";
 				INFOPLIST_FILE = WLMElectronicInvoice/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = qianbao.WLMElectronicInvoice;
@@ -372,6 +478,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/WLMElectronicInvoice/WLMElectronicInvoice.pch";
 				INFOPLIST_FILE = WLMElectronicInvoice/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = qianbao.WLMElectronicInvoice;
