@@ -1,0 +1,28 @@
+# Xcode
+.DS_Store
+*/build/*
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+xcuserdata
+profile
+*.moved-aside
+DerivedData
+.idea/
+*.hmap
+*.xccheckout
+*.ipa
+*.xcuserstate
+build/
+
+#CocoaPods
+
+# 考虑到忽略pods文件导致每次其他同学拉取代码都有pod文件丢失问题，所有pods文件暂时取消忽略
+#Pods
+#Pods/
+xcshareddata/
