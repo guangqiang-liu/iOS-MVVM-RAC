@@ -19,6 +19,8 @@
 		9C26470520999B59004A4551 /* WLBViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C2646FC20999B59004A4551 /* WLBViewModel.m */; };
 		9C26470620999B59004A4551 /* WLBViewModelServiceImp.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C2646FD20999B59004A4551 /* WLBViewModelServiceImp.m */; };
 		9C26470720999B59004A4551 /* WLBView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C26470220999B59004A4551 /* WLBView.m */; };
+		9C264750209AEFE2004A4551 /* WLMInvoiceApplyVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C26474F209AEFE2004A4551 /* WLMInvoiceApplyVC.m */; };
+		9C264753209AF037004A4551 /* WLMInvoiceApplyVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C264752209AF037004A4551 /* WLMInvoiceApplyVM.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +52,10 @@
 		9C26470120999B59004A4551 /* WLBViewProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WLBViewProtocol.h; sourceTree = "<group>"; };
 		9C26470220999B59004A4551 /* WLBView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WLBView.m; sourceTree = "<group>"; };
 		9C26470820999CB3004A4551 /* WLMElectronicInvoice.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WLMElectronicInvoice.pch; sourceTree = "<group>"; };
+		9C26474E209AEFE2004A4551 /* WLMInvoiceApplyVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WLMInvoiceApplyVC.h; sourceTree = "<group>"; };
+		9C26474F209AEFE2004A4551 /* WLMInvoiceApplyVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WLMInvoiceApplyVC.m; sourceTree = "<group>"; };
+		9C264751209AF037004A4551 /* WLMInvoiceApplyVM.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WLMInvoiceApplyVM.h; sourceTree = "<group>"; };
+		9C264752209AF037004A4551 /* WLMInvoiceApplyVM.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WLMInvoiceApplyVM.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +100,10 @@
 		9C2646D7209994C8004A4551 /* WLMElectronicInvoice */ = {
 			isa = PBXGroup;
 			children = (
+				9C264744209AEEFA004A4551 /* ElectronicInvoiceApply */,
+				9C26473A209AEEFA004A4551 /* ElectronicInvoiceDetail */,
+				9C264749209AEEFA004A4551 /* ElectronicInvoiceManager */,
+				9C26473F209AEEFA004A4551 /* ElectronicInvoiceSearch */,
 				9C2646EF20999B35004A4551 /* Base */,
 				9C2646F020999B35004A4551 /* Resources */,
 				9C2646EE20999B35004A4551 /* Tools */,
@@ -176,6 +186,166 @@
 				9C26470220999B59004A4551 /* WLBView.m */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		9C26473A209AEEFA004A4551 /* ElectronicInvoiceDetail */ = {
+			isa = PBXGroup;
+			children = (
+				9C26473B209AEEFA004A4551 /* ViewModel */,
+				9C26473C209AEEFA004A4551 /* Controller */,
+				9C26473D209AEEFA004A4551 /* Model */,
+				9C26473E209AEEFA004A4551 /* View */,
+			);
+			path = ElectronicInvoiceDetail;
+			sourceTree = "<group>";
+		};
+		9C26473B209AEEFA004A4551 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		9C26473C209AEEFA004A4551 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		9C26473D209AEEFA004A4551 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		9C26473E209AEEFA004A4551 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9C26473F209AEEFA004A4551 /* ElectronicInvoiceSearch */ = {
+			isa = PBXGroup;
+			children = (
+				9C264740209AEEFA004A4551 /* ViewModel */,
+				9C264741209AEEFA004A4551 /* Controller */,
+				9C264742209AEEFA004A4551 /* Model */,
+				9C264743209AEEFA004A4551 /* View */,
+			);
+			path = ElectronicInvoiceSearch;
+			sourceTree = "<group>";
+		};
+		9C264740209AEEFA004A4551 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		9C264741209AEEFA004A4551 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		9C264742209AEEFA004A4551 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		9C264743209AEEFA004A4551 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9C264744209AEEFA004A4551 /* ElectronicInvoiceApply */ = {
+			isa = PBXGroup;
+			children = (
+				9C264745209AEEFA004A4551 /* ViewModel */,
+				9C264746209AEEFA004A4551 /* Controller */,
+				9C264747209AEEFA004A4551 /* Model */,
+				9C264748209AEEFA004A4551 /* View */,
+			);
+			path = ElectronicInvoiceApply;
+			sourceTree = "<group>";
+		};
+		9C264745209AEEFA004A4551 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				9C264751209AF037004A4551 /* WLMInvoiceApplyVM.h */,
+				9C264752209AF037004A4551 /* WLMInvoiceApplyVM.m */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		9C264746209AEEFA004A4551 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				9C26474E209AEFE2004A4551 /* WLMInvoiceApplyVC.h */,
+				9C26474F209AEFE2004A4551 /* WLMInvoiceApplyVC.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		9C264747209AEEFA004A4551 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		9C264748209AEEFA004A4551 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9C264749209AEEFA004A4551 /* ElectronicInvoiceManager */ = {
+			isa = PBXGroup;
+			children = (
+				9C26474A209AEEFA004A4551 /* ViewModel */,
+				9C26474B209AEEFA004A4551 /* Controller */,
+				9C26474C209AEEFA004A4551 /* Model */,
+				9C26474D209AEEFA004A4551 /* View */,
+			);
+			path = ElectronicInvoiceManager;
+			sourceTree = "<group>";
+		};
+		9C26474A209AEEFA004A4551 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		9C26474B209AEEFA004A4551 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		9C26474C209AEEFA004A4551 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		9C26474D209AEEFA004A4551 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		AE7C1BB297102048DF9B74F3 /* Frameworks */ = {
@@ -325,8 +495,10 @@
 				9C26470420999B59004A4551 /* WLBViewController.m in Sources */,
 				9C2646DD209994C8004A4551 /* ViewController.m in Sources */,
 				9C26470720999B59004A4551 /* WLBView.m in Sources */,
+				9C264750209AEFE2004A4551 /* WLMInvoiceApplyVC.m in Sources */,
 				9C2646E8209994C8004A4551 /* main.m in Sources */,
 				9C2646DA209994C8004A4551 /* AppDelegate.m in Sources */,
+				9C264753209AF037004A4551 /* WLMInvoiceApplyVM.m in Sources */,
 				9C26470320999B59004A4551 /* WLBModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -465,10 +637,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/WLMElectronicInvoice/WLMElectronicInvoice.pch";
 				INFOPLIST_FILE = WLMElectronicInvoice/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = qianbao.WLMElectronicInvoice;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -480,10 +653,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/WLMElectronicInvoice/WLMElectronicInvoice.pch";
 				INFOPLIST_FILE = WLMElectronicInvoice/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = qianbao.WLMElectronicInvoice;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
