@@ -1,24 +1,24 @@
 //
-//  WLMInvoiceApplyVC.m
+//  WLMInvoiceSearchVC.m
 //  WLMElectronicInvoice
 //
-//  Created by 刘光强 on 2018/5/3.
+//  Created by 刘光强 on 2018/5/4.
 //  Copyright © 2018年 quangqiang. All rights reserved.
 //
 
-#import "WLMInvoiceApplyVC.h"
+#import "WLMInvoiceSearchVC.h"
 
-@interface WLMInvoiceApplyVC ()
+@interface WLMInvoiceSearchVC ()
 
 @end
 
-@implementation WLMInvoiceApplyVC
+@implementation WLMInvoiceSearchVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    self.view.backgroundColor = [UIColor redColor];
+    self.view.backgroundColor = [UIColor yellowColor];
 }
 
 - (void)didReceiveMemoryWarning {

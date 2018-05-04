@@ -21,6 +21,9 @@
 		9C26470720999B59004A4551 /* WLBView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C26470220999B59004A4551 /* WLBView.m */; };
 		9C264750209AEFE2004A4551 /* WLMInvoiceApplyVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C26474F209AEFE2004A4551 /* WLMInvoiceApplyVC.m */; };
 		9C264753209AF037004A4551 /* WLMInvoiceApplyVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C264752209AF037004A4551 /* WLMInvoiceApplyVM.m */; };
+		9C26476E209BF10D004A4551 /* WLMInvoiceDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C26476D209BF10D004A4551 /* WLMInvoiceDetailVC.m */; };
+		9C264771209BF17B004A4551 /* WLMInvoiceManagerListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C264770209BF17B004A4551 /* WLMInvoiceManagerListVC.m */; };
+		9C264774209BF1A2004A4551 /* WLMInvoiceSearchVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C264773209BF1A2004A4551 /* WLMInvoiceSearchVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +59,12 @@
 		9C26474F209AEFE2004A4551 /* WLMInvoiceApplyVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WLMInvoiceApplyVC.m; sourceTree = "<group>"; };
 		9C264751209AF037004A4551 /* WLMInvoiceApplyVM.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WLMInvoiceApplyVM.h; sourceTree = "<group>"; };
 		9C264752209AF037004A4551 /* WLMInvoiceApplyVM.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WLMInvoiceApplyVM.m; sourceTree = "<group>"; };
+		9C26476C209BF10D004A4551 /* WLMInvoiceDetailVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WLMInvoiceDetailVC.h; sourceTree = "<group>"; };
+		9C26476D209BF10D004A4551 /* WLMInvoiceDetailVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WLMInvoiceDetailVC.m; sourceTree = "<group>"; };
+		9C26476F209BF17B004A4551 /* WLMInvoiceManagerListVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WLMInvoiceManagerListVC.h; sourceTree = "<group>"; };
+		9C264770209BF17B004A4551 /* WLMInvoiceManagerListVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WLMInvoiceManagerListVC.m; sourceTree = "<group>"; };
+		9C264772209BF1A2004A4551 /* WLMInvoiceSearchVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WLMInvoiceSearchVC.h; sourceTree = "<group>"; };
+		9C264773209BF1A2004A4551 /* WLMInvoiceSearchVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WLMInvoiceSearchVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -209,6 +218,8 @@
 		9C26473C209AEEFA004A4551 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				9C26476C209BF10D004A4551 /* WLMInvoiceDetailVC.h */,
+				9C26476D209BF10D004A4551 /* WLMInvoiceDetailVC.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -248,6 +259,8 @@
 		9C264741209AEEFA004A4551 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				9C264772209BF1A2004A4551 /* WLMInvoiceSearchVC.h */,
+				9C264773209BF1A2004A4551 /* WLMInvoiceSearchVC.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -330,6 +343,8 @@
 		9C26474B209AEEFA004A4551 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				9C26476F209BF17B004A4551 /* WLMInvoiceManagerListVC.h */,
+				9C264770209BF17B004A4551 /* WLMInvoiceManagerListVC.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -491,12 +506,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				9C26470520999B59004A4551 /* WLBViewModel.m in Sources */,
+				9C264774209BF1A2004A4551 /* WLMInvoiceSearchVC.m in Sources */,
 				9C26470620999B59004A4551 /* WLBViewModelServiceImp.m in Sources */,
 				9C26470420999B59004A4551 /* WLBViewController.m in Sources */,
 				9C2646DD209994C8004A4551 /* ViewController.m in Sources */,
 				9C26470720999B59004A4551 /* WLBView.m in Sources */,
+				9C264771209BF17B004A4551 /* WLMInvoiceManagerListVC.m in Sources */,
 				9C264750209AEFE2004A4551 /* WLMInvoiceApplyVC.m in Sources */,
 				9C2646E8209994C8004A4551 /* main.m in Sources */,
+				9C26476E209BF10D004A4551 /* WLMInvoiceDetailVC.m in Sources */,
 				9C2646DA209994C8004A4551 /* AppDelegate.m in Sources */,
 				9C264753209AF037004A4551 /* WLMInvoiceApplyVM.m in Sources */,
 				9C26470320999B59004A4551 /* WLBModel.m in Sources */,

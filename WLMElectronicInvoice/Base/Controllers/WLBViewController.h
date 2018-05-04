@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 #import "WLBViewControllerProtocol.h"
-#import <WLBaseView/WLBaseViewController.h>
-@interface WLBViewController : WLBaseViewController<WLBViewControllerProtocol>
+@interface WLBViewController : UIViewController<WLBViewControllerProtocol>
 
 @end
