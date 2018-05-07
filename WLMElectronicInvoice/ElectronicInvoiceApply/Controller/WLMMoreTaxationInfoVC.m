@@ -7,7 +7,7 @@
 //
 
 #import "WLMMoreTaxationInfoVC.h"
-
+#import "WLMOpenInvoiceVC.h"
 @interface WLMMoreTaxationInfoVC ()
 
 @property (nonatomic, strong) UIButton *bottomButton;
@@ -29,7 +29,7 @@
 }
 
 - (void)configFormInfo {
-     [self.form addSection:[self merchantInfo]];
+    [self.form addSection:[self merchantInfo]];
     [self.form addSection:[self invoiceInfo]];
     [self.form addSection:[self moreInfo]];
 }
@@ -240,7 +240,7 @@
         _bottomButton.titleLabel.font = H18;
         [_bottomButton createGradientButtonWithSize:CGSizeMake(SCREEN_WIDTH, 44) colorArray:@[HexRGB(0xFF7E4A), HexRGB(0xFF4A4A)] percentageArray:@[@(0.1), @(1)] gradientType:GradientFromLeftToRight];
         [_bottomButton whenTapped:^{
-            WLMMoreTaxationInfoVC *VC = [[WLMMoreTaxationInfoVC alloc] init];
+            WLMOpenInvoiceVC *VC = [[WLMOpenInvoiceVC alloc] init];
             [self.navigationController pushViewController:VC animated:YES];
         }];
     }
