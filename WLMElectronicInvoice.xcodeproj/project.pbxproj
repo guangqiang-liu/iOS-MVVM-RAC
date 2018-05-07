@@ -27,6 +27,7 @@
 		9CEEA5CE209D9DB900673214 /* WLMFillTaxationInfoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CEEA5CD209D9DB900673214 /* WLMFillTaxationInfoVC.m */; };
 		9CEEA5D1209DC10000673214 /* WLMMoreTaxationInfoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CEEA5D0209DC10000673214 /* WLMMoreTaxationInfoVC.m */; };
 		9CEEA5D420A03E9400673214 /* WLMOpenInvoiceVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CEEA5D320A03E9400673214 /* WLMOpenInvoiceVC.m */; };
+		9CEEA5D720A05C0E00673214 /* WLMResendInvoiceVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CEEA5D620A05C0E00673214 /* WLMResendInvoiceVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,6 +75,8 @@
 		9CEEA5D0209DC10000673214 /* WLMMoreTaxationInfoVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WLMMoreTaxationInfoVC.m; sourceTree = "<group>"; };
 		9CEEA5D220A03E9400673214 /* WLMOpenInvoiceVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WLMOpenInvoiceVC.h; sourceTree = "<group>"; };
 		9CEEA5D320A03E9400673214 /* WLMOpenInvoiceVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WLMOpenInvoiceVC.m; sourceTree = "<group>"; };
+		9CEEA5D520A05C0E00673214 /* WLMResendInvoiceVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WLMResendInvoiceVC.h; sourceTree = "<group>"; };
+		9CEEA5D620A05C0E00673214 /* WLMResendInvoiceVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WLMResendInvoiceVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -229,6 +232,8 @@
 			children = (
 				9C26476C209BF10D004A4551 /* WLMInvoiceDetailVC.h */,
 				9C26476D209BF10D004A4551 /* WLMInvoiceDetailVC.m */,
+				9CEEA5D520A05C0E00673214 /* WLMResendInvoiceVC.h */,
+				9CEEA5D620A05C0E00673214 /* WLMResendInvoiceVC.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -539,6 +544,7 @@
 				9CEEA5CE209D9DB900673214 /* WLMFillTaxationInfoVC.m in Sources */,
 				9C2646DA209994C8004A4551 /* AppDelegate.m in Sources */,
 				9C264753209AF037004A4551 /* WLMInvoiceApplyVM.m in Sources */,
+				9CEEA5D720A05C0E00673214 /* WLMResendInvoiceVC.m in Sources */,
 				9C26470320999B59004A4551 /* WLBModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

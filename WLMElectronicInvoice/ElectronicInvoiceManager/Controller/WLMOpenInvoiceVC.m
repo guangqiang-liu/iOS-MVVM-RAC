@@ -7,7 +7,7 @@
 //
 
 #import "WLMOpenInvoiceVC.h"
-
+#import "WLMResendInvoiceVC.h"
 @interface WLMOpenInvoiceVC ()
 
 @property (nonatomic, strong) UIButton *bottomButton;
@@ -129,7 +129,8 @@
         _bottomButton.titleLabel.font = H18;
         [_bottomButton createGradientButtonWithSize:CGSizeMake(SCREEN_WIDTH, 44) colorArray:@[HexRGB(0xFF7E4A), HexRGB(0xFF4A4A)] percentageArray:@[@(0.1), @(1)] gradientType:GradientFromLeftToRight];
         [_bottomButton whenTapped:^{
-           
+            WLMResendInvoiceVC *VC = [[WLMResendInvoiceVC alloc] init];
+            [self.navigationController pushViewController:VC animated:YES];
         }];
     }
     return _bottomButton;
