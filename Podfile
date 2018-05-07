@@ -5,14 +5,16 @@ use_frameworks!
 
 source 'https://github.com/CocoaPods/Specs.git'
 source 'git@gitlab.qianbaocard.org:iOS/WLSpecs.git'
+
 target 'WLMElectronicInvoice' do
   
-
   # Pods for WLMElectronicInvoice
   
-  pod 'WLIconFont'
-  pod 'WLBaseView'
-  pod 'Masonry'
-  pod 'ReactiveObjC'
-  
+  pod 'WLIconFont', '0.1.4'
+  pod 'WLBaseView', '0.1.4'
+  pod 'Masonry', '1.1.0'
+  pod 'ReactiveObjC', '3.1.0'
+  pod 'WLForm', '0.0.4'
+#  pod 'WLForm', :path => '/Users/liuguangqiang/Desktop/companyRepo/WLPLib/WLForm/WLForm.podspec'
+
 end

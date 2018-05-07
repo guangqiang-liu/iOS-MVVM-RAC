@@ -20,4 +20,7 @@
 #import <WLBaseView/WLBaseView-umbrella.h>
 #import "ReactiveObjC.h"
 
+#import <WLForm/WLForm.h>
+#import <WLForm/WLForm-umbrella.h>
+
 #endif /* WLMElectronicInvoice_pch */

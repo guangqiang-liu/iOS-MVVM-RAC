@@ -1,0 +1,6 @@
+framework module WLForm {
+  umbrella header "WLForm-umbrella.h"
+
+  export *
+  module * { export * }
+}

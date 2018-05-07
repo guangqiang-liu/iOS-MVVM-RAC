@@ -24,6 +24,8 @@
 		9C26476E209BF10D004A4551 /* WLMInvoiceDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C26476D209BF10D004A4551 /* WLMInvoiceDetailVC.m */; };
 		9C264771209BF17B004A4551 /* WLMInvoiceManagerListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C264770209BF17B004A4551 /* WLMInvoiceManagerListVC.m */; };
 		9C264774209BF1A2004A4551 /* WLMInvoiceSearchVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C264773209BF1A2004A4551 /* WLMInvoiceSearchVC.m */; };
+		9CEEA5CE209D9DB900673214 /* WLMFillTaxationInfoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CEEA5CD209D9DB900673214 /* WLMFillTaxationInfoVC.m */; };
+		9CEEA5D1209DC10000673214 /* WLMMoreTaxationInfoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CEEA5D0209DC10000673214 /* WLMMoreTaxationInfoVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,6 +67,10 @@
 		9C264770209BF17B004A4551 /* WLMInvoiceManagerListVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WLMInvoiceManagerListVC.m; sourceTree = "<group>"; };
 		9C264772209BF1A2004A4551 /* WLMInvoiceSearchVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WLMInvoiceSearchVC.h; sourceTree = "<group>"; };
 		9C264773209BF1A2004A4551 /* WLMInvoiceSearchVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WLMInvoiceSearchVC.m; sourceTree = "<group>"; };
+		9CEEA5CC209D9DB900673214 /* WLMFillTaxationInfoVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WLMFillTaxationInfoVC.h; sourceTree = "<group>"; };
+		9CEEA5CD209D9DB900673214 /* WLMFillTaxationInfoVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WLMFillTaxationInfoVC.m; sourceTree = "<group>"; };
+		9CEEA5CF209DC10000673214 /* WLMMoreTaxationInfoVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WLMMoreTaxationInfoVC.h; sourceTree = "<group>"; };
+		9CEEA5D0209DC10000673214 /* WLMMoreTaxationInfoVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WLMMoreTaxationInfoVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -304,6 +310,10 @@
 			children = (
 				9C26474E209AEFE2004A4551 /* WLMInvoiceApplyVC.h */,
 				9C26474F209AEFE2004A4551 /* WLMInvoiceApplyVC.m */,
+				9CEEA5CC209D9DB900673214 /* WLMFillTaxationInfoVC.h */,
+				9CEEA5CD209D9DB900673214 /* WLMFillTaxationInfoVC.m */,
+				9CEEA5CF209DC10000673214 /* WLMMoreTaxationInfoVC.h */,
+				9CEEA5D0209DC10000673214 /* WLMMoreTaxationInfoVC.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -481,16 +491,20 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-WLMElectronicInvoice/Pods-WLMElectronicInvoice-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework",
 				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
 				"${BUILT_PRODUCTS_DIR}/ReactiveObjC/ReactiveObjC.framework",
 				"${BUILT_PRODUCTS_DIR}/WLBaseView/WLBaseView.framework",
+				"${BUILT_PRODUCTS_DIR}/WLForm/WLForm.framework",
 				"${BUILT_PRODUCTS_DIR}/WLIconFont/WLIconFont.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManager.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactiveObjC.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/WLBaseView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/WLForm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/WLIconFont.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -515,6 +529,8 @@
 				9C264750209AEFE2004A4551 /* WLMInvoiceApplyVC.m in Sources */,
 				9C2646E8209994C8004A4551 /* main.m in Sources */,
 				9C26476E209BF10D004A4551 /* WLMInvoiceDetailVC.m in Sources */,
+				9CEEA5D1209DC10000673214 /* WLMMoreTaxationInfoVC.m in Sources */,
+				9CEEA5CE209D9DB900673214 /* WLMFillTaxationInfoVC.m in Sources */,
 				9C2646DA209994C8004A4551 /* AppDelegate.m in Sources */,
 				9C264753209AF037004A4551 /* WLMInvoiceApplyVM.m in Sources */,
 				9C26470320999B59004A4551 /* WLBModel.m in Sources */,
