@@ -19,6 +19,7 @@
     // Do any additional setup after loading the view.
     
     self.title = @"重发电子发票";
+    self.tableView.frame = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
     [self setupViews];
 }
 
