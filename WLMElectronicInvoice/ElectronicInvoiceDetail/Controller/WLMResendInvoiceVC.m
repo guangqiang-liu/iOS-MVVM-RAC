@@ -7,6 +7,7 @@
 //
 
 #import "WLMResendInvoiceVC.h"
+#import "WLMPackageSelectVC.h"
 
 @interface WLMResendInvoiceVC ()
 
@@ -19,7 +20,6 @@
     // Do any additional setup after loading the view.
     
     self.title = @"重发电子发票";
-    self.tableView.frame = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
     [self setupViews];
 }
 
@@ -97,11 +97,12 @@
     WLFormItemViewModel *row = nil;
     row = [[WLFormItemViewModel alloc] initFormItemWithStyle:UITableViewCellStyleValue1 reuseIdentifier:@"WLFormBottomButtonCell"];
     row.cellClass = [WLFormBottomButtonCell class];
-    row.itemHeight = 44.f;
+    row.itemHeight = 78.f;
     row.itemConfigBlock = ^(WLFormBottomButtonCell *cell, id value, NSIndexPath *indexPath) {
         cell.title = info[kLeftKey];
         cell.bottomButtonBlock = ^{
-            NSLog(@"点击了提交按钮");
+            WLMPackageSelectVC *VC = [[WLMPackageSelectVC alloc] init];
+            [self.navigationController pushViewController:VC animated:YES];
         };
     };
     return row;

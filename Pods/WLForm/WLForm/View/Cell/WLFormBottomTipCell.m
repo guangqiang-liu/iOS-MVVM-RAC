@@ -42,6 +42,7 @@
         _tipLable.font = H12;
         _tipLable.numberOfLines = 2;
         _tipLable.textAlignment = NSTextAlignmentCenter;
+        _tipLable.backgroundColor = red_color;
         [_tipLable whenTapped:^{
             !_tipBlock ?: _tipBlock();
         }];

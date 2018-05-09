@@ -33,9 +33,13 @@ PODS:
 DEPENDENCIES:
   - Masonry (= 1.1.0)
   - ReactiveObjC (= 3.1.0)
-  - WLForm
+  - WLForm (from `/Users/liuguangqiang/Desktop/companyRepo/WLPLib/WLForm/WLForm.podspec`)
   - WLIconFont
   - WLModal
+
+EXTERNAL SOURCES:
+  WLForm:
+    :path: /Users/liuguangqiang/Desktop/companyRepo/WLPLib/WLForm/WLForm.podspec
 
 SPEC CHECKSUMS:
   IQKeyboardManager: c49d59e358aeeffaa0280aa305093c2b194d2607
@@ -47,6 +51,6 @@ SPEC CHECKSUMS:
   WLModal: ee31840806471416bcf78a212632dadbbfdbee7e
   WLWidget: 29f38795f8c2a0d77532f0a84ef49017bc2f2f87
 
-PODFILE CHECKSUM: 84ff3930b8da7bcc30169e9a3496434560a7da9b
+PODFILE CHECKSUM: d4e30528460829a06fc364f1e2fa98bcd4d8759d
 
 COCOAPODS: 1.4.0

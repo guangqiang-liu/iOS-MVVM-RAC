@@ -13,7 +13,9 @@ target 'WLMElectronicInvoice' do
   pod 'WLIconFont'
   pod 'Masonry', '1.1.0'
   pod 'ReactiveObjC', '3.1.0'
-  pod 'WLForm'
+  
+  pod 'WLForm', :path => '/Users/liuguangqiang/Desktop/companyRepo/WLPLib/WLForm/WLForm.podspec'
+  
   pod 'WLModal'
   
 end

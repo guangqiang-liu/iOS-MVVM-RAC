@@ -21,6 +21,7 @@
     // Do any additional setup after loading the view.
     
     self.title = @"填写税务信息";
+    self.tableView.frame = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT - 48);
     [self setupViews];
 }
 

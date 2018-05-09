@@ -1,6 +1,6 @@
 {
   "name": "WLForm",
-  "version": "0.0.2",
+  "version": "0.0.8",
   "summary": "自定义通用表单组件",
   "description": "TODO: Add long description of the pod here.",
   "homepage": "https://gitlab.qianbaocard.org/iOS/view/WLForm",
@@ -10,7 +10,7 @@
   },
   "source": {
     "git": "git@gitlab.qianbaocard.org:iOS/view/WLForm.git",
-    "tag": "0.0.2"
+    "tag": "0.0.8"
   },
   "platforms": {
     "ios": "8.0"
@@ -22,6 +22,9 @@
   "dependencies": {
     "IQKeyboardManager": [
 
+    ],
+    "WLWidget": [
+
     ]
   },
   "subspecs": [
@@ -32,8 +35,7 @@
         "WLForm/Controller/**/*.{h,m}",
         "WLForm/Model/**/*.{h,m}",
         "WLForm/View/**/*.{h,m}",
-        "WLForm/ViewModel/**/*.{h,m}",
-        "WLForm/Tool/**/*.{h,m}"
+        "WLForm/ViewModel/**/*.{h,m}"
       ]
     }
   ]

@@ -11,7 +11,6 @@
 
 @interface WLMFillTaxationInfoVC ()
 
-@property (nonatomic, strong) UIButton *bottomButton;
 @end
 
 @implementation WLMFillTaxationInfoVC
@@ -25,11 +24,6 @@
 
 - (void)setupViews {
     [self configFormInfo];
-    [self renderBottomButton];
-}
-
-- (void)renderBottomButton {
-    [self.view addSubview:self.bottomButton];
 }
 
 - (void)configFormInfo {
@@ -70,6 +64,12 @@
     row = [self bottomTipCellWithInfo:dic];
     row.hasBottomSep = NO;
     [section addItem:row];
+    
+    dic = @{kLeftKey:@"下一步"};
+    row = [self bottomButtonCellWithInfo:dic];
+    row.bottomSepLineMarginLeft = 0;
+    [section addItem:row];
+    
     return section;
 }
 
@@ -111,30 +111,31 @@
     WLFormItemViewModel *row = nil;
     row = [[WLFormItemViewModel alloc] initFormItemWithStyle:UITableViewCellStyleValue1 reuseIdentifier:@"WLFormBottomTipCell"];
     row.cellClass = [WLFormBottomTipCell class];
-    row.itemHeight = 44.f;
+    row.itemHeight = 48.f;
+    __weak typeof(self) weakSelf = self;
     row.itemConfigBlock = ^(WLFormBottomTipCell *cell, id value, NSIndexPath *indexPath) {
         cell.tipStr = info[kLeftKey];
         cell.tipBlock = ^{
-            NSLog(@"点击了提示文字");
+            
         };
     };
     return row;
 }
 
-- (UIButton *)bottomButton {
-    if (!_bottomButton) {
-        _bottomButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        _bottomButton.frame = CGRectMake(0, SCREEN_HEIGHT - 48, SCREEN_WIDTH, 48);
-        [_bottomButton setTitleColor:white_color forState:UIControlStateNormal];
-        [_bottomButton setTitle:@"下一步" forState:UIControlStateNormal];
-        _bottomButton.titleLabel.font = H18;
-        [_bottomButton createGradientButtonWithSize:CGSizeMake(SCREEN_WIDTH, 44) colorArray:@[HexRGB(0xFF7E4A), HexRGB(0xFF4A4A)] percentageArray:@[@(0.1), @(1)] gradientType:GradientFromLeftToRight];
-        [_bottomButton whenTapped:^{
+- (WLFormItemViewModel *)bottomButtonCellWithInfo:(NSDictionary *)info {
+    WLFormItemViewModel *row = nil;
+    row = [[WLFormItemViewModel alloc] initFormItemWithStyle:UITableViewCellStyleValue1 reuseIdentifier:@"WLFormBottomButtonCell"];
+    row.cellClass = [WLFormBottomButtonCell class];
+    row.itemHeight = 78.f;
+     __weak typeof(self) weakSelf = self;
+    row.itemConfigBlock = ^(WLFormBottomButtonCell *cell, id value, NSIndexPath *indexPath) {
+        cell.title = info[kLeftKey];
+        cell.bottomButtonBlock = ^{
             WLMMoreTaxationInfoVC *VC = [[WLMMoreTaxationInfoVC alloc] init];
-            [self.navigationController pushViewController:VC animated:YES];
-        }];
-    }
-    return _bottomButton;
+            [weakSelf.navigationController pushViewController:VC animated:YES];
+        };
+    };
+    return row;
 }
 
 @end
