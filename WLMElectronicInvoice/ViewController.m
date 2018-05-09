@@ -33,6 +33,25 @@
         [button addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:button];
     }
+    
+    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+    [btn setTitle:@"字体图片测试" forState:UIControlStateNormal];
+    btn.frame = CGRectMake(0, 400, 200, 30);
+    btn.backgroundColor = [UIColor redColor];
+    // UIButton使用大小自适应行不通
+    //    [test.titleLabel sizeToFit];
+    [btn setTitleColor:[UIColor magentaColor] forState:UIControlStateNormal];
+    [btn setImage:[WLIcon iconWithName:@"keyboard_o" size:23 color:[UIColor orangeColor]] forState:UIControlStateNormal];
+    [self.view addSubview:btn];
+    
+    // UILable使用方式
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 180, 280, 40)];
+    label.font = [UIFont fontWithName:@"iconfont" size:15]; //设置label的字体
+    label.text = [WLIcon matchIconCodeWithName:@"play_o"];
+    label.textColor = [UIColor redColor];
+    // lable根据内容自适应大小
+    [label sizeToFit];
+    [self.view addSubview:label];
 }
 
 - (void)btnClick:(UIButton *)button {

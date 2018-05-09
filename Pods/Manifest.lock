@@ -2,40 +2,51 @@ PODS:
   - IQKeyboardManager (6.0.2)
   - Masonry (1.1.0)
   - ReactiveObjC (3.1.0)
-  - WLBaseView (0.1.4):
-    - WLBaseView/Categorys (= 0.1.4)
-    - WLBaseView/Controllers (= 0.1.4)
-    - WLBaseView/Models (= 0.1.4)
-    - WLBaseView/ViewModels (= 0.1.4)
-    - WLBaseView/Views (= 0.1.4)
-  - WLBaseView/Categorys (0.1.4)
-  - WLBaseView/Controllers (0.1.4):
-    - WLBaseView/Categorys
-  - WLBaseView/Models (0.1.4)
-  - WLBaseView/ViewModels (0.1.4)
-  - WLBaseView/Views (0.1.4)
-  - WLForm (0.0.4):
+  - SDWebImage (4.3.3):
+    - SDWebImage/Core (= 4.3.3)
+  - SDWebImage/Core (4.3.3)
+  - WLForm (0.0.8):
     - IQKeyboardManager
-    - WLForm/Code (= 0.0.4)
-  - WLForm/Code (0.0.4):
+    - WLForm/Code (= 0.0.8)
+    - WLWidget
+  - WLForm/Code (0.0.8):
     - IQKeyboardManager
-  - WLIconFont (0.1.4)
+    - WLWidget
+  - WLIconFont (0.1.5)
+  - WLModal (0.0.2):
+    - Masonry
+    - SDWebImage
+    - WLIconFont
+    - WLModal/Modal (= 0.0.2)
+    - WLWidget
+  - WLModal/Modal (0.0.2):
+    - Masonry
+    - SDWebImage
+    - WLIconFont
+    - WLWidget
+  - WLWidget (0.0.4):
+    - WLWidget/Category (= 0.0.4)
+    - WLWidget/Macro (= 0.0.4)
+  - WLWidget/Category (0.0.4)
+  - WLWidget/Macro (0.0.4)
 
 DEPENDENCIES:
   - Masonry (= 1.1.0)
   - ReactiveObjC (= 3.1.0)
-  - WLBaseView (= 0.1.4)
-  - WLForm (= 0.0.4)
-  - WLIconFont (= 0.1.4)
+  - WLForm
+  - WLIconFont
+  - WLModal
 
 SPEC CHECKSUMS:
   IQKeyboardManager: c49d59e358aeeffaa0280aa305093c2b194d2607
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   ReactiveObjC: 2a38ea15335de4119d8b17caf1db1484f61db902
-  WLBaseView: b9f5fc8f9d57f1f9c73ec1a62e8ed926cc1dfcf6
-  WLForm: 46f2edc46b03716e3ca2a2c9d770362c0e376534
-  WLIconFont: 90d85045eac52306afc40647c58972e95007ca3a
+  SDWebImage: de4d90b5bff3571eae7bd16202b1f43135409fa5
+  WLForm: c81886116f6ed85a93a6cec43657cee9d0e07f23
+  WLIconFont: ab5bdf2208203afa208d0a721da8e4079f3ce7de
+  WLModal: ee31840806471416bcf78a212632dadbbfdbee7e
+  WLWidget: 29f38795f8c2a0d77532f0a84ef49017bc2f2f87
 
-PODFILE CHECKSUM: fd354b864ca265a7aace5df36272a39a3fc68d83
+PODFILE CHECKSUM: 84ff3930b8da7bcc30169e9a3496434560a7da9b
 
 COCOAPODS: 1.4.0

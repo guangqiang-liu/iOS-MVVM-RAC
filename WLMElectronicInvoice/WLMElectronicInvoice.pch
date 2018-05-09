@@ -16,11 +16,10 @@
 #import "WLBViewModel.h"
 #import "WLBViewController.h"
 #import "WLBView.h"
-#import <WLIconFont/WLIcon.h>
-#import <WLBaseView/WLBaseView-umbrella.h>
 #import "ReactiveObjC.h"
-
-#import <WLForm/WLForm.h>
-#import <WLForm/WLForm-umbrella.h>
+#import "CategoryHeader.h"
+#import "MacroHeader.h"
+#import "FormHeader.h"
+#import "WLIcon.h"
 
 #endif /* WLMElectronicInvoice_pch */

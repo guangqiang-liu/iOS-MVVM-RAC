@@ -10,11 +10,10 @@ target 'WLMElectronicInvoice' do
   
   # Pods for WLMElectronicInvoice
   
-  pod 'WLIconFont', '0.1.4'
-  pod 'WLBaseView', '0.1.4'
+  pod 'WLIconFont'
   pod 'Masonry', '1.1.0'
   pod 'ReactiveObjC', '3.1.0'
-  pod 'WLForm', '0.0.4'
-#  pod 'WLForm', :path => '/Users/liuguangqiang/Desktop/companyRepo/WLPLib/WLForm/WLForm.podspec'
-
+  pod 'WLForm'
+  pod 'WLModal'
+  
 end

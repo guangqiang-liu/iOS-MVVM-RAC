@@ -1,0 +1,6 @@
+framework module WLWidget {
+  umbrella header "WLWidget-umbrella.h"
+
+  export *
+  module * { export * }
+}

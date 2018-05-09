@@ -6,7 +6,7 @@
 //  Copyright © 2018年 quangqiang. All rights reserved.
 //
 
-#import <WLForm/WLForm.h>
+#import "WLFormVC.h"
 
 @interface WLMOpenInvoiceVC : WLFormVC
 
