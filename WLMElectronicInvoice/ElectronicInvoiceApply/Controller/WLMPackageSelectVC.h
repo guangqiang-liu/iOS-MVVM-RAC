@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface WLMPackageSelectVC : UIViewController
+@interface WLMPackageSelectVC : WLBaseViewController
 
 @end

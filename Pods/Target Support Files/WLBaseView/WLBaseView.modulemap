@@ -1,0 +1,6 @@
+framework module WLBaseView {
+  umbrella header "WLBaseView-umbrella.h"
+
+  export *
+  module * { export * }
+}

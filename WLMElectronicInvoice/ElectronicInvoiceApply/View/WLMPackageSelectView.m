@@ -68,7 +68,7 @@
         _applyButton.backgroundColor = green_color;
         _applyButton.layer.cornerRadius = 4;
         _applyButton.layer.masksToBounds = YES;
-        [_applyButton createGradientButtonWithSize:CGSizeMake(MaxY(self.protocolButton) + 32, 44) colorArray:@[HexRGB(0xFF7E4A), HexRGB(0xFF4A4A)] percentageArray:@[@(0.1), @(1)] gradientType:GradientFromLeftToRight];
+        [_applyButton createGradientButtonWithSize:CGSizeMake(MaxY(self.protocolButton) + 32, 44) colorArray:@[HexRGB(0xFF7E4A), HexRGB(0xFF4A4A)] gradientType:GradientFromLeftToRight];
     }
     return _applyButton;
 }

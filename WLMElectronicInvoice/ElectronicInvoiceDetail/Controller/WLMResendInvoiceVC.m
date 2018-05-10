@@ -20,10 +20,10 @@
     // Do any additional setup after loading the view.
     
     self.title = @"重发电子发票";
-    [self setupViews];
 }
 
-- (void)setupViews {
+- (void)renderViews {
+    [super renderViews];
     [self configFormInfo];
 }
 

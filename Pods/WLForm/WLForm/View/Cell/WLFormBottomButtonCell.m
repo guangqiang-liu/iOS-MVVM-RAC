@@ -19,7 +19,7 @@
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
-        self.backgroundColor = clear_color;
+        self.backgroundColor = purple_color;
         [self renderViews];
     }
     return self;
@@ -43,13 +43,12 @@
 - (UIButton *)button {
     if (!_button) {
         _button = [UIButton buttonWithType:UIButtonTypeCustom];
-        _button.frame = CGRectMake(15, 16, SCREEN_WIDTH - 30, HEIGHT(self.contentView));
+        _button.frame = CGRectMake(15, 16, SCREEN_WIDTH - 30, 44);
         [_button setTitleColor:white_color forState:UIControlStateNormal];
         _button.titleLabel.font = H18;
         _button.layer.cornerRadius = 4;
         _button.layer.masksToBounds = YES;
-        _button.backgroundColor = purple_color;
-        [_button createGradientButtonWithSize:CGSizeMake(SCREEN_WIDTH - 30, 44) colorArray:@[HexRGB(0xFF7E4A), HexRGB(0xFF4A4A)] percentageArray:@[@(0.1), @(1)] gradientType:GradientFromLeftToRight];
+        [_button createGradientButtonWithSize:CGSizeMake(SCREEN_WIDTH - 30, 44) colorArray:@[HexRGB(0xFF7E4A), HexRGB(0xFF4A4A)] gradientType:GradientFromLeftToRight];
         [_button addTarget:self action:@selector(buttonClick) forControlEvents:UIControlEventTouchUpInside];
     }
     return _button;

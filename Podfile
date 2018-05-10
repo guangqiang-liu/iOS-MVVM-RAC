@@ -18,6 +18,5 @@ target 'WLMElectronicInvoice' do
 
   pod 'WLForm'
   pod 'WLModal'
-  pod 'DZNEmptyDataSet'
   
 end

@@ -21,13 +21,19 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.backgroundColor = bgColor;
-    [self.view addSubview:self.packageView];
+}
+
+- (void)renderViews {
+    [super renderViews];
+     [self.view addSubview:self.packageView];
 }
 
 - (WLMPackageSelectView *)packageView {
     if (!_packageView) {
         _packageView = [[WLMPackageSelectView alloc] init];
+        @weakify(self);
         _packageView.packageSelectBlock = ^{
+            @strongify(self);
             WLMInvoiceApplyResultVC *VC = [[WLMInvoiceApplyResultVC alloc] init];
             [self.navigationController pushViewController:VC animated:YES];
         };

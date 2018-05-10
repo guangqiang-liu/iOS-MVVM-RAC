@@ -32,6 +32,8 @@
 - (void)setTipStr:(NSString *)tipStr {
     _tipStr = tipStr;
     self.tipLable.text = tipStr;
+    CGSize tipSize = [self.tipLable sizeWithText:tipStr font:H12];
+    self.tipLable.frame = CGRectMake(20, 0, SCREEN_WIDTH - 40, tipSize.height + 32);
 }
 
 - (UILabel *)tipLable {

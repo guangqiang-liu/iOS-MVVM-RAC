@@ -6,8 +6,8 @@
 //  Copyright © 2018年 quangqiang. All rights reserved.
 //
 
-#import "WLBViewModel.h"
+#import "WLBaseViewModel.h"
 
-@interface WLMInvoiceApplyVM : WLBViewModel
+@interface WLMInvoiceApplyVM : WLBaseViewModel
 
 @end

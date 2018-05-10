@@ -6,8 +6,8 @@
 //  Copyright © 2018年 quangqiang. All rights reserved.
 //
 
-#import "WLBViewController.h"
+#import <UIKit/UIKit.h>
 
-@interface WLMInvoiceDetailVC : WLBViewController
+@interface WLMInvoiceDetailVC : WLBaseViewController
 
 @end

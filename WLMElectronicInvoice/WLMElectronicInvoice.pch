@@ -13,13 +13,12 @@
 // You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
 
 #import "Masonry.h"
-#import "WLBViewModel.h"
-#import "WLBViewController.h"
-#import "WLBView.h"
 #import "ReactiveObjC.h"
 #import "CategoryHeader.h"
 #import "MacroHeader.h"
 #import "FormHeader.h"
 #import "WLIcon.h"
+
+#import "BaseViewHeader.h"
 
 #endif /* WLMElectronicInvoice_pch */

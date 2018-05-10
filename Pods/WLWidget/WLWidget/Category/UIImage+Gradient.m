@@ -10,16 +10,15 @@
 
 @implementation UIImage (Gradient)
 
-- (UIImage *)createGradientImageWithSize:(CGSize)imageSize gradientColors:(NSArray *)colorArr percentage:(NSArray *)percents gradientType:(GradientType)gradientType {
+- (UIImage *)createGradientImageWithSize:(CGSize)imageSize gradientColors:(NSArray *)colorArr gradientType:(GradientType)gradientType {
     
-    NSAssert(percents.count <= 5, @"输入颜色数量过多，如果需求数量过大，请修改locations[]数组的个数");
-    
+    NSArray *percents = @[@(0.1), @(1)];
     NSMutableArray *array = [NSMutableArray array];
     for(UIColor *color in colorArr) {
         [array addObject:(id)color.CGColor];
     }
     
-    CGFloat locations[5];
+    CGFloat locations[2];
     for (int i = 0; i < percents.count; i++) {
         locations[i] = [percents[i] floatValue];
     }

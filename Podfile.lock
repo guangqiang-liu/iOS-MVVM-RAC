@@ -5,12 +5,19 @@ PODS:
   - SDWebImage (4.3.3):
     - SDWebImage/Core (= 4.3.3)
   - SDWebImage/Core (4.3.3)
-  - WLForm (0.0.8):
+  - WLBaseView (0.1.6):
+    - ReactiveObjC
+    - WLBaseView/Code (= 0.1.6)
+  - WLBaseView/Code (0.1.6):
+    - ReactiveObjC
+  - WLForm (0.1.0):
     - IQKeyboardManager
-    - WLForm/Code (= 0.0.8)
+    - WLBaseView
+    - WLForm/Code (= 0.1.0)
     - WLWidget
-  - WLForm/Code (0.0.8):
+  - WLForm/Code (0.1.0):
     - IQKeyboardManager
+    - WLBaseView
     - WLWidget
   - WLIconFont (0.1.5)
   - WLModal (0.0.2):
@@ -24,33 +31,30 @@ PODS:
     - SDWebImage
     - WLIconFont
     - WLWidget
-  - WLWidget (0.0.4):
-    - WLWidget/Category (= 0.0.4)
-    - WLWidget/Macro (= 0.0.4)
-  - WLWidget/Category (0.0.4)
-  - WLWidget/Macro (0.0.4)
+  - WLWidget (0.0.5):
+    - WLWidget/Category (= 0.0.5)
+    - WLWidget/Macro (= 0.0.5)
+  - WLWidget/Category (0.0.5)
+  - WLWidget/Macro (0.0.5)
 
 DEPENDENCIES:
   - Masonry (= 1.1.0)
   - ReactiveObjC (= 3.1.0)
-  - WLForm (from `/Users/liuguangqiang/Desktop/companyRepo/WLPLib/WLForm/WLForm.podspec`)
+  - WLForm
   - WLIconFont
   - WLModal
-
-EXTERNAL SOURCES:
-  WLForm:
-    :path: /Users/liuguangqiang/Desktop/companyRepo/WLPLib/WLForm/WLForm.podspec
 
 SPEC CHECKSUMS:
   IQKeyboardManager: c49d59e358aeeffaa0280aa305093c2b194d2607
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   ReactiveObjC: 2a38ea15335de4119d8b17caf1db1484f61db902
   SDWebImage: de4d90b5bff3571eae7bd16202b1f43135409fa5
-  WLForm: c81886116f6ed85a93a6cec43657cee9d0e07f23
+  WLBaseView: 3b9acdf6c1b701617e38b6a2d94c86d705688954
+  WLForm: 7428b7a6cd8ebbdac70e800b15c0691cc923f543
   WLIconFont: ab5bdf2208203afa208d0a721da8e4079f3ce7de
   WLModal: ee31840806471416bcf78a212632dadbbfdbee7e
-  WLWidget: 29f38795f8c2a0d77532f0a84ef49017bc2f2f87
+  WLWidget: 8a84e7c918b1873f4cbb6b7c250c543b5012feb8
 
-PODFILE CHECKSUM: d4e30528460829a06fc364f1e2fa98bcd4d8759d
+PODFILE CHECKSUM: 342c63b05ee812e07bd23cfb9b929d54fb5c6f2e
 
 COCOAPODS: 1.4.0

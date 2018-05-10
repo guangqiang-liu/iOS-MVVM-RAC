@@ -20,10 +20,10 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.backgroundColor = bgColor;
-    [self renderViews];
 }
 
 - (void)renderViews {
+    [super renderViews];
     [self.view addSubview:self.resultView];
 }
 

@@ -10,8 +10,8 @@
 
 @implementation UIButton (Gradient)
 
-- (UIButton *)createGradientButtonWithSize:(CGSize)btnSize colorArray:(NSArray *)colorArr percentageArray:(NSArray *)percent gradientType:(GradientType)type {
-    UIImage *backImage = [[[UIImage alloc] init] createGradientImageWithSize:btnSize gradientColors:colorArr percentage:percent gradientType:type];
+- (UIButton *)createGradientButtonWithSize:(CGSize)btnSize colorArray:(NSArray *)colorArr gradientType:(GradientType)type {
+    UIImage *backImage = [[[UIImage alloc] init] createGradientImageWithSize:btnSize gradientColors:colorArr gradientType:type];
     [self setBackgroundImage:backImage forState:UIControlStateNormal];
     return self;
 }

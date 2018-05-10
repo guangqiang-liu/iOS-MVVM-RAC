@@ -115,7 +115,7 @@
         _button.layer.cornerRadius = 4;
         _button.layer.masksToBounds = YES;
         [_button setTitle:@"返回发现页" forState:UIControlStateNormal];
-        [_button createGradientButtonWithSize:CGSizeMake(SCREEN_WIDTH - 30, 44) colorArray:@[HexRGB(0xFF7E4A), HexRGB(0xFF4A4A)] percentageArray:@[@(0.1), @(1)] gradientType:GradientFromLeftToRight];
+        [_button createGradientButtonWithSize:CGSizeMake(SCREEN_WIDTH - 30, 44) colorArray:@[HexRGB(0xFF7E4A), HexRGB(0xFF4A4A)] gradientType:GradientFromLeftToRight];
         [_button whenTapped:^{
             
         }];

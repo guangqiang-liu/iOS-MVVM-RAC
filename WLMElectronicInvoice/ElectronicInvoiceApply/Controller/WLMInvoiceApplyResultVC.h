@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface WLMInvoiceApplyResultVC : UIViewController
+@interface WLMInvoiceApplyResultVC : WLBaseViewController
 
 @end

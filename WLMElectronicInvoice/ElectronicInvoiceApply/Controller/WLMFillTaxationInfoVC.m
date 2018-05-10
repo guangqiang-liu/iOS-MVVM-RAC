@@ -19,13 +19,12 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.title = @"填写税务信息";
-    [self setupViews];
 }
 
-- (void)setupViews {
+- (void)renderViews {
+    [super renderViews];
     [self configFormInfo];
 }
-
 - (void)configFormInfo {
     [self.form addSection:[self taxationInfoSection]];
 }

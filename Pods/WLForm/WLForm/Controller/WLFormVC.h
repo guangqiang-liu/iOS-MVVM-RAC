@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "WLBaseViewController.h"
 
 @class WLForm;
 
-@interface WLFormVC : UIViewController
+@interface WLFormVC : WLBaseViewController
 
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) WLForm *form;

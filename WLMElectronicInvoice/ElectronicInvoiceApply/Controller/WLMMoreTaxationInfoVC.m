@@ -22,10 +22,10 @@
     
     self.title = @"填写税务信息";
     self.tableView.frame = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT - 48);
-    [self setupViews];
 }
 
-- (void)setupViews {
+-(void)renderViews {
+    [super renderViews];
     [self configFormInfo];
     [self renderBottomButton];
 }
@@ -240,7 +240,7 @@
         [_bottomButton setTitleColor:white_color forState:UIControlStateNormal];
         [_bottomButton setTitle:@"下一步" forState:UIControlStateNormal];
         _bottomButton.titleLabel.font = H18;
-        [_bottomButton createGradientButtonWithSize:CGSizeMake(SCREEN_WIDTH, 44) colorArray:@[HexRGB(0xFF7E4A), HexRGB(0xFF4A4A)] percentageArray:@[@(0.1), @(1)] gradientType:GradientFromLeftToRight];
+        [_bottomButton createGradientButtonWithSize:CGSizeMake(SCREEN_WIDTH, 44) colorArray:@[HexRGB(0xFF7E4A), HexRGB(0xFF4A4A)] gradientType:GradientFromLeftToRight];
         [_bottomButton whenTapped:^{
             WLMOpenInvoiceVC *VC = [[WLMOpenInvoiceVC alloc] init];
             [self.navigationController pushViewController:VC animated:YES];

@@ -12,8 +12,10 @@
 #import "WLMInvoiceSearchVC.h"
 #import "WLMInvoiceDetailVC.h"
 #import "WLCircleProgressView.h"
-
 #import "WLMPackageSelectVC.h"
+#import "WLMSelectApplyMerchant.h"
+
+
 #define ktag 1000
 
 @interface ViewController ()
@@ -65,7 +67,7 @@
 - (void)btnClick:(UIButton *)button {
     NSInteger tag = button.tag - ktag;
     if (tag == 0) {
-        WLMInvoiceApplyVC *VC = [[WLMInvoiceApplyVC alloc] init];
+        WLMSelectApplyMerchant *VC = [[WLMSelectApplyMerchant alloc] init];
         [self.navigationController pushViewController:VC animated:YES];
     } else if (tag == 1) {
         WLMInvoiceManagerListVC *VC = [[WLMInvoiceManagerListVC alloc] init];
