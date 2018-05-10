@@ -21,18 +21,18 @@ typedef NS_ENUM(NSInteger, StatusBarStyle) {
 /**
  是否隐藏导航左按钮
  */
-@property (nonatomic, assign) BOOL hiddenLeftBarBtn;
+@property (nonatomic, assign, getter=isLeftBarBtnHidden) BOOL leftBarBtnHidden;
 
 /**
  *  是否显示导航栏的toolbar
  */
-@property (nonatomic, getter=isToolbarHidden) BOOL toolbarHidden;
+@property (nonatomic, assign, getter=isToolbarHidden) BOOL toolbarHidden;
 
 
 /**
  *  是否显示Navigation bar
  */
-@property (nonatomic, getter=isNavigationBarHidden) BOOL navigationBarHidden;
+@property (nonatomic, assign, getter=isNavigationBarHidden) BOOL navigationBarHidden;
 
 
 /**

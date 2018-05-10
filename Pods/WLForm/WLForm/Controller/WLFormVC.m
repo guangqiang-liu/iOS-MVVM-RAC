@@ -110,6 +110,7 @@
 
 #pragma mark - private methods
 - (void)renderViews {
+    [super renderViews];
     [self.view addSubview:self.tableView];
 }
 

@@ -5,17 +5,17 @@ PODS:
   - SDWebImage (4.3.3):
     - SDWebImage/Core (= 4.3.3)
   - SDWebImage/Core (4.3.3)
-  - WLBaseView (0.1.6):
+  - WLBaseView (0.1.9):
     - ReactiveObjC
-    - WLBaseView/Code (= 0.1.6)
-  - WLBaseView/Code (0.1.6):
+    - WLBaseView/Code (= 0.1.9)
+  - WLBaseView/Code (0.1.9):
     - ReactiveObjC
-  - WLForm (0.1.0):
+  - WLForm (0.1.2):
     - IQKeyboardManager
     - WLBaseView
-    - WLForm/Code (= 0.1.0)
+    - WLForm/Code (= 0.1.2)
     - WLWidget
-  - WLForm/Code (0.1.0):
+  - WLForm/Code (0.1.2):
     - IQKeyboardManager
     - WLBaseView
     - WLWidget
@@ -49,8 +49,8 @@ SPEC CHECKSUMS:
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   ReactiveObjC: 2a38ea15335de4119d8b17caf1db1484f61db902
   SDWebImage: de4d90b5bff3571eae7bd16202b1f43135409fa5
-  WLBaseView: 3b9acdf6c1b701617e38b6a2d94c86d705688954
-  WLForm: 7428b7a6cd8ebbdac70e800b15c0691cc923f543
+  WLBaseView: 01bca533a7b63a60b8e720b424352aa46fee1a4d
+  WLForm: 889665f5e1933979473ab6e3febe2cc111ea4183
   WLIconFont: ab5bdf2208203afa208d0a721da8e4079f3ce7de
   WLModal: ee31840806471416bcf78a212632dadbbfdbee7e
   WLWidget: 8a84e7c918b1873f4cbb6b7c250c543b5012feb8

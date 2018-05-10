@@ -47,9 +47,10 @@
 - (UITableView *)tableView {
     if (!_tableView) {
         _tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
-        _tableView.frame = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT - 64);
+        _tableView.frame = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
         _tableView.backgroundColor = bgColor;
         _tableView.contentInset = UIEdgeInsetsMake(10, 0, 0, 0);
+        _tableView.tableFooterView = [UIView new];
         _tableView.rowHeight = 70;
         _tableView.delegate = self;
         _tableView.dataSource = self;

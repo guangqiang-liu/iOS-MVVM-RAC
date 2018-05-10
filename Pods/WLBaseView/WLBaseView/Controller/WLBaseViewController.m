@@ -7,13 +7,11 @@
 //
 
 #import "WLBaseViewController.h"
-#import "UIViewController+WLNavigationItem.h"
 
 @interface WLBaseViewController ()
 
 @property (nonatomic, getter=isViewAppeared) BOOL viewAppeared;
 @property (nonatomic, strong, readwrite) WLBaseViewModel *viewModel;
-
 @end
 
 @implementation WLBaseViewController
@@ -37,25 +35,15 @@
     return self;
 }
 
-- (void)renderViews {
-}
+- (void)renderViews {}
 
-- (void)bindViewModel {
-}
-
-- (void)initialize {
-    self.edgesForExtendedLayout = UIRectEdgeLeft | UIRectEdgeRight;
-    self.navigationBarHidden = NO;
-    self.toolbarHidden = YES;
-    self.titleColor = kNavTitleColor;
-    self.view.backgroundColor = kBgColor;
-}
+- (void)bindViewModel {}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self initialize];
     
-    if (!self.hiddenLeftBarBtn) {
+    if (!self.leftBarBtnHidden) {
         [self setNavigationItemBackItem];
     }
 }
@@ -76,9 +64,16 @@
     self.viewAppeared = NO;
 }
 
+- (void)initialize {
+    self.navigationBarHidden = NO;
+    self.toolbarHidden = YES;
+    self.titleColor = kNavTitleColor;
+    self.view.backgroundColor = [UIColor whiteColor];
+}
+
 - (void)setTitleColor:(UIColor *)titleColor {
     _titleColor = titleColor;
-    self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName:titleColor, NSFontAttributeName: [UIFont systemFontOfSize:17.0f]};
+    self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName:titleColor, NSFontAttributeName: [UIFont systemFontOfSize:18.0f]};
 }
 
 - (void)setNavigationBarImage:(UIImage *)navigationBarImage {
@@ -106,10 +101,6 @@
     if (self.isViewLoaded) {
         [self.navigationController setToolbarHidden:_toolbarHidden];
     }
-}
-
-- (BOOL)shouldAutorotate {
-    return YES;
 }
 
 - (void)dealloc {
