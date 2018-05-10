@@ -14,8 +14,10 @@ target 'WLMElectronicInvoice' do
   pod 'Masonry', '1.1.0'
   pod 'ReactiveObjC', '3.1.0'
   
-  pod 'WLForm', :path => '/Users/liuguangqiang/Desktop/companyRepo/WLPLib/WLForm/WLForm.podspec'
-  
+#  pod 'WLForm', :path => '/Users/liuguangqiang/Desktop/companyRepo/WLPLib/WLForm/WLForm.podspec'
+
+  pod 'WLForm'
   pod 'WLModal'
+  pod 'DZNEmptyDataSet'
   
 end
