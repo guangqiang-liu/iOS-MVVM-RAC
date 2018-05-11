@@ -19,6 +19,10 @@
 		9C26476E209BF10D004A4551 /* WLMInvoiceDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C26476D209BF10D004A4551 /* WLMInvoiceDetailVC.m */; };
 		9C264771209BF17B004A4551 /* WLMInvoiceManagerListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C264770209BF17B004A4551 /* WLMInvoiceManagerListVC.m */; };
 		9C264774209BF1A2004A4551 /* WLMInvoiceSearchVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C264773209BF1A2004A4551 /* WLMInvoiceSearchVC.m */; };
+		9C9C473920A52B4A0023F02E /* WLMInvoiceDetailHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C9C473820A52B4A0023F02E /* WLMInvoiceDetailHeaderView.m */; };
+		9C9C473C20A52B6D0023F02E /* WLMInvoiceDetailInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C9C473B20A52B6D0023F02E /* WLMInvoiceDetailInfoView.m */; };
+		9C9C474520A596A70023F02E /* sawtooth@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C9C474320A596A70023F02E /* sawtooth@3x.png */; };
+		9C9C474620A596A70023F02E /* sawtooth@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C9C474420A596A70023F02E /* sawtooth@2x.png */; };
 		9CC4FEF520A2E70800232074 /* WLMPackageSelectVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CC4FEF420A2E70800232074 /* WLMPackageSelectVC.m */; };
 		9CC4FEF820A2E75300232074 /* WLMPackageSelectView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CC4FEF720A2E75300232074 /* WLMPackageSelectView.m */; };
 		9CC4FEFF20A2FADD00232074 /* middle@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CC4FEF920A2FADC00232074 /* middle@3x.png */; };
@@ -63,6 +67,12 @@
 		9C264770209BF17B004A4551 /* WLMInvoiceManagerListVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WLMInvoiceManagerListVC.m; sourceTree = "<group>"; };
 		9C264772209BF1A2004A4551 /* WLMInvoiceSearchVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WLMInvoiceSearchVC.h; sourceTree = "<group>"; };
 		9C264773209BF1A2004A4551 /* WLMInvoiceSearchVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WLMInvoiceSearchVC.m; sourceTree = "<group>"; };
+		9C9C473720A52B4A0023F02E /* WLMInvoiceDetailHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WLMInvoiceDetailHeaderView.h; sourceTree = "<group>"; };
+		9C9C473820A52B4A0023F02E /* WLMInvoiceDetailHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WLMInvoiceDetailHeaderView.m; sourceTree = "<group>"; };
+		9C9C473A20A52B6D0023F02E /* WLMInvoiceDetailInfoView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WLMInvoiceDetailInfoView.h; sourceTree = "<group>"; };
+		9C9C473B20A52B6D0023F02E /* WLMInvoiceDetailInfoView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WLMInvoiceDetailInfoView.m; sourceTree = "<group>"; };
+		9C9C474320A596A70023F02E /* sawtooth@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sawtooth@3x.png"; sourceTree = "<group>"; };
+		9C9C474420A596A70023F02E /* sawtooth@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sawtooth@2x.png"; sourceTree = "<group>"; };
 		9CC4FEF320A2E70800232074 /* WLMPackageSelectVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WLMPackageSelectVC.h; sourceTree = "<group>"; };
 		9CC4FEF420A2E70800232074 /* WLMPackageSelectVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WLMPackageSelectVC.m; sourceTree = "<group>"; };
 		9CC4FEF620A2E75300232074 /* WLMPackageSelectView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WLMPackageSelectView.h; sourceTree = "<group>"; };
@@ -165,6 +175,8 @@
 		9C2646F020999B35004A4551 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				9C9C474420A596A70023F02E /* sawtooth@2x.png */,
+				9C9C474320A596A70023F02E /* sawtooth@3x.png */,
 				9CC4FEFB20A2FADC00232074 /* big@2x.png */,
 				9CC4FEFC20A2FADD00232074 /* big@3x.png */,
 				9CC4FEFE20A2FADD00232074 /* middle@2x.png */,
@@ -214,6 +226,10 @@
 		9C26473E209AEEFA004A4551 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				9C9C473720A52B4A0023F02E /* WLMInvoiceDetailHeaderView.h */,
+				9C9C473820A52B4A0023F02E /* WLMInvoiceDetailHeaderView.m */,
+				9C9C473A20A52B6D0023F02E /* WLMInvoiceDetailInfoView.h */,
+				9C9C473B20A52B6D0023F02E /* WLMInvoiceDetailInfoView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -437,7 +453,9 @@
 				9C2646E2209994C8004A4551 /* Assets.xcassets in Resources */,
 				9CC4FF0220A2FADD00232074 /* big@3x.png in Resources */,
 				9CC4FF0320A2FADD00232074 /* normal@3x.png in Resources */,
+				9C9C474620A596A70023F02E /* sawtooth@2x.png in Resources */,
 				9CC4FEFF20A2FADD00232074 /* middle@3x.png in Resources */,
+				9C9C474520A596A70023F02E /* sawtooth@3x.png in Resources */,
 				9CC4FF0020A2FADD00232074 /* normal@2x.png in Resources */,
 				9C2646E0209994C8004A4551 /* Main.storyboard in Resources */,
 				9CC4FF0420A2FADD00232074 /* middle@2x.png in Resources */,
@@ -521,6 +539,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C9C473C20A52B6D0023F02E /* WLMInvoiceDetailInfoView.m in Sources */,
 				9CC4FEF820A2E75300232074 /* WLMPackageSelectView.m in Sources */,
 				9C264774209BF1A2004A4551 /* WLMInvoiceSearchVC.m in Sources */,
 				9CC4FF0720A318EB00232074 /* WLMInvoiceApplyResultVC.m in Sources */,
@@ -528,6 +547,7 @@
 				9CC4FEF520A2E70800232074 /* WLMPackageSelectVC.m in Sources */,
 				9C2646DD209994C8004A4551 /* ViewController.m in Sources */,
 				9CEEA5D420A03E9400673214 /* WLMOpenInvoiceVC.m in Sources */,
+				9C9C473920A52B4A0023F02E /* WLMInvoiceDetailHeaderView.m in Sources */,
 				9C264771209BF17B004A4551 /* WLMInvoiceManagerListVC.m in Sources */,
 				9CC4FF1720A3DBD200232074 /* WLCircleProgressView.m in Sources */,
 				9C264750209AEFE2004A4551 /* WLMInvoiceApplyVC.m in Sources */,

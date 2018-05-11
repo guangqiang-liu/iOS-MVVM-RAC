@@ -14,7 +14,7 @@
 #import "WLCircleProgressView.h"
 #import "WLMPackageSelectVC.h"
 #import "WLMSelectApplyMerchant.h"
-
+#import "WLMInvoiceDetailVC.h"
 
 #define ktag 1000
 
@@ -28,9 +28,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    WLCircleProgressView *progressView = [[WLCircleProgressView alloc] initWithFrame:CGRectMake(100, 100, 150, 150) circleWidth:10 gradientCGColors:@[(id)HexRGB(0x72D7FF).CGColor, (id)HexRGB(0x4B77FF).CGColor]];
-    [self.view addSubview:progressView];
-    progressView.progress = @(0.8);
+//    WLCircleProgressView *progressView = [[WLCircleProgressView alloc] initWithFrame:CGRectMake(100, 100, 150, 150) circleWidth:10 gradientCGColors:@[(id)HexRGB(0x72D7FF).CGColor, (id)HexRGB(0x4B77FF).CGColor]];
+//    [self.view addSubview:progressView];
+//    progressView.progress = @(0.8);
     
     NSArray *array = @[@"电票申请",@"电票管理",@"电票搜索",@"电票详情"];
     for (NSInteger i = 0; i < 4; i ++) {
@@ -67,7 +67,7 @@
 - (void)btnClick:(UIButton *)button {
     NSInteger tag = button.tag - ktag;
     if (tag == 0) {
-        WLMSelectApplyMerchant *VC = [[WLMSelectApplyMerchant alloc] init];
+        WLMInvoiceDetailVC *VC = [[WLMInvoiceDetailVC alloc] init];
         [self.navigationController pushViewController:VC animated:YES];
     } else if (tag == 1) {
         WLMInvoiceManagerListVC *VC = [[WLMInvoiceManagerListVC alloc] init];
