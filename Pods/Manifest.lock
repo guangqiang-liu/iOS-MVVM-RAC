@@ -1,14 +1,14 @@
 PODS:
-  - IQKeyboardManager (6.0.2)
+  - IQKeyboardManager (6.0.3)
   - Masonry (1.1.0)
   - ReactiveObjC (3.1.0)
   - SDWebImage (4.3.3):
     - SDWebImage/Core (= 4.3.3)
   - SDWebImage/Core (4.3.3)
-  - WLBaseView (0.1.9):
+  - WLBaseView (0.2.0):
     - ReactiveObjC
-    - WLBaseView/Code (= 0.1.9)
-  - WLBaseView/Code (0.1.9):
+    - WLBaseView/Code (= 0.2.0)
+  - WLBaseView/Code (0.2.0):
     - ReactiveObjC
   - WLForm (0.1.2):
     - IQKeyboardManager
@@ -19,7 +19,7 @@ PODS:
     - IQKeyboardManager
     - WLBaseView
     - WLWidget
-  - WLIconFont (0.1.5)
+  - WLIconFont (0.1.6)
   - WLModal (0.0.2):
     - Masonry
     - SDWebImage
@@ -40,21 +40,22 @@ PODS:
 DEPENDENCIES:
   - Masonry (= 1.1.0)
   - ReactiveObjC (= 3.1.0)
+  - WLBaseView
   - WLForm
   - WLIconFont
   - WLModal
 
 SPEC CHECKSUMS:
-  IQKeyboardManager: c49d59e358aeeffaa0280aa305093c2b194d2607
+  IQKeyboardManager: c390e612f4b98c8fd748016470138537dc163ead
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   ReactiveObjC: 2a38ea15335de4119d8b17caf1db1484f61db902
   SDWebImage: de4d90b5bff3571eae7bd16202b1f43135409fa5
-  WLBaseView: 01bca533a7b63a60b8e720b424352aa46fee1a4d
+  WLBaseView: f470ae54077921395c0fc2b5342d9a3c194762b5
   WLForm: 889665f5e1933979473ab6e3febe2cc111ea4183
-  WLIconFont: ab5bdf2208203afa208d0a721da8e4079f3ce7de
+  WLIconFont: 9eae86bae17c9aa455247d11bebd63a39b608edb
   WLModal: ee31840806471416bcf78a212632dadbbfdbee7e
   WLWidget: 8a84e7c918b1873f4cbb6b7c250c543b5012feb8
 
-PODFILE CHECKSUM: 342c63b05ee812e07bd23cfb9b929d54fb5c6f2e
+PODFILE CHECKSUM: 9bf89aec911331763563712ef9f18bdfdc0ec3d1
 
 COCOAPODS: 1.4.0

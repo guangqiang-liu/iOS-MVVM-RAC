@@ -7,6 +7,7 @@
 //
 
 #import "WLMInvoiceDetailInfoView.h"
+#import "UIView+WLDashLine.h"
 
 @interface WLMInvoiceDetailInfoView()
 
@@ -21,7 +22,7 @@
         self.backgroundColor = white_color;
         self.layer.shadowColor = [UIColor blackColor].CGColor;
         self.layer.shadowOpacity = 0.3;
-        self.layer.shadowOffset = CGSizeMake(0, 3);
+        self.layer.shadowOffset = CGSizeMake(0, 2);
         self.layer.cornerRadius = 6;
         self.dataArr = @[@"", @"", @"", @"", @""];
         [self renderViews];
@@ -43,7 +44,7 @@
     UIView *line = [[UIView alloc] init];
     line.frame = CGRectMake(15, MaxY(tempView) + 24, WIDTH(tempView), 2);
     [self addSubview:line];
-    [self drawDashLineWithView:line];
+    [line drawDashLineWithLineHeight:1 dashLineWidth:@2 dashLineSpace:@5 lineColor:HexRGB(0xDEDEDE)];
     
     for (NSInteger i = 0; i < 2; i ++) {
         UIView *view = [[UIView alloc] init];
@@ -82,28 +83,4 @@
     }];
 }
 
-- (void)drawDashLineWithView:(UIView *)view {
-    CAShapeLayer *shapeLayer = [CAShapeLayer layer];
-    [shapeLayer setBounds:view.bounds];
-    [shapeLayer setPosition:CGPointMake(view.frame.size.width / 2.0, view.frame.size.height)];
-    [shapeLayer setFillColor:[UIColor clearColor].CGColor];
-    // 设置虚线颜色
-    [shapeLayer setStrokeColor:HexRGB(0xDEDEDE).CGColor];
-    // 设置虚线宽度
-    [shapeLayer setLineWidth: 2];
-    [shapeLayer setLineJoin:kCALineJoinRound];
-    // 设置虚线的线宽及间距
-    [shapeLayer setLineDashPattern:[NSArray arrayWithObjects:[NSNumber numberWithInt:2], [NSNumber numberWithInt:5], nil]];
-    // 创建虚线绘制路径
-    CGMutablePathRef path = CGPathCreateMutable();
-    // 设置虚线绘制路径起点
-    CGPathMoveToPoint(path, NULL, 0, 0);
-    // 设置虚线绘制路径终点
-    CGPathAddLineToPoint(path, NULL, view.frame.size.width, 0);
-    // 设置虚线绘制路径
-    [shapeLayer setPath:path];
-    CGPathRelease(path);
-    // 添加虚线
-    [view.layer addSublayer:shapeLayer];
-}
 @end

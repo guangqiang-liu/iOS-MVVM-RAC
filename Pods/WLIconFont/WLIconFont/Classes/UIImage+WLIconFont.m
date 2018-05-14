@@ -26,7 +26,7 @@
     
     if (iconInfo.iconBgColor) {
         [iconInfo.iconBgColor set];
-        UIRectFill(CGRectMake(0.0, 0.0, imageSize, imageSize)); //fill the background
+        UIRectFill(CGRectMake(0.0, 0.0, imageSize, imageSize));
     }
     
     CGPoint point = CGPointMake(iconInfo.iconInsets.left * scale, iconInfo.iconInsets.top * scale);

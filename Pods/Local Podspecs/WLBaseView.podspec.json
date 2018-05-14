@@ -1,0 +1,39 @@
+{
+  "name": "WLBaseView",
+  "version": "0.2.0",
+  "summary": "常用View的基础base类",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "git@gitlab.qianbaocard.org:iOS/base/WLBaseView.git",
+  "license": "MIT",
+  "authors": {
+    "guangqiang": "1126756952@qq.com"
+  },
+  "source": {
+    "git": "git@gitlab.qianbaocard.org:iOS/base/WLBaseView.git",
+    "tag": "0.2.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "requires_arc": true,
+  "prefix_header_file": "WLBaseView/WLBaseView.pch",
+  "default_subspecs": "Code",
+  "resources": "WLBaseView/Resource/*.png",
+  "dependencies": {
+    "ReactiveObjC": [
+
+    ]
+  },
+  "subspecs": [
+    {
+      "name": "Code",
+      "source_files": [
+        "WLBaseView/Category/**/*.{h,m}",
+        "WLBaseView/Controller/**/*.{h,m}",
+        "WLBaseView/Model/**/*.{h,m}",
+        "WLBaseView/ViewModel/**/*.{h,m}",
+        "WLBaseView/View/**/*.{h,m}"
+      ]
+    }
+  ]
+}

@@ -23,6 +23,7 @@
 		9C9C473C20A52B6D0023F02E /* WLMInvoiceDetailInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C9C473B20A52B6D0023F02E /* WLMInvoiceDetailInfoView.m */; };
 		9C9C474520A596A70023F02E /* sawtooth@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C9C474320A596A70023F02E /* sawtooth@3x.png */; };
 		9C9C474620A596A70023F02E /* sawtooth@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C9C474420A596A70023F02E /* sawtooth@2x.png */; };
+		9C9C474A20A91F3D0023F02E /* UIView+WLDashLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C9C474920A91F3D0023F02E /* UIView+WLDashLine.m */; };
 		9CC4FEF520A2E70800232074 /* WLMPackageSelectVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CC4FEF420A2E70800232074 /* WLMPackageSelectVC.m */; };
 		9CC4FEF820A2E75300232074 /* WLMPackageSelectView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CC4FEF720A2E75300232074 /* WLMPackageSelectView.m */; };
 		9CC4FEFF20A2FADD00232074 /* middle@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CC4FEF920A2FADC00232074 /* middle@3x.png */; };
@@ -73,6 +74,8 @@
 		9C9C473B20A52B6D0023F02E /* WLMInvoiceDetailInfoView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WLMInvoiceDetailInfoView.m; sourceTree = "<group>"; };
 		9C9C474320A596A70023F02E /* sawtooth@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sawtooth@3x.png"; sourceTree = "<group>"; };
 		9C9C474420A596A70023F02E /* sawtooth@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sawtooth@2x.png"; sourceTree = "<group>"; };
+		9C9C474820A91F3D0023F02E /* UIView+WLDashLine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+WLDashLine.h"; sourceTree = "<group>"; };
+		9C9C474920A91F3D0023F02E /* UIView+WLDashLine.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+WLDashLine.m"; sourceTree = "<group>"; };
 		9CC4FEF320A2E70800232074 /* WLMPackageSelectVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WLMPackageSelectVC.h; sourceTree = "<group>"; };
 		9CC4FEF420A2E70800232074 /* WLMPackageSelectVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WLMPackageSelectVC.m; sourceTree = "<group>"; };
 		9CC4FEF620A2E75300232074 /* WLMPackageSelectView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WLMPackageSelectView.h; sourceTree = "<group>"; };
@@ -145,6 +148,7 @@
 		9C2646D7209994C8004A4551 /* WLMElectronicInvoice */ = {
 			isa = PBXGroup;
 			children = (
+				9C9C474720A91F130023F02E /* Categorys */,
 				9C264744209AEEFA004A4551 /* ElectronicInvoiceApply */,
 				9C26473A209AEEFA004A4551 /* ElectronicInvoiceDetail */,
 				9C264749209AEEFA004A4551 /* ElectronicInvoiceManager */,
@@ -379,6 +383,15 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		9C9C474720A91F130023F02E /* Categorys */ = {
+			isa = PBXGroup;
+			children = (
+				9C9C474820A91F3D0023F02E /* UIView+WLDashLine.h */,
+				9C9C474920A91F3D0023F02E /* UIView+WLDashLine.m */,
+			);
+			path = Categorys;
+			sourceTree = "<group>";
+		};
 		AE7C1BB297102048DF9B74F3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -560,6 +573,7 @@
 				9C2646DA209994C8004A4551 /* AppDelegate.m in Sources */,
 				9C264753209AF037004A4551 /* WLMInvoiceApplyVM.m in Sources */,
 				9CEEA5D720A05C0E00673214 /* WLMResendInvoiceVC.m in Sources */,
+				9C9C474A20A91F3D0023F02E /* UIView+WLDashLine.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

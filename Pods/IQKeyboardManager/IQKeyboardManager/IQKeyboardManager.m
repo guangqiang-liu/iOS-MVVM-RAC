@@ -228,6 +228,7 @@ NSInteger const kIQPreviousNextButtonToolbarTag     =   -1005;
             
             //Loading IQToolbar, IQTitleBarButtonItem, IQBarButtonItem to fix first time keyboard appearance delay (Bug ID: #550)
             {
+                //If you experience exception breakpoint issue at below line then try these solutions https://stackoverflow.com/questions/27375640/all-exception-break-point-is-stopping-for-no-reason-on-simulator
                 UITextField *view = [[UITextField alloc] init];
                 [view addDoneOnKeyboardWithTarget:nil action:nil];
                 [view addPreviousNextDoneOnKeyboardWithTarget:nil previousAction:nil nextAction:nil doneAction:nil];
@@ -682,7 +683,7 @@ NSInteger const kIQPreviousNextButtonToolbarTag     =   -1005;
             
             if (_lastScrollView.shouldRestoreScrollViewContentOffset)
             {
-                [_lastScrollView setContentOffset:_startingContentOffset animated:YES];
+                [_lastScrollView setContentOffset:_startingContentOffset animated:UIView.areAnimationsEnabled];
             }
 
             _startingContentInsets = UIEdgeInsetsZero;
@@ -708,7 +709,7 @@ NSInteger const kIQPreviousNextButtonToolbarTag     =   -1005;
 
             if (_lastScrollView.shouldRestoreScrollViewContentOffset)
             {
-                [_lastScrollView setContentOffset:_startingContentOffset animated:YES];
+                [_lastScrollView setContentOffset:_startingContentOffset animated:UIView.areAnimationsEnabled];
             }
             
             _lastScrollView = superScrollView;

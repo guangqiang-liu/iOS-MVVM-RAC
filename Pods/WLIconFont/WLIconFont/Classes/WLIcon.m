@@ -36,7 +36,7 @@
 + (NSString *)matchIconCodeWithName:(NSString *)iconName {
     NSDictionary *fontDic = [WLIconFontConfig glyphMap];
     NSString *code = fontDic[iconName];
-    return code ? : iconName;
+    return code ?: iconName;
 }
 
 @end
