@@ -9,7 +9,7 @@
 #import "WLMRecordFiltrVC.h"
 #import "WLMRecordListCell.h"
 #import "WLMEInvoiceFilterView.h"
-//#import "WLMRecordSearchVC.h"
+#import "WLMRecordSearchVC.h"
 
 @interface WLMRecordFiltrVC () <UITableViewDataSource, UITableViewDelegate>
 
@@ -148,13 +148,13 @@
         [_searchBtn setTitleColor:RGB(153, 153, 153) forState:UIControlStateNormal];
         [_searchBtn setTitle:@"搜索" forState:UIControlStateNormal];
         [_searchBtn whenTapped:^{
-//            WLMRecordSearchVC *vc = [[WLMRecordSearchVC alloc] init];
-//
-//            vc.invoiceRecordSearchBlock = ^(NSString *search) {
-//                NSLog(@"%@", search);
-//            };
-//
-//            [self.navigationController pushViewController:vc animated:YES];
+            WLMRecordSearchVC *vc = [[WLMRecordSearchVC alloc] init];
+
+            vc.invoiceRecordSearchBlock = ^(NSString *search) {
+                NSLog(@"%@", search);
+            };
+
+            [self.navigationController pushViewController:vc animated:YES];
         }];
     }
     return _searchBtn;

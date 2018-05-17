@@ -18,6 +18,7 @@
 		049DDF4420AD1CF300F22E06 /* HJCornerRadius.m in Sources */ = {isa = PBXBuildFile; fileRef = 049DDF4320AD1CF300F22E06 /* HJCornerRadius.m */; };
 		049DDF4820AD1CF900F22E06 /* ImageTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 049DDF4720AD1CF900F22E06 /* ImageTextField.m */; };
 		049DDF4C20AD1D0400F22E06 /* HMSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 049DDF4B20AD1D0300F22E06 /* HMSegmentedControl.m */; };
+		049DDF4F20AD241E00F22E06 /* WLMRecordSearchVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 049DDF4E20AD241D00F22E06 /* WLMRecordSearchVC.m */; };
 		50AA9FC5E70CCF584D47605D /* Pods_WLMElectronicInvoice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58614F4727A6F4189F29ACDC /* Pods_WLMElectronicInvoice.framework */; };
 		9C2646DA209994C8004A4551 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C2646D9209994C8004A4551 /* AppDelegate.m */; };
 		9C2646DD209994C8004A4551 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C2646DC209994C8004A4551 /* ViewController.m */; };
@@ -77,6 +78,8 @@
 		049DDF4720AD1CF900F22E06 /* ImageTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageTextField.m; sourceTree = "<group>"; };
 		049DDF4A20AD1D0300F22E06 /* HMSegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMSegmentedControl.h; sourceTree = "<group>"; };
 		049DDF4B20AD1D0300F22E06 /* HMSegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMSegmentedControl.m; sourceTree = "<group>"; };
+		049DDF4D20AD241D00F22E06 /* WLMRecordSearchVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WLMRecordSearchVC.h; sourceTree = "<group>"; };
+		049DDF4E20AD241D00F22E06 /* WLMRecordSearchVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WLMRecordSearchVC.m; sourceTree = "<group>"; };
 		0C58E3E41CE2B24BB6F43768 /* Pods-WLMElectronicInvoice.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WLMElectronicInvoice.release.xcconfig"; path = "Pods/Target Support Files/Pods-WLMElectronicInvoice/Pods-WLMElectronicInvoice.release.xcconfig"; sourceTree = "<group>"; };
 		58614F4727A6F4189F29ACDC /* Pods_WLMElectronicInvoice.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WLMElectronicInvoice.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8EC5F3AAC5E149448B9054F5 /* Pods-WLMElectronicInvoice.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WLMElectronicInvoice.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WLMElectronicInvoice/Pods-WLMElectronicInvoice.debug.xcconfig"; sourceTree = "<group>"; };
@@ -322,6 +325,8 @@
 		9C264741209AEEFA004A4551 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				049DDF4D20AD241D00F22E06 /* WLMRecordSearchVC.h */,
+				049DDF4E20AD241D00F22E06 /* WLMRecordSearchVC.m */,
 				9C264772209BF1A2004A4551 /* WLMInvoiceSearchVC.h */,
 				9C264773209BF1A2004A4551 /* WLMInvoiceSearchVC.m */,
 			);
@@ -645,6 +650,7 @@
 				9CEEA5D420A03E9400673214 /* WLMOpenInvoiceVC.m in Sources */,
 				9C9C473920A52B4A0023F02E /* WLMInvoiceDetailHeaderView.m in Sources */,
 				9C264771209BF17B004A4551 /* WLMInvoiceManagerListVC.m in Sources */,
+				049DDF4F20AD241E00F22E06 /* WLMRecordSearchVC.m in Sources */,
 				9CC4FF1720A3DBD200232074 /* WLCircleProgressView.m in Sources */,
 				9C264750209AEFE2004A4551 /* WLMInvoiceApplyVC.m in Sources */,
 				9C2646E8209994C8004A4551 /* main.m in Sources */,
