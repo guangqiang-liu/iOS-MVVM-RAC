@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		049DDF3120AC650B00F22E06 /* WLMRecordFiltrVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 049DDF2B20AC650A00F22E06 /* WLMRecordFiltrVC.m */; };
+		049DDF3220AC650B00F22E06 /* WLMRequirementListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 049DDF2C20AC650A00F22E06 /* WLMRequirementListVC.m */; };
+		049DDF3320AC650B00F22E06 /* WLMPackageInfoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 049DDF2F20AC650B00F22E06 /* WLMPackageInfoVC.m */; };
+		049DDF3420AC650B00F22E06 /* WLMRecordListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 049DDF3020AC650B00F22E06 /* WLMRecordListVC.m */; };
+		049DDF3D20AC651600F22E06 /* WLMRequirementListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 049DDF3620AC651600F22E06 /* WLMRequirementListCell.m */; };
+		049DDF3E20AC651600F22E06 /* WLMRecordListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 049DDF3720AC651600F22E06 /* WLMRecordListCell.m */; };
+		049DDF3F20AC651600F22E06 /* WLMEInvoiceFilterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 049DDF3920AC651600F22E06 /* WLMEInvoiceFilterView.m */; };
+		049DDF4020AC651600F22E06 /* WLMInvoiceRecprdFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 049DDF3A20AC651600F22E06 /* WLMInvoiceRecprdFooterView.m */; };
+		049DDF4420AD1CF300F22E06 /* HJCornerRadius.m in Sources */ = {isa = PBXBuildFile; fileRef = 049DDF4320AD1CF300F22E06 /* HJCornerRadius.m */; };
+		049DDF4820AD1CF900F22E06 /* ImageTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 049DDF4720AD1CF900F22E06 /* ImageTextField.m */; };
+		049DDF4C20AD1D0400F22E06 /* HMSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 049DDF4B20AD1D0300F22E06 /* HMSegmentedControl.m */; };
 		50AA9FC5E70CCF584D47605D /* Pods_WLMElectronicInvoice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58614F4727A6F4189F29ACDC /* Pods_WLMElectronicInvoice.framework */; };
 		9C2646DA209994C8004A4551 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C2646D9209994C8004A4551 /* AppDelegate.m */; };
 		9C2646DD209994C8004A4551 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C2646DC209994C8004A4551 /* ViewController.m */; };
@@ -44,6 +55,28 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		049DDF2920AC650A00F22E06 /* WLMRecordFiltrVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WLMRecordFiltrVC.h; sourceTree = "<group>"; };
+		049DDF2A20AC650A00F22E06 /* WLMPackageInfoVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WLMPackageInfoVC.h; sourceTree = "<group>"; };
+		049DDF2B20AC650A00F22E06 /* WLMRecordFiltrVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WLMRecordFiltrVC.m; sourceTree = "<group>"; };
+		049DDF2C20AC650A00F22E06 /* WLMRequirementListVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WLMRequirementListVC.m; sourceTree = "<group>"; };
+		049DDF2D20AC650A00F22E06 /* WLMRequirementListVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WLMRequirementListVC.h; sourceTree = "<group>"; };
+		049DDF2E20AC650B00F22E06 /* WLMRecordListVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WLMRecordListVC.h; sourceTree = "<group>"; };
+		049DDF2F20AC650B00F22E06 /* WLMPackageInfoVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WLMPackageInfoVC.m; sourceTree = "<group>"; };
+		049DDF3020AC650B00F22E06 /* WLMRecordListVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WLMRecordListVC.m; sourceTree = "<group>"; };
+		049DDF3520AC651600F22E06 /* WLMEInvoiceFilterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WLMEInvoiceFilterView.h; sourceTree = "<group>"; };
+		049DDF3620AC651600F22E06 /* WLMRequirementListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WLMRequirementListCell.m; sourceTree = "<group>"; };
+		049DDF3720AC651600F22E06 /* WLMRecordListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WLMRecordListCell.m; sourceTree = "<group>"; };
+		049DDF3820AC651600F22E06 /* WLMRecordListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WLMRecordListCell.h; sourceTree = "<group>"; };
+		049DDF3920AC651600F22E06 /* WLMEInvoiceFilterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WLMEInvoiceFilterView.m; sourceTree = "<group>"; };
+		049DDF3A20AC651600F22E06 /* WLMInvoiceRecprdFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WLMInvoiceRecprdFooterView.m; sourceTree = "<group>"; };
+		049DDF3B20AC651600F22E06 /* WLMInvoiceRecprdFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WLMInvoiceRecprdFooterView.h; sourceTree = "<group>"; };
+		049DDF3C20AC651600F22E06 /* WLMRequirementListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WLMRequirementListCell.h; sourceTree = "<group>"; };
+		049DDF4220AD1CF300F22E06 /* HJCornerRadius.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HJCornerRadius.h; sourceTree = "<group>"; };
+		049DDF4320AD1CF300F22E06 /* HJCornerRadius.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HJCornerRadius.m; sourceTree = "<group>"; };
+		049DDF4620AD1CF900F22E06 /* ImageTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageTextField.h; sourceTree = "<group>"; };
+		049DDF4720AD1CF900F22E06 /* ImageTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageTextField.m; sourceTree = "<group>"; };
+		049DDF4A20AD1D0300F22E06 /* HMSegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMSegmentedControl.h; sourceTree = "<group>"; };
+		049DDF4B20AD1D0300F22E06 /* HMSegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMSegmentedControl.m; sourceTree = "<group>"; };
 		0C58E3E41CE2B24BB6F43768 /* Pods-WLMElectronicInvoice.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WLMElectronicInvoice.release.xcconfig"; path = "Pods/Target Support Files/Pods-WLMElectronicInvoice/Pods-WLMElectronicInvoice.release.xcconfig"; sourceTree = "<group>"; };
 		58614F4727A6F4189F29ACDC /* Pods_WLMElectronicInvoice.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WLMElectronicInvoice.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8EC5F3AAC5E149448B9054F5 /* Pods-WLMElectronicInvoice.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WLMElectronicInvoice.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WLMElectronicInvoice/Pods-WLMElectronicInvoice.debug.xcconfig"; sourceTree = "<group>"; };
@@ -118,6 +151,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		049DDF4120AD1CF300F22E06 /* HJCornerRadius */ = {
+			isa = PBXGroup;
+			children = (
+				049DDF4220AD1CF300F22E06 /* HJCornerRadius.h */,
+				049DDF4320AD1CF300F22E06 /* HJCornerRadius.m */,
+			);
+			path = HJCornerRadius;
+			sourceTree = "<group>";
+		};
+		049DDF4520AD1CF900F22E06 /* ImageTextField */ = {
+			isa = PBXGroup;
+			children = (
+				049DDF4620AD1CF900F22E06 /* ImageTextField.h */,
+				049DDF4720AD1CF900F22E06 /* ImageTextField.m */,
+			);
+			path = ImageTextField;
+			sourceTree = "<group>";
+		};
+		049DDF4920AD1D0300F22E06 /* SegmentController */ = {
+			isa = PBXGroup;
+			children = (
+				049DDF4A20AD1D0300F22E06 /* HMSegmentedControl.h */,
+				049DDF4B20AD1D0300F22E06 /* HMSegmentedControl.m */,
+			);
+			path = SegmentController;
+			sourceTree = "<group>";
+		};
 		71DFEAB7C76F1CE63CE6F560 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -172,6 +232,9 @@
 		9C2646EE20999B35004A4551 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				049DDF4920AD1D0300F22E06 /* SegmentController */,
+				049DDF4520AD1CF900F22E06 /* ImageTextField */,
+				049DDF4120AD1CF300F22E06 /* HJCornerRadius */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -359,6 +422,14 @@
 		9C26474B209AEEFA004A4551 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				049DDF2A20AC650A00F22E06 /* WLMPackageInfoVC.h */,
+				049DDF2F20AC650B00F22E06 /* WLMPackageInfoVC.m */,
+				049DDF2920AC650A00F22E06 /* WLMRecordFiltrVC.h */,
+				049DDF2B20AC650A00F22E06 /* WLMRecordFiltrVC.m */,
+				049DDF2E20AC650B00F22E06 /* WLMRecordListVC.h */,
+				049DDF3020AC650B00F22E06 /* WLMRecordListVC.m */,
+				049DDF2D20AC650A00F22E06 /* WLMRequirementListVC.h */,
+				049DDF2C20AC650A00F22E06 /* WLMRequirementListVC.m */,
 				9C26476F209BF17B004A4551 /* WLMInvoiceManagerListVC.h */,
 				9C264770209BF17B004A4551 /* WLMInvoiceManagerListVC.m */,
 				9CEEA5D220A03E9400673214 /* WLMOpenInvoiceVC.h */,
@@ -377,6 +448,14 @@
 		9C26474D209AEEFA004A4551 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				049DDF3520AC651600F22E06 /* WLMEInvoiceFilterView.h */,
+				049DDF3920AC651600F22E06 /* WLMEInvoiceFilterView.m */,
+				049DDF3B20AC651600F22E06 /* WLMInvoiceRecprdFooterView.h */,
+				049DDF3A20AC651600F22E06 /* WLMInvoiceRecprdFooterView.m */,
+				049DDF3820AC651600F22E06 /* WLMRecordListCell.h */,
+				049DDF3720AC651600F22E06 /* WLMRecordListCell.m */,
+				049DDF3C20AC651600F22E06 /* WLMRequirementListCell.h */,
+				049DDF3620AC651600F22E06 /* WLMRequirementListCell.m */,
 				9CC4FF1520A3DBD200232074 /* WLCircleProgressView.h */,
 				9CC4FF1620A3DBD200232074 /* WLCircleProgressView.m */,
 			);
@@ -552,12 +631,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				049DDF4020AC651600F22E06 /* WLMInvoiceRecprdFooterView.m in Sources */,
+				049DDF3120AC650B00F22E06 /* WLMRecordFiltrVC.m in Sources */,
 				9C9C473C20A52B6D0023F02E /* WLMInvoiceDetailInfoView.m in Sources */,
 				9CC4FEF820A2E75300232074 /* WLMPackageSelectView.m in Sources */,
 				9C264774209BF1A2004A4551 /* WLMInvoiceSearchVC.m in Sources */,
 				9CC4FF0720A318EB00232074 /* WLMInvoiceApplyResultVC.m in Sources */,
 				9CC4FF8220A43C3100232074 /* WLMSelectApplyMerchant.m in Sources */,
+				049DDF3420AC650B00F22E06 /* WLMRecordListVC.m in Sources */,
 				9CC4FEF520A2E70800232074 /* WLMPackageSelectVC.m in Sources */,
+				049DDF3220AC650B00F22E06 /* WLMRequirementListVC.m in Sources */,
 				9C2646DD209994C8004A4551 /* ViewController.m in Sources */,
 				9CEEA5D420A03E9400673214 /* WLMOpenInvoiceVC.m in Sources */,
 				9C9C473920A52B4A0023F02E /* WLMInvoiceDetailHeaderView.m in Sources */,
@@ -566,12 +649,19 @@
 				9C264750209AEFE2004A4551 /* WLMInvoiceApplyVC.m in Sources */,
 				9C2646E8209994C8004A4551 /* main.m in Sources */,
 				9CC4FF8520A43C4F00232074 /* WLMSelectApplyMerchantCell.m in Sources */,
+				049DDF4C20AD1D0400F22E06 /* HMSegmentedControl.m in Sources */,
 				9C26476E209BF10D004A4551 /* WLMInvoiceDetailVC.m in Sources */,
+				049DDF3320AC650B00F22E06 /* WLMPackageInfoVC.m in Sources */,
+				049DDF4420AD1CF300F22E06 /* HJCornerRadius.m in Sources */,
 				9CEEA5D1209DC10000673214 /* WLMMoreTaxationInfoVC.m in Sources */,
 				9CEEA5CE209D9DB900673214 /* WLMFillTaxationInfoVC.m in Sources */,
+				049DDF4820AD1CF900F22E06 /* ImageTextField.m in Sources */,
 				9CC4FF0A20A318FD00232074 /* WLMInvoiceApplyResultView.m in Sources */,
+				049DDF3D20AC651600F22E06 /* WLMRequirementListCell.m in Sources */,
 				9C2646DA209994C8004A4551 /* AppDelegate.m in Sources */,
 				9C264753209AF037004A4551 /* WLMInvoiceApplyVM.m in Sources */,
+				049DDF3E20AC651600F22E06 /* WLMRecordListCell.m in Sources */,
+				049DDF3F20AC651600F22E06 /* WLMEInvoiceFilterView.m in Sources */,
 				9CEEA5D720A05C0E00673214 /* WLMResendInvoiceVC.m in Sources */,
 				9C9C474A20A91F3D0023F02E /* UIView+WLDashLine.m in Sources */,
 			);
@@ -709,6 +799,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9J6JH9B3QM;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/WLMElectronicInvoice/WLMElectronicInvoice.pch";
 				INFOPLIST_FILE = WLMElectronicInvoice/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -725,6 +816,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9J6JH9B3QM;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/WLMElectronicInvoice/WLMElectronicInvoice.pch";
 				INFOPLIST_FILE = WLMElectronicInvoice/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
