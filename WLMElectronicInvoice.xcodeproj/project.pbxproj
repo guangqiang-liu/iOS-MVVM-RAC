@@ -33,12 +33,26 @@
 		9C264750209AEFE2004A4551 /* WLMInvoiceApplyVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C26474F209AEFE2004A4551 /* WLMInvoiceApplyVC.m */; };
 		9C264753209AF037004A4551 /* WLMInvoiceApplyVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C264752209AF037004A4551 /* WLMInvoiceApplyVM.m */; };
 		9C26476E209BF10D004A4551 /* WLMInvoiceDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C26476D209BF10D004A4551 /* WLMInvoiceDetailVC.m */; };
-		9C264771209BF17B004A4551 /* WLMInvoiceManagerListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C264770209BF17B004A4551 /* WLMInvoiceManagerListVC.m */; };
 		9C264774209BF1A2004A4551 /* WLMInvoiceSearchVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C264773209BF1A2004A4551 /* WLMInvoiceSearchVC.m */; };
 		9C9C473920A52B4A0023F02E /* WLMInvoiceDetailHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C9C473820A52B4A0023F02E /* WLMInvoiceDetailHeaderView.m */; };
 		9C9C473C20A52B6D0023F02E /* WLMInvoiceDetailInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C9C473B20A52B6D0023F02E /* WLMInvoiceDetailInfoView.m */; };
 		9C9C474A20A91F3D0023F02E /* UIView+WLDashLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C9C474920A91F3D0023F02E /* UIView+WLDashLine.m */; };
 		9CA4032820ADAB7C00E4AA51 /* WLMResendInvoiceVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CA4032720ADAB7C00E4AA51 /* WLMResendInvoiceVM.m */; };
+		9CA4037420AEE0BE00E4AA51 /* HJCornerRadius.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CA4036D20AEE0BE00E4AA51 /* HJCornerRadius.m */; };
+		9CA4037520AEE0BE00E4AA51 /* ImageTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CA4037020AEE0BE00E4AA51 /* ImageTextField.m */; };
+		9CA4037620AEE0BE00E4AA51 /* HMSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CA4037320AEE0BE00E4AA51 /* HMSegmentedControl.m */; };
+		9CA4039220AEE0E300E4AA51 /* WLMRecordFiltrVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CA4037A20AEE0E300E4AA51 /* WLMRecordFiltrVC.m */; };
+		9CA4039320AEE0E300E4AA51 /* WLMRequirementListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CA4037F20AEE0E300E4AA51 /* WLMRequirementListVC.m */; };
+		9CA4039420AEE0E300E4AA51 /* WLMRecordListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CA4038220AEE0E300E4AA51 /* WLMRecordListVC.m */; };
+		9CA4039520AEE0E300E4AA51 /* WLMPackageInfoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CA4038320AEE0E300E4AA51 /* WLMPackageInfoVC.m */; };
+		9CA4039720AEE0E300E4AA51 /* WLMRequirementListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CA4038920AEE0E300E4AA51 /* WLMRequirementListCell.m */; };
+		9CA4039820AEE0E300E4AA51 /* WLMInvoiceRecprdFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CA4038B20AEE0E300E4AA51 /* WLMInvoiceRecprdFooterView.m */; };
+		9CA4039920AEE0E300E4AA51 /* WLMRecordListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CA4038C20AEE0E300E4AA51 /* WLMRecordListCell.m */; };
+		9CA4039B20AEE0E300E4AA51 /* WLMEInvoiceFilterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CA4039020AEE0E300E4AA51 /* WLMEInvoiceFilterView.m */; };
+		9CA403A720AEE19000E4AA51 /* WLMRecordSearchVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CA403A520AEE18F00E4AA51 /* WLMRecordSearchVC.m */; };
+		9CA403AA20AEE22300E4AA51 /* WLCircleProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CA403A920AEE22300E4AA51 /* WLCircleProgressView.m */; };
+		9CA403AD20AEE27300E4AA51 /* WLMInvoiceManagerListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CA403AB20AEE27300E4AA51 /* WLMInvoiceManagerListVC.m */; };
+		9CA403B020AEE2C400E4AA51 /* WLMOpenInvoiceVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CA403AF20AEE2C300E4AA51 /* WLMOpenInvoiceVC.m */; };
 		9CC4FEF520A2E70800232074 /* WLMPackageSelectVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CC4FEF420A2E70800232074 /* WLMPackageSelectVC.m */; };
 		9CC4FEF820A2E75300232074 /* WLMPackageSelectView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CC4FEF720A2E75300232074 /* WLMPackageSelectView.m */; };
 		9CC4FEFF20A2FADD00232074 /* middle@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CC4FEF920A2FADC00232074 /* middle@3x.png */; };
@@ -49,11 +63,9 @@
 		9CC4FF0420A2FADD00232074 /* middle@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CC4FEFE20A2FADD00232074 /* middle@2x.png */; };
 		9CC4FF0720A318EB00232074 /* WLMInvoiceApplyResultVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CC4FF0620A318EB00232074 /* WLMInvoiceApplyResultVC.m */; };
 		9CC4FF0A20A318FD00232074 /* WLMInvoiceApplyResultView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CC4FF0920A318FD00232074 /* WLMInvoiceApplyResultView.m */; };
-		9CC4FF1720A3DBD200232074 /* WLCircleProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CC4FF1620A3DBD200232074 /* WLCircleProgressView.m */; };
 		9CC4FF8520A43C4F00232074 /* WLMSelectApplyMerchantCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CC4FF8420A43C4F00232074 /* WLMSelectApplyMerchantCell.m */; };
 		9CEEA5CE209D9DB900673214 /* WLMFillTaxationInfoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CEEA5CD209D9DB900673214 /* WLMFillTaxationInfoVC.m */; };
 		9CEEA5D1209DC10000673214 /* WLMMoreTaxationInfoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CEEA5D0209DC10000673214 /* WLMMoreTaxationInfoVC.m */; };
-		9CEEA5D420A03E9400673214 /* WLMOpenInvoiceVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CEEA5D320A03E9400673214 /* WLMOpenInvoiceVC.m */; };
 		9CEEA5D720A05C0E00673214 /* WLMResendInvoiceVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CEEA5D620A05C0E00673214 /* WLMResendInvoiceVC.m */; };
 /* End PBXBuildFile section */
 
@@ -104,8 +116,6 @@
 		9C264752209AF037004A4551 /* WLMInvoiceApplyVM.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WLMInvoiceApplyVM.m; sourceTree = "<group>"; };
 		9C26476C209BF10D004A4551 /* WLMInvoiceDetailVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WLMInvoiceDetailVC.h; sourceTree = "<group>"; };
 		9C26476D209BF10D004A4551 /* WLMInvoiceDetailVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WLMInvoiceDetailVC.m; sourceTree = "<group>"; };
-		9C26476F209BF17B004A4551 /* WLMInvoiceManagerListVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WLMInvoiceManagerListVC.h; sourceTree = "<group>"; };
-		9C264770209BF17B004A4551 /* WLMInvoiceManagerListVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WLMInvoiceManagerListVC.m; sourceTree = "<group>"; };
 		9C264772209BF1A2004A4551 /* WLMInvoiceSearchVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WLMInvoiceSearchVC.h; sourceTree = "<group>"; };
 		9C264773209BF1A2004A4551 /* WLMInvoiceSearchVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WLMInvoiceSearchVC.m; sourceTree = "<group>"; };
 		9C9C473720A52B4A0023F02E /* WLMInvoiceDetailHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WLMInvoiceDetailHeaderView.h; sourceTree = "<group>"; };
@@ -116,6 +126,36 @@
 		9C9C474920A91F3D0023F02E /* UIView+WLDashLine.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+WLDashLine.m"; sourceTree = "<group>"; };
 		9CA4032620ADAB7C00E4AA51 /* WLMResendInvoiceVM.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WLMResendInvoiceVM.h; sourceTree = "<group>"; };
 		9CA4032720ADAB7C00E4AA51 /* WLMResendInvoiceVM.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WLMResendInvoiceVM.m; sourceTree = "<group>"; };
+		9CA4036C20AEE0BE00E4AA51 /* HJCornerRadius.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HJCornerRadius.h; sourceTree = "<group>"; };
+		9CA4036D20AEE0BE00E4AA51 /* HJCornerRadius.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HJCornerRadius.m; sourceTree = "<group>"; };
+		9CA4036F20AEE0BE00E4AA51 /* ImageTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageTextField.h; sourceTree = "<group>"; };
+		9CA4037020AEE0BE00E4AA51 /* ImageTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageTextField.m; sourceTree = "<group>"; };
+		9CA4037220AEE0BE00E4AA51 /* HMSegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMSegmentedControl.h; sourceTree = "<group>"; };
+		9CA4037320AEE0BE00E4AA51 /* HMSegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMSegmentedControl.m; sourceTree = "<group>"; };
+		9CA4037A20AEE0E300E4AA51 /* WLMRecordFiltrVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WLMRecordFiltrVC.m; sourceTree = "<group>"; };
+		9CA4037B20AEE0E300E4AA51 /* WLMRequirementListVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WLMRequirementListVC.h; sourceTree = "<group>"; };
+		9CA4037C20AEE0E300E4AA51 /* WLMRecordListVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WLMRecordListVC.h; sourceTree = "<group>"; };
+		9CA4037E20AEE0E300E4AA51 /* WLMPackageInfoVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WLMPackageInfoVC.h; sourceTree = "<group>"; };
+		9CA4037F20AEE0E300E4AA51 /* WLMRequirementListVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WLMRequirementListVC.m; sourceTree = "<group>"; };
+		9CA4038020AEE0E300E4AA51 /* WLMRecordFiltrVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WLMRecordFiltrVC.h; sourceTree = "<group>"; };
+		9CA4038220AEE0E300E4AA51 /* WLMRecordListVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WLMRecordListVC.m; sourceTree = "<group>"; };
+		9CA4038320AEE0E300E4AA51 /* WLMPackageInfoVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WLMPackageInfoVC.m; sourceTree = "<group>"; };
+		9CA4038820AEE0E300E4AA51 /* WLMRecordListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WLMRecordListCell.h; sourceTree = "<group>"; };
+		9CA4038920AEE0E300E4AA51 /* WLMRequirementListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WLMRequirementListCell.m; sourceTree = "<group>"; };
+		9CA4038A20AEE0E300E4AA51 /* WLMEInvoiceFilterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WLMEInvoiceFilterView.h; sourceTree = "<group>"; };
+		9CA4038B20AEE0E300E4AA51 /* WLMInvoiceRecprdFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WLMInvoiceRecprdFooterView.m; sourceTree = "<group>"; };
+		9CA4038C20AEE0E300E4AA51 /* WLMRecordListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WLMRecordListCell.m; sourceTree = "<group>"; };
+		9CA4038E20AEE0E300E4AA51 /* WLMRequirementListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WLMRequirementListCell.h; sourceTree = "<group>"; };
+		9CA4038F20AEE0E300E4AA51 /* WLMInvoiceRecprdFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WLMInvoiceRecprdFooterView.h; sourceTree = "<group>"; };
+		9CA4039020AEE0E300E4AA51 /* WLMEInvoiceFilterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WLMEInvoiceFilterView.m; sourceTree = "<group>"; };
+		9CA403A520AEE18F00E4AA51 /* WLMRecordSearchVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WLMRecordSearchVC.m; sourceTree = "<group>"; };
+		9CA403A620AEE19000E4AA51 /* WLMRecordSearchVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WLMRecordSearchVC.h; sourceTree = "<group>"; };
+		9CA403A820AEE22200E4AA51 /* WLCircleProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WLCircleProgressView.h; sourceTree = "<group>"; };
+		9CA403A920AEE22300E4AA51 /* WLCircleProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WLCircleProgressView.m; sourceTree = "<group>"; };
+		9CA403AB20AEE27300E4AA51 /* WLMInvoiceManagerListVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WLMInvoiceManagerListVC.m; sourceTree = "<group>"; };
+		9CA403AC20AEE27300E4AA51 /* WLMInvoiceManagerListVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WLMInvoiceManagerListVC.h; sourceTree = "<group>"; };
+		9CA403AE20AEE2C300E4AA51 /* WLMOpenInvoiceVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WLMOpenInvoiceVC.h; sourceTree = "<group>"; };
+		9CA403AF20AEE2C300E4AA51 /* WLMOpenInvoiceVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WLMOpenInvoiceVC.m; sourceTree = "<group>"; };
 		9CC4FEF320A2E70800232074 /* WLMPackageSelectVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WLMPackageSelectVC.h; sourceTree = "<group>"; };
 		9CC4FEF420A2E70800232074 /* WLMPackageSelectVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WLMPackageSelectVC.m; sourceTree = "<group>"; };
 		9CC4FEF620A2E75300232074 /* WLMPackageSelectView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WLMPackageSelectView.h; sourceTree = "<group>"; };
@@ -130,16 +170,12 @@
 		9CC4FF0620A318EB00232074 /* WLMInvoiceApplyResultVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WLMInvoiceApplyResultVC.m; sourceTree = "<group>"; };
 		9CC4FF0820A318FD00232074 /* WLMInvoiceApplyResultView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WLMInvoiceApplyResultView.h; sourceTree = "<group>"; };
 		9CC4FF0920A318FD00232074 /* WLMInvoiceApplyResultView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WLMInvoiceApplyResultView.m; sourceTree = "<group>"; };
-		9CC4FF1520A3DBD200232074 /* WLCircleProgressView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WLCircleProgressView.h; sourceTree = "<group>"; };
-		9CC4FF1620A3DBD200232074 /* WLCircleProgressView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WLCircleProgressView.m; sourceTree = "<group>"; };
 		9CC4FF8320A43C4F00232074 /* WLMSelectApplyMerchantCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WLMSelectApplyMerchantCell.h; sourceTree = "<group>"; };
 		9CC4FF8420A43C4F00232074 /* WLMSelectApplyMerchantCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WLMSelectApplyMerchantCell.m; sourceTree = "<group>"; };
 		9CEEA5CC209D9DB900673214 /* WLMFillTaxationInfoVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WLMFillTaxationInfoVC.h; sourceTree = "<group>"; };
 		9CEEA5CD209D9DB900673214 /* WLMFillTaxationInfoVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WLMFillTaxationInfoVC.m; sourceTree = "<group>"; };
 		9CEEA5CF209DC10000673214 /* WLMMoreTaxationInfoVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WLMMoreTaxationInfoVC.h; sourceTree = "<group>"; };
 		9CEEA5D0209DC10000673214 /* WLMMoreTaxationInfoVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WLMMoreTaxationInfoVC.m; sourceTree = "<group>"; };
-		9CEEA5D220A03E9400673214 /* WLMOpenInvoiceVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WLMOpenInvoiceVC.h; sourceTree = "<group>"; };
-		9CEEA5D320A03E9400673214 /* WLMOpenInvoiceVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WLMOpenInvoiceVC.m; sourceTree = "<group>"; };
 		9CEEA5D520A05C0E00673214 /* WLMResendInvoiceVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WLMResendInvoiceVC.h; sourceTree = "<group>"; };
 		9CEEA5D620A05C0E00673214 /* WLMResendInvoiceVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WLMResendInvoiceVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -210,6 +246,9 @@
 		9C2646EE20999B35004A4551 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				9CA4036B20AEE0BE00E4AA51 /* HJCornerRadius */,
+				9CA4036E20AEE0BE00E4AA51 /* ImageTextField */,
+				9CA4037120AEE0BE00E4AA51 /* SegmentController */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -305,6 +344,8 @@
 		9C264741209AEEFA004A4551 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				9CA403A620AEE19000E4AA51 /* WLMRecordSearchVC.h */,
+				9CA403A520AEE18F00E4AA51 /* WLMRecordSearchVC.m */,
 				9C264772209BF1A2004A4551 /* WLMInvoiceSearchVC.h */,
 				9C264773209BF1A2004A4551 /* WLMInvoiceSearchVC.m */,
 			);
@@ -403,46 +444,12 @@
 		9C264749209AEEFA004A4551 /* ElectronicInvoiceManager */ = {
 			isa = PBXGroup;
 			children = (
-				9C26474A209AEEFA004A4551 /* ViewModel */,
-				9C26474B209AEEFA004A4551 /* Controller */,
-				9C26474C209AEEFA004A4551 /* Model */,
-				9C26474D209AEEFA004A4551 /* View */,
+				9CA4037820AEE0E300E4AA51 /* Controller */,
+				9CA4038520AEE0E300E4AA51 /* Model */,
+				9CA4038620AEE0E300E4AA51 /* View */,
+				9CA4037720AEE0E300E4AA51 /* ViewModel */,
 			);
 			path = ElectronicInvoiceManager;
-			sourceTree = "<group>";
-		};
-		9C26474A209AEEFA004A4551 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		9C26474B209AEEFA004A4551 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				9C26476F209BF17B004A4551 /* WLMInvoiceManagerListVC.h */,
-				9C264770209BF17B004A4551 /* WLMInvoiceManagerListVC.m */,
-				9CEEA5D220A03E9400673214 /* WLMOpenInvoiceVC.h */,
-				9CEEA5D320A03E9400673214 /* WLMOpenInvoiceVC.m */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		9C26474C209AEEFA004A4551 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		9C26474D209AEEFA004A4551 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				9CC4FF1520A3DBD200232074 /* WLCircleProgressView.h */,
-				9CC4FF1620A3DBD200232074 /* WLCircleProgressView.m */,
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		9C9C474720A91F130023F02E /* Categorys */ = {
@@ -452,6 +459,83 @@
 				9C9C474920A91F3D0023F02E /* UIView+WLDashLine.m */,
 			);
 			path = Categorys;
+			sourceTree = "<group>";
+		};
+		9CA4036B20AEE0BE00E4AA51 /* HJCornerRadius */ = {
+			isa = PBXGroup;
+			children = (
+				9CA4036C20AEE0BE00E4AA51 /* HJCornerRadius.h */,
+				9CA4036D20AEE0BE00E4AA51 /* HJCornerRadius.m */,
+			);
+			path = HJCornerRadius;
+			sourceTree = "<group>";
+		};
+		9CA4036E20AEE0BE00E4AA51 /* ImageTextField */ = {
+			isa = PBXGroup;
+			children = (
+				9CA4036F20AEE0BE00E4AA51 /* ImageTextField.h */,
+				9CA4037020AEE0BE00E4AA51 /* ImageTextField.m */,
+			);
+			path = ImageTextField;
+			sourceTree = "<group>";
+		};
+		9CA4037120AEE0BE00E4AA51 /* SegmentController */ = {
+			isa = PBXGroup;
+			children = (
+				9CA4037220AEE0BE00E4AA51 /* HMSegmentedControl.h */,
+				9CA4037320AEE0BE00E4AA51 /* HMSegmentedControl.m */,
+			);
+			path = SegmentController;
+			sourceTree = "<group>";
+		};
+		9CA4037720AEE0E300E4AA51 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		9CA4037820AEE0E300E4AA51 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				9CA403AE20AEE2C300E4AA51 /* WLMOpenInvoiceVC.h */,
+				9CA403AF20AEE2C300E4AA51 /* WLMOpenInvoiceVC.m */,
+				9CA403AC20AEE27300E4AA51 /* WLMInvoiceManagerListVC.h */,
+				9CA403AB20AEE27300E4AA51 /* WLMInvoiceManagerListVC.m */,
+				9CA4037A20AEE0E300E4AA51 /* WLMRecordFiltrVC.m */,
+				9CA4037B20AEE0E300E4AA51 /* WLMRequirementListVC.h */,
+				9CA4037C20AEE0E300E4AA51 /* WLMRecordListVC.h */,
+				9CA4037E20AEE0E300E4AA51 /* WLMPackageInfoVC.h */,
+				9CA4037F20AEE0E300E4AA51 /* WLMRequirementListVC.m */,
+				9CA4038020AEE0E300E4AA51 /* WLMRecordFiltrVC.h */,
+				9CA4038220AEE0E300E4AA51 /* WLMRecordListVC.m */,
+				9CA4038320AEE0E300E4AA51 /* WLMPackageInfoVC.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		9CA4038520AEE0E300E4AA51 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		9CA4038620AEE0E300E4AA51 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9CA403A820AEE22200E4AA51 /* WLCircleProgressView.h */,
+				9CA403A920AEE22300E4AA51 /* WLCircleProgressView.m */,
+				9CA4038820AEE0E300E4AA51 /* WLMRecordListCell.h */,
+				9CA4038920AEE0E300E4AA51 /* WLMRequirementListCell.m */,
+				9CA4038A20AEE0E300E4AA51 /* WLMEInvoiceFilterView.h */,
+				9CA4038B20AEE0E300E4AA51 /* WLMInvoiceRecprdFooterView.m */,
+				9CA4038C20AEE0E300E4AA51 /* WLMRecordListCell.m */,
+				9CA4038E20AEE0E300E4AA51 /* WLMRequirementListCell.h */,
+				9CA4038F20AEE0E300E4AA51 /* WLMInvoiceRecprdFooterView.h */,
+				9CA4039020AEE0E300E4AA51 /* WLMEInvoiceFilterView.m */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		AE7C1BB297102048DF9B74F3 /* Frameworks */ = {
@@ -624,35 +708,47 @@
 			files = (
 				9C9C473C20A52B6D0023F02E /* WLMInvoiceDetailInfoView.m in Sources */,
 				9C140ACC20AC592E006E6747 /* WLMEInvoiceIntroduceVM.m in Sources */,
+				9CA4037420AEE0BE00E4AA51 /* HJCornerRadius.m in Sources */,
+				9CA4039320AEE0E300E4AA51 /* WLMRequirementListVC.m in Sources */,
 				9C140A9F20ABBFFC006E6747 /* WLMEInvoiceProtocolVC.m in Sources */,
 				9CC4FEF820A2E75300232074 /* WLMPackageSelectView.m in Sources */,
+				9CA4039420AEE0E300E4AA51 /* WLMRecordListVC.m in Sources */,
 				9C264774209BF1A2004A4551 /* WLMInvoiceSearchVC.m in Sources */,
 				9C140AA520ABC1AF006E6747 /* WLMEInvoicePreviewVC.m in Sources */,
+				9CA403A720AEE19000E4AA51 /* WLMRecordSearchVC.m in Sources */,
+				9CA403AD20AEE27300E4AA51 /* WLMInvoiceManagerListVC.m in Sources */,
 				9CC4FF0720A318EB00232074 /* WLMInvoiceApplyResultVC.m in Sources */,
 				9C140AA820ABC1C3006E6747 /* WLMEInvoiceIntroduceVC.m in Sources */,
 				9CC4FEF520A2E70800232074 /* WLMPackageSelectVC.m in Sources */,
 				9C2646DD209994C8004A4551 /* ViewController.m in Sources */,
-				9CEEA5D420A03E9400673214 /* WLMOpenInvoiceVC.m in Sources */,
+				9CA4039B20AEE0E300E4AA51 /* WLMEInvoiceFilterView.m in Sources */,
 				9C9C473920A52B4A0023F02E /* WLMInvoiceDetailHeaderView.m in Sources */,
-				9C264771209BF17B004A4551 /* WLMInvoiceManagerListVC.m in Sources */,
-				9CC4FF1720A3DBD200232074 /* WLCircleProgressView.m in Sources */,
+				9CA403AA20AEE22300E4AA51 /* WLCircleProgressView.m in Sources */,
 				9C13035220AD24D5009BED8E /* WLMSelectedApplyMerchantModel.m in Sources */,
 				9C264750209AEFE2004A4551 /* WLMInvoiceApplyVC.m in Sources */,
 				9CA4032820ADAB7C00E4AA51 /* WLMResendInvoiceVM.m in Sources */,
 				9C140AC320AC576F006E6747 /* WLMFillTaxationInfoVM.m in Sources */,
+				9CA4037520AEE0BE00E4AA51 /* ImageTextField.m in Sources */,
+				9CA4039520AEE0E300E4AA51 /* WLMPackageInfoVC.m in Sources */,
 				9C140AC920AC57F6006E6747 /* WLMPackageSelectVM.m in Sources */,
 				9C2646E8209994C8004A4551 /* main.m in Sources */,
 				9CC4FF8520A43C4F00232074 /* WLMSelectApplyMerchantCell.m in Sources */,
 				9C26476E209BF10D004A4551 /* WLMInvoiceDetailVC.m in Sources */,
+				9CA4039820AEE0E300E4AA51 /* WLMInvoiceRecprdFooterView.m in Sources */,
+				9CA4037620AEE0BE00E4AA51 /* HMSegmentedControl.m in Sources */,
 				9CEEA5D1209DC10000673214 /* WLMMoreTaxationInfoVC.m in Sources */,
 				9CEEA5CE209D9DB900673214 /* WLMFillTaxationInfoVC.m in Sources */,
 				9C140AC620AC5789006E6747 /* WLMMoreTaxationInfoVM.m in Sources */,
 				9CC4FF0A20A318FD00232074 /* WLMInvoiceApplyResultView.m in Sources */,
 				9C140ABD20AC4ECB006E6747 /* WLMSelectedApplyMerchantVM.m in Sources */,
 				9C2646DA209994C8004A4551 /* AppDelegate.m in Sources */,
+				9CA4039920AEE0E300E4AA51 /* WLMRecordListCell.m in Sources */,
 				9C264753209AF037004A4551 /* WLMInvoiceApplyVM.m in Sources */,
+				9CA4039220AEE0E300E4AA51 /* WLMRecordFiltrVC.m in Sources */,
 				9C140AC020AC4EE7006E6747 /* WLMSelectApplyMerchantVC.m in Sources */,
 				9CEEA5D720A05C0E00673214 /* WLMResendInvoiceVC.m in Sources */,
+				9CA403B020AEE2C400E4AA51 /* WLMOpenInvoiceVC.m in Sources */,
+				9CA4039720AEE0E300E4AA51 /* WLMRequirementListCell.m in Sources */,
 				9C9C474A20A91F3D0023F02E /* UIView+WLDashLine.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
