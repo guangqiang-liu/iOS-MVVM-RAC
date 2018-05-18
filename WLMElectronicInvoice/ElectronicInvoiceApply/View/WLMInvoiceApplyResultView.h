@@ -8,9 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-typedef void(^ResultBlock)(void);
+@interface WLMInvoiceApplyResultView : WLBaseView
 
-@interface WLMInvoiceApplyResultView : UIView
-
-@property (nonatomic, copy) ResultBlock resultBlock;
+@property (nonatomic, strong) UIButton *button;
 @end

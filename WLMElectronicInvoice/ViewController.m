@@ -13,8 +13,9 @@
 #import "WLMInvoiceDetailVC.h"
 #import "WLCircleProgressView.h"
 #import "WLMPackageSelectVC.h"
-#import "WLMSelectApplyMerchant.h"
+#import "WLMSelectApplyMerchantVC.h"
 #import "WLMInvoiceDetailVC.h"
+#import "WLMOpenInvoiceVC.h"
 
 #define ktag 1000
 
@@ -51,13 +52,13 @@
     // UIButton使用大小自适应行不通
     //    [test.titleLabel sizeToFit];
     [btn setTitleColor:[UIColor magentaColor] forState:UIControlStateNormal];
-    [btn setImage:[WLIcon iconWithName:@"keyboard_o" size:23 color:[UIColor orangeColor]] forState:UIControlStateNormal];
+    [btn setImage:[WLIcon iconWithName:@"notification_o" size:23 color:[UIColor orangeColor]] forState:UIControlStateNormal];
     [self.view addSubview:btn];
     
     // UILable使用方式
     UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 180, 280, 40)];
     label.font = [UIFont fontWithName:@"iconfont" size:15]; //设置label的字体
-    label.text = [WLIcon matchIconCodeWithName:@"play_o"];
+    label.text = [WLIcon matchIconCodeWithName:@"scan_o"];
     label.textColor = [UIColor redColor];
     // lable根据内容自适应大小
     [label sizeToFit];
@@ -67,7 +68,7 @@
 - (void)btnClick:(UIButton *)button {
     NSInteger tag = button.tag - ktag;
     if (tag == 0) {
-        WLMInvoiceApplyVC *VC = [[WLMInvoiceApplyVC alloc] init];
+        WLMOpenInvoiceVC *VC = [[WLMOpenInvoiceVC alloc] init];
         [self.navigationController pushViewController:VC animated:YES];
     } else if (tag == 1) {
         WLMInvoiceManagerListVC *VC = [[WLMInvoiceManagerListVC alloc] init];
@@ -76,8 +77,16 @@
         WLMInvoiceSearchVC *VC = [[WLMInvoiceSearchVC alloc] init];
         [self.navigationController pushViewController:VC animated:YES];
     } else {
-        WLMInvoiceDetailVC *VC = [[WLMInvoiceDetailVC alloc] init];
-        [self.navigationController pushViewController:VC animated:YES];
+        [self modal];
     }
+}
+
+- (void)modal {
+    WLModal *alertView = [[WLModal alloc] init];
+    alertView.buttonTitles = @[@"xxx"];
+    alertView.backgroundColor = red_color;
+    WLTitleWithContentModal *modal = [[WLTitleWithContentModal alloc] initWithTitle:@"暂不开通暂不开通" content:@"暂不开通暂不开通暂不开通暂不开通暂不开通暂不开通暂不开通暂不开通暂不开通暂不开通"];
+    [alertView addContentView:modal];
+    [alertView show];
 }
 @end

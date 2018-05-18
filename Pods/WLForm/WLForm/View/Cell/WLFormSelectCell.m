@@ -29,20 +29,12 @@
     [self.contentView addSubview:self.arrowImg];
 }
 
-//- (void)layoutSubviews {
-//    [super layoutSubviews];
-//    CGSize leftTitleSize = [self.leftLable sizeForTitle:self.leftLable.text withFont:H14];
-//    self.leftLable.frame = CGRectMake(15, 0, WIDTH(self.contentView), HEIGHT(self.contentView));
-//    CGFloat padding = 10;
-//    self.rightLable.frame = CGRectMake(leftTitleSize.width + 30, padding, SCREEN_WIDTH - (leftTitleSize.width + 30 + 15 + 15), self.contentView.frame.size.height - 2 * padding);
-//}
-
 - (void)setRightTitle:(NSString *)rightTitle {
     _rightTitle = rightTitle;
     self.rightLable.text = rightTitle;
-    CGSize leftTitleSize = [self.leftLable sizeWithText:rightTitle font:H14];
+    CGSize leftTitleSize = [UILabel calculateLableSizeWithLableText:rightTitle font:H14 maxWidth:200];
     self.leftLable.frame = CGRectMake(15, 0, WIDTH(self.contentView), HEIGHT(self.contentView));
-    self.rightLable.frame = CGRectMake(leftTitleSize.width + 30, (48 - leftTitleSize.height) / 2, SCREEN_WIDTH - (leftTitleSize.width + 30 + 15 + 15), leftTitleSize.height);
+    self.rightLable.frame = CGRectMake(leftTitleSize.width + 30, (48 - leftTitleSize.height) / 2, SCREEN_WIDTH - (leftTitleSize.width + 30 + 15 + 20), leftTitleSize.height);
 }
 
 - (void)setHasSelected:(BOOL)hasSelected {
@@ -62,8 +54,8 @@
 - (UIImageView *)arrowImg {
     if (!_arrowImg) {
         _arrowImg = [[UIImageView alloc] init];
-        _arrowImg.frame = CGRectMake(SCREEN_WIDTH - (15 + 8), (48 - 15) / 2, 8, 15);
-        _arrowImg.image = UIImageName(@"icon_arrow");
+        _arrowImg.frame = CGRectMake(SCREEN_WIDTH - (15 + 15), (48 - 15) / 2, 15, 15);
+        _arrowImg.image = [WLIcon iconWithName:@"right_arrow_o" size:12 color:HexRGB(0xDEDEDE)];
     }
     return _arrowImg;
 }

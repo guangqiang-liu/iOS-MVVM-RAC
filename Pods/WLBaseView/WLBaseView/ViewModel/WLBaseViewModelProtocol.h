@@ -11,7 +11,7 @@
 @protocol WLBaseViewModelProtocol <NSObject>
 
 @optional
-@property (nonatomic, weak, readonly) id<WLBViewModelServiceImpProtocol> service;
+@property (nonatomic, strong, readonly) id<WLBViewModelServiceImpProtocol> service;
 @property (nonatomic, copy, readonly) NSDictionary *params;
 
 - (void)initialize;

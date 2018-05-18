@@ -17,7 +17,7 @@
 // 按钮标题数组
 @property (nonatomic, copy) NSArray *buttonTitles;
 // 按钮点击事件
-@property (nonatomic, copy) void (^onButtonTouchUpInside)(WLModal *alertView, int buttonIndex);
+@property (nonatomic, copy) void (^onButtonTouchUpInside)(WLModal *alertView, NSInteger buttonIndex);
 
 - (id)init;
 
@@ -25,10 +25,10 @@
 
 - (void)close;
 
-- (void)setSubView:(UIView *)subView;
+- (void)addContentView:(UIView *)view;
 
 // 设置按钮点击事件
-- (void)setOnButtonTouchUpInside:(void (^)(WLModal *alertView, int buttonIndex))onButtonTouchUpInside;
+- (void)setOnButtonTouchUpInside:(void (^)(WLModal *alertView, NSInteger buttonIndex))onButtonTouchUpInside;
 
 // 设备旋转，横向/竖向改变
 - (void)deviceOrientationDidChange:(NSNotification *)notification;

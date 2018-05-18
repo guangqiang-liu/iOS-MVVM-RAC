@@ -8,6 +8,7 @@
 
 #import "WLMInvoiceApplyResultVC.h"
 #import "WLMInvoiceApplyResultView.h"
+#import "WLMOpenInvoiceVC.h"
 
 @interface WLMInvoiceApplyResultVC ()
 
@@ -19,7 +20,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.view.backgroundColor = bgColor;
+    
+    self.title = self.titleStr;
 }
 
 - (void)renderViews {
@@ -30,6 +32,10 @@
 - (WLMInvoiceApplyResultView *)resultView {
     if (!_resultView) {
         _resultView = [[WLMInvoiceApplyResultView alloc] init];
+        [_resultView.button whenTapped:^{
+            WLMOpenInvoiceVC *VC = [[WLMOpenInvoiceVC alloc] init];
+            [self.navigationController pushViewController:VC animated:YES];
+        }];
     }
     return _resultView;
 }

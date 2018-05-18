@@ -7,6 +7,7 @@
 //
 
 #import "WLMSelectApplyMerchantCell.h"
+#import "WLMSelectedApplyMerchantModel.h"
 
 @interface WLMSelectApplyMerchantCell()
 
@@ -49,7 +50,7 @@
     [self.arrowImage mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(self.contentView);
         make.right.equalTo(self).offset(-15);
-        make.width.mas_offset(6);
+        make.width.mas_offset(12);
         make.height.mas_offset(12);
     }];
     
@@ -57,6 +58,31 @@
         make.centerY.equalTo(self.contentView);
         make.right.equalTo(self.arrowImage.mas_left).offset(-8);
     }];
+}
+
+- (void)setModel:(WLMSelectedApplyMerchantModel *)model {
+    _model = model;
+    self.title.text = model.merchantName;
+    self.subTitle.text = model.merchantAddress;
+    switch (model.merchantState) {
+        case WLMerchantStateNotOpen:
+            self.stateLable.text = @"未开通";
+            self.stateLable.textColor = textGrayColor;
+            break;
+        case WLMerchantStateOpening:
+            self.stateLable.text = @"开通中";
+            self.stateLable.textColor = HexRGB(0xFFA800);
+            break;
+        case WLMerchantStateTesting:
+            self.stateLable.text = @"测试上线中";
+            self.stateLable.textColor = HexRGB(0xFFA800);
+            
+            break;
+        case WLMerchantStateOpened:
+            self.stateLable.text = @"已开通";
+            self.stateLable.textColor = textGrayColor;
+            break;
+    }
 }
 
 - (UILabel *)title {
@@ -92,7 +118,7 @@
 - (UIImageView *)arrowImage {
     if (!_arrowImage) {
         _arrowImage = [[UIImageView alloc] init];
-        _arrowImage.backgroundColor = red_color;
+        _arrowImage.image = [WLIcon iconWithName:@"right_arrow_o" size:16 color:HexRGB(0xDEDEDE)];
     }
     return _arrowImage;
 }

@@ -16,5 +16,9 @@
 #import "UIView+Borders.h"
 #import "UIView+WLGestureBlock.h"
 #import "UIView+WLSize.h"
+#import "UILabel+WLLineSpace.h"
+#import "UIView+WLRoundedCorners.h"
+#import "UIImageView+WLSDImage.h"
+#import "UIButton+WLSDButton.h"
 
 #endif /* CategoryHeader_h */

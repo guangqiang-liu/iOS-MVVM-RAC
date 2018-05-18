@@ -21,8 +21,7 @@
     if (self) {
         self.backgroundColor = white_color;
         self.layer.shadowColor = [UIColor blackColor].CGColor;
-        self.layer.shadowOpacity = 0.3;
-        self.layer.shadowOffset = CGSizeMake(0, 2);
+        self.layer.shadowOffset = CGSizeMake(0, -2);
         self.layer.cornerRadius = 6;
         self.dataArr = @[@"", @"", @"", @"", @""];
         [self renderViews];
@@ -31,7 +30,6 @@
 }
 
 - (void)renderViews {
-    
     UIView *tempView;
     for (NSInteger i = 0; i < self.dataArr.count; i ++) {
         UIView *view = [[UIView alloc] init];
@@ -54,8 +52,9 @@
     }
     
     UIImageView *image = [[UIImageView alloc] init];
-    image.frame = CGRectMake(0, 320 - 15, SCREEN_WIDTH - 30, 12);
+    image.frame = CGRectMake(0, 320 - 12, SCREEN_WIDTH - 30, 12);
     image.image = UIImageName(@"sawtooth");
+    image.contentMode = UIViewContentModeScaleToFill;
     [self addSubview:image];
 }
 
@@ -67,7 +66,7 @@
     [view addSubview:leftLable];
     
     [leftLable mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(view).offset(15);
+        make.left.equalTo(view);
         make.centerY.equalTo(view);
     }];
     
@@ -78,7 +77,7 @@
     [view addSubview:rightLable];
     
     [rightLable mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.right.equalTo(view).offset(-15);
+        make.right.equalTo(view);
         make.centerY.equalTo(view);
     }];
 }

@@ -8,9 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+typedef void(^TextChangeBlock)(NSString *text);
+
 @interface WLFormTextInputCell : UITableViewCell
 
 @property (nonatomic, strong) UILabel *leftlabel;
 @property (nonatomic, strong) UITextField *rightField;
-@property (nonatomic, copy) void(^textChangeBlock)(NSString *text);
+@property (nonatomic, copy) TextChangeBlock textChangeBlock;
 @end

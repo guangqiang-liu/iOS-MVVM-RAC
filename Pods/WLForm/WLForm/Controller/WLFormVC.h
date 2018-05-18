@@ -10,7 +10,6 @@
 #import "WLBaseViewController.h"
 
 @class WLForm;
-
 @interface WLFormVC : WLBaseViewController
 
 @property (nonatomic, strong) UITableView *tableView;

@@ -8,10 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-typedef void(^BottomButtonBlock)(void);
-
 @interface WLFormBottomButtonCell : UITableViewCell
 
-@property (nonatomic, copy) NSString *title;
-@property (nonatomic, copy) BottomButtonBlock bottomButtonBlock;
+@property (nonatomic, strong) UIButton *button;
 @end

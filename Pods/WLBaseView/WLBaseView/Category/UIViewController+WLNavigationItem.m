@@ -14,7 +14,8 @@
 
 - (void)setNavigationItemBackItem {
     UIButton *itemBtn = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 44, 44)];
-    UIImage *image = UIImageName(@"icon_back");
+    NSBundle *bundle = [NSBundle bundleForClass:NSClassFromString(@"WLBaseView")];
+    UIImage *image = [UIImage imageNamed:@"icon_back" inBundle:bundle compatibleWithTraitCollection:nil];
     [itemBtn setImage:image forState:UIControlStateNormal];
     [itemBtn setImageEdgeInsets:UIEdgeInsetsMake(0, -30, 0, 0)];
     [itemBtn addTarget:self action:@selector(popVC) forControlEvents:UIControlEventTouchUpInside];

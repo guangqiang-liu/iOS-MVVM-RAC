@@ -8,8 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-typedef void(^PackageSelectBlock)(void);
-@interface WLMPackageSelectView : UIView
+typedef void(^PackageSelectBlock)(NSNumber *);
+typedef void(^InvoiceProtocolActionBlock)(void);
+
+@interface WLMPackageSelectView : WLBaseView
 
 @property (nonatomic, copy) PackageSelectBlock packageSelectBlock;
+@property (nonatomic, copy) InvoiceProtocolActionBlock invoiceProtocolActionBlock;
 @end

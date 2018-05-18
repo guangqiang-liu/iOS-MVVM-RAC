@@ -7,6 +7,7 @@
 //
 
 #import "WLFormRadioCell.h"
+#import "WLForm.h"
 
 @interface WLFormRadioCell()
 
@@ -34,8 +35,7 @@
 
 - (void)setRadioInfo:(NSDictionary *)radioInfo {
     _radioInfo = radioInfo;
-    self.leftTitle.text = radioInfo[@"leftTitle"];
-//    CGSize leftTitleSize = [self.leftTitle sizeWithText:radioInfo[@"leftTitle"] font:H14];
+    self.leftTitle.text = radioInfo[kLeftKey];
     self.leftTitle.frame = CGRectMake(15, 0, 135, 48);
     
     NSString *rightButtonTitle = radioInfo[@"rightButtonTitle"];
@@ -50,13 +50,15 @@
 }
 
 - (void)leftButtonClick:(UIButton *)button {
-    [self.leftButton setImage:UIImageName(@"icon_selected") forState:UIControlStateNormal];
-    [self.rightButton setImage:UIImageName(@"icon_unSelected") forState:UIControlStateNormal];
+    [self.leftButton setImage:[WLIcon iconWithName:@"selected_cycyle_o" size:16 color:HexRGB(0xF94B4A)] forState:UIControlStateNormal];
+    [self.rightButton setImage:[WLIcon iconWithName:@"unselected_cycyle_o" size:16 color:HexRGB(0xDEDEDE)] forState:UIControlStateNormal];
+    !self.radioCellActionBlock ?: self.radioCellActionBlock(@0);
 }
 
 - (void)rightButtonClick:(UIButton *)button {
-    [self.leftButton setImage:UIImageName(@"icon_unSelected") forState:UIControlStateNormal];
-    [self.rightButton setImage:UIImageName(@"icon_selected") forState:UIControlStateNormal];
+    [self.leftButton setImage:[WLIcon iconWithName:@"unselected_cycyle_o" size:16 color:HexRGB(0xDEDEDE)] forState:UIControlStateNormal];
+    [self.rightButton setImage:[WLIcon iconWithName:@"selected_cycyle_o" size:16 color:HexRGB(0xF94B4A)] forState:UIControlStateNormal];
+    !self.radioCellActionBlock ?: self.radioCellActionBlock(@1);
 }
 
 - (UILabel *)leftTitle {
@@ -74,7 +76,7 @@
         _leftButton = [UIButton buttonWithType:UIButtonTypeCustom];
         [_leftButton setTitleColor:HexRGB(0x666666) forState:UIControlStateNormal];
         _leftButton.titleLabel.font = H14;
-        [_leftButton setImage:UIImageName(@"icon_selected") forState:UIControlStateNormal];
+        [_leftButton setImage:[WLIcon iconWithName:@"selected_cycyle_o" size:16 color:HexRGB(0xF94B4A)] forState:UIControlStateNormal];
         [_leftButton addTarget:self action:@selector(leftButtonClick:) forControlEvents:UIControlEventTouchUpInside];
         [_leftButton layoutButtonWithEdgeInsetsStyle:(MKButtonEdgeInsetsStyleLeft) imageTitleSpace:8];
     }
@@ -87,7 +89,7 @@
         [_rightButton setTitleColor:HexRGB(0x666666) forState:UIControlStateNormal];
         _rightButton.titleLabel.font = H14;
         [_rightButton addTarget:self action:@selector(rightButtonClick:) forControlEvents:UIControlEventTouchUpInside];
-        [_rightButton setImage:UIImageName(@"icon_unSelected") forState:UIControlStateNormal];
+        [_rightButton setImage:[WLIcon iconWithName:@"unselected_cycyle_o" size:16 color:HexRGB(0xDEDEDE)] forState:UIControlStateNormal];
         [_rightButton layoutButtonWithEdgeInsetsStyle:(MKButtonEdgeInsetsStyleLeft) imageTitleSpace:8];
     }
     return _rightButton;

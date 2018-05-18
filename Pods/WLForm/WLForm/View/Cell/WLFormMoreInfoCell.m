@@ -34,7 +34,7 @@
 
 - (void)foldClick {
     self.isSpread =! self.isSpread;
-    [self.rightButton setImage:self.isSpread ? UIImageName(@"foldUp") : UIImageName(@"foldDown") forState:UIControlStateNormal];
+    [self.rightButton setImage:self.isSpread ? [WLIcon iconWithName:@"arrow_up_o" size:15 color:HexRGB(0x999999)] : [WLIcon iconWithName:@"arrow_down_o" size:15 color:HexRGB(0x999999)] forState:UIControlStateNormal];
     if (self.moreInfoBlock) {
         self.moreInfoBlock();
     }
@@ -67,7 +67,7 @@
     if (!_rightButton) {
         _rightButton = [UIButton buttonWithType:UIButtonTypeCustom];
         _rightButton.frame = CGRectMake(SCREEN_WIDTH - 40, (54 - 20) / 2 + 5, 30, 20);
-        [_rightButton setImage:UIImageName(@"foldUp") forState:UIControlStateNormal];
+        [_rightButton setImage:[WLIcon iconWithName:@"arrow_up_o" size:15 color:HexRGB(0x999999)] forState:UIControlStateNormal];
         [_rightButton addTarget:self action:@selector(foldClick) forControlEvents:UIControlEventTouchUpInside];
     }
     return _rightButton;

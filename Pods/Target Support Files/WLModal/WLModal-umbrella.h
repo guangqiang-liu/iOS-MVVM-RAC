@@ -10,10 +10,13 @@
 #endif
 #endif
 
+#import "ModalHeader.h"
 #import "WLAlertModal.h"
 #import "WLInvoiceQrModal.h"
 #import "WLModal.h"
 #import "WLPurchaseInvoiceStepModal.h"
+#import "WLTitleModal.h"
+#import "WLTitleWithContentModal.h"
 
 FOUNDATION_EXPORT double WLModalVersionNumber;
 FOUNDATION_EXPORT const unsigned char WLModalVersionString[];

@@ -1,0 +1,6 @@
+framework module WLPickerView {
+  umbrella header "WLPickerView-umbrella.h"
+
+  export *
+  module * { export * }
+}

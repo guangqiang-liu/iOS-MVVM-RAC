@@ -7,14 +7,12 @@
 //
 
 #import "WLMInvoiceApplyResultView.h"
-
 @interface WLMInvoiceApplyResultView()
 
 @property (nonatomic, strong) UIImageView *stateImage;
 @property (nonatomic, strong) UIImageView *shadowImage;
 @property (nonatomic, strong) UILabel *stateLable;
 @property (nonatomic, strong) UILabel *contentLable;
-@property (nonatomic, strong) UIButton *button;
 @end
 
 @implementation WLMInvoiceApplyResultView
@@ -72,7 +70,7 @@
 - (UIImageView *)stateImage {
     if (!_stateImage) {
         _stateImage = [[UIImageView alloc] init];
-        _stateImage.backgroundColor = red_color;
+        _stateImage.image = UIImageName(@"invoice_apply_success");
     }
     return _stateImage;
 }
@@ -80,7 +78,7 @@
 - (UIImageView *)shadowImage {
     if (!_shadowImage) {
         _shadowImage = [[UIImageView alloc] init];
-        _shadowImage.backgroundColor = orange_color;
+        _shadowImage.image = UIImageName(@"invoice_apply_shadow");
     }
     return _shadowImage;
 }
@@ -116,9 +114,6 @@
         _button.layer.masksToBounds = YES;
         [_button setTitle:@"返回发现页" forState:UIControlStateNormal];
         [_button createGradientButtonWithSize:CGSizeMake(SCREEN_WIDTH - 30, 44) colorArray:@[HexRGB(0xFF7E4A), HexRGB(0xFF4A4A)] gradientType:GradientFromLeftToRight];
-        [_button whenTapped:^{
-            
-        }];
     }
     return _button;
 }

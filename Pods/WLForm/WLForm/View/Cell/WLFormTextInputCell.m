@@ -8,8 +8,6 @@
 
 #import "WLFormTextInputCell.h"
 
-static const CGFloat kFieldWidth = 150.f;
-
 @implementation WLFormTextInputCell
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
@@ -26,17 +24,14 @@ static const CGFloat kFieldWidth = 150.f;
 }
 
 - (void)textFieldDidChange:(UITextField *)field {
-    if ([self textChangeBlock]) {
-        [self textChangeBlock](field.text);
-    }
+    !self.textChangeBlock ?: self.textChangeBlock(field.text);
 }
 
 - (void)layoutSubviews {
     [super layoutSubviews];
     CGSize leftTitleSize = [self.leftlabel sizeWithText:self.leftlabel.text font:H14];
     self.leftlabel.frame = CGRectMake(15, 0, self.contentView.frame.size.width, self.contentView.frame.size.height);
-    CGFloat padding = 10;
-    self.rightField.frame = CGRectMake(leftTitleSize.width + 30, padding, SCREEN_WIDTH - (leftTitleSize.width + 30 + 15), self.contentView.frame.size.height - 2 * padding);
+    self.rightField.frame = CGRectMake(leftTitleSize.width + 30, 10, SCREEN_WIDTH - (leftTitleSize.width + 30 + 15), self.contentView.frame.size.height - 2 * 10);
 }
 
 - (void)setTextChangeBlock:(void (^)(NSString *))textChangeBlock {

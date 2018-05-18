@@ -1,20 +1,34 @@
 //
-//  WLMSelectApplyMerchant.m
+//  WLMSelectApplyMerchantVC.m
 //  WLMElectronicInvoice
 //
-//  Created by 刘光强 on 2018/5/10.
+//  Created by 刘光强 on 2018/5/16.
 //  Copyright © 2018年 quangqiang. All rights reserved.
 //
 
-#import "WLMSelectApplyMerchant.h"
+#import "WLMSelectApplyMerchantVC.h"
 #import "WLMSelectApplyMerchantCell.h"
+#import "WLMEInvoiceIntroduceVC.h"
+#import "WLMEInvoiceIntroduceVM.h"
+#import "WLMSelectedApplyMerchantVM.h"
+#import "WLMSelectedApplyMerchantModel.h"
+#import "WLMResendInvoiceVC.h"
+@interface WLMSelectApplyMerchantVC()<UITableViewDelegate, UITableViewDataSource>
 
-@interface WLMSelectApplyMerchant ()<UITableViewDelegate, UITableViewDataSource>
-
+@property (nonatomic, strong) WLMSelectedApplyMerchantVM *merchantViewModel;
 @property (nonatomic, strong) UITableView *tableView;
+@property (nonatomic, copy) NSArray *dataArray;
 @end
 
-@implementation WLMSelectApplyMerchant
+@implementation WLMSelectApplyMerchantVC
+
+- (instancetype)initWithViewModel:(WLMSelectedApplyMerchantVM *)viewModel {
+    self = [super initWithViewModel:viewModel];
+    if (self) {
+        _merchantViewModel = viewModel;
+    }
+    return self;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -26,8 +40,16 @@
     [self.view addSubview:self.tableView];
 }
 
+- (void)bindViewModel {
+    [super bindViewModel];
+    [[[RACObserve(self.merchantViewModel, dataArray) skip:1] deliverOn:[RACScheduler mainThreadScheduler]] subscribeNext:^(NSArray *array) {
+        self.dataArray = array;
+        [self.tableView reloadData];
+    }];
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return  10;
+    return  self.dataArray.count;
 }
 
 - (WLMSelectApplyMerchantCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -36,12 +58,14 @@
     if (!cell) {
         cell = [[WLMSelectApplyMerchantCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
     }
-    cell.dataDic = @{};
+    cell.model = self.dataArray[indexPath.row];
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
+    [tableView deselectRowAtIndexPath:indexPath animated:NO];
+    WLMEInvoiceIntroduceVC *VC = [[WLMEInvoiceIntroduceVC alloc] initWithViewModel:self.merchantViewModel.introduceViewModel];
+    [self.navigationController pushViewController:VC animated:YES];
 }
 
 - (UITableView *)tableView {

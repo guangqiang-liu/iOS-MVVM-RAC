@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+@class WLMSelectedApplyMerchantModel;
 @interface WLMSelectApplyMerchantCell : UITableViewCell
 
-@property (nonatomic, copy) NSDictionary *dataDic;
+@property (nonatomic, strong) WLMSelectedApplyMerchantModel *model;
 @end

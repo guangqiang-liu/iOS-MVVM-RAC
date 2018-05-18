@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+typedef void(^CloseModalActionBlock)(void);
+
 @interface WLPurchaseInvoiceStepModal : UIView
 
+@property (nonatomic, copy) CloseModalActionBlock closeModalActionBlock;
 @end

@@ -10,11 +10,21 @@ target 'WLMElectronicInvoice' do
   
   # Pods for WLMElectronicInvoice
   
-  pod 'WLIconFont'
-  pod 'Masonry', '1.1.0'
-  pod 'ReactiveObjC', '3.1.0'
-  pod 'WLForm'
-  pod 'WLBaseView'
-  pod 'WLModal'
+#  pod 'WLIconFont', :path => '/Users/liuguangqiang/Desktop/companyRepo/WLPLib/WLIconFont/WLIconFont.podspec'
+#  pod 'WLForm', :path => '/Users/liuguangqiang/Desktop/companyRepo/WLPLib/WLForm/WLForm.podspec'
+#  pod 'WLBaseView', :path => '/Users/liuguangqiang/Desktop/companyRepo/WLPLib/WLBaseView/WLBaseView.podspec'
+#  pod 'WLModal', :path => '/Users/liuguangqiang/Desktop/companyRepo/WLPLib/WLModal/WLModal.podspec'
+#  pod 'WLWidget', :path => '/Users/liuguangqiang/Desktop/companyRepo/WLPLib/WLWidget/WLWidget.podspec'
+#  pod 'WLPickerView', :path => '/Users/liuguangqiang/Desktop/companyRepo/WLPLib/WLPickerView/WLPickerView.podspec'
+
+    pod 'WLIconFont'
+    pod 'WLForm'
+    pod 'WLBaseView'
+    pod 'WLModal'
+    pod 'WLWidget'
+    pod 'WLPickerView'
+    pod 'Masonry'
+    pod 'ReactiveObjC'
+    pod 'MJExtension'
   
 end

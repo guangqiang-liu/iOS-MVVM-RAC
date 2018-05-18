@@ -7,9 +7,13 @@
 //
 
 #import "AppDelegate.h"
+#import "WLMSelectedApplyMerchantVM.h"
+#import "WLMSelectApplyMerchantVC.h"
+#import "WLBViewModelServiceImp.h"
 
 @interface AppDelegate ()
 
+@property (nonatomic, strong) WLBViewModelServiceImp *viewModelService;
 @end
 
 @implementation AppDelegate
@@ -18,7 +22,14 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
-    self.window.backgroundColor = white_color;
+    self.viewModelService = [[WLBViewModelServiceImp alloc] init];
+    WLMSelectedApplyMerchantVM *viewModel = [[WLMSelectedApplyMerchantVM alloc] initWithService:self.viewModelService params:nil];
+    WLMSelectApplyMerchantVC *VC = [[WLMSelectApplyMerchantVC alloc] initWithViewModel:viewModel];
+    UINavigationController *navVC = [[UINavigationController alloc] initWithRootViewController:VC];
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.window.backgroundColor = [UIColor whiteColor];
+    self.window.rootViewController = navVC;
+    [self.window makeKeyAndVisible];
     return YES;
 }
 

@@ -56,7 +56,7 @@
         !item.cellExtraInitBlock ?: item.cellExtraInitBlock(cell, item.value, indexPath);
     }
     NSAssert(!(item.itemConfigBlockWithCompletion && item.itemConfigBlock), @"参数配置不正确！");
-    itemConfigCompletion completion = nil;
+    ItemConfigCompletion completion = nil;
     if (item.itemConfigBlock) {
         item.itemConfigBlock(cell, item.value, indexPath);
     } else if (item.itemConfigBlockWithCompletion) {

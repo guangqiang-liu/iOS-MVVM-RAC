@@ -36,7 +36,7 @@
 
 /// 项目默认颜色值
 #define bgColor HexRGB(0xFAF9F9)
-#define sepLineColor HexRGB(0xEFEFF5)
+#define sepLineColor HexRGB(0xEEEEEE)
 #define themeColor  HexRGB(0x7442ea)
 #define textGrayColor HexRGB(0x999999)
 #define textDarkGrayColor HexRGB(0x666666)

@@ -10,7 +10,7 @@
 #import <UIKit/UIKit.h>
 @class WLFormSectionViewModel;
 
-typedef void(^itemConfigCompletion)(void);
+typedef void(^ItemConfigCompletion)(void);
 
 extern NSString *kValidateRetKey;
 extern NSString *kValidateMsgKey;
@@ -46,7 +46,7 @@ static inline NSDictionary *itemInvalid(NSString *msg) {
 @property (nonatomic, copy) NSString *placeholderValue;
 
 @property (nonatomic, copy) void(^itemConfigBlock)(id cell, id value, NSIndexPath *indexPath);
-@property (nonatomic, copy) itemConfigCompletion(^itemConfigBlockWithCompletion)(id cell, id value, NSIndexPath *indexPath);
+@property (nonatomic, copy) ItemConfigCompletion(^itemConfigBlockWithCompletion)(id cell, id value, NSIndexPath *indexPath);
 
 @property (nonatomic, copy) void(^cellExtraInitBlock)(id cell, id value, NSIndexPath *indexPath);
 

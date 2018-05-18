@@ -11,7 +11,8 @@
 
 @interface WLBaseViewModel()
 
-@property (nonatomic, weak, readwrite) id<WLBViewModelServiceImpProtocol> service;
+// service 只会存在于VM中
+@property (nonatomic, strong, readwrite) id<WLBViewModelServiceImpProtocol> service;
 @property (nonatomic, copy, readwrite) NSDictionary *params;
 @end
 

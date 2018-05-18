@@ -8,7 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+typedef void(^RadioCellActionBlock)(NSNumber *);
+
 @interface WLFormRadioCell : UITableViewCell
 
 @property (nonatomic, copy) NSDictionary *radioInfo;
+@property (nonatomic, copy) RadioCellActionBlock radioCellActionBlock;
 @end

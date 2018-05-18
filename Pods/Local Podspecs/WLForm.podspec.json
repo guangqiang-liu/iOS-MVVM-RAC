@@ -28,6 +28,9 @@
     ],
     "WLBaseView": [
 
+    ],
+    "WLIconFont": [
+
     ]
   },
   "subspecs": [

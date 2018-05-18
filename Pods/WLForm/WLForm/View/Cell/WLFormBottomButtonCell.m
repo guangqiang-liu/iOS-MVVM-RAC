@@ -11,7 +11,6 @@
 
 @interface WLFormBottomButtonCell()
 
-@property (nonatomic, strong) UIButton *button;
 @end
 
 @implementation WLFormBottomButtonCell
@@ -19,7 +18,7 @@
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
-        self.backgroundColor = purple_color;
+        self.backgroundColor = clear_color;
         [self renderViews];
     }
     return self;
@@ -27,17 +26,6 @@
 
 - (void)renderViews {
     [self.contentView addSubview: self.button];
-}
-
-- (void)buttonClick {
-    if (self.bottomButtonBlock) {
-        self.bottomButtonBlock();
-    }
-}
-
-- (void)setTitle:(NSString *)title {
-    _title = title;
-    [self.button setTitle:title forState:UIControlStateNormal];
 }
 
 - (UIButton *)button {
@@ -49,7 +37,6 @@
         _button.layer.cornerRadius = 4;
         _button.layer.masksToBounds = YES;
         [_button createGradientButtonWithSize:CGSizeMake(SCREEN_WIDTH - 30, 44) colorArray:@[HexRGB(0xFF7E4A), HexRGB(0xFF4A4A)] gradientType:GradientFromLeftToRight];
-        [_button addTarget:self action:@selector(buttonClick) forControlEvents:UIControlEventTouchUpInside];
     }
     return _button;
 }

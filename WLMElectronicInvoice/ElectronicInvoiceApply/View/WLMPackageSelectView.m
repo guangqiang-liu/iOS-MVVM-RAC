@@ -7,30 +7,40 @@
 //
 
 #import "WLMPackageSelectView.h"
+#import "WLMPackageSelectVM.h"
+
+static const NSInteger kStateImageTag = 9999;
 
 @interface WLMPackageSelectView()
 
 @property (nonatomic, strong) UIScrollView *scrollView;
 @property (nonatomic, strong) UIView *packageCell;
-@property (nonatomic, strong) UIButton *protocolButton;
+@property (nonatomic, strong) UIButton *readProtocolButton;
+@property (nonatomic, strong) UILabel *protocolLable;
 @property (nonatomic, strong) UIButton *applyButton;
 @property (nonatomic, copy) NSArray *infoArray;
+@property (nonatomic, strong) NSMutableArray *stateImageArr;
+@property (nonatomic, strong) WLMPackageSelectVM *packageViewModel;
+
+@property (nonatomic, strong) NSNumber *packageType;
 @end
 
 @implementation WLMPackageSelectView
 
-- (instancetype)initWithFrame:(CGRect)frame {
-    self = [super initWithFrame:frame];
+- (instancetype)initWithViewModel:(WLMPackageSelectVM *)viewModel {
+    self = [super initWithViewModel:viewModel];
     if (self) {
         self.backgroundColor = bgColor;
         self.frame = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
+        self.stateImageArr = [NSMutableArray array];
         self.infoArray = @[@{
                                @"packageType":@"套餐A",
                                @"invoiceCount":@"10000",
                                @"merchantType":@"普通类型",
                                @"price":@"666",
                                @"marketPrice":@"888",
-                               @"imageName":@"normal"
+                               @"imageName":@"normal",
+                               @"selectedState":@"YES"
                                },
                            @{
                                @"packageType":@"套餐B",
@@ -38,50 +48,85 @@
                                @"merchantType":@"普通类型",
                                @"price":@"666",
                                @"marketPrice":@"888",
-                               @"imageName":@"middle"
+                               @"imageName":@"middle",
+                               @"selectedState":@"NO"
                                },
                            @{
-                               @"packageType":@"套餐A",
+                               @"packageType":@"套餐C",
                                @"invoiceCount":@"10000",
                                @"merchantType":@"普通类型",
                                @"price":@"666",
                                @"marketPrice":@"888",
-                               @"imageName":@"big"
+                               @"imageName":@"big",
+                               @"selectedState":@"NO"
                                }];
-        [self renderViews];
+        _packageViewModel = viewModel;
     }
     return self;
 }
 
 - (void)renderViews {
+    [super renderViews];
+    
     [self addSubview:self.scrollView];
     [self renderPackageCell];
-    [self.scrollView addSubview:self.protocolButton];
+    [self.scrollView addSubview:self.readProtocolButton];
+    [self.scrollView addSubview:self.protocolLable];
     [self.scrollView addSubview:self.applyButton];
+}
+
+- (void)bindViewModel {
+    [super bindViewModel];
+    RAC(self.applyButton, enabled) = RACObserve(self.readProtocolButton, selected);
+    
 }
 
 - (UIButton *)applyButton {
     if (!_applyButton) {
         _applyButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        _applyButton.frame = CGRectMake(15, MaxY(self.protocolButton) + 32, SCREEN_WIDTH - 30, 44);
+        _applyButton.frame = CGRectMake(15, MaxY(self.readProtocolButton) + 32, SCREEN_WIDTH - 30, 44);
         [_applyButton setTitle:@"确认申请" forState:UIControlStateNormal];
-        _applyButton.backgroundColor = green_color;
         _applyButton.layer.cornerRadius = 4;
         _applyButton.layer.masksToBounds = YES;
-        [_applyButton createGradientButtonWithSize:CGSizeMake(MaxY(self.protocolButton) + 32, 44) colorArray:@[HexRGB(0xFF7E4A), HexRGB(0xFF4A4A)] gradientType:GradientFromLeftToRight];
+        [_applyButton createGradientButtonWithSize:CGSizeMake(MaxY(self.readProtocolButton) + 32, 44) colorArray:@[HexRGB(0xFF7E4A), HexRGB(0xFF4A4A)] gradientType:GradientFromLeftToRight];
+        [_applyButton whenTapped:^{
+            !_packageSelectBlock ?: _packageSelectBlock(self.packageType);
+        }];
     }
     return _applyButton;
 }
 
-- (UIButton *)protocolButton {
-    if (!_protocolButton) {
-        _protocolButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        _protocolButton.frame = CGRectMake(0, 420, SCREEN_WIDTH, 20);
-        [_protocolButton setTitle:@"我已阅读《电子发票合作协议》" forState:UIControlStateNormal];
-        _protocolButton.titleLabel.font = H12;
-        [_protocolButton setTitleColor:textGrayColor forState:UIControlStateNormal];
+- (UIButton *)readProtocolButton {
+    if (!_readProtocolButton) {
+        _readProtocolButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        _readProtocolButton.frame = CGRectMake(0, 420, SCREEN_WIDTH / 2, 20);
+        _readProtocolButton.titleLabel.font = H12;
+       _readProtocolButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentRight;
+        [_readProtocolButton setImage:[WLIcon iconWithName:@"unselected_cycyle_o" size:16 color:HexRGB(0xDEDEDE)] forState:UIControlStateNormal];
+        [_readProtocolButton setImage:[WLIcon iconWithName:@"check_selected_o" size:16 color:HexRGB(0xF94B4A)] forState:UIControlStateSelected];
+        [_readProtocolButton setTitle:@"我已阅读" forState:UIControlStateNormal];
+        _readProtocolButton.imageEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 5);
+        [_readProtocolButton setTitleColor:textGrayColor forState:UIControlStateNormal];
+        [_readProtocolButton whenTapped:^{
+            _readProtocolButton.selected =! _readProtocolButton.selected;
+        }];
     }
-    return _protocolButton;
+    return _readProtocolButton;
+}
+
+- (UILabel *)protocolLable {
+    if (!_protocolLable) {
+        _protocolLable = [[UILabel alloc] init];
+        _protocolLable.frame = CGRectMake(SCREEN_WIDTH / 2, 420, SCREEN_WIDTH / 2, 20);
+        _protocolLable.text = @"《电子发票合作协议》";
+        _protocolLable.font = H12;
+        _protocolLable.textColor = textGrayColor;
+        _protocolLable.textAlignment = NSTextAlignmentLeft;
+        [_protocolLable whenTapped:^{
+            !_invoiceProtocolActionBlock ?: _invoiceProtocolActionBlock();
+        }];
+    }
+    return _protocolLable;
 }
 
 - (void)renderPackageCell {
@@ -91,17 +136,23 @@
         view.frame = CGRectMake(15, i * 130, SCREEN_WIDTH - 30, 130);
         view.layer.shadowColor = [UIColor blackColor].CGColor;
         view.layer.shadowOpacity = 0.3;
-        view.layer.shadowOffset = CGSizeMake(0, 5);
+        view.layer.shadowOffset = CGSizeMake(0, 3);
         [view whenTapped:^{
-            !_packageSelectBlock ?: _packageSelectBlock();
+            self.packageType = [NSNumber numberWithInteger:i];
+            for (UIImageView *imageView in self.stateImageArr) {
+                if (imageView.tag == kStateImageTag + i) {
+                    imageView.image = [WLIcon iconWithName:@"check_unselected_o" size:16 color:white_color];
+                } else {
+                    imageView.image = [WLIcon iconWithName:@"unselected_cycyle_o" size:16 color:white_color];
+                }
+            }
         }];
         [self.scrollView addSubview:view];
-        
-        [self renderInfoWithView:view info:cellInfo];
+        [self renderInfoWithView:view info:cellInfo index:i];
     }
 }
 
-- (void)renderInfoWithView:(UIView *)view info:(NSDictionary *)cellInfo {
+- (void)renderInfoWithView:(UIView *)view info:(NSDictionary *)cellInfo index:(NSInteger)index {
     
     UIImageView *bgImage = [[UIImageView alloc] init];
     bgImage.image = [UIImage imageNamed:cellInfo[@"imageName"]];
@@ -114,8 +165,10 @@
     }];
     
     UIImageView *stateImg = [[UIImageView alloc] init];
-    stateImg.backgroundColor = red_color;
+    stateImg.image = index == 0 ? [WLIcon iconWithName:@"check_unselected_o" size:16 color:white_color] : [WLIcon iconWithName:@"unselected_cycyle_o" size:16 color:white_color];
+    stateImg.tag = kStateImageTag + index;
     [bgImage addSubview:stateImg];
+    [self.stateImageArr addObject:stateImg];
     
     [stateImg mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_offset(16);

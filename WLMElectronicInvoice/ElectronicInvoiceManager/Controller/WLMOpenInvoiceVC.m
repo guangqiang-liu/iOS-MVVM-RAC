@@ -10,6 +10,8 @@
 #import "WLMResendInvoiceVC.h"
 
 @interface WLMOpenInvoiceVC ()
+
+@property (nonatomic, assign) BOOL buttonEnabled;
 @end
 
 @implementation WLMOpenInvoiceVC
@@ -24,6 +26,10 @@
 - (void)renderViews {
     [super renderViews];
     [self configFormInfo];
+}
+
+- (void)bindViewModel {
+    [super bindViewModel];
 }
 
 - (void)configFormInfo {
@@ -46,8 +52,8 @@
     section.headerTitleFont = H16;
     section.headerTitle = @"发票详情";
     
-    dic = @{kLeftKey:@"发票金额（请确认金额）"};
-    row = [self textFieldCellWithInfo:dic];
+    dic = @{kLeftKey:@"发票金额（请确认金额）", kPlaceholder:@"请输入金额"};
+    row = [self textFieldSumCellWithInfo:dic];
     row.hasTopSep = YES;
     [section addItem:row];
     
@@ -61,6 +67,7 @@
     
     dic = @{kLeftKey:@"税号"};
     row = [self textFieldCellWithInfo:dic];
+    row.hasBottomSep = NO;
     [section addItem:row];
     return section;
 }
@@ -87,21 +94,48 @@
     
     dic = @{kLeftKey:@"电子邮箱"};
     row = [self textFieldCellWithInfo:dic];
+    row.hasBottomSep = NO;
     [section addItem:row];
     
-    dic = @{kLeftKey:@"下一步"};
+    dic = @{kLeftKey:@"确认开票"};
     row = [self bottomButtonCellWithInfo:dic];
     row.bottomSepLineMarginLeft = 0;
     [section addItem:row];
     return section;
 }
 
-- (WLFormItemViewModel *)textFieldCellWithInfo:(NSDictionary *)userInfo {
+- (WLFormItemViewModel *)textFieldSumCellWithInfo:(NSDictionary *)info {
+    WLFormItemViewModel *row = nil;
+    row = [[WLFormItemViewModel alloc] initFormItemWithStyle:UITableViewCellStyleValue1 reuseIdentifier:@"WLFormSumTextInputCell"];
+    row.itemHeight = 68;
+    row.cellClass = [WLFormSumTextInputCell class];
+    row.value = info.mutableCopy;
+    row.itemConfigBlock = ^(WLFormSumTextInputCell *cell, id value, NSIndexPath *indexPath) {
+        cell.leftLable.text = value[kLeftKey];
+        cell.rightInput.text = value[kRightKey];
+        cell.rightInput.enabled = ![value[kDisableKey] boolValue];
+        cell.rightInput.placeholder = value[kPlaceholder];
+        __weak typeof(cell) weakCell = cell;
+        cell.textChangeBlock = ^(NSString *text) {
+            value[kRightKey] = text;
+            text.length ? (weakCell.rightInput.font = HB26) : (weakCell.rightInput.font = H14);
+            text.length ? (self.buttonEnabled = YES) : (self.buttonEnabled = NO);
+        };
+    };
+    row.requestParamsConfigBlock = ^(id value) {
+        NSMutableDictionary *ret = [NSMutableDictionary dictionaryWithCapacity:1];
+        ret[value[kLeftKey]] = value[kRightKey];
+        return ret;
+    };
+    return row;
+}
+
+- (WLFormItemViewModel *)textFieldCellWithInfo:(NSDictionary *)info {
     WLFormItemViewModel *row = nil;
     row = [[WLFormItemViewModel alloc] initFormItemWithStyle:UITableViewCellStyleValue1 reuseIdentifier:@"WLFormTextInputCell"];
     row.itemHeight = 48;
     row.cellClass = [WLFormTextInputCell class];
-    row.value = userInfo.mutableCopy;
+    row.value = info.mutableCopy;
     row.itemConfigBlock = ^(WLFormTextInputCell *cell, id value, NSIndexPath *indexPath) {
         cell.leftlabel.text = value[kLeftKey];
         cell.rightField.text = value[kRightKey];
@@ -126,11 +160,12 @@
     row.itemHeight = 78.f;
     __weak typeof(self) weakSelf = self;
     row.itemConfigBlock = ^(WLFormBottomButtonCell *cell, id value, NSIndexPath *indexPath) {
-        cell.title = info[kLeftKey];
-        cell.bottomButtonBlock = ^{
+        [cell.button setTitle:info[kLeftKey] forState:UIControlStateNormal];
+        RAC(cell.button, enabled) = RACObserve(self, buttonEnabled);
+        [cell.button whenTapped:^{
             WLMResendInvoiceVC *VC = [[WLMResendInvoiceVC alloc] init];
-            [self.navigationController pushViewController:VC animated:YES];
-        };
+            [weakSelf.navigationController pushViewController:VC animated:YES];
+        }];
     };
     return row;
 }

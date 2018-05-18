@@ -1,0 +1,31 @@
+{
+  "name": "WLPickerView",
+  "version": "0.0.1",
+  "summary": "自定义日期、地址、select选择器组件",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://gitlab.qianbaocard.org/iOS/view/WLPickerView",
+  "license": "MIT",
+  "authors": {
+    "guangqiang": "1126756952@qq.com"
+  },
+  "source": {
+    "git": "git@gitlab.qianbaocard.org:iOS/view/WLPickerView.git",
+    "tag": "0.0.1"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "requires_arc": true,
+  "prefix_header_file": "WLPickerView/WLPickerView.pch",
+  "default_subspecs": "Code",
+  "resources": "WLPickerView/Resource/*",
+  "subspecs": [
+    {
+      "name": "Code",
+      "source_files": [
+        "WLPickerView/Model/**/*.{h,m}",
+        "WLPickerView/View/**/*.{h,m}"
+      ]
+    }
+  ]
+}

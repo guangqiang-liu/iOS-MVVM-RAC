@@ -19,5 +19,7 @@
 #import "FormHeader.h"
 #import "WLIcon.h"
 #import "WLBaseViewHeader.h"
+#import "ModalHeader.h"
+#import "WLPickerViewManager.h"
 
 #endif /* WLMElectronicInvoice_pch */

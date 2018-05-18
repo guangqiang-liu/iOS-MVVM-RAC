@@ -25,12 +25,18 @@
     self.title = @"开票详情";
     self.view.backgroundColor = bgColor;
     self.navigationController.navigationBar.translucent = NO;
+    
+    [self setNavigationItemRightBarButtonItem:@selector(invoiceInvalid) withTitle:@"作废发票" withTitleColor: textGrayColor];
 }
 
 - (void)renderViews {
     [super renderViews];
     [self.view addSubview:self.headerView];
     [self.view addSubview:self.infoView];
+}
+
+- (void)invoiceInvalid {
+    
 }
 
 - (WLMInvoiceDetailHeaderView *)headerView {

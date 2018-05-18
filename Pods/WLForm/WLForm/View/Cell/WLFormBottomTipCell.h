@@ -8,10 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-typedef void(^BottomTipBlock)(void);
-
 @interface WLFormBottomTipCell : UITableViewCell
 
 @property (nonatomic, copy) NSString *tipStr;
-@property (nonatomic, copy) BottomTipBlock tipBlock;
 @end

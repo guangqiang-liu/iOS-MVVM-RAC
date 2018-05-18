@@ -66,7 +66,7 @@
     
     UIImageView *redDot = [[UIImageView alloc] init];
     redDot.frame = CGRectMake(0, (18 - 10) / 2, 10, 10);
-    redDot.backgroundColor = red_color;
+    redDot.image = [WLIcon iconWithName:@"invoice_detail_state_o" size:10 color:HexRGB(0xFF4B4A)];
     [view addSubview:redDot];
     
     UILabel *stateLable = [[UILabel alloc] init];
