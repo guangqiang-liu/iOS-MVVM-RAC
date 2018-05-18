@@ -9,7 +9,6 @@
 #import "ViewController.h"
 #import "WLMInvoiceApplyVC.h"
 #import "WLMInvoiceManagerListVC.h"
-#import "WLMInvoiceSearchVC.h"
 #import "WLMInvoiceDetailVC.h"
 #import "WLCircleProgressView.h"
 #import "WLMPackageSelectVC.h"
@@ -74,8 +73,6 @@
         WLMInvoiceManagerListVC *VC = [[WLMInvoiceManagerListVC alloc] init];
       [self.navigationController pushViewController:VC animated:YES];
     } else if (tag == 2) {
-        WLMInvoiceSearchVC *VC = [[WLMInvoiceSearchVC alloc] init];
-        [self.navigationController pushViewController:VC animated:YES];
     } else {
         [self modal];
     }

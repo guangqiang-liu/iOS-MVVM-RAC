@@ -33,7 +33,6 @@
 		9C264750209AEFE2004A4551 /* WLMInvoiceApplyVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C26474F209AEFE2004A4551 /* WLMInvoiceApplyVC.m */; };
 		9C264753209AF037004A4551 /* WLMInvoiceApplyVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C264752209AF037004A4551 /* WLMInvoiceApplyVM.m */; };
 		9C26476E209BF10D004A4551 /* WLMInvoiceDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C26476D209BF10D004A4551 /* WLMInvoiceDetailVC.m */; };
-		9C264774209BF1A2004A4551 /* WLMInvoiceSearchVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C264773209BF1A2004A4551 /* WLMInvoiceSearchVC.m */; };
 		9C9C473920A52B4A0023F02E /* WLMInvoiceDetailHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C9C473820A52B4A0023F02E /* WLMInvoiceDetailHeaderView.m */; };
 		9C9C473C20A52B6D0023F02E /* WLMInvoiceDetailInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C9C473B20A52B6D0023F02E /* WLMInvoiceDetailInfoView.m */; };
 		9C9C474A20A91F3D0023F02E /* UIView+WLDashLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C9C474920A91F3D0023F02E /* UIView+WLDashLine.m */; };
@@ -116,8 +115,6 @@
 		9C264752209AF037004A4551 /* WLMInvoiceApplyVM.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WLMInvoiceApplyVM.m; sourceTree = "<group>"; };
 		9C26476C209BF10D004A4551 /* WLMInvoiceDetailVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WLMInvoiceDetailVC.h; sourceTree = "<group>"; };
 		9C26476D209BF10D004A4551 /* WLMInvoiceDetailVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WLMInvoiceDetailVC.m; sourceTree = "<group>"; };
-		9C264772209BF1A2004A4551 /* WLMInvoiceSearchVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WLMInvoiceSearchVC.h; sourceTree = "<group>"; };
-		9C264773209BF1A2004A4551 /* WLMInvoiceSearchVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WLMInvoiceSearchVC.m; sourceTree = "<group>"; };
 		9C9C473720A52B4A0023F02E /* WLMInvoiceDetailHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WLMInvoiceDetailHeaderView.h; sourceTree = "<group>"; };
 		9C9C473820A52B4A0023F02E /* WLMInvoiceDetailHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WLMInvoiceDetailHeaderView.m; sourceTree = "<group>"; };
 		9C9C473A20A52B6D0023F02E /* WLMInvoiceDetailInfoView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WLMInvoiceDetailInfoView.h; sourceTree = "<group>"; };
@@ -346,8 +343,6 @@
 			children = (
 				9CA403A620AEE19000E4AA51 /* WLMRecordSearchVC.h */,
 				9CA403A520AEE18F00E4AA51 /* WLMRecordSearchVC.m */,
-				9C264772209BF1A2004A4551 /* WLMInvoiceSearchVC.h */,
-				9C264773209BF1A2004A4551 /* WLMInvoiceSearchVC.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -502,13 +497,13 @@
 				9CA403AF20AEE2C300E4AA51 /* WLMOpenInvoiceVC.m */,
 				9CA403AC20AEE27300E4AA51 /* WLMInvoiceManagerListVC.h */,
 				9CA403AB20AEE27300E4AA51 /* WLMInvoiceManagerListVC.m */,
+				9CA4037C20AEE0E300E4AA51 /* WLMRecordListVC.h */,
+				9CA4038220AEE0E300E4AA51 /* WLMRecordListVC.m */,
+				9CA4038020AEE0E300E4AA51 /* WLMRecordFiltrVC.h */,
 				9CA4037A20AEE0E300E4AA51 /* WLMRecordFiltrVC.m */,
 				9CA4037B20AEE0E300E4AA51 /* WLMRequirementListVC.h */,
-				9CA4037C20AEE0E300E4AA51 /* WLMRecordListVC.h */,
-				9CA4037E20AEE0E300E4AA51 /* WLMPackageInfoVC.h */,
 				9CA4037F20AEE0E300E4AA51 /* WLMRequirementListVC.m */,
-				9CA4038020AEE0E300E4AA51 /* WLMRecordFiltrVC.h */,
-				9CA4038220AEE0E300E4AA51 /* WLMRecordListVC.m */,
+				9CA4037E20AEE0E300E4AA51 /* WLMPackageInfoVC.h */,
 				9CA4038320AEE0E300E4AA51 /* WLMPackageInfoVC.m */,
 			);
 			path = Controller;
@@ -527,13 +522,13 @@
 				9CA403A820AEE22200E4AA51 /* WLCircleProgressView.h */,
 				9CA403A920AEE22300E4AA51 /* WLCircleProgressView.m */,
 				9CA4038820AEE0E300E4AA51 /* WLMRecordListCell.h */,
-				9CA4038920AEE0E300E4AA51 /* WLMRequirementListCell.m */,
-				9CA4038A20AEE0E300E4AA51 /* WLMEInvoiceFilterView.h */,
-				9CA4038B20AEE0E300E4AA51 /* WLMInvoiceRecprdFooterView.m */,
 				9CA4038C20AEE0E300E4AA51 /* WLMRecordListCell.m */,
 				9CA4038E20AEE0E300E4AA51 /* WLMRequirementListCell.h */,
-				9CA4038F20AEE0E300E4AA51 /* WLMInvoiceRecprdFooterView.h */,
+				9CA4038920AEE0E300E4AA51 /* WLMRequirementListCell.m */,
+				9CA4038A20AEE0E300E4AA51 /* WLMEInvoiceFilterView.h */,
 				9CA4039020AEE0E300E4AA51 /* WLMEInvoiceFilterView.m */,
+				9CA4038F20AEE0E300E4AA51 /* WLMInvoiceRecprdFooterView.h */,
+				9CA4038B20AEE0E300E4AA51 /* WLMInvoiceRecprdFooterView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -713,7 +708,6 @@
 				9C140A9F20ABBFFC006E6747 /* WLMEInvoiceProtocolVC.m in Sources */,
 				9CC4FEF820A2E75300232074 /* WLMPackageSelectView.m in Sources */,
 				9CA4039420AEE0E300E4AA51 /* WLMRecordListVC.m in Sources */,
-				9C264774209BF1A2004A4551 /* WLMInvoiceSearchVC.m in Sources */,
 				9C140AA520ABC1AF006E6747 /* WLMEInvoicePreviewVC.m in Sources */,
 				9CA403A720AEE19000E4AA51 /* WLMRecordSearchVC.m in Sources */,
 				9CA403AD20AEE27300E4AA51 /* WLMInvoiceManagerListVC.m in Sources */,
