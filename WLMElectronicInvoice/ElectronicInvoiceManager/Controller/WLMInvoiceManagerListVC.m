@@ -7,8 +7,17 @@
 //
 
 #import "WLMInvoiceManagerListVC.h"
+#import "HMSegmentedControl.h"
+#import "WLMRequirementListVC.h"
+#import "WLMRecordListVC.h"
+#import "WLMPackageInfoVC.h"
+#import "WLMRecordFiltrVC.h"
 
-@interface WLMInvoiceManagerListVC ()
+@interface WLMInvoiceManagerListVC () <UIScrollViewDelegate>
+
+@property (nonatomic, strong) UIScrollView *scrollView;
+@property (nonatomic, strong) HMSegmentedControl *segmentedControl;
+@property (nonatomic, strong) NSMutableArray *childControllers;
 
 @end
 
@@ -16,24 +25,90 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
     
-    self.view.backgroundColor = [UIColor orangeColor];
+    self.title = @"电子发票管理";
+    self.view.backgroundColor = bgColor;
+    
+    [self segmentLaunch];
 }
+
+- (void)segmentLaunch {
+    self.segmentedControl = [[HMSegmentedControl alloc] initWithFrame:CGRectMake(0, 64, SCREEN_WIDTH, 44)];
+    self.segmentedControl.sectionTitles = @[@"开票请求", @"开票记录", @"套餐情况"];
+    self.segmentedControl.selectedSegmentIndex = 1;
+    self.segmentedControl.autoresizingMask = UIViewAutoresizingFlexibleRightMargin;
+    self.segmentedControl.backgroundColor = [UIColor whiteColor];
+    self.segmentedControl.titleTextAttributes = @{NSForegroundColorAttributeName : [UIColor lightGrayColor]};
+    self.segmentedControl.selectedTitleTextAttributes = @{NSForegroundColorAttributeName : [UIColor blackColor]};
+    self.segmentedControl.selectionIndicatorColor = [UIColor redColor];
+    self.segmentedControl.selectionStyle = HMSegmentedControlSelectionStyleTextWidthStripe;
+    self.segmentedControl.selectionIndicatorLocation = HMSegmentedControlSelectionIndicatorLocationDown;
+    self.segmentedControl.tag = 3;
+    
+    __weak typeof(self) weakSelf = self;
+    [self.segmentedControl setIndexChangeBlock:^(NSInteger index) {
+        [weakSelf.scrollView scrollRectToVisible:CGRectMake(SCREEN_WIDTH *index, 0, SCREEN_WIDTH, 200) animated:YES];
+    }];
+    
+    [self.view addSubview:self.segmentedControl];
+    
+    self.scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 108, SCREEN_WIDTH, SCREEN_HEIGHT)];
+    self.scrollView.backgroundColor = [UIColor whiteColor];
+    self.scrollView.pagingEnabled = YES;
+    self.scrollView.showsHorizontalScrollIndicator = NO;
+    self.scrollView.contentSize = CGSizeMake(SCREEN_WIDTH *3, SCREEN_HEIGHT);
+    self.scrollView.delegate = self;
+    [self.scrollView scrollRectToVisible:CGRectMake(SCREEN_WIDTH, 0, SCREEN_WIDTH, SCREEN_HEIGHT) animated:NO];
+    [self.view addSubview:self.scrollView];
+    
+    [self addChildControllers];
+}
+
+- (void)addChildControllers {
+    self.childControllers = [[NSMutableArray alloc] initWithCapacity:3];
+    
+    for (int i = 1; i < 4; i ++) {
+        if (1 == i) {
+            WLMRequirementListVC *vc = [[WLMRequirementListVC alloc] init];
+            [self.childControllers addObject:vc];
+        } else if (2 == i) {
+            WLMRecordListVC *vc = [[WLMRecordListVC alloc] init];
+            [self.childControllers addObject:vc];
+        } else if (3 == i) {
+            WLMRecordFiltrVC *vc = [[WLMRecordFiltrVC alloc] init];
+//            WLMPackageInfoVC *vc = [[WLMPackageInfoVC alloc] init];
+            [self.childControllers addObject:vc];
+        }
+    }
+    
+    [self.childControllers enumerateObjectsUsingBlock:^(UIViewController *obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        UIView *view = obj.view;
+        view.frame = CGRectMake(idx*SCREEN_WIDTH, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
+        [self.scrollView addSubview:view];
+    }];
+//    [self.scrollView setContentSize:CGSizeMake(3 * SCREEN_WIDTH, SCREEN_HEIGHT)];
+}
+
+- (void)segmentedControlChangedValue:(HMSegmentedControl *)segmentedControl {
+    NSLog(@"Selected index %ld (via UIControlEventValueChanged)", (long)segmentedControl.selectedSegmentIndex);
+}
+
+- (void)uisegmentedControlChangedValue:(UISegmentedControl *)segmentedControl {
+    NSLog(@"Selected index %ld", (long)segmentedControl.selectedSegmentIndex);
+}
+
+#pragma mark - UIScrollViewDelegate
+
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+    CGFloat pageWidth = scrollView.frame.size.width;
+    NSInteger page = scrollView.contentOffset.x / pageWidth;
+    
+    [self.segmentedControl setSelectedSegmentIndex:page animated:YES];
+}
+    
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

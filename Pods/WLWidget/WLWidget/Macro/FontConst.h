@@ -75,4 +75,13 @@
 #define HB9  [UIFont boldSystemFontOfSize:9]
 #define HB8  [UIFont boldSystemFontOfSize:8]
 
+#define __IOS_V ([[[UIDevice currentDevice] systemVersion] floatValue])
+
+#define FONT_SYSTEM_Light(s) [UIFont systemFontOfSize:s]
+#define FONT_SYSTEM_Bold(s)  [UIFont boldSystemFontOfSize:s]
+
+#define FONT_PingFang_Light(s) (__IOS_V >= 9 ? [UIFont fontWithName:@"PingFangSC-Light" size:s] : FONT_SYSTEM_Light(s))
+#define FONT_PingFang_Regular(s) (__IOS_V >= 9 ? [UIFont fontWithName:@"PingFangSC-Regular" size:s] : FONT_SYSTEM_Light(s))
+#define FONT_PingFang_Bold(s) (__IOS_V >= 9 ? [UIFont fontWithName:@"PingFangSC-Medium" size:s] : FONT_SYSTEM_Bold(s))
+
 #endif /* FontConst_h */
