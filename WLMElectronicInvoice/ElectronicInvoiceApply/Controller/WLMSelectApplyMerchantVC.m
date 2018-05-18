@@ -13,6 +13,7 @@
 #import "WLMSelectedApplyMerchantVM.h"
 #import "WLMSelectedApplyMerchantModel.h"
 #import "WLMResendInvoiceVC.h"
+
 @interface WLMSelectApplyMerchantVC()<UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, strong) WLMSelectedApplyMerchantVM *merchantViewModel;
@@ -22,6 +23,7 @@
 
 @implementation WLMSelectApplyMerchantVC
 
+#pragma mark - init
 - (instancetype)initWithViewModel:(WLMSelectedApplyMerchantVM *)viewModel {
     self = [super initWithViewModel:viewModel];
     if (self) {
@@ -30,14 +32,17 @@
     return self;
 }
 
+#pragma mark - lifeCycle
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"请选择申请开通的门店";
 }
 
+#pragma mark - public method
 - (void)renderViews {
     [super renderViews];
     [self.view addSubview:self.tableView];
+    [self setNavigationItemRightBarButtonItem:@selector(testAction) withTitle:@"电票管理" withTitleColor:red_color];
 }
 
 - (void)bindViewModel {
@@ -48,6 +53,7 @@
     }];
 }
 
+#pragma mark - TableView DataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return  self.dataArray.count;
 }
@@ -62,12 +68,14 @@
     return cell;
 }
 
+#pragma mark - TableView Delegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
     WLMEInvoiceIntroduceVC *VC = [[WLMEInvoiceIntroduceVC alloc] initWithViewModel:self.merchantViewModel.introduceViewModel];
     [self.navigationController pushViewController:VC animated:YES];
 }
 
+#pragma mark - getter\setter
 - (UITableView *)tableView {
     if (!_tableView) {
         _tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
@@ -80,6 +88,11 @@
         _tableView.dataSource = self;
     }
     return _tableView;
+}
+
+#pragma private method
+- (void)testAction {
+    
 }
 
 @end
