@@ -2,7 +2,7 @@
 //  WLMEInvoiceFilterView.m
 //  WLMElectronicInvoice
 //
-//  Created by Saturday on 2018/5/15.
+//  Created by Qianbao on 2018/5/15.
 //  Copyright © 2018年 quangqiang. All rights reserved.
 //
 
@@ -50,7 +50,7 @@
                        @{@"title":@"作废中",@"tag":@(3)},
                        @{@"title":@"已作废",@"tag":@(4)},
                        @{@"title":@"作废失败",@"tag":@(5)},
-                       @{@"title":@"代开票",@"tag":@(6)},
+                       @{@"title":@"开票失败",@"tag":@(6)},
                        ];
 }
 

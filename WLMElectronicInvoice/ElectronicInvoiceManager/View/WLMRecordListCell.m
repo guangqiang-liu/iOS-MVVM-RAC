@@ -72,7 +72,7 @@ static const CGFloat kRecordHeight = 140.f;
     if (!_invoicePrice) {
         _invoicePrice = [[UILabel alloc] init];
         _invoicePrice.frame = CGRectMake(16, 16, 160, 22);
-        _invoicePrice.textColor = lightGray_color;
+        _invoicePrice.textColor = RGB(67, 67, 67);
         _invoicePrice.font = FONT_PingFang_Regular(18);
         _invoicePrice.textAlignment = NSTextAlignmentLeft;
         _invoicePrice.text = @"发票金额：32.50元";
@@ -84,7 +84,7 @@ static const CGFloat kRecordHeight = 140.f;
     if (!_invoiceTitle) {
         _invoiceTitle = [[UILabel alloc] init];
         _invoiceTitle.frame = CGRectMake(16, 46, 240, 18);
-        _invoiceTitle.textColor = lightGray_color;
+        _invoiceTitle.textColor = RGB(102, 102, 102);
         _invoiceTitle.font = FONT_PingFang_Light(14);
         _invoiceTitle.textAlignment = NSTextAlignmentLeft;
         _invoiceTitle.text = @"钱包生活(平潭)科技有限公司上分公司";

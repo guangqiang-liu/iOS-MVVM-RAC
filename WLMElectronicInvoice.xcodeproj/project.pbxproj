@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		049DDF5D20AEE82100F22E06 /* WLMInvoiceQRCodeListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 049DDF5320AEE82100F22E06 /* WLMInvoiceQRCodeListVC.m */; };
+		049DDF5E20AEE82100F22E06 /* InvoiceCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 049DDF5720AEE82100F22E06 /* InvoiceCollectionReusableView.m */; };
+		049DDF5F20AEE82100F22E06 /* InvoiceQRCodeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 049DDF5920AEE82100F22E06 /* InvoiceQRCodeCell.m */; };
+		049DDF6020AEE82100F22E06 /* InvoiceScanHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 049DDF5B20AEE82100F22E06 /* InvoiceScanHeadView.m */; };
 		50AA9FC5E70CCF584D47605D /* Pods_WLMElectronicInvoice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58614F4727A6F4189F29ACDC /* Pods_WLMElectronicInvoice.framework */; };
 		9C13035220AD24D5009BED8E /* WLMSelectedApplyMerchantModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C13035120AD24D5009BED8E /* WLMSelectedApplyMerchantModel.m */; };
 		9C140A9F20ABBFFC006E6747 /* WLMEInvoiceProtocolVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C140A9E20ABBFFC006E6747 /* WLMEInvoiceProtocolVC.m */; };
@@ -69,6 +73,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		049DDF5220AEE82100F22E06 /* WLMInvoiceQRCodeListVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WLMInvoiceQRCodeListVC.h; sourceTree = "<group>"; };
+		049DDF5320AEE82100F22E06 /* WLMInvoiceQRCodeListVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WLMInvoiceQRCodeListVC.m; sourceTree = "<group>"; };
+		049DDF5620AEE82100F22E06 /* InvoiceCollectionReusableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InvoiceCollectionReusableView.h; sourceTree = "<group>"; };
+		049DDF5720AEE82100F22E06 /* InvoiceCollectionReusableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InvoiceCollectionReusableView.m; sourceTree = "<group>"; };
+		049DDF5820AEE82100F22E06 /* InvoiceQRCodeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InvoiceQRCodeCell.h; sourceTree = "<group>"; };
+		049DDF5920AEE82100F22E06 /* InvoiceQRCodeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InvoiceQRCodeCell.m; sourceTree = "<group>"; };
+		049DDF5A20AEE82100F22E06 /* InvoiceScanHeadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InvoiceScanHeadView.h; sourceTree = "<group>"; };
+		049DDF5B20AEE82100F22E06 /* InvoiceScanHeadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InvoiceScanHeadView.m; sourceTree = "<group>"; };
 		0C58E3E41CE2B24BB6F43768 /* Pods-WLMElectronicInvoice.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WLMElectronicInvoice.release.xcconfig"; path = "Pods/Target Support Files/Pods-WLMElectronicInvoice/Pods-WLMElectronicInvoice.release.xcconfig"; sourceTree = "<group>"; };
 		58614F4727A6F4189F29ACDC /* Pods_WLMElectronicInvoice.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WLMElectronicInvoice.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8EC5F3AAC5E149448B9054F5 /* Pods-WLMElectronicInvoice.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WLMElectronicInvoice.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WLMElectronicInvoice/Pods-WLMElectronicInvoice.debug.xcconfig"; sourceTree = "<group>"; };
@@ -189,6 +201,53 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		049DDF5020AEE82100F22E06 /* ElectronicInvoiceQRCodeManager */ = {
+			isa = PBXGroup;
+			children = (
+				049DDF5120AEE82100F22E06 /* Controller */,
+				049DDF5420AEE82100F22E06 /* Model */,
+				049DDF5520AEE82100F22E06 /* View */,
+				049DDF5C20AEE82100F22E06 /* ViewModel */,
+			);
+			path = ElectronicInvoiceQRCodeManager;
+			sourceTree = "<group>";
+		};
+		049DDF5120AEE82100F22E06 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				049DDF5220AEE82100F22E06 /* WLMInvoiceQRCodeListVC.h */,
+				049DDF5320AEE82100F22E06 /* WLMInvoiceQRCodeListVC.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		049DDF5420AEE82100F22E06 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		049DDF5520AEE82100F22E06 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				049DDF5620AEE82100F22E06 /* InvoiceCollectionReusableView.h */,
+				049DDF5720AEE82100F22E06 /* InvoiceCollectionReusableView.m */,
+				049DDF5820AEE82100F22E06 /* InvoiceQRCodeCell.h */,
+				049DDF5920AEE82100F22E06 /* InvoiceQRCodeCell.m */,
+				049DDF5A20AEE82100F22E06 /* InvoiceScanHeadView.h */,
+				049DDF5B20AEE82100F22E06 /* InvoiceScanHeadView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		049DDF5C20AEE82100F22E06 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		71DFEAB7C76F1CE63CE6F560 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -224,6 +283,7 @@
 				9C26473A209AEEFA004A4551 /* ElectronicInvoiceDetail */,
 				9C264749209AEEFA004A4551 /* ElectronicInvoiceManager */,
 				9C26473F209AEEFA004A4551 /* ElectronicInvoiceSearch */,
+				049DDF5020AEE82100F22E06 /* ElectronicInvoiceQRCodeManager */,
 				9C2646F020999B35004A4551 /* Resources */,
 				9C2646EE20999B35004A4551 /* Tools */,
 				9C2646D8209994C8004A4551 /* AppDelegate.h */,
@@ -523,6 +583,8 @@
 				9CA403A920AEE22300E4AA51 /* WLCircleProgressView.m */,
 				9CA4038820AEE0E300E4AA51 /* WLMRecordListCell.h */,
 				9CA4038C20AEE0E300E4AA51 /* WLMRecordListCell.m */,
+				9CA4038A20AEE0E300E4AA51 /* WLMEInvoiceFilterView.h */,
+				9CA4039020AEE0E300E4AA51 /* WLMEInvoiceFilterView.m */,
 				9CA4038E20AEE0E300E4AA51 /* WLMRequirementListCell.h */,
 				9CA4038920AEE0E300E4AA51 /* WLMRequirementListCell.m */,
 				9CA4038A20AEE0E300E4AA51 /* WLMEInvoiceFilterView.h */,
@@ -704,6 +766,7 @@
 				9C9C473C20A52B6D0023F02E /* WLMInvoiceDetailInfoView.m in Sources */,
 				9C140ACC20AC592E006E6747 /* WLMEInvoiceIntroduceVM.m in Sources */,
 				9CA4037420AEE0BE00E4AA51 /* HJCornerRadius.m in Sources */,
+				049DDF5E20AEE82100F22E06 /* InvoiceCollectionReusableView.m in Sources */,
 				9CA4039320AEE0E300E4AA51 /* WLMRequirementListVC.m in Sources */,
 				9C140A9F20ABBFFC006E6747 /* WLMEInvoiceProtocolVC.m in Sources */,
 				9CC4FEF820A2E75300232074 /* WLMPackageSelectView.m in Sources */,
@@ -715,6 +778,7 @@
 				9C140AA820ABC1C3006E6747 /* WLMEInvoiceIntroduceVC.m in Sources */,
 				9CC4FEF520A2E70800232074 /* WLMPackageSelectVC.m in Sources */,
 				9C2646DD209994C8004A4551 /* ViewController.m in Sources */,
+				049DDF5F20AEE82100F22E06 /* InvoiceQRCodeCell.m in Sources */,
 				9CA4039B20AEE0E300E4AA51 /* WLMEInvoiceFilterView.m in Sources */,
 				9C9C473920A52B4A0023F02E /* WLMInvoiceDetailHeaderView.m in Sources */,
 				9CA403AA20AEE22300E4AA51 /* WLCircleProgressView.m in Sources */,
@@ -722,6 +786,7 @@
 				9C264750209AEFE2004A4551 /* WLMInvoiceApplyVC.m in Sources */,
 				9CA4032820ADAB7C00E4AA51 /* WLMResendInvoiceVM.m in Sources */,
 				9C140AC320AC576F006E6747 /* WLMFillTaxationInfoVM.m in Sources */,
+				049DDF5D20AEE82100F22E06 /* WLMInvoiceQRCodeListVC.m in Sources */,
 				9CA4037520AEE0BE00E4AA51 /* ImageTextField.m in Sources */,
 				9CA4039520AEE0E300E4AA51 /* WLMPackageInfoVC.m in Sources */,
 				9C140AC920AC57F6006E6747 /* WLMPackageSelectVM.m in Sources */,
@@ -744,6 +809,7 @@
 				9CA403B020AEE2C400E4AA51 /* WLMOpenInvoiceVC.m in Sources */,
 				9CA4039720AEE0E300E4AA51 /* WLMRequirementListCell.m in Sources */,
 				9C9C474A20A91F3D0023F02E /* UIView+WLDashLine.m in Sources */,
+				049DDF6020AEE82100F22E06 /* InvoiceScanHeadView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -879,6 +945,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9J6JH9B3QM;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/WLMElectronicInvoice/WLMElectronicInvoice.pch";
 				INFOPLIST_FILE = WLMElectronicInvoice/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -895,6 +962,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9J6JH9B3QM;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/WLMElectronicInvoice/WLMElectronicInvoice.pch";
 				INFOPLIST_FILE = WLMElectronicInvoice/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;

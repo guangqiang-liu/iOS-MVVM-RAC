@@ -11,7 +11,6 @@
 #import "WLMRequirementListVC.h"
 #import "WLMRecordListVC.h"
 #import "WLMPackageInfoVC.h"
-#import "WLMRecordFiltrVC.h"
 
 @interface WLMInvoiceManagerListVC () <UIScrollViewDelegate>
 
@@ -75,8 +74,7 @@
             WLMRecordListVC *vc = [[WLMRecordListVC alloc] init];
             [self.childControllers addObject:vc];
         } else if (3 == i) {
-            WLMRecordFiltrVC *vc = [[WLMRecordFiltrVC alloc] init];
-//            WLMPackageInfoVC *vc = [[WLMPackageInfoVC alloc] init];
+            WLMPackageInfoVC *vc = [[WLMPackageInfoVC alloc] init];
             [self.childControllers addObject:vc];
         }
     }
@@ -105,7 +103,13 @@
     
     [self.segmentedControl setSelectedSegmentIndex:page animated:YES];
 }
-    
+
+//- (UIScrollView *)scrollView {
+//    if (_scrollView == nil) {
+//
+//    }
+//    return _scrollView;
+//}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

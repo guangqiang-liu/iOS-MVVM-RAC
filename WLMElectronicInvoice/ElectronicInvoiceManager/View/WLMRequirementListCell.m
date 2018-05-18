@@ -68,28 +68,28 @@ static const CGFloat kRequirementHeight = 156.f;
     return _bgView;
 }
 
-- (UILabel *)invoicePrice {
-    if (!_invoicePrice) {
-        _invoicePrice = [[UILabel alloc] init];
-        _invoicePrice.frame = CGRectMake(16, 16, 160, 22);
-        _invoicePrice.textColor = lightGray_color;
-        _invoicePrice.font = FONT_PingFang_Regular(18);
-        _invoicePrice.textAlignment = NSTextAlignmentLeft;
-        _invoicePrice.text = @"发票金额：32.50元";
-    }
-    return _invoicePrice;
-}
-
 - (UILabel *)invoiceTitle {
     if (!_invoiceTitle) {
         _invoiceTitle = [[UILabel alloc] init];
-        _invoiceTitle.frame = CGRectMake(16, 46, 240, 18);
-        _invoiceTitle.textColor = lightGray_color;
+        _invoiceTitle.frame = CGRectMake(16, 16, 240, 22);
+        _invoiceTitle.textColor = RGB(67, 67, 67);
         _invoiceTitle.font = FONT_PingFang_Light(14);
         _invoiceTitle.textAlignment = NSTextAlignmentLeft;
         _invoiceTitle.text = @"钱包生活(平潭)科技有限公司上分公司";
     }
     return _invoiceTitle;
+}
+
+- (UILabel *)invoicePrice {
+    if (!_invoicePrice) {
+        _invoicePrice = [[UILabel alloc] init];
+        _invoicePrice.frame = CGRectMake(16, 46, 240, 18);
+        _invoicePrice.textColor = RGB(153, 153, 153);
+        _invoicePrice.font = FONT_PingFang_Light(14);
+        _invoicePrice.textAlignment = NSTextAlignmentLeft;
+        _invoicePrice.text = @"申请时间：2018.4.18";
+    }
+    return _invoicePrice;
 }
 
 - (UIView *)lineView {

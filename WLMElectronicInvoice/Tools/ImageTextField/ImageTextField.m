@@ -2,7 +2,7 @@
 //  ImageTextField.m
 //  WLMElectronicInvoice
 //
-//  Created by Saturday on 2018/5/16.
+//  Created by Qianbao on 2018/5/16.
 //  Copyright © 2018年 quangqiang. All rights reserved.
 //
 
@@ -61,9 +61,11 @@ typedef NS_ENUM(NSInteger, ImageLocation) {
     CGSize tempSize = CGSizeZero;
     UIImage *tempImage = nil;
     if (location == ImageLocationLeft) {
-        tempSize = _sizeLeft;tempImage = _leftImage;
+        tempSize = _sizeLeft;
+        tempImage = _leftImage;
     }else {
-        tempSize = _sizeRight;tempImage = _rightImage;
+        tempSize = _sizeRight;
+        tempImage = _rightImage;
     }
     CGFloat defaultWidth = tempSize.width > self.frame.size.height ? tempSize.width + 10 : self.frame.size.height;
     UIView *bgView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, defaultWidth, self.frame.size.height)];
