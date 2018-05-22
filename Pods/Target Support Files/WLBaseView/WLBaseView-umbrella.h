@@ -10,7 +10,6 @@
 #endif
 #endif
 
-#import "UINavigationController+WLExtension.h"
 #import "UIViewController+WLNavigationItem.h"
 #import "WLBaseCollectionViewController.h"
 #import "WLBaseTableViewViewController.h"

@@ -6,7 +6,10 @@
 //  Copyright © 2018年 quangqiang. All rights reserved.
 //
 
+@class WLMInvoiceResultVM;
+
 @interface WLMPackageSelectVM : WLBaseViewModel
 
+@property (nonatomic, strong, readonly) WLMInvoiceResultVM *resultViewModel;
 @property (nonatomic, strong, readonly) RACCommand *submitCmd;
 @end

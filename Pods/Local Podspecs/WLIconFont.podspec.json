@@ -1,6 +1,6 @@
 {
   "name": "WLIconFont",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "summary": "iOS中的IconFont字体私有库",
   "description": "TODO: Add long description of the pod here.",
   "homepage": "http://www.qianbaocard.com",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "git@gitlab.qianbaocard.org:iOS/tool/WLIconFont.git",
-    "tag": "0.1.6"
+    "tag": "0.1.7"
   },
   "platforms": {
     "ios": "8.0"

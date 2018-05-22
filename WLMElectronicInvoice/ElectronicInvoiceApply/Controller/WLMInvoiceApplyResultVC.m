@@ -9,19 +9,28 @@
 #import "WLMInvoiceApplyResultVC.h"
 #import "WLMInvoiceApplyResultView.h"
 #import "WLMOpenInvoiceVC.h"
+#import "WLMInvoiceResultModel.h"
+#import "WLMInvoiceResultVM.h"
 
 @interface WLMInvoiceApplyResultVC ()
 
 @property (nonatomic, strong) WLMInvoiceApplyResultView *resultView;
+@property (nonatomic, strong) WLMInvoiceResultVM *resutViewModel;
 @end
 
 @implementation WLMInvoiceApplyResultVC
 
+- (instancetype)initWithViewModel:(WLMInvoiceResultVM *)viewModel {
+    self = [super initWithViewModel:viewModel];
+    if (self) {
+        _resutViewModel = viewModel;
+    }
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
-    self.title = self.titleStr;
 }
 
 - (void)renderViews {
@@ -29,9 +38,14 @@
     [self.view addSubview:self.resultView];
 }
 
+- (void)bindViewModel {
+    [super bindViewModel];
+    RAC(self, title) = RACObserve(self.resutViewModel, title);
+}
+
 - (WLMInvoiceApplyResultView *)resultView {
     if (!_resultView) {
-        _resultView = [[WLMInvoiceApplyResultView alloc] init];
+        _resultView = [[WLMInvoiceApplyResultView alloc] initWithViewModel:self.resutViewModel];
         [_resultView.button whenTapped:^{
             WLMOpenInvoiceVC *VC = [[WLMOpenInvoiceVC alloc] init];
             [self.navigationController pushViewController:VC animated:YES];

@@ -9,7 +9,6 @@
 #ifndef WLBaseViewHeader_h
 #define WLBaseViewHeader_h
 
-#import "UINavigationController+WLExtension.h"
 #import "UIViewController+WLNavigationItem.h"
 #import "WLBaseCollectionViewController.h"
 #import "WLBaseTableViewViewController.h"

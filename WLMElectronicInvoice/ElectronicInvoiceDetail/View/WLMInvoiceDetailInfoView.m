@@ -20,9 +20,11 @@
     self = [super initWithFrame:frame];
     if (self) {
         self.backgroundColor = white_color;
-        self.layer.shadowColor = [UIColor blackColor].CGColor;
-        self.layer.shadowOffset = CGSizeMake(0, -2);
         self.layer.cornerRadius = 6;
+        self.layer.shadowColor = [[UIColor lightGrayColor] CGColor];
+        self.layer.shadowOffset = CGSizeMake(0, 0);
+        self.layer.shadowRadius = 4.0f;
+        self.layer.shadowOpacity = 0.2f;
         self.dataArr = @[@"", @"", @"", @"", @""];
         [self renderViews];
     }
@@ -42,7 +44,7 @@
     UIView *line = [[UIView alloc] init];
     line.frame = CGRectMake(15, MaxY(tempView) + 24, WIDTH(tempView), 2);
     [self addSubview:line];
-    [line drawDashLineWithLineHeight:1 dashLineWidth:@2 dashLineSpace:@5 lineColor:HexRGB(0xDEDEDE)];
+    [line drawDashLineWithLineHeight:1 dashLineWidth:@4 dashLineSpace:@5 lineColor:HexRGB(0xDEDEDE)];
     
     for (NSInteger i = 0; i < 2; i ++) {
         UIView *view = [[UIView alloc] init];

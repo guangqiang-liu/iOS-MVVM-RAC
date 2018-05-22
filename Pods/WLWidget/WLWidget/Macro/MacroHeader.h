@@ -9,9 +9,11 @@
 #ifndef MacroHeader_h
 #define MacroHeader_h
 
-#import "ColorConst.h"
-#import "FontConst.h"
-#import "LogConst.h"
 #import "WLConst.h"
+#import "FontConst.h"
+#import "ColorConst.h"
+#import "LogConst.h"
+#import "FormConst.h"
+#import "RectConst.h"
 
 #endif /* MacroHeader_h */

@@ -29,7 +29,6 @@ static const CGFloat kMarginBottom = 10.0f;
         self.backgroundColor = white_color;
         _title = title;
         _content = content;
-        [self drawRoundedCornersWithCorners:UIRectCornerTopLeft | UIRectCornerTopRight cornerRadii:CGSizeMake(12, 12)];
         [self renderViews];
     }
     return self;
@@ -38,14 +37,16 @@ static const CGFloat kMarginBottom = 10.0f;
 - (void)renderViews {
     [self addSubview:self.titleLable];
     [self addSubview:self.contentLable];
-    
+
     CGSize titleSize = [UILabel calculateLableSizeWithLableText:self.title font:HB14 maxWidth:200];
     CGSize contentSize = [UILabel calculateLableSizeWithLableText:self.content font:H14 lineSpace:4 maxWidth:240];
-    
+
     self.titleLable.frame = CGRectMake(35, kMarginTop, 200, titleSize.height);
     self.contentLable.frame = CGRectMake(16, MaxY(self.titleLable) + kGap, 240, contentSize.height);
-    
+
     self.frame = CGRectMake(0, 0, 270, MaxY(self.contentLable) + kMarginBottom);
+    
+    [self drawCornersWithCorners:UIRectCornerTopLeft | UIRectCornerTopRight cornerRadii:CGSizeMake(12, 12) viewRect:CGRectMake(0, 0, 270, MaxY(self.contentLable) + kMarginBottom)];
 }
 
 - (UILabel *)titleLable {

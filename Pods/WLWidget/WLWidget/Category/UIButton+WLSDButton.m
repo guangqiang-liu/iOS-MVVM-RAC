@@ -10,11 +10,11 @@
 
 @implementation UIButton (WLSDButton)
 
-- (void)setButtonImageWithUrlStr:(NSString *)urlStr placeholderImage:(UIImage *)placeholderImage {
-    [self sd_setImageWithURL:[NSURL URLWithString:urlStr] forState:UIControlStateNormal placeholderImage:placeholderImage options:SDWebImageLowPriority | SDWebImageRetryFailed];
-}
-
-- (void)setButtonBackgroundImageWithUrlStr:(NSString *)urlStr placeholderImage:(UIImage *)placeholderImage {
-    [self sd_setBackgroundImageWithURL:[NSURL URLWithString:urlStr] forState:UIControlStateNormal placeholderImage:placeholderImage options:SDWebImageLowPriority | SDWebImageRetryFailed];
-}
+//- (void)setButtonImageWithUrlStr:(NSString *)urlStr placeholderImage:(UIImage *)placeholderImage {
+//    [self sd_setImageWithURL:[NSURL URLWithString:urlStr] forState:UIControlStateNormal placeholderImage:placeholderImage options:SDWebImageLowPriority | SDWebImageRetryFailed];
+//}
+//
+//- (void)setButtonBackgroundImageWithUrlStr:(NSString *)urlStr placeholderImage:(UIImage *)placeholderImage {
+//    [self sd_setBackgroundImageWithURL:[NSURL URLWithString:urlStr] forState:UIControlStateNormal placeholderImage:placeholderImage options:SDWebImageLowPriority | SDWebImageRetryFailed];
+//}
 @end

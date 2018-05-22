@@ -13,6 +13,10 @@
 #define SYS_FONT(x) [UIFont systemFontOfSize:x]
 #define BS_FONT(x) [UIFont boldSystemFontOfSize:x]
 
+#define FONT_PingFang_Light(x) (SYSTEM_VERSION >= 9 ? [UIFont fontWithName:@"PingFangSC-Light" size:x] : SYS_FONT(x))
+#define FONT_PingFang_Regular(x) (SYSTEM_VERSION >= 9 ? [UIFont fontWithName:@"PingFangSC-Regular" size:x] : SYS_FONT(x))
+#define FONT_PingFang_Bold(x) (SYSTEM_VERSION >= 9 ? [UIFont fontWithName:@"PingFangSC-Medium" size:x] : BS_FONT(x))
+
 /// 正常字体
 #define H36 [UIFont systemFontOfSize:36]
 #define H35 [UIFont systemFontOfSize:35]
@@ -74,14 +78,5 @@
 #define HB10 [UIFont boldSystemFontOfSize:10]
 #define HB9  [UIFont boldSystemFontOfSize:9]
 #define HB8  [UIFont boldSystemFontOfSize:8]
-
-#define __IOS_V ([[[UIDevice currentDevice] systemVersion] floatValue])
-
-#define FONT_SYSTEM_Light(s) [UIFont systemFontOfSize:s]
-#define FONT_SYSTEM_Bold(s)  [UIFont boldSystemFontOfSize:s]
-
-#define FONT_PingFang_Light(s) (__IOS_V >= 9 ? [UIFont fontWithName:@"PingFangSC-Light" size:s] : FONT_SYSTEM_Light(s))
-#define FONT_PingFang_Regular(s) (__IOS_V >= 9 ? [UIFont fontWithName:@"PingFangSC-Regular" size:s] : FONT_SYSTEM_Light(s))
-#define FONT_PingFang_Bold(s) (__IOS_V >= 9 ? [UIFont fontWithName:@"PingFangSC-Medium" size:s] : FONT_SYSTEM_Bold(s))
 
 #endif /* FontConst_h */

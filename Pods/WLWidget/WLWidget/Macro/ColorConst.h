@@ -11,6 +11,7 @@
 
 #define RGB(r, g, b) [UIColor colorWithRed:((r) / 255.0) green:((g) / 255.0) blue:((b) / 255.0) alpha:1.0]
 #define RGBAlpha(r, g, b, a) [UIColor colorWithRed:((r) / 255.0) green:((g) / 255.0) blue:((b) / 255.0) alpha:(a)]
+
 #define HexRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 #define HexRGBAlpha(rgbValue, a) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:(a)]
 
@@ -34,7 +35,7 @@
 #define gray_color      [UIColor grayColor]
 #define magenta_color   [UIColor magentaColor]
 
-/// 项目默认颜色值
+/// 设计规范
 #define bgColor HexRGB(0xFAF9F9)
 #define sepLineColor HexRGB(0xEEEEEE)
 #define themeColor  HexRGB(0x7442ea)

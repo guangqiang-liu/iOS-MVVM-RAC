@@ -9,6 +9,4 @@
 #import <UIKit/UIKit.h>
 
 @interface WLMInvoiceApplyResultVC : WLBaseViewController
-
-@property (nonatomic, copy) NSString *titleStr;
 @end

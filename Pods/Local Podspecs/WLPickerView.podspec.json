@@ -1,6 +1,6 @@
 {
   "name": "WLPickerView",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "summary": "自定义日期、地址、select选择器组件",
   "description": "TODO: Add long description of the pod here.",
   "homepage": "https://gitlab.qianbaocard.org/iOS/view/WLPickerView",
@@ -10,7 +10,7 @@
   },
   "source": {
     "git": "git@gitlab.qianbaocard.org:iOS/view/WLPickerView.git",
-    "tag": "0.0.1"
+    "tag": "0.0.2"
   },
   "platforms": {
     "ios": "8.0"

@@ -8,6 +8,8 @@
 
 #import "WLMPackageSelectView.h"
 #import "WLMPackageSelectVM.h"
+#import "UIView+WLCurrentVC.h"
+#import "WLMEInvoiceProtocolVC.h"
 
 static const NSInteger kStateImageTag = 9999;
 
@@ -124,6 +126,9 @@ static const NSInteger kStateImageTag = 9999;
         _protocolLable.textAlignment = NSTextAlignmentLeft;
         [_protocolLable whenTapped:^{
             !_invoiceProtocolActionBlock ?: _invoiceProtocolActionBlock();
+            UIViewController *currentVC = [self getCurrentViewController];
+            WLMEInvoiceProtocolVC *VC = [[WLMEInvoiceProtocolVC alloc] init];
+            [currentVC.navigationController pushViewController:VC animated:YES];
         }];
     }
     return _protocolLable;
@@ -134,9 +139,10 @@ static const NSInteger kStateImageTag = 9999;
         NSDictionary *cellInfo = self.infoArray[i];
         UIView *view = [[UIView alloc] init];
         view.frame = CGRectMake(15, i * 130, SCREEN_WIDTH - 30, 130);
-        view.layer.shadowColor = [UIColor blackColor].CGColor;
-        view.layer.shadowOpacity = 0.3;
-        view.layer.shadowOffset = CGSizeMake(0, 3);
+        view.layer.shadowColor =  [[UIColor blackColor] CGColor];
+        view.layer.shadowOpacity = 0.2f;
+        view.layer.shadowOffset = CGSizeMake(0, 0);
+        view.layer.shadowRadius = 4.0f;
         [view whenTapped:^{
             self.packageType = [NSNumber numberWithInteger:i];
             for (UIImageView *imageView in self.stateImageArr) {

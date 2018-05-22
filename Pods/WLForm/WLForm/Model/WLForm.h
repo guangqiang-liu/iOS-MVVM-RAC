@@ -10,11 +10,12 @@
 #import <UIKit/UIKit.h>
 @class WLFormSectionViewModel, WLFormItemViewModel;
 
-static NSString *const kLeftKey = @"kLeftKey";          // 标记左侧内容
-static NSString *const kRightKey = @"kRightKey";        // 标记右侧内容
-static NSString *const kFlagKey = @"kFlagKey";          // 用于标记是否有箭头
-static NSString *const kDisableKey = @"kDisableKey";    // 用于标记是否禁用 textField
-static NSString *const kPlaceholder = @"kPlaceholder";  // 标记textField placeholder
+static NSString *const kLeftKey = @"kLeftKey";
+static NSString *const kRightKey = @"kRightKey";
+static NSString *const kFlagKey = @"kFlagKey";
+static NSString *const kDisableKey = @"kDisableKey";
+static NSString *const kPlaceholder = @"kPlaceholder";
+static NSString *const kDispensable = @"kDispensable";
 
 @interface WLForm : NSObject
 

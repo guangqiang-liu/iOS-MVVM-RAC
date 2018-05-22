@@ -1,6 +1,6 @@
 {
   "name": "WLWidget",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "summary": "工具小组件集合类，目前包含分类和宏",
   "description": "TODO: Add long description of the pod here.",
   "homepage": "https://gitlab.qianbaocard.org/iOS/tool/WLWidget",
@@ -10,7 +10,7 @@
   },
   "source": {
     "git": "git@gitlab.qianbaocard.org:iOS/tool/WLWidget.git",
-    "tag": "0.0.5"
+    "tag": "0.0.6"
   },
   "platforms": {
     "ios": "8.0"

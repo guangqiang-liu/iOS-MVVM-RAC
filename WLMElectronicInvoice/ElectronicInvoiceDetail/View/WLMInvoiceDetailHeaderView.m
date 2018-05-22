@@ -21,9 +21,11 @@
     if (self) {
         self.layer.cornerRadius = 6;
         self.backgroundColor = white_color;
-        self.layer.shadowColor = [UIColor blackColor].CGColor;
-        self.layer.shadowOpacity = 0.3;
-        self.layer.shadowOffset = CGSizeMake(0, 2);
+        self.layer.shadowColor = [[UIColor lightGrayColor] CGColor];
+        self.layer.shadowOpacity = 0.2;
+        self.layer.shadowOffset = CGSizeMake(0, 0);
+        self.layer.shadowRadius = 4.0f;
+        
         self.dataArr = @[@"", @"", @""];
         [self renderViews];
     }
@@ -80,7 +82,7 @@
     line.frame = CGRectMake(0, 0, 112, 2);
     [view addSubview:line];
     line.center = CGPointMake(view.bounds.size.width / 2, view.bounds.size.height / 2);
-    [line drawDashLineWithLineHeight:1 dashLineWidth:@2 dashLineSpace:@5 lineColor:HexRGB(0xDEDEDE)];
+    [line drawDashLineWithLineHeight:1 dashLineWidth:@4 dashLineSpace:@5 lineColor:HexRGB(0xDEDEDE)];
     
     UILabel *timeLable = [[UILabel alloc] init];
     timeLable.frame = CGRectMake(WIDTH(view) - 94, 0, 94, 18);

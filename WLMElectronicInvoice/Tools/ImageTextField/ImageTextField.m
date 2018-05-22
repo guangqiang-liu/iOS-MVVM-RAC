@@ -41,7 +41,7 @@ typedef NS_ENUM(NSInteger, ImageLocation) {
         _sizeRight = size2;
         self.contentMode = UIViewContentModeCenter;
         self.backgroundColor = [UIColor whiteColor];
-        self.font = FONT_SYSTEM_Light(14);
+        self.font = H14;
         self.tintColor = themeColor;
         self.textColor = lightGray_color;
         self.clearButtonMode = UITextFieldViewModeAlways;

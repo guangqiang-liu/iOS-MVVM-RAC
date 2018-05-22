@@ -43,7 +43,7 @@
 
 - (void)bindViewModel {
     [super bindViewModel];
-    RAC(self.bottomButton, enabled) = RACObserve(self, buttonEnabled);
+//    RAC(self.bottomButton, enabled) = RACObserve(self, buttonEnabled);
 }
 
 - (void)configFormInfo {
@@ -147,46 +147,46 @@
     NSDictionary *dic = @{};
     section = [[WLFormSectionViewModel alloc] init];
     
-    dic = @{kLeftKey:@"收款人", kPlaceholder:@"请输入收款人"};
+    dic = @{kLeftKey:@"收款人", kPlaceholder:@"请输入收款人", kDispensable:@YES};
     row = [self textFieldCellWithInfo:dic];
     [section addItem:row];
     
-    dic = @{kLeftKey:@"复核人", kPlaceholder:@"请输入复核人"};
+    dic = @{kLeftKey:@"复核人", kPlaceholder:@"请输入复核人", kDispensable:@YES};
     row = [self textFieldCellWithInfo:dic];
     [section addItem:row];
     
-    dic = @{kLeftKey:@"财务联系电话", kPlaceholder:@"请输入财务联系电话"};
+    dic = @{kLeftKey:@"财务联系电话", kPlaceholder:@"请输入财务联系电话", kDispensable:@YES};
     row = [self textFieldCellWithInfo:dic];
     [section addItem:row];
     
-    dic = @{kLeftKey:@"特殊票种标识", kPlaceholder:@"请选择特殊票种标识"};
+    dic = @{kLeftKey:@"特殊票种标识", kPlaceholder:@"请选择特殊票种标识", kDispensable:@YES};
     row = [self selectCellWithInfo:dic];
     [section addItem:row];
     
-    dic = @{kLeftKey:@"发票行性质", kPlaceholder:@"请选择发票行性质"};
+    dic = @{kLeftKey:@"发票行性质", kPlaceholder:@"请选择发票行性质", kDispensable:@YES};
     row = [self selectCellWithInfo:dic];
     [section addItem:row];
     
-    dic = @{kLeftKey:@"优惠政策标识", kPlaceholder:@"请选择优惠政策标识"};
+    dic = @{kLeftKey:@"优惠政策标识", kPlaceholder:@"请选择优惠政策标识", kDispensable:@YES};
     row = [self selectCellWithInfo:dic];
     [section addItem:row];
     
-    dic = @{kLeftKey:@"零税率标识", kPlaceholder:@"请选择零税率标识"};
+    dic = @{kLeftKey:@"零税率标识", kPlaceholder:@"请选择零税率标识", kDispensable:@YES};
     row = [self selectCellWithInfo:dic];
     [section addItem:row];
     
-    dic = @{kLeftKey:@"增值税特殊管理", kRightKey:@"无", kDisableKey:@YES};
+    dic = @{kLeftKey:@"增值税特殊管理", kRightKey:@"无", kDisableKey:@YES, kDispensable:@YES};
     row = [self textFieldCellWithInfo:dic];
     [section addItem:row];
     return section;
 }
 
-- (WLFormItemViewModel *)textFieldCellWithInfo:(NSDictionary *)userInfo {
+- (WLFormItemViewModel *)textFieldCellWithInfo:(NSDictionary *)info {
     WLFormItemViewModel *row = nil;
     row = [[WLFormItemViewModel alloc] initFormItemWithStyle:UITableViewCellStyleValue1 reuseIdentifier:@"WLFormTextInputCell"];
     row.itemHeight = 48;
     row.cellClass = [WLFormTextInputCell class];
-    row.value = userInfo.mutableCopy;
+    row.value = info.mutableCopy;
     row.itemConfigBlock = ^(WLFormTextInputCell *cell, id value, NSIndexPath *indexPath) {
         cell.leftlabel.text = value[kLeftKey];
         cell.rightField.text = value[kRightKey];
@@ -203,8 +203,9 @@
         ret[value[kLeftKey]] = value[kRightKey];
         return ret;
     };
+    
     row.valueValidateBlock = ^NSDictionary *(id value) {
-        if ([value[kRightKey] length]) return itemValid();
+        if ([value[kRightKey] length] || [value[kDispensable] boolValue]) return itemValid();
         return itemInvalid(value[kPlaceholder]);
     };
     return row;
@@ -246,7 +247,7 @@
         }];
     };
     row.valueValidateBlock = ^NSDictionary *(id value) {
-        if ([value[kRightKey] length]) return itemValid();
+        if ([value[kRightKey] length] || [value[kDispensable] boolValue]) return itemValid();
         return itemInvalid(value[kPlaceholder]);
     };
     return row;
@@ -274,12 +275,7 @@
 
 - (void)changeSubmitButtonState {
     NSDictionary *validateParams = [self.form validateItems];
-    if ([validateParams[kValidateRetKey] boolValue]) {
-        self.buttonEnabled = YES;
-    } else {
-        self.buttonEnabled = NO;
-    }
-//    [validateParams[kValidateRetKey] boolValue] ? (self.buttonEnabled = YES) : (self.buttonEnabled = NO);
+    [validateParams[kValidateRetKey] boolValue] ? (self.buttonEnabled = YES) : (self.buttonEnabled = NO);
 }
 
 - (void)selectItemWithDataSource:(NSArray *)data title:(NSString *)title callback:(void(^)(NSString *item))callback {

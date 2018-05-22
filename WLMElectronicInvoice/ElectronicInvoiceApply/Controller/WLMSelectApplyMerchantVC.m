@@ -14,6 +14,7 @@
 #import "WLMSelectedApplyMerchantModel.h"
 #import "WLMResendInvoiceVC.h"
 #import "WLMInvoiceManagerListVC.h"
+#import "WLMInvoiceDetailVC.h"
 
 @interface WLMSelectApplyMerchantVC()<UITableViewDelegate, UITableViewDataSource>
 
@@ -93,8 +94,9 @@
 
 #pragma private method
 - (void)testAction {
-    WLMInvoiceManagerListVC *vc = [[WLMInvoiceManagerListVC alloc] init];
-    [self.navigationController pushViewController:vc animated:YES];
+//    WLMInvoiceManagerListVC *vc = [[WLMInvoiceManagerListVC alloc] init];
+    WLMInvoiceDetailVC *VC = [[WLMInvoiceDetailVC alloc] init];
+    [self.navigationController pushViewController:VC animated:YES];
 }
 
 @end

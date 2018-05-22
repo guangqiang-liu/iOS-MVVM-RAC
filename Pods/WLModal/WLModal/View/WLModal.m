@@ -190,12 +190,12 @@ CGFloat buttonSpacerHeight = 1;
         // 设置第一个和最后一个按钮的圆角
         if (buttonTitles.count > 1) {
             if (i == 0) {
-                [closeButton drawRoundedCornersWithCorners:UIRectCornerBottomLeft cornerRadii:CGSizeMake(12, 12)];
+                [closeButton drawCornersWithCorners:UIRectCornerBottomLeft cornerRadii:CGSizeMake(12, 12)];
             } else if (i == buttonTitles.count - 1) {
-                [closeButton drawRoundedCornersWithCorners:UIRectCornerBottomRight cornerRadii:CGSizeMake(12, 12)];
+                [closeButton drawCornersWithCorners:UIRectCornerBottomRight cornerRadii:CGSizeMake(12, 12)];
             }
         } else {
-            [closeButton drawRoundedCornersWithCorners:UIRectCornerBottomLeft | UIRectCornerBottomRight cornerRadii:CGSizeMake(12, 12)];
+            [closeButton drawCornersWithCorners:UIRectCornerBottomLeft | UIRectCornerBottomRight cornerRadii:CGSizeMake(12, 12)];
         }
     
         [container addSubview:closeButton];

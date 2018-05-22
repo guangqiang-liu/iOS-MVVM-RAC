@@ -48,9 +48,8 @@
         @weakify(self);
         _packageView.packageSelectBlock = ^(NSNumber * packageType) {
             @strongify(self);
-            [[[self.packageViewModel.submitCmd execute:@{}] deliverOn:[RACScheduler mainThreadScheduler]] subscribeNext:^(id  _Nullable x) {
-                WLMInvoiceApplyResultVC *VC = [[WLMInvoiceApplyResultVC alloc] init];
-                VC.titleStr = @"申请结果";
+            [[[self.packageViewModel.submitCmd execute:nil] deliverOn:[RACScheduler mainThreadScheduler]] subscribeNext:^(id  _Nullable x) {
+                WLMInvoiceApplyResultVC *VC = [[WLMInvoiceApplyResultVC alloc] initWithViewModel:self.packageViewModel.resultViewModel];
                 [self.navigationController pushViewController:VC animated:YES];
             }];
         };

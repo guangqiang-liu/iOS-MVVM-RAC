@@ -6,32 +6,32 @@ PODS:
   - SDWebImage (4.3.3):
     - SDWebImage/Core (= 4.3.3)
   - SDWebImage/Core (4.3.3)
-  - WLBaseView (0.2.1):
+  - WLBaseView (0.2.2):
     - ReactiveObjC
-    - WLBaseView/Code (= 0.2.1)
-  - WLBaseView/Code (0.2.1):
+    - WLBaseView/Code (= 0.2.2)
+  - WLBaseView/Code (0.2.2):
     - ReactiveObjC
-  - WLForm (0.1.3):
+  - WLForm (0.1.4):
     - IQKeyboardManager
     - Masonry
     - WLBaseView
-    - WLForm/Code (= 0.1.3)
+    - WLForm/Code (= 0.1.4)
     - WLIconFont
     - WLWidget
-  - WLForm/Code (0.1.3):
+  - WLForm/Code (0.1.4):
     - IQKeyboardManager
     - Masonry
     - WLBaseView
     - WLIconFont
     - WLWidget
   - WLIconFont (0.1.7)
-  - WLModal (0.0.3):
+  - WLModal (0.0.4):
     - Masonry
     - SDWebImage
     - WLIconFont
-    - WLModal/Modal (= 0.0.3)
+    - WLModal/Modal (= 0.0.4)
     - WLWidget
-  - WLModal/Modal (0.0.3):
+  - WLModal/Modal (0.0.4):
     - Masonry
     - SDWebImage
     - WLIconFont
@@ -39,13 +39,13 @@ PODS:
   - WLPickerView (0.0.2):
     - WLPickerView/Code (= 0.0.2)
   - WLPickerView/Code (0.0.2)
-  - WLWidget (0.0.6):
+  - WLWidget (0.0.12):
     - SDWebImage
-    - WLWidget/Category (= 0.0.6)
-    - WLWidget/Macro (= 0.0.6)
-  - WLWidget/Category (0.0.6):
+    - WLWidget/Category (= 0.0.12)
+    - WLWidget/Macro (= 0.0.12)
+  - WLWidget/Category (0.0.12):
     - SDWebImage
-  - WLWidget/Macro (0.0.6):
+  - WLWidget/Macro (0.0.12):
     - SDWebImage
 
 DEPENDENCIES:
@@ -65,13 +65,13 @@ SPEC CHECKSUMS:
   MJExtension: 5932755f451458eefa24239358817f8d291240c7
   ReactiveObjC: 2a38ea15335de4119d8b17caf1db1484f61db902
   SDWebImage: de4d90b5bff3571eae7bd16202b1f43135409fa5
-  WLBaseView: 9f174f3cbffd245ea8acdc804cce6f6bff68951e
-  WLForm: 370e5747c091735fd94c452dbbb1285318079a24
+  WLBaseView: 6aec0789d6a65467fad6ca1c1f4bcc09e060753f
+  WLForm: 91ee561f3ed41fb98080d9b2800b6bb50b98a729
   WLIconFont: 069245eba7ccf7dbefc3fb58bf9d84eba34944dc
-  WLModal: 2ef528f2ce279e820d1b708a6ab434b9c51aa04c
+  WLModal: 05bc84e2ad8b17348319128683310465a1641da6
   WLPickerView: 980fa23885fcaf4dddadbcb1fba98f742a316b7c
-  WLWidget: ffa26d1d8c28c8c2b4d808299c6878f6c5a4dbb0
+  WLWidget: ac05c0b5020292e0d432e8a94904362ba97cb2cf
 
-PODFILE CHECKSUM: 46182c3bb1d17bb9a71de263c89396cf6e9e6505
+PODFILE CHECKSUM: 92ea17a61ecc45a40825fba4fe9bdf24ae7833ff
 
 COCOAPODS: 1.4.0

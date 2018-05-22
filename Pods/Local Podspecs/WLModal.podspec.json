@@ -1,6 +1,6 @@
 {
   "name": "WLModal",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "summary": "iOS中常用的Modal弹框组件集合库",
   "description": "TODO: Add long description of the pod here.",
   "homepage": "https://gitlab.qianbaocard.org/iOS/view/WLModal",
@@ -10,7 +10,7 @@
   },
   "source": {
     "git": "git@gitlab.qianbaocard.org:iOS/view/WLModal.git",
-    "tag": "0.0.2"
+    "tag": "0.0.3"
   },
   "platforms": {
     "ios": "8.0"

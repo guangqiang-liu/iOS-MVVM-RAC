@@ -10,17 +10,17 @@
 
 @implementation UIView (WLRoundedCorners)
 
-- (void)drawRoundedCornersWithCorners:(UIRectCorner)corners
-                         cornerRadii:(CGSize)radii {
+- (void)drawCornersWithCorners:(UIRectCorner)corners
+                   cornerRadii:(CGSize)radii {
     UIBezierPath *maskPath = [UIBezierPath bezierPathWithRoundedRect:self.bounds byRoundingCorners:corners cornerRadii:radii];
     CAShapeLayer *shape = [[CAShapeLayer alloc] init];
     shape.path = maskPath.CGPath;
     self.layer.mask = shape;
 }
 
-- (void)drawRoundedCornersWithCorners:(UIRectCorner)corners
-                         cornerRadii:(CGSize)radii
-                            viewRect:(CGRect)rect {
+- (void)drawCornersWithCorners:(UIRectCorner)corners
+                   cornerRadii:(CGSize)radii
+                      viewRect:(CGRect)rect {
     UIBezierPath *maskPath = [UIBezierPath bezierPathWithRoundedRect:rect byRoundingCorners:corners cornerRadii:radii];
     CAShapeLayer *shape = [[CAShapeLayer alloc] init];
     shape.path = maskPath.CGPath;

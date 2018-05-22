@@ -15,12 +15,10 @@ typedef void(^ItemConfigCompletion)(void);
 extern NSString *kValidateRetKey;
 extern NSString *kValidateMsgKey;
 
-// 验证通过
 static inline NSDictionary *itemValid() {
     return @{kValidateRetKey: @YES};
 }
 
-// 验证不通过
 static inline NSDictionary *itemInvalid(NSString *msg) {
     return @{kValidateMsgKey: msg ?: @"",
              kValidateRetKey: @NO};

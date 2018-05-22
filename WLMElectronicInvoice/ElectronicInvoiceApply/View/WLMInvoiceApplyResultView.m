@@ -7,26 +7,32 @@
 //
 
 #import "WLMInvoiceApplyResultView.h"
+#import "WLMInvoiceResultModel.h"
+#import "WLMInvoiceResultVM.h"
+
 @interface WLMInvoiceApplyResultView()
 
 @property (nonatomic, strong) UIImageView *stateImage;
 @property (nonatomic, strong) UIImageView *shadowImage;
 @property (nonatomic, strong) UILabel *stateLable;
 @property (nonatomic, strong) UILabel *contentLable;
+@property (nonatomic, strong) WLMInvoiceResultVM *resultViewModel;
 @end
 
 @implementation WLMInvoiceApplyResultView
 
-- (instancetype)initWithFrame:(CGRect)frame {
-    self = [super initWithFrame:frame];
+- (instancetype)initWithViewModel:(WLMInvoiceResultVM *)viewModel {
+    self = [super initWithViewModel:viewModel];
     if (self) {
-        self.frame = CGRectMake(0, 64, SCREEN_WIDTH, SCREEN_HEIGHT);
-        [self renderViews];
+        _resultViewModel = viewModel;
     }
     return self;
 }
 
 - (void)renderViews {
+    [super renderViews];
+    self.frame = CGRectMake(0, 64, SCREEN_WIDTH, SCREEN_HEIGHT);
+    
     [self addSubview:self.stateImage];
     [self addSubview:self.shadowImage];
     [self addSubview:self.stateLable];
@@ -66,6 +72,14 @@
     }];
 }
 
+- (void)bindViewModel {
+    [super bindViewModel];
+    [[[self.resultViewModel.resultInfoCmd execute:nil] deliverOn:[RACScheduler mainThreadScheduler]] subscribeNext:^(WLMInvoiceResultModel *model) {
+        self.stateLable.text = model.stateTitle;
+        self.contentLable.text = model.content;
+        [self.button setTitle:model.buttonTitle forState:UIControlStateNormal];
+    }];
+}
 
 - (UIImageView *)stateImage {
     if (!_stateImage) {
@@ -101,6 +115,7 @@
         _contentLable.font = H14;
         _contentLable.text = @"申请完成后，电票业务不会立即生效，我们会尽快派专人协助您上线电子发票功能。";
         _contentLable.numberOfLines = 0;
+        _contentLable.textAlignment = NSTextAlignmentCenter;
     }
     return _contentLable;
 }

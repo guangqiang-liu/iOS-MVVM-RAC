@@ -22,7 +22,6 @@
 - (instancetype)initWithService:(id<WLBViewModelServiceImpProtocol>)service params:(NSDictionary *)params {
     self = [super initWithService:service params:params];
     if (self) {
-        
     }
     return self;
 }
@@ -53,7 +52,6 @@
             [subscriber sendCompleted];
             return [RACDisposable disposableWithBlock:^{
                 // 信号被取消后的处理，这里可以cancle task
-                NSLog(@"信号被取消了！");
             }];
         }];
     }];

@@ -17,14 +17,14 @@ target 'WLMElectronicInvoice' do
 #  pod 'WLWidget', :path => '/Users/liuguangqiang/Desktop/companyRepo/WLPLib/WLWidget/WLWidget.podspec'
 #  pod 'WLPickerView', :path => '/Users/liuguangqiang/Desktop/companyRepo/WLPLib/WLPickerView/WLPickerView.podspec'
 
-    pod 'WLIconFont'
-    pod 'WLForm'
-    pod 'WLBaseView'
-    pod 'WLModal'
-    pod 'WLWidget'
-    pod 'WLPickerView'
-    pod 'Masonry'
-    pod 'ReactiveObjC'
-    pod 'MJExtension'
+  pod 'WLIconFont'
+  pod 'WLForm'
+  pod 'WLBaseView'
+  pod 'WLModal'
+  pod 'WLWidget'
+  pod 'WLPickerView'
+  pod 'Masonry'
+  pod 'ReactiveObjC'
+  pod 'MJExtension'
   
 end
