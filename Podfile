@@ -27,4 +27,7 @@ target 'WLMElectronicInvoice' do
   pod 'ReactiveObjC'
   pod 'MJExtension'
   
+  pod 'WLNet', :subspecs => ['Debug', 'NetWL']
+  pod 'WLConst', :subspecs => ['WLM', 'WLImage']
+  
 end

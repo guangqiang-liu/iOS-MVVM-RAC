@@ -1,0 +1,6 @@
+framework module SimpleView {
+  umbrella header "SimpleView-umbrella.h"
+
+  export *
+  module * { export * }
+}

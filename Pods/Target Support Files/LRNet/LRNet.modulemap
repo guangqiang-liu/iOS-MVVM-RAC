@@ -1,0 +1,6 @@
+framework module LRNet {
+  umbrella header "LRNet-umbrella.h"
+
+  export *
+  module * { export * }
+}

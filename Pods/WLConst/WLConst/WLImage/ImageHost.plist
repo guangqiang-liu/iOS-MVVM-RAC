@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>host_product</key>
+	<string>http://img0.qianbaocard.com/public/qianbaolife/</string>
+	<key>host_pre_product</key>
+	<string>http://img0.qianbaocard.com/public/qianbaolife/</string>
+	<key>host_develop</key>
+	<string>http://img0.qianbaocard.com/public/qianbaolifetest/</string>
+	<key>host_test</key>
+	<string>http://img0.qianbaocard.com/public/qianbaolifetest/</string>
+</dict>
+</plist>

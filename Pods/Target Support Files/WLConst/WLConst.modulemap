@@ -1,0 +1,6 @@
+framework module WLConst {
+  umbrella header "WLConst-umbrella.h"
+
+  export *
+  module * { export * }
+}
