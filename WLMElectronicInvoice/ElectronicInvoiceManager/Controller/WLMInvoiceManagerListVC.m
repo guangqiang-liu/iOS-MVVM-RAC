@@ -12,11 +12,18 @@
 #import "WLMRecordListVC.h"
 #import "WLMPackageInfoVC.h"
 
+#define SCREEN_IS_X (SCREEN_HEIGHT == 812.0)
+#define MAIN_NAV_HEIGHT (SCREEN_IS_X ? 88 : 64)
+
 @interface WLMInvoiceManagerListVC () <UIScrollViewDelegate>
 
 @property (nonatomic, strong) UIScrollView *scrollView;
 @property (nonatomic, strong) HMSegmentedControl *segmentedControl;
 @property (nonatomic, strong) NSMutableArray *childControllers;
+@property (nonatomic, strong) UIView *noticeBoard;
+@property (nonatomic, strong) UIImageView *noticeImg;
+@property (nonatomic, strong) UILabel *noticeLabel;
+@property (nonatomic, assign) BOOL isShowNotice;
 
 @end
 
@@ -28,7 +35,12 @@
     self.title = @"电子发票管理";
     self.view.backgroundColor = bgColor;
     
+    [self dataInitialize];
     [self segmentLaunch];
+}
+
+- (void)dataInitialize {
+    self.isShowNotice = NO;
 }
 
 - (void)segmentLaunch {
@@ -37,8 +49,8 @@
     self.segmentedControl.selectedSegmentIndex = 1;
     self.segmentedControl.autoresizingMask = UIViewAutoresizingFlexibleRightMargin;
     self.segmentedControl.backgroundColor = [UIColor whiteColor];
-    self.segmentedControl.titleTextAttributes = @{NSForegroundColorAttributeName : [UIColor lightGrayColor]};
-    self.segmentedControl.selectedTitleTextAttributes = @{NSForegroundColorAttributeName : [UIColor blackColor]};
+    self.segmentedControl.titleTextAttributes = @{NSForegroundColorAttributeName : HexRGB(0x999999)};
+    self.segmentedControl.selectedTitleTextAttributes = @{NSForegroundColorAttributeName : HexRGB(0x434343)};
     self.segmentedControl.selectionIndicatorColor = [UIColor redColor];
     self.segmentedControl.selectionStyle = HMSegmentedControlSelectionStyleTextWidthStripe;
     self.segmentedControl.selectionIndicatorLocation = HMSegmentedControlSelectionIndicatorLocationDown;
@@ -51,7 +63,18 @@
     
     [self.view addSubview:self.segmentedControl];
     
-    self.scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 108, SCREEN_WIDTH, SCREEN_HEIGHT)];
+    if (self.isShowNotice) {
+        [self.view addSubview:self.noticeBoard];
+        [self.noticeBoard addSubview:self.noticeImg];
+        [self.noticeBoard addSubview:self.noticeLabel];
+    } else {
+        [self.noticeBoard removeFromSuperview];
+        [self.noticeBoard removeFromSuperview];
+        [self.noticeBoard removeFromSuperview];
+    }
+    
+    CGFloat y = self.isShowNotice ? MAIN_NAV_HEIGHT + 78 : MAIN_NAV_HEIGHT + 44;
+    self.scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, y, SCREEN_WIDTH, SCREEN_HEIGHT)];
     self.scrollView.backgroundColor = [UIColor whiteColor];
     self.scrollView.pagingEnabled = YES;
     self.scrollView.showsHorizontalScrollIndicator = NO;
@@ -84,7 +107,7 @@
         view.frame = CGRectMake(idx*SCREEN_WIDTH, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
         [self.scrollView addSubview:view];
     }];
-//    [self.scrollView setContentSize:CGSizeMake(3 * SCREEN_WIDTH, SCREEN_HEIGHT)];
+    //    [self.scrollView setContentSize:CGSizeMake(3 * SCREEN_WIDTH, SCREEN_HEIGHT)];
 }
 
 - (void)segmentedControlChangedValue:(HMSegmentedControl *)segmentedControl {
@@ -104,15 +127,44 @@
     [self.segmentedControl setSelectedSegmentIndex:page animated:YES];
 }
 
-//- (UIScrollView *)scrollView {
-//    if (_scrollView == nil) {
-//
-//    }
-//    return _scrollView;
-//}
+#pragma mark -
+
+- (UIView *)noticeBoard {
+    if (!_noticeBoard) {
+        _noticeBoard = [[UIView alloc] init];
+        _noticeBoard.frame = CGRectMake(0, MAIN_NAV_HEIGHT + 44, SCREEN_WIDTH, 34);
+        _noticeBoard.backgroundColor = HexRGB(0xFFF0D1);
+        _noticeBoard.hidden = !self.isShowNotice;
+    }
+    return _noticeBoard;
+}
+
+- (UIImageView *)noticeImg {
+    if (!_noticeImg) {
+        _noticeImg = [[UIImageView alloc] init];
+        _noticeImg.frame = CGRectMake(16, 8, 16, 16);
+        _noticeImg.image = UIImageName(@"einvoice_notice");
+        _noticeImg.hidden = !self.isShowNotice;
+    }
+    return _noticeImg;
+}
+
+- (UILabel *)noticeLabel {
+    if (!_noticeLabel) {
+        _noticeLabel = [[UILabel alloc] init];
+        _noticeLabel.frame = CGRectMake(40, 8, SCREEN_WIDTH - 56, 18);
+        _noticeLabel.textColor = HexRGB(0xFFA800);
+        _noticeLabel.font = FONT_PingFang_Light(12);
+        _noticeLabel.textAlignment = NSTextAlignmentLeft;
+        _noticeLabel.text = @"功能开通中，我们会派专人与您联系。";
+        _noticeLabel.hidden = !self.isShowNotice;
+    }
+    return _noticeLabel;
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
 
 @end
+

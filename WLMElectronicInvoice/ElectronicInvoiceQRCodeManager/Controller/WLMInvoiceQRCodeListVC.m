@@ -9,6 +9,7 @@
 #import "WLMInvoiceQRCodeListVC.h"
 #import "InvoiceQRCodeCell.h"
 #import "InvoiceCollectionReusableView.h"
+#import "WLMInvoiceConfirmView.h"
 
 @interface WLMInvoiceQRCodeListVC () <UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
 
@@ -119,16 +120,16 @@
     [self.headBgView addSubview:self.shopName];
     [self.headBgView addSubview:self.shopChange];
     
-//    UILabel *label = [self.headerView viewWithTag:3000];
-//
-//    if (!label) {
-//        label = [[UILabel alloc] initWithFrame:self.headerView.bounds];
-//        label.tag = 3000;
-//        label.font = [UIFont systemFontOfSize:20];
-//        [self.headerView addSubview:label];
-//    }
-//
-//    label.text = [NSString stringWithFormat:@"这是collectionView的头部:%zd,%zd",indexPath.section,indexPath.row];
+    //    UILabel *label = [self.headerView viewWithTag:3000];
+    //
+    //    if (!label) {
+    //        label = [[UILabel alloc] initWithFrame:self.headerView.bounds];
+    //        label.tag = 3000;
+    //        label.font = [UIFont systemFontOfSize:20];
+    //        [self.headerView addSubview:label];
+    //    }
+    //
+    //    label.text = [NSString stringWithFormat:@"这是collectionView的头部:%zd,%zd",indexPath.section,indexPath.row];
     
     return self.headerView;
 }
@@ -145,7 +146,7 @@
     if (!_headBgView) {
         _headBgView = [[UIView alloc] init];
         _headBgView.frame = CGRectMake(60, 16, SCREEN_WIDTH - 120, self.headerView.frame.size.height - 28);
-//        _headBgView.center = CGPointMake(self.headerView.frame.size.width / 2, self.headerView.frame.size.height / 2);
+        //        _headBgView.center = CGPointMake(self.headerView.frame.size.width / 2, self.headerView.frame.size.height / 2);
         _headBgView.backgroundColor = white_color;
         _headBgView.layer.cornerRadius = 28;
         _headBgView.layer.masksToBounds = YES;
@@ -201,8 +202,30 @@
         [_scanButton setImage:UIImageName(@"einvoice_scan") forState:UIControlStateNormal];
         [_scanButton setTitleEdgeInsets:UIEdgeInsetsMake(14, 60, 14, 50)];
         [_scanButton createGradientButtonWithSize:CGSizeMake(SCREEN_WIDTH, 44) colorArray:@[HexRGB(0xFF7E4A), HexRGB(0xFF4A4A)] gradientType:GradientFromLeftToRight];
+        [_scanButton whenTapped:^{
+            
+            WLModal *alertView = [[WLModal alloc] init];
+            WLMInvoiceConfirmView *view = [[WLMInvoiceConfirmView alloc] init];
+            view.invoiceConfirmBlock = ^(NSString *confirm) {
+                NSLog(@"%@", confirm);
+                [alertView close];
+            };
+            [alertView addContentView:view];
+            [alertView show];
+        }];
     }
     return _scanButton;
+}
+
+- (void)testAction {
+    
+    WLModal *alertView = [[WLModal alloc] init];
+    WLMInvoiceConfirmView *view = [[WLMInvoiceConfirmView alloc] init];
+    view.invoiceConfirmBlock = ^(NSString *confirm) {
+        NSLog(@"%@", confirm);
+    };
+    [alertView addContentView:view];
+    [alertView show];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -211,3 +234,4 @@
 }
 
 @end
+

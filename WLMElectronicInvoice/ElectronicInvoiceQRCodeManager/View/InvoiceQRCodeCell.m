@@ -50,7 +50,7 @@
         _invoiceId = [[UILabel alloc] init];
         _invoiceId.frame = CGRectMake(0, 16, 120, 16);
         _invoiceId.center = CGPointMake(self.contentView.frame.size.width / 2, 16);
-        _invoiceId.textColor = RGB(67, 67, 67);
+        _invoiceId.textColor = HexRGB(0x434343);
         _invoiceId.font = FONT_PingFang_Light(12);
         _invoiceId.textAlignment = NSTextAlignmentCenter;
         _invoiceId.text = @"Y900 013 893";
@@ -63,7 +63,7 @@
         _QRCodeImg = [[UIImageView alloc] init];
         _QRCodeImg.frame = CGRectMake(8, 32, self.frame.size.width - 16, self.frame.size.width - 16);
         _QRCodeImg.backgroundColor = lightGray_color;
-//        _QRCodeImg.image = UIImageName(@"einvoice_mange_sample");
+        //        _QRCodeImg.image = UIImageName(@"einvoice_mange_sample");
     }
     return _QRCodeImg;
 }
@@ -99,3 +99,4 @@
 }
 
 @end
+

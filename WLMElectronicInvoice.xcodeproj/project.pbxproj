@@ -11,6 +11,9 @@
 		049DDF5E20AEE82100F22E06 /* InvoiceCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 049DDF5720AEE82100F22E06 /* InvoiceCollectionReusableView.m */; };
 		049DDF5F20AEE82100F22E06 /* InvoiceQRCodeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 049DDF5920AEE82100F22E06 /* InvoiceQRCodeCell.m */; };
 		049DDF6020AEE82100F22E06 /* InvoiceScanHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 049DDF5B20AEE82100F22E06 /* InvoiceScanHeadView.m */; };
+		049DDF6520B4475C00F22E06 /* WLMInvoiceConfirmView.m in Sources */ = {isa = PBXBuildFile; fileRef = 049DDF6120B4475B00F22E06 /* WLMInvoiceConfirmView.m */; };
+		049DDF6620B4475C00F22E06 /* WLMQRScanVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 049DDF6420B4475C00F22E06 /* WLMQRScanVC.m */; };
+		049DDF6A20B447F400F22E06 /* QRCodeUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 049DDF6920B447F400F22E06 /* QRCodeUtil.m */; };
 		50AA9FC5E70CCF584D47605D /* Pods_WLMElectronicInvoice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58614F4727A6F4189F29ACDC /* Pods_WLMElectronicInvoice.framework */; };
 		9C13035220AD24D5009BED8E /* WLMSelectedApplyMerchantModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C13035120AD24D5009BED8E /* WLMSelectedApplyMerchantModel.m */; };
 		9C140A9F20ABBFFC006E6747 /* WLMEInvoiceProtocolVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C140A9E20ABBFFC006E6747 /* WLMEInvoiceProtocolVC.m */; };
@@ -81,6 +84,12 @@
 		049DDF5920AEE82100F22E06 /* InvoiceQRCodeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InvoiceQRCodeCell.m; sourceTree = "<group>"; };
 		049DDF5A20AEE82100F22E06 /* InvoiceScanHeadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InvoiceScanHeadView.h; sourceTree = "<group>"; };
 		049DDF5B20AEE82100F22E06 /* InvoiceScanHeadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InvoiceScanHeadView.m; sourceTree = "<group>"; };
+		049DDF6120B4475B00F22E06 /* WLMInvoiceConfirmView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WLMInvoiceConfirmView.m; sourceTree = "<group>"; };
+		049DDF6220B4475C00F22E06 /* WLMQRScanVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WLMQRScanVC.h; sourceTree = "<group>"; };
+		049DDF6320B4475C00F22E06 /* WLMInvoiceConfirmView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WLMInvoiceConfirmView.h; sourceTree = "<group>"; };
+		049DDF6420B4475C00F22E06 /* WLMQRScanVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WLMQRScanVC.m; sourceTree = "<group>"; };
+		049DDF6820B447F400F22E06 /* QRCodeUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRCodeUtil.h; sourceTree = "<group>"; };
+		049DDF6920B447F400F22E06 /* QRCodeUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRCodeUtil.m; sourceTree = "<group>"; };
 		0C58E3E41CE2B24BB6F43768 /* Pods-WLMElectronicInvoice.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WLMElectronicInvoice.release.xcconfig"; path = "Pods/Target Support Files/Pods-WLMElectronicInvoice/Pods-WLMElectronicInvoice.release.xcconfig"; sourceTree = "<group>"; };
 		58614F4727A6F4189F29ACDC /* Pods_WLMElectronicInvoice.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WLMElectronicInvoice.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8EC5F3AAC5E149448B9054F5 /* Pods-WLMElectronicInvoice.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WLMElectronicInvoice.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WLMElectronicInvoice/Pods-WLMElectronicInvoice.debug.xcconfig"; sourceTree = "<group>"; };
@@ -215,6 +224,10 @@
 		049DDF5120AEE82100F22E06 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				049DDF6320B4475C00F22E06 /* WLMInvoiceConfirmView.h */,
+				049DDF6120B4475B00F22E06 /* WLMInvoiceConfirmView.m */,
+				049DDF6220B4475C00F22E06 /* WLMQRScanVC.h */,
+				049DDF6420B4475C00F22E06 /* WLMQRScanVC.m */,
 				049DDF5220AEE82100F22E06 /* WLMInvoiceQRCodeListVC.h */,
 				049DDF5320AEE82100F22E06 /* WLMInvoiceQRCodeListVC.m */,
 			);
@@ -246,6 +259,15 @@
 			children = (
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		049DDF6720B447F400F22E06 /* QRCodeUtil */ = {
+			isa = PBXGroup;
+			children = (
+				049DDF6820B447F400F22E06 /* QRCodeUtil.h */,
+				049DDF6920B447F400F22E06 /* QRCodeUtil.m */,
+			);
+			path = QRCodeUtil;
 			sourceTree = "<group>";
 		};
 		71DFEAB7C76F1CE63CE6F560 /* Pods */ = {
@@ -303,6 +325,7 @@
 		9C2646EE20999B35004A4551 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				049DDF6720B447F400F22E06 /* QRCodeUtil */,
 				9CA4036E20AEE0BE00E4AA51 /* ImageTextField */,
 				9CA4037120AEE0BE00E4AA51 /* SegmentController */,
 			);
@@ -794,6 +817,7 @@
 				9CA403AA20AEE22300E4AA51 /* WLCircleProgressView.m in Sources */,
 				9C13035220AD24D5009BED8E /* WLMSelectedApplyMerchantModel.m in Sources */,
 				9C264750209AEFE2004A4551 /* WLMInvoiceApplyVC.m in Sources */,
+				049DDF6A20B447F400F22E06 /* QRCodeUtil.m in Sources */,
 				9CA4032820ADAB7C00E4AA51 /* WLMResendInvoiceVM.m in Sources */,
 				9C140AC320AC576F006E6747 /* WLMFillTaxationInfoVM.m in Sources */,
 				049DDF5D20AEE82100F22E06 /* WLMInvoiceQRCodeListVC.m in Sources */,
@@ -813,9 +837,11 @@
 				9C2646DA209994C8004A4551 /* AppDelegate.m in Sources */,
 				9CA4039920AEE0E300E4AA51 /* WLMRecordListCell.m in Sources */,
 				9C264753209AF037004A4551 /* WLMInvoiceApplyVM.m in Sources */,
+				049DDF6520B4475C00F22E06 /* WLMInvoiceConfirmView.m in Sources */,
 				9CA4039220AEE0E300E4AA51 /* WLMRecordFiltrVC.m in Sources */,
 				9C140AC020AC4EE7006E6747 /* WLMSelectApplyMerchantVC.m in Sources */,
 				9CEEA5D720A05C0E00673214 /* WLMResendInvoiceVC.m in Sources */,
+				049DDF6620B4475C00F22E06 /* WLMQRScanVC.m in Sources */,
 				9C1C0EF420B2BE4900FD6857 /* WLMInvoiceResultVM.m in Sources */,
 				9CA403B020AEE2C400E4AA51 /* WLMOpenInvoiceVC.m in Sources */,
 				9CA4039720AEE0E300E4AA51 /* WLMRequirementListCell.m in Sources */,

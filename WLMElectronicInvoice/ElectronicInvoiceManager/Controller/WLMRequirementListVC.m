@@ -9,10 +9,14 @@
 #import "WLMRequirementListVC.h"
 #import "WLMRequirementListCell.h"
 
+#define SCREEN_IS_X (SCREEN_HEIGHT == 812.0)
+#define MAIN_NAV_HEIGHT (SCREEN_IS_X ? 88 : 64)
+
 @interface WLMRequirementListVC () <UITableViewDataSource, UITableViewDelegate>
 
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, copy) NSArray *dataArray;
+@property (nonatomic, assign) float tableHeight;
 
 @end
 
@@ -68,7 +72,7 @@
 
 - (UITableView *)tableView {
     if (_tableView == nil) {
-        CGRect rect = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
+        CGRect rect = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT - MAIN_NAV_HEIGHT - 44);
         _tableView = [[UITableView alloc] initWithFrame:rect style:UITableViewStylePlain];
         _tableView.backgroundColor = bgColor;
         _tableView.delegate = self;
@@ -85,3 +89,4 @@
 }
 
 @end
+
