@@ -11,13 +11,6 @@
 #import "QRCodeUtil.h"
 
 
-/**
- *  屏幕 高 宽 边界
- */
-#define SCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height
-#define SCREEN_WIDTH  [UIScreen mainScreen].bounds.size.width
-#define SCREEN_BOUNDS  [UIScreen mainScreen].bounds
-
 #define TOP (SCREEN_HEIGHT-220)/2
 #define LEFT (SCREEN_WIDTH-220)/2
 
@@ -30,14 +23,15 @@
     CAShapeLayer *cropLayer;
 }
 
-@property (strong,nonatomic)AVCaptureDevice *device;
-@property (strong,nonatomic)AVCaptureDeviceInput *input;
-@property (strong,nonatomic)AVCaptureMetadataOutput *output;
-@property (strong,nonatomic)AVCaptureSession *session;
-@property (strong,nonatomic)AVCaptureVideoPreviewLayer *preview;
+@property (strong, nonatomic) AVCaptureDevice *device;
+@property (strong, nonatomic) AVCaptureDeviceInput *input;
+@property (strong, nonatomic) AVCaptureMetadataOutput *output;
+@property (strong, nonatomic) AVCaptureSession *session;
+@property (strong, nonatomic) AVCaptureVideoPreviewLayer *preview;
 
+@property (nonatomic, strong) UIImageView *pickImageView;
 @property (nonatomic, strong) UIImageView *line;
-@property (weak, nonatomic) IBOutlet UIButton *localImage;
+@property (nonatomic, strong) UILabel *infoLabel;
 
 @end
 
@@ -56,13 +50,12 @@
 }
 
 -(void)configView{
-    self.localImage.layer.masksToBounds = YES;
-    self.localImage.layer.borderColor = [UIColor whiteColor].CGColor;
-    self.localImage.layer.borderWidth = 1;
+    //    UIImageView * pickImageView = [[UIImageView alloc]initWithFrame:kScanRect];
+    //    imageView.image = [UIImage imageNamed:@"pick_bg"];
+    //    [self.view addSubview:imageView];
     
-    UIImageView * imageView = [[UIImageView alloc]initWithFrame:kScanRect];
-    imageView.image = [UIImage imageNamed:@"pick_bg"];
-    [self.view addSubview:imageView];
+    [self.view addSubview:self.pickImageView];
+    [self.view addSubview:self.infoLabel];
     
     upOrdown = NO;
     num =0;
@@ -76,12 +69,6 @@
 -(void)viewWillAppear:(BOOL)animated{
     [self setCropRect:kScanRect];
     [self performSelector:@selector(setupCamera) withObject:nil afterDelay:0.3];
-}
-
-- (IBAction)tapLocalScan:(UIButton *)sender {
-    NSLog(@"识别本地图片");
-    NSString *result = [QRCodeUtil readQRCodeFromImage:[UIImage imageNamed:@"QRImage"]];
-    NSLog(@"识别本地图片结果:%@",result);
 }
 
 -(void)animation1 {
@@ -100,7 +87,6 @@
     }
 }
 
-
 - (void)setCropRect:(CGRect)cropRect{
     cropLayer = [[CAShapeLayer alloc] init];
     CGMutablePathRef path = CGPathCreateMutable();
@@ -116,7 +102,6 @@
     [cropLayer setNeedsDisplay];
     
     [self.view.layer addSublayer:cropLayer];
-    [self.view bringSubviewToFront:self.localImage];
 }
 
 - (void)setupCamera {
@@ -146,7 +131,6 @@
     CGFloat height = 220/SCREEN_HEIGHT;
     ///top 与 left 互换  width 与 height 互换
     [_output setRectOfInterest:CGRectMake(top,left, height, width)];
-    
     
     // Session
     _session = [[AVCaptureSession alloc]init];
@@ -210,9 +194,30 @@
     }
 }
 
+- (UIImageView *)pickImageView {
+    if (!_pickImageView) {
+        _pickImageView = [[UIImageView alloc] initWithFrame:kScanRect];
+        _pickImageView.image = [UIImage imageNamed:@"pick_bg"];
+    }
+    return _pickImageView;
+}
+
+- (UILabel *)infoLabel {
+    if (!_infoLabel) {
+        _infoLabel = [[UILabel alloc] init];
+        _infoLabel.frame = CGRectMake(15, TOP + 236, SCREEN_WIDTH - 30, 20);
+        _infoLabel.font = FONT_PingFang_Regular(12);
+        _infoLabel.textColor = HexRGB(0xDEDEDE);
+        _infoLabel.text = @"将二维码/条码放入框内，即可自动扫描";
+        _infoLabel.textAlignment = NSTextAlignmentCenter;
+    }
+    return _infoLabel;
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
 @end
+
