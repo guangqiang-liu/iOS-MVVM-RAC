@@ -13,7 +13,6 @@
 
 #define TOP (SCREEN_HEIGHT-220)/2
 #define LEFT (SCREEN_WIDTH-220)/2
-
 #define kScanRect CGRectMake(LEFT, TOP, 220, 220)
 
 @interface WLMQRScanVC ()<AVCaptureMetadataOutputObjectsDelegate>{
@@ -45,49 +44,45 @@
     
 }
 
--(BOOL)prefersStatusBarHidden{
-    return  YES;
+-(BOOL)prefersStatusBarHidden {
+    return YES;
 }
 
--(void)configView{
-    //    UIImageView * pickImageView = [[UIImageView alloc]initWithFrame:kScanRect];
-    //    imageView.image = [UIImage imageNamed:@"pick_bg"];
-    //    [self.view addSubview:imageView];
-    
+-(void)configView {
     [self.view addSubview:self.pickImageView];
     [self.view addSubview:self.infoLabel];
     
     upOrdown = NO;
-    num =0;
-    _line = [[UIImageView alloc] initWithFrame:CGRectMake(LEFT, TOP+10, 220, 2)];
-    _line.image = [UIImage imageNamed:@"line.png"];
+    num = 0;
+    _line = [[UIImageView alloc] initWithFrame:CGRectMake(LEFT, TOP + 10, 220, 2)];
+    _line.image = UIImageName(@"line");
     [self.view addSubview:_line];
     
-    timer = [NSTimer scheduledTimerWithTimeInterval:.02 target:self selector:@selector(animation1) userInfo:nil repeats:YES];
+    timer = [NSTimer scheduledTimerWithTimeInterval:.02 target:self selector:@selector(reverseScan) userInfo:nil repeats:YES];
 }
 
--(void)viewWillAppear:(BOOL)animated{
+-(void)viewWillAppear:(BOOL)animated {
     [self setCropRect:kScanRect];
     [self performSelector:@selector(setupCamera) withObject:nil afterDelay:0.3];
 }
 
--(void)animation1 {
+-(void)reverseScan {
     if (upOrdown == NO) {
         num ++;
-        _line.frame = CGRectMake(LEFT, TOP+10+2*num, 220, 2);
-        if (2*num == 200) {
+        _line.frame = CGRectMake(LEFT, TOP + 10 + 2 * num, 220, 2);
+        if (2 * num == 200) {
             upOrdown = YES;
         }
     } else {
         num --;
-        _line.frame = CGRectMake(LEFT, TOP+10+2*num, 220, 2);
+        _line.frame = CGRectMake(LEFT, TOP + 10 + 2 * num, 220, 2);
         if (num == 0) {
             upOrdown = NO;
         }
     }
 }
 
-- (void)setCropRect:(CGRect)cropRect{
+- (void)setCropRect:(CGRect)cropRect {
     cropLayer = [[CAShapeLayer alloc] init];
     CGMutablePathRef path = CGPathCreateMutable();
     CGPathAddRect(path, nil, cropRect);
@@ -98,19 +93,18 @@
     [cropLayer setFillColor:[UIColor blackColor].CGColor];
     [cropLayer setOpacity:0.6];
     
-    
     [cropLayer setNeedsDisplay];
-    
     [self.view.layer addSublayer:cropLayer];
 }
 
 - (void)setupCamera {
     AVCaptureDevice *device = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
-    if (device==nil) {
+    if (device == nil) {
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"提示" message:@"设备没有摄像头" preferredStyle:UIAlertControllerStyleAlert];
         [alert addAction:[UIAlertAction actionWithTitle:@"确认" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
             
         }]];
+        
         [self presentViewController:alert animated:YES completion:nil];
         return;
     }
@@ -121,7 +115,7 @@
     _input = [AVCaptureDeviceInput deviceInputWithDevice:self.device error:nil];
     
     // Output
-    _output = [[AVCaptureMetadataOutput alloc]init];
+    _output = [[AVCaptureMetadataOutput alloc] init];
     [_output setMetadataObjectsDelegate:self queue:dispatch_get_main_queue()];
     
     //设置扫描区域
@@ -130,18 +124,17 @@
     CGFloat width = 220/SCREEN_WIDTH;
     CGFloat height = 220/SCREEN_HEIGHT;
     ///top 与 left 互换  width 与 height 互换
-    [_output setRectOfInterest:CGRectMake(top,left, height, width)];
+    [_output setRectOfInterest:CGRectMake(top, left, height, width)];
     
     // Session
-    _session = [[AVCaptureSession alloc]init];
+    _session = [[AVCaptureSession alloc] init];
     [_session setSessionPreset:AVCaptureSessionPresetHigh];
-    if ([_session canAddInput:self.input])
-    {
+    
+    if ([_session canAddInput:self.input]) {
         [_session addInput:self.input];
     }
     
-    if ([_session canAddOutput:self.output])
-    {
+    if ([_session canAddOutput:self.output]) {
         [_session addOutput:self.output];
     }
     
@@ -149,9 +142,9 @@
     [_output setMetadataObjectTypes:[NSArray arrayWithObjects:AVMetadataObjectTypeQRCode, nil]];
     
     // Preview
-    _preview =[AVCaptureVideoPreviewLayer layerWithSession:_session];
+    _preview = [AVCaptureVideoPreviewLayer layerWithSession:_session];
     _preview.videoGravity = AVLayerVideoGravityResizeAspectFill;
-    _preview.frame =self.view.layer.bounds;
+    _preview.frame = self.view.layer.bounds;
     [self.view.layer insertSublayer:_preview atIndex:0];
     
     // Start
@@ -159,11 +152,11 @@
 }
 
 #pragma mark AVCaptureMetadataOutputObjectsDelegate
+
 - (void)captureOutput:(AVCaptureOutput *)captureOutput didOutputMetadataObjects:(NSArray *)metadataObjects fromConnection:(AVCaptureConnection *)connection {
     NSString *stringValue;
     
-    if ([metadataObjects count] >0)
-    {
+    if ([metadataObjects count] >0) {
         //停止扫描
         [_session stopRunning];
         [timer setFireDate:[NSDate distantFuture]];
@@ -177,14 +170,15 @@
             NSLog(@"%@",temp);
         }
         
-        
+        /*
+         * 扫描获取url，后续动作根据业务员需求修改
+         */
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"扫描结果" message:stringValue preferredStyle:UIAlertControllerStyleAlert];
         [alert addAction:[UIAlertAction actionWithTitle:@"确认" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
             if (_session != nil && timer != nil) {
                 [_session startRunning];
                 [timer setFireDate:[NSDate date]];
             }
-            
         }]];
         [self presentViewController:alert animated:YES completion:nil];
         
@@ -197,7 +191,7 @@
 - (UIImageView *)pickImageView {
     if (!_pickImageView) {
         _pickImageView = [[UIImageView alloc] initWithFrame:kScanRect];
-        _pickImageView.image = [UIImage imageNamed:@"pick_bg"];
+        _pickImageView.image = UIImageName(@"pick_bg");
     }
     return _pickImageView;
 }
