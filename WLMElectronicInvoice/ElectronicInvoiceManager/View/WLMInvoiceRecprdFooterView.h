@@ -8,15 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@protocol invoiceRecordFilterDelegate <NSObject>
-@optional
-- (void)didRecordFilterButton:(UIButton *)button;
-@end
+typedef void(^FooterButtonCallback)(void);
 
 @interface WLMInvoiceRecprdFooterView : UIView
 
--(instancetype)initWithFootView;
-
-@property(nonatomic, weak) id <invoiceRecordFilterDelegate> delegate;
-
+@property (nonatomic, copy) FooterButtonCallback footerButtonCallback;
 @end

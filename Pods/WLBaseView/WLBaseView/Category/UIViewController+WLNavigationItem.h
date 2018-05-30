@@ -32,7 +32,7 @@
  @param btnSel 按钮的点击事件
  @param image 按钮的图片
  */
-- (void)setNavigationItemLeftBarButtonItem:(SEL)btnSel withImage:(NSString *)image;
+- (void)setNavigationItemLeftBarButtonItem:(SEL)btnSel withImage:(UIImage *)image;
 
 
 /**
@@ -41,7 +41,7 @@
  @param btnSel 按钮的点击事件
  @param image 按钮的图片
  */
-- (void)setNavigationItemRightBarButtonItem:(SEL)btnSel withImage:(NSString *)image;
+- (void)setNavigationItemRightBarButtonItem:(SEL)btnSel withImage:(UIImage *)image;
 
 
 /**
@@ -52,6 +52,18 @@
  @param color title的颜色
  */
 - (void)setNavigationItemRightBarButtonItem:(SEL)btnSel withTitle:(NSString *)title withTitleColor:(UIColor *)color;
+
+
+/**
+ 设置导航栏右侧按钮，右侧出现两个按钮
+
+ @param leftSel 右侧左边的文本按钮
+ @param title title
+ @param color color
+ @param rightSel 右侧的image按钮
+ @param image image
+ */
+- (void)setNavigationItemRightBarButtonItemsWithLeftSel:(SEL)leftSel leftTitle:(NSString *)title leftTitleColor:(UIColor *)color rightSel:(SEL)rightSel rightImage:(UIImage *)image;
 
 
 /**

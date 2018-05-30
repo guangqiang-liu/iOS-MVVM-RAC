@@ -10,12 +10,15 @@
 #import "WLMOpenInvoiceVC.h"
 #import "WLMMoreTaxationInfoVM.h"
 #import "WLMPackageSelectVC.h"
+#import "WLMSearchInvoiceItemVC.h"
+#import "WLMSelectInvoiceItemModel.h"
 
 @interface WLMMoreTaxationInfoVC ()
 
 @property (nonatomic, strong) UIButton *bottomButton;
 @property (nonatomic, strong) WLMMoreTaxationInfoVM *moreInfoViewModel;
 @property (nonatomic, assign) BOOL buttonEnabled;
+@property (nonatomic, copy) NSString *invoiceName;
 @end
 
 @implementation WLMMoreTaxationInfoVC
@@ -30,9 +33,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
     self.title = @"填写税务信息";
     self.tableView.frame = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT - 48);
+     self.automaticallyAdjustsScrollViewInsets = NO;
 }
 
 -(void)renderViews {
@@ -43,7 +46,8 @@
 
 - (void)bindViewModel {
     [super bindViewModel];
-//    RAC(self.bottomButton, enabled) = RACObserve(self, buttonEnabled);
+    // 这里的绑定，能否不生成中间变量就可以实现状态绑定？
+    RAC(self.bottomButton, enabled) = RACObserve(self, buttonEnabled);
 }
 
 - (void)configFormInfo {
@@ -59,12 +63,6 @@
     
     section = [[WLFormSectionViewModel alloc] init];
     section.headerHeight = 58;
-    section.sectionHeaderBgColor = white_color;
-    section.headerTitleMarginLeft = 15;
-    section.headerTopSepLineHeight = 10;
-    section.headerTopSepLineColor = sepLineColor;
-    section.headerTitleColor = HexRGB(0x434343);
-    section.headerTitleFont = H16;
     section.headerTitle = @"商户信息（必填）";
     
     dic = @{kLeftKey:@"名称", kPlaceholder:@"请输入商户名称"};
@@ -77,7 +75,7 @@
     [section addItem:row];
     
     dic = @{kLeftKey:@"地址", kPlaceholder:@"请输入地址"};
-    row = [self textFieldCellWithInfo:dic];
+    row = [self textViewCellWithInfo:dic];
     [section addItem:row];
     
     dic = @{kLeftKey:@"联系电话", kPlaceholder:@"请输入联系电话"};
@@ -103,29 +101,28 @@
     
     section = [[WLFormSectionViewModel alloc] init];
     section.headerHeight = 58;
-    section.sectionHeaderBgColor = white_color;
-    section.headerTitleMarginLeft = 15;
-    section.headerTopSepLineHeight = 10;
-    section.headerTopSepLineColor = sepLineColor;
-    section.headerTitleColor = HexRGB(0x434343);
-    section.headerTitleFont = H16;
     section.headerTitle = @"开票信息（必填）";
     
     dic = @{kLeftKey:@"征税方式", kPlaceholder:@"请选择征税方式"};
-    row = [self selectCellWithInfo:dic];
+    row = [self selectPickerCellWithInfo:dic];
     row.hasTopSep = YES;
     [section addItem:row];
     
     dic = @{kLeftKey:@"开票项目", kPlaceholder:@"请输入开票项目"};
-    row = [self textFieldCellWithInfo:dic];
-    [section addItem:row];
+    WLFormItemViewModel *invoiceItemRow = [self selectCellWithInfo:dic];
+    [section addItem:invoiceItemRow];
     
-    dic = @{kLeftKey:@"商品编号", kPlaceholder:@"请输入商户编号"};
-    row = [self textFieldCellWithInfo:dic];
+    dic = @{kLeftKey:@"商品编号", kRightKey:@"1090252020000000000"};
+    row = [self rightValueCellWithInfo:dic];
+    row.itemConfigBlock = ^(WLFormRightValueCell *cell, id value, NSIndexPath *indexPath) {
+        cell.leftLable.text = value[kLeftKey];
+        value[kRightKey] = invoiceItemRow.value[kRightKey] ? invoiceItemRow.value[kRightKey] : value[kRightKey];
+        cell.rightTitle = invoiceItemRow.value[kRightKey] ? invoiceItemRow.value[kRightKey] : value[kRightKey];
+    };
     [section addItem:row];
     
     dic = @{kLeftKey:@"税率", kPlaceholder:@"请选择税率"};
-    row = [self selectCellWithInfo:dic];
+    row = [self selectPickerCellWithInfo:dic];
     [section addItem:row];
     
     dic = @{kLeftKey:@"开票人", kPlaceholder:@"请输入开票人"};
@@ -160,23 +157,24 @@
     [section addItem:row];
     
     dic = @{kLeftKey:@"特殊票种标识", kPlaceholder:@"请选择特殊票种标识", kDispensable:@YES};
-    row = [self selectCellWithInfo:dic];
+    row = [self selectPickerCellWithInfo:dic];
     [section addItem:row];
     
     dic = @{kLeftKey:@"发票行性质", kPlaceholder:@"请选择发票行性质", kDispensable:@YES};
-    row = [self selectCellWithInfo:dic];
+    row = [self selectPickerCellWithInfo:dic];
     [section addItem:row];
     
     dic = @{kLeftKey:@"优惠政策标识", kPlaceholder:@"请选择优惠政策标识", kDispensable:@YES};
-    row = [self selectCellWithInfo:dic];
+    row = [self selectPickerCellWithInfo:dic];
     [section addItem:row];
     
     dic = @{kLeftKey:@"零税率标识", kPlaceholder:@"请选择零税率标识", kDispensable:@YES};
-    row = [self selectCellWithInfo:dic];
+    row = [self selectPickerCellWithInfo:dic];
     [section addItem:row];
     
     dic = @{kLeftKey:@"增值税特殊管理", kRightKey:@"无", kDisableKey:@YES, kDispensable:@YES};
     row = [self textFieldCellWithInfo:dic];
+    row.hasBottomSep = NO;
     [section addItem:row];
     return section;
 }
@@ -203,7 +201,34 @@
         ret[value[kLeftKey]] = value[kRightKey];
         return ret;
     };
-    
+    row.valueValidateBlock = ^NSDictionary *(id value) {
+        if ([value[kRightKey] length] || [value[kDispensable] boolValue]) return itemValid();
+        return itemInvalid(value[kPlaceholder]);
+    };
+    return row;
+}
+
+- (WLFormItemViewModel *)textViewCellWithInfo:(NSDictionary *)info {
+    WLFormItemViewModel *row = nil;
+    row = [[WLFormItemViewModel alloc] initFormItemWithStyle:UITableViewCellStyleValue1 reuseIdentifier:@"WLFormTextViewCell"];
+    row.itemHeight = 48;
+    row.cellClass = [WLFormTextViewCell class];
+    row.value = info.mutableCopy;
+    row.itemConfigBlock = ^(WLFormTextViewCell *cell, id value, NSIndexPath *indexPath) {
+        cell.leftTitle.text = value[kLeftKey];
+        cell.textView.text = value[kRightKey];
+        cell.textView.textColor = [value[kDisableKey] boolValue] ? HexRGB(0xcfcfcf) : textBlackColor;
+        cell.textView.wl_placeHolder = value[kPlaceholder];
+        cell.textChangeBlock = ^(NSString *text) {
+            value[kRightKey] = text;
+            [self changeSubmitButtonState];
+        };
+    };
+    row.requestParamsConfigBlock = ^(id value) {
+        NSMutableDictionary *ret = [NSMutableDictionary dictionaryWithCapacity:1];
+        ret[value[kLeftKey]] = value[kRightKey];
+        return ret;
+    };
     row.valueValidateBlock = ^NSDictionary *(id value) {
         if ([value[kRightKey] length] || [value[kDispensable] boolValue]) return itemValid();
         return itemInvalid(value[kPlaceholder]);
@@ -228,7 +253,7 @@
     return row;
 }
 
-- (WLFormItemViewModel *)selectCellWithInfo:(NSDictionary *)info {
+- (WLFormItemViewModel *)selectPickerCellWithInfo:(NSDictionary *)info {
     WLFormItemViewModel *row = nil;
     row = [[WLFormItemViewModel alloc] initFormItemWithStyle:UITableViewCellStyleValue1 reuseIdentifier:@"WLFormSelectCell"];
     row.itemHeight = 48;
@@ -242,13 +267,65 @@
         [self selectItemWithDataSource:@[@"1", @"2", @"3", @"4"] title:value[kLeftKey] callback:^(NSString *item) {
             value[kRightKey] = item;
             cell.rightTitle = item;
-            cell.hasSelected = YES;
             [self changeSubmitButtonState];
         }];
     };
     row.valueValidateBlock = ^NSDictionary *(id value) {
         if ([value[kRightKey] length] || [value[kDispensable] boolValue]) return itemValid();
         return itemInvalid(value[kPlaceholder]);
+    };
+    row.requestParamsConfigBlock = ^(id value) {
+        NSMutableDictionary *ret = [NSMutableDictionary dictionaryWithCapacity:1];
+        ret[value[kLeftKey]] = value[kRightKey];
+        return ret;
+    };
+    return row;
+}
+
+- (WLFormItemViewModel *)selectCellWithInfo:(NSDictionary *)info {
+    WLFormItemViewModel *row = nil;
+    row = [[WLFormItemViewModel alloc] initFormItemWithStyle:UITableViewCellStyleValue1 reuseIdentifier:@"WLFormSelectCell"];
+    row.itemHeight = 48;
+    row.cellClass = [WLFormSelectCell class];
+    row.value = info.mutableCopy;
+    row.itemConfigBlock = ^(WLFormSelectCell *cell, id value, NSIndexPath *indexPath) {
+        cell.leftLable.text = value[kLeftKey];
+        cell.rightTitle = value[kRightKey];
+    };
+    @weakify(self);
+    row.didSelectCellBlock = ^(NSIndexPath *indexPath, id value, WLFormSelectCell *cell) {
+        @strongify(self);
+        WLMSearchInvoiceItemVC *vc = [[WLMSearchInvoiceItemVC alloc] init];
+        vc.selectInvoiceItemBlock = ^(WLMSelectInvoiceItemModel *model) {
+            value[kRightKey] = model.invoiceName;
+            cell.rightTitle = model.invoiceName;
+            [self changeSubmitButtonState];
+            [self.tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:2 inSection:1]] withRowAnimation:UITableViewRowAnimationNone];
+        };
+        [self.navigationController pushViewController:vc animated:YES];
+    };
+    row.valueValidateBlock = ^NSDictionary *(id value) {
+        if ([value[kRightKey] length] || [value[kDispensable] boolValue]) return itemValid();
+        return itemInvalid(value[kPlaceholder]);
+    };
+    row.requestParamsConfigBlock = ^(id value) {
+        NSMutableDictionary *ret = [NSMutableDictionary dictionaryWithCapacity:1];
+        ret[value[kLeftKey]] = value[kRightKey];
+        return ret;
+    };
+    return row;
+}
+
+- (WLFormItemViewModel *)rightValueCellWithInfo:(NSDictionary *)info {
+    WLFormItemViewModel *row = nil;
+    row = [[WLFormItemViewModel alloc] initFormItemWithStyle:UITableViewCellStyleValue1 reuseIdentifier:@"WLFormRightValueCell"];
+    row.itemHeight = 48;
+    row.cellClass = [WLFormRightValueCell class];
+    row.value = info.mutableCopy;
+    row.requestParamsConfigBlock = ^(id value) {
+        NSMutableDictionary *ret = [NSMutableDictionary dictionaryWithCapacity:1];
+        ret[value[kLeftKey]] = value[kRightKey];
+        return ret;
     };
     return row;
 }
@@ -265,10 +342,7 @@
         [_bottomButton setTitle:@"下一步" forState:UIControlStateNormal];
         _bottomButton.titleLabel.font = H18;
         [_bottomButton createGradientButtonWithSize:CGSizeMake(SCREEN_WIDTH, 44) colorArray:@[HexRGB(0xFF7E4A), HexRGB(0xFF4A4A)] gradientType:GradientFromLeftToRight];
-        [_bottomButton whenTapped:^{
-            WLMPackageSelectVC *VC = [[WLMPackageSelectVC alloc] initWithViewModel:self.moreInfoViewModel.packageSelectViewModel];
-            [self.navigationController pushViewController:VC animated:YES];
-        }];
+        [_bottomButton addTarget:self action:@selector(nextAction) forControlEvents:UIControlEventTouchUpInside];
     }
     return _bottomButton;
 }
@@ -276,6 +350,27 @@
 - (void)changeSubmitButtonState {
     NSDictionary *validateParams = [self.form validateItems];
     [validateParams[kValidateRetKey] boolValue] ? (self.buttonEnabled = YES) : (self.buttonEnabled = NO);
+}
+
+- (void)nextAction {
+//    WLMPackageSelectVC *VC = [[WLMPackageSelectVC alloc] initWithViewModel:self.moreInfoViewModel.packageSelectViewModel];
+//    [self.navigationController pushViewController:VC animated:YES];
+    NSDictionary *dic = [self.form validateItems];
+    if (![dic[kValidateRetKey] boolValue]) {
+//        [self alertMsg:dic[kValidateMsgKey]];
+    } else {
+        NSDictionary *params = [self.form fetchRequestParams];
+        NSLog(@"%@", params);
+    }
+}
+
+- (void)alertMsg:(NSString *)msg title:(NSString *)title {
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:title
+                                                                   message:msg
+                                                            preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *done = [UIAlertAction actionWithTitle:@"Done" style:UIAlertActionStyleDefault handler:nil];
+    [alert addAction:done];
+    [self presentViewController:alert animated:YES completion:nil];
 }
 
 - (void)selectItemWithDataSource:(NSArray *)data title:(NSString *)title callback:(void(^)(NSString *item))callback {

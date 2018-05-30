@@ -8,12 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@class MerchantModel;
+@class WLMInvoiceRecordModel;
 
 @interface WLMRecordListCell : UITableViewCell
 
-@property (nonatomic, strong) MerchantModel *merchantModel;
+@property (nonatomic, strong) WLMInvoiceRecordModel *model;
 
 + (CGFloat)cellHeight;
-
 @end

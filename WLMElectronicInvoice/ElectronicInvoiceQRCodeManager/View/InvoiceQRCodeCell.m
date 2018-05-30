@@ -29,8 +29,6 @@
         self.layer.shadowOffset = CGSizeMake(0.0f, 0.0f); //[水平偏移, 垂直偏移]
         self.layer.shadowOpacity = 0.2f; // 0.0 ~ 1.0 的值
         self.layer.shadowRadius = 4.0f; // 阴影发散的程度
-        self.clipsToBounds = NO;
-        
         [self renderViews];
     }
     return self;
@@ -42,8 +40,6 @@
     [self.contentView addSubview:self.unbindBtn];
     [self.contentView addSubview:self.saveBtn];
 }
-
-#pragma mark -
 
 - (UILabel *)invoiceId {
     if (!_invoiceId) {
@@ -63,7 +59,6 @@
         _QRCodeImg = [[UIImageView alloc] init];
         _QRCodeImg.frame = CGRectMake(8, 32, self.frame.size.width - 16, self.frame.size.width - 16);
         _QRCodeImg.backgroundColor = lightGray_color;
-        //        _QRCodeImg.image = UIImageName(@"einvoice_mange_sample");
     }
     return _QRCodeImg;
 }
@@ -75,7 +70,6 @@
         _unbindBtn.titleLabel.font = FONT_PingFang_Light(14);
         [_unbindBtn setTitle:@"解绑" forState:UIControlStateNormal];
         [_unbindBtn setTitleColor:HexRGB(0x999999) forState:UIControlStateNormal];
-        
         _unbindBtn.layer.cornerRadius = 4;
         _unbindBtn.layer.borderColor = HexRGB(0x999999).CGColor;
         _unbindBtn.layer.borderWidth = 0.5;
@@ -90,7 +84,6 @@
         _saveBtn.titleLabel.font = FONT_PingFang_Light(14);
         [_saveBtn setTitle:@"保存" forState:UIControlStateNormal];
         [_saveBtn setTitleColor:HexRGB(0xFF4B4A) forState:UIControlStateNormal];
-        
         _saveBtn.layer.cornerRadius = 4;
         _saveBtn.layer.borderColor = HexRGB(0xFF4B4A).CGColor;
         _saveBtn.layer.borderWidth = 0.5;

@@ -14,6 +14,7 @@
 
 @property (nonatomic, strong) WLMInvoiceDetailHeaderView *headerView;
 @property (nonatomic, strong) WLMInvoiceDetailInfoView *infoView;
+@property (nonatomic, strong) UIScrollView *scrollView;
 @end
 
 @implementation WLMInvoiceDetailVC
@@ -23,20 +24,30 @@
     // Do any additional setup after loading the view.
     
     self.title = @"开票详情";
-    self.view.backgroundColor = bgColor;
-    self.navigationController.navigationBar.translucent = NO;
-    
+//    self.navigationController.navigationBar.translucent = NO;
     [self setNavigationItemRightBarButtonItem:@selector(invoiceInvalid) withTitle:@"作废发票" withTitleColor: textGrayColor];
 }
 
 - (void)renderViews {
     [super renderViews];
-    [self.view addSubview:self.headerView];
-    [self.view addSubview:self.infoView];
+    [self.view addSubview:self.scrollView];
+    [self.scrollView addSubview:self.headerView];
+    [self.scrollView addSubview:self.infoView];
+    NSLog(@"%@", NSStringFromCGRect(self.infoView.frame));
+    self.scrollView.contentSize = CGSizeMake(SCREEN_WIDTH, MaxY(self.infoView) + 84);
 }
 
 - (void)invoiceInvalid {
     
+}
+
+- (UIScrollView *)scrollView {
+    if (!_scrollView) {
+        _scrollView = [[UIScrollView alloc] init];
+        _scrollView.frame = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
+        _scrollView.backgroundColor = bgColor;
+    }
+    return _scrollView;
 }
 
 - (WLMInvoiceDetailHeaderView *)headerView {

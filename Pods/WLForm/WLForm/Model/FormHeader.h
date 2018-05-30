@@ -29,5 +29,7 @@
 #import "WLFormSectionViewModel.h"
 #import "WLFormBottomTipButtonCell.h"
 #import "WLFormSumTextInputCell.h"
+#import "WLFormRightValueCell.h"
+#import "WLFormTextViewCell.h"
 
 #endif /* FormHeader_h */

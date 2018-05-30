@@ -31,16 +31,21 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     self.title = @"电子发票管理";
-    self.view.backgroundColor = bgColor;
-    
+}
+
+- (void)renderViews {
+    [super renderViews];
     [self dataInitialize];
     [self segmentLaunch];
 }
 
 - (void)dataInitialize {
-    self.isShowNotice = NO;
+    self.isShowNotice = YES;
+}
+
+- (void)bindViewModel {
+    [super bindViewModel];
 }
 
 - (void)segmentLaunch {
@@ -78,7 +83,7 @@
     self.scrollView.backgroundColor = [UIColor whiteColor];
     self.scrollView.pagingEnabled = YES;
     self.scrollView.showsHorizontalScrollIndicator = NO;
-    self.scrollView.contentSize = CGSizeMake(SCREEN_WIDTH *3, SCREEN_HEIGHT);
+    self.scrollView.contentSize = CGSizeMake(SCREEN_WIDTH * 3, SCREEN_HEIGHT);
     self.scrollView.delegate = self;
     [self.scrollView scrollRectToVisible:CGRectMake(SCREEN_WIDTH, 0, SCREEN_WIDTH, SCREEN_HEIGHT) animated:NO];
     [self.view addSubview:self.scrollView];
@@ -104,10 +109,9 @@
     
     [self.childControllers enumerateObjectsUsingBlock:^(UIViewController *obj, NSUInteger idx, BOOL * _Nonnull stop) {
         UIView *view = obj.view;
-        view.frame = CGRectMake(idx*SCREEN_WIDTH, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
+        view.frame = CGRectMake(idx * SCREEN_WIDTH, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
         [self.scrollView addSubview:view];
     }];
-    //    [self.scrollView setContentSize:CGSizeMake(3 * SCREEN_WIDTH, SCREEN_HEIGHT)];
 }
 
 - (void)segmentedControlChangedValue:(HMSegmentedControl *)segmentedControl {
@@ -119,22 +123,18 @@
 }
 
 #pragma mark - UIScrollViewDelegate
-
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
     CGFloat pageWidth = scrollView.frame.size.width;
     NSInteger page = scrollView.contentOffset.x / pageWidth;
-    
     [self.segmentedControl setSelectedSegmentIndex:page animated:YES];
 }
 
-#pragma mark -
-
+#pragma mark - getter\setter
 - (UIView *)noticeBoard {
     if (!_noticeBoard) {
         _noticeBoard = [[UIView alloc] init];
         _noticeBoard.frame = CGRectMake(0, MAIN_NAV_HEIGHT + 44, SCREEN_WIDTH, 34);
         _noticeBoard.backgroundColor = HexRGB(0xFFF0D1);
-        _noticeBoard.hidden = !self.isShowNotice;
     }
     return _noticeBoard;
 }
@@ -142,9 +142,8 @@
 - (UIImageView *)noticeImg {
     if (!_noticeImg) {
         _noticeImg = [[UIImageView alloc] init];
-        _noticeImg.frame = CGRectMake(16, 8, 16, 16);
-        _noticeImg.image = UIImageName(@"einvoice_notice");
-        _noticeImg.hidden = !self.isShowNotice;
+        _noticeImg.frame = CGRectMake(16, 9, 16, 16);
+        _noticeImg.image = [WLIcon iconWithName:@"notification_o" size:16 color:HexRGB(0xFFA800)];
     }
     return _noticeImg;
 }
@@ -160,10 +159,6 @@
         _noticeLabel.hidden = !self.isShowNotice;
     }
     return _noticeLabel;
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
 }
 
 @end

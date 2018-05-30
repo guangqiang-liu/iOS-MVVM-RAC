@@ -1,6 +1,6 @@
 {
   "name": "WLForm",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "summary": "自定义通用表单组件",
   "description": "TODO: Add long description of the pod here.",
   "homepage": "https://gitlab.qianbaocard.org/iOS/view/WLForm",
@@ -10,7 +10,7 @@
   },
   "source": {
     "git": "git@gitlab.qianbaocard.org:iOS/view/WLForm.git",
-    "tag": "0.1.3"
+    "tag": "0.1.4"
   },
   "platforms": {
     "ios": "8.0"

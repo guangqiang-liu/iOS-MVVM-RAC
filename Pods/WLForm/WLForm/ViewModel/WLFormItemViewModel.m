@@ -32,9 +32,7 @@ NSString *kValidateMsgKey = @"kValidateMsgKey";
     return self;
 }
 
-#ifdef DEBUG
 - (void)dealloc {
     NSLog(@"row dealloc %@", self);
 }
-#endif
 @end

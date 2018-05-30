@@ -2,6 +2,20 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>wl_deposit_msg_info</key>
+	<string>v1/mermanager/deposit/get_merchant_payment_info</string>
+	<key>wl_deposit_refund</key>
+	<string>v1/mermanager/deposit/get_return_info</string>
+	<key>wl_deposit_state_update</key>
+	<string>v1/mermanager/deposit/update_payment_result_info</string>
+	<key>wl_deposit_refund_detail</key>
+	<string>v1/mermanager/deposit/get_return_detail_info</string>
+	<key>wl_deposit_merchant_list</key>
+	<string>v1/mermanager/deposit/get_merchant_unpay_deposit_info</string>
+	<key>wl_deposit_info</key>
+	<string>v1/mermanager/deposit/get_merchant_deposit_info</string>
+	<key>wl_deposit_order_create</key>
+	<string>v1/mermanager/deposit/get_cashier_desk_info</string>
 	<key>wl_app_config</key>
 	<string>v1/basic/get_app_config</string>
 	<key>wl_server_time</key>
@@ -134,5 +148,9 @@
 	<string>v1/mermng/zero/rate/get_activity_merchant</string>
 	<key>push_time_difference</key>
 	<string>v1/basic/report/report_data</string>
+	<key>net_ei_merchant_list</key>
+	<string>v1/mermng/invoice/get_allmerchant_invoicebusinessstatus</string>
+	<key>net_ei_fill_tax_info</key>
+	<string>v1/mermng/invoice/add_tax_control_info</string>
 </dict>
 </plist>

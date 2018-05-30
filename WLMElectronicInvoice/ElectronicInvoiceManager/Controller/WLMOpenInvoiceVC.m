@@ -44,12 +44,6 @@
     
     section = [[WLFormSectionViewModel alloc] init];
     section.headerHeight = 58;
-    section.sectionHeaderBgColor = white_color;
-    section.headerTitleMarginLeft = 15;
-    section.headerTopSepLineHeight = 10;
-    section.headerTopSepLineColor = sepLineColor;
-    section.headerTitleColor = HexRGB(0x434343);
-    section.headerTitleFont = H16;
     section.headerTitle = @"发票详情";
     
     dic = @{kLeftKey:@"发票金额（请确认金额）", kPlaceholder:@"请输入金额"};
@@ -79,12 +73,6 @@
     
     section = [[WLFormSectionViewModel alloc] init];
     section.headerHeight = 58;
-    section.sectionHeaderBgColor = white_color;
-    section.headerTitleMarginLeft = 15;
-    section.headerTopSepLineHeight = 10;
-    section.headerTopSepLineColor = sepLineColor;
-    section.headerTitleColor = HexRGB(0x434343);
-    section.headerTitleFont = H16;
     section.headerTitle = @"接受方式";
     
     dic = @{kLeftKey:@"手机号码"};

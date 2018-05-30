@@ -21,17 +21,18 @@
     if (self) {
         _headerTitleColor = WLLeftTitleColor;
         _headerTitleFont = WLLeftTitleFont;
-        _headerTitleMarginLeft = WLMarginLeft;
+        _headerTitleMarginLeft = 15;
         _headerTitleMarginRight = WLMarginRight;
         _headerHeight = WLSectionHeaderHeight;
         _sectionHeaderBgColor = WLSectionHeaderBgColor;
+        _headerTopSepLineHeight = 10;
+        _headerTopSepLineColor = sepLineColor;
         
         _footerTitleFont = WLLeftTitleFont;
         _footerTitleMarginLeft = WLMarginLeft;
         _footerTitleMarginRight = WLMarginRight;
         _footerHeight = WLSectionFooterHeight;
         _sectionFooterBgColor = WLSectionFooterBgColor;
-        
     }
     return self;
 }

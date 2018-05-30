@@ -22,6 +22,7 @@
 #import "UIImageView+WLSDImage.h"
 #import "UILabel+WLLineSpace.h"
 #import "UINavigationItem+WLFixedSpace.h"
+#import "UITextView+WLTextView.h"
 #import "UIView+Borders.h"
 #import "UIView+WLCurrentVC.h"
 #import "UIView+WLDashLine.h"
@@ -35,6 +36,14 @@
 #import "MacroHeader.h"
 #import "RectConst.h"
 #import "WLConst.h"
+#import "SComponentHeader.h"
+#import "WLBadge.h"
+#import "WLPdfReader.h"
+#import "WLProgress.h"
+#import "WLRate.h"
+#import "WLSearchBar.h"
+#import "WLSelect.h"
+#import "WLSlider.h"
 
 FOUNDATION_EXPORT double WLWidgetVersionNumber;
 FOUNDATION_EXPORT const unsigned char WLWidgetVersionString[];

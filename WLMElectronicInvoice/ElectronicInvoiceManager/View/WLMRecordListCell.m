@@ -7,6 +7,7 @@
 //
 
 #import "WLMRecordListCell.h"
+#import "WLMInvoiceRecordModel.h"
 
 static const CGFloat kRecordHeight = 140.f;
 
@@ -19,7 +20,6 @@ static const CGFloat kRecordHeight = 140.f;
 @property (nonatomic, strong) UILabel *applyTime;
 @property (nonatomic, strong) UILabel *invoiceStatus;
 @property (nonatomic, strong) UIImageView *recordImg;
-
 @end
 
 @implementation WLMRecordListCell
@@ -44,8 +44,12 @@ static const CGFloat kRecordHeight = 140.f;
     [self.bgView addSubview:self.recordImg];
 }
 
-- (void)setMerchantModel:(WLBaseModel *)merchantModel {
-    
+- (void)setModel:(WLMInvoiceRecordModel *)model {
+    _model = model;
+    self.invoicePrice.text = model.invoiceAmount;
+    self.invoiceTitle.text = model.companyName;
+    self.applyTime.text = model.invoiceDate;
+    self.invoiceStatus.text = model.invoiceState;
 }
 
 + (CGFloat)cellHeight; {
@@ -58,12 +62,10 @@ static const CGFloat kRecordHeight = 140.f;
         _bgView.frame = CGRectMake(15, 4, SCREEN_WIDTH - 30, 132);
         _bgView.backgroundColor = white_color;
         _bgView.layer.cornerRadius = 5;
-        
         _bgView.layer.shadowColor = [[UIColor lightGrayColor] CGColor];
         _bgView.layer.shadowOffset = CGSizeMake(0.0f, 0.0f); //[水平偏移, 垂直偏移]
         _bgView.layer.shadowOpacity = 0.2f; // 0.0 ~ 1.0 的值
         _bgView.layer.shadowRadius = 4.0f; // 阴影发散的程度
-        _bgView.clipsToBounds = NO;
     }
     return _bgView;
 }
@@ -95,9 +97,8 @@ static const CGFloat kRecordHeight = 140.f;
 - (UIView *)lineView {
     if (!_lineView) {
         _lineView = [[UIView alloc] init];
-        _lineView.backgroundColor = RGB(222, 222, 222);
         _lineView.frame = CGRectMake(16, 80, SCREEN_WIDTH - 62, 0.5);
-//        [self drawRect:_lineView.frame];
+        [_lineView drawDashLineWithLineHeight:1 dashLineWidth:@4 dashLineSpace:@5 lineColor:HexRGB(0xDEDEDE)];
     }
     return _lineView;
 }
@@ -134,62 +135,4 @@ static const CGFloat kRecordHeight = 140.f;
     }
     return _recordImg;
 }
-
-- (void)drawRect:(CGRect)rect {
-    [super drawRect:rect];
-    CGContextRef currentContext = UIGraphicsGetCurrentContext();
-    //设置虚线颜色
-    CGContextSetStrokeColorWithColor(currentContext, RGB(240, 89, 78).CGColor);
-    //设置虚线宽度
-    CGContextSetLineWidth(currentContext, 1);
-    //设置虚线绘制起点
-    CGContextMoveToPoint(currentContext, 16, self.frame.size.height/2);
-    //设置虚线绘制终点
-    CGContextAddLineToPoint(currentContext, self.frame.origin.x + self.frame.size.width - 16, self.frame.size.height/2);
-    //设置虚线排列的宽度间隔:下面的arr中的数字表示先绘制3个点再绘制1个点
-    CGFloat arr[] = {3,2};
-    //下面最后一个参数“2”代表排列的个数。
-    CGContextSetLineDash(currentContext, 0, arr, 2);
-    CGContextDrawPath(currentContext, kCGPathStroke);
-}
-
-/**
- ** lineView:       需要绘制成虚线的view
- ** lineLength:     虚线的宽度
- ** lineSpacing:    虚线的间距
- ** lineColor:      虚线的颜色
- **/
-- (void)drawDashLine:(UIView *)lineView lineLength:(int)lineLength lineSpacing:(int)lineSpacing lineColor:(UIColor *)lineColor {
-    CAShapeLayer *shapeLayer = [CAShapeLayer layer];
-    [shapeLayer setBounds:lineView.bounds];
-    [shapeLayer setPosition:CGPointMake(CGRectGetWidth(lineView.frame) / 2, CGRectGetHeight(lineView.frame))];
-    [shapeLayer setFillColor:[UIColor clearColor].CGColor];
-    //  设置虚线颜色为blackColor
-    [shapeLayer setStrokeColor:lineColor.CGColor];
-    //  设置虚线宽度
-    [shapeLayer setLineWidth:CGRectGetHeight(lineView.frame)];
-    [shapeLayer setLineJoin:kCALineJoinRound];
-    //  设置线宽，线间距
-    [shapeLayer setLineDashPattern:[NSArray arrayWithObjects:[NSNumber numberWithInt:lineLength], [NSNumber numberWithInt:lineSpacing], nil]];
-    //  设置路径
-    CGMutablePathRef path = CGPathCreateMutable();
-    CGPathMoveToPoint(path, NULL, 0, 0);
-    CGPathAddLineToPoint(path, NULL,CGRectGetWidth(lineView.frame), 0);
-    [shapeLayer setPath:path];
-    CGPathRelease(path);
-    //  把绘制好的虚线添加上来
-    [lineView.layer addSublayer:shapeLayer];
-}
-
-- (void)awakeFromNib {
-    [super awakeFromNib];
-    // Initialization code
-}
-
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
-}
-
 @end

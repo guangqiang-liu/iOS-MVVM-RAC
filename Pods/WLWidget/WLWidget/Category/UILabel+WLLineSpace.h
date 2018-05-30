@@ -46,7 +46,7 @@
  @param color 颜色
  @param font 字号
  */
-- (void)setSpecificTextWithText:(NSString *)text color:(UIColor *)color font:(NSInteger )font;
+- (void)setSpecificTextWithText:(NSString *)text color:(UIColor *)color font:(UIFont *)font;
     
 
 /**
@@ -57,7 +57,7 @@
  @param color 颜色
  @param font 字号
  */
-- (void)setSpecificTextWithLocation:(NSInteger)location length:(NSInteger)length color:(UIColor *)color font:(NSInteger )font;
+- (void)setSpecificTextWithLocation:(NSInteger)location length:(NSInteger)length color:(UIColor *)color font:(UIFont *)font;
 
 /**
  计算lable的高度，支持单行和多行，带行间距

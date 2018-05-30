@@ -13,6 +13,4 @@
 @property (nonatomic, strong, readonly) RACCommand *merchantListCmd;
 
 @property (nonatomic, strong, readonly) WLMEInvoiceIntroduceVM *introduceViewModel;
-
-@property (nonatomic, copy, readonly) NSArray *dataArray;
 @end

@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "WLCircleProgressView.h"
 
 @interface WLMPackageInfoVC : UIViewController
 
+@property (nonatomic, strong) WLCircleProgressView *progressView;
 @end

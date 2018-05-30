@@ -25,6 +25,8 @@
              @"unselected_cycyle_o": @"\U0000e609",
              @"selected_cycyle_o": @"\U0000e607",
              @"invoice_detail_state_o": @"\U0000e621",
+             @"search_gray_o": @"\U0000e614",
+             @"scan_rect_o": @"\U0000e612"
              };
 }
 

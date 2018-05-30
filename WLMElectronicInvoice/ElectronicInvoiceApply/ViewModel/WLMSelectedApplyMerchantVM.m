@@ -13,8 +13,6 @@
 
 @property (nonatomic, strong, readwrite) RACCommand *merchantListCmd;
 @property (nonatomic, strong, readwrite) WLMEInvoiceIntroduceVM *introduceViewModel;
-@property (nonatomic, copy, readwrite) NSArray *dataArray;
-
 @end
 
 @implementation WLMSelectedApplyMerchantVM
@@ -30,28 +28,19 @@
     [super initialize];
     
     self.introduceViewModel = [[WLMEInvoiceIntroduceVM alloc] initWithService:self.service params:nil];
-    
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         
-        NSMutableArray *tempArr = [NSMutableArray array];
-        for (NSInteger i = 0; i < 10; i ++) {
-            WLMSelectedApplyMerchantModel *model = [[WLMSelectedApplyMerchantModel alloc] init];
-            model.merchantName = @"上海小南国(南京店)";
-            model.merchantAddress = @"上海市-上海市-黄浦区";
-            model.merchantState = WLMerchantStateOpening;
-            [tempArr addObject:model];
-        }
-        self.dataArray = tempArr;
-    });
-    
     _merchantListCmd = [[RACCommand alloc] initWithSignalBlock:^RACSignal * _Nonnull(id  _Nullable input) {
         return [RACSignal createSignal:^RACDisposable * _Nullable(id<RACSubscriber>  _Nonnull subscriber) {
-            NSDictionary *dic = @{};
-            NSArray *dataArr = dic[@"data"];
-            [subscriber sendNext:dataArr];
-            [subscriber sendCompleted];
+            [[[__NETWL configPostPathKey:@"net_ei_merchant_list" postParams:@{}] setLoadMode:RequestLoadShowErrorTips] requestCallBack:^(LRResponseModel *responseModel) {
+                if (responseModel.success) {
+                    NSArray *dataArray = [WLMSelectedApplyMerchantModel mj_objectArrayWithKeyValuesArray:responseModel];
+                    [subscriber sendNext:dataArray];
+                    [subscriber sendCompleted];
+                } else {
+                    [subscriber sendCompleted];
+                }
+            }];
             return [RACDisposable disposableWithBlock:^{
-                // 信号被取消后的处理，这里可以cancle task
             }];
         }];
     }];

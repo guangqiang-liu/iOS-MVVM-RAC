@@ -29,7 +29,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
     self.title = @"填写税务信息";
 }
 
@@ -54,12 +53,6 @@
     
     section = [[WLFormSectionViewModel alloc] init];
     section.headerHeight = 58;
-    section.sectionHeaderBgColor = white_color;
-    section.headerTitleMarginLeft = 15;
-    section.headerTopSepLineHeight = 10;
-    section.headerTopSepLineColor = sepLineColor;
-    section.headerTitleColor = HexRGB(0x434343);
-    section.headerTitleFont = H16;
     section.headerTitle = @"税务信息";
     
     dic = @{kLeftKey:@"税控盘类型", @"leftButtonTitle":@"航信金税盘", @"rightButtonTitle":@"百望税控盘"};
@@ -170,18 +163,17 @@
         [self alertMsg:dic[kValidateMsgKey]];
     } else {
         NSDictionary *requestParams = [self.form fetchRequestParams];
-        NSLog(@"--%@", requestParams);
         NSNumber *opened = requestParams[@"是否已至税务局开通电子发票业务"];
         if (![opened boolValue]) {
-            WLTitleWithContentModal *modal = [[WLTitleWithContentModal alloc] initWithTitle:@"友情提示" content:@"开通该业务后，须由财务或法人携带相关材料，至所属税务分局进行电子发票发行申请。如需帮助，请联系客户经理"];
-            WLModal *alertView = [[WLModal alloc] init];
-            alertView.buttonTitles = @[@"暂不开通", @"确认开通"];
-            [alertView setOnButtonTouchUpInside:^(WLModal *alertView, NSInteger buttonIndex) {
+            WLTitleWithContentModal *view = [[WLTitleWithContentModal alloc] initWithTitle:@"友情提示" content:@"开通该业务后，须由财务或法人携带相关材料，至所属税务分局进行电子发票发行申请。如需帮助，请联系客户经理"];
+            WLModal *modal = [[WLModal alloc] init];
+            modal.buttonTitles = @[@"暂不开通", @"确认开通"];
+            [modal setOnButtonTouchUpInside:^(WLModal *modal, NSInteger buttonIndex) {
                 buttonIndex != 1 ?: [self formRequestWithParams:requestParams];
-                [alertView close];
+                [modal close];
             }];
-            [alertView addContentView:modal];
-            [alertView show];
+            [modal addContentView:view];
+            [modal show];
         } else {
             [self formRequestWithParams:requestParams];
         }
@@ -189,10 +181,12 @@
 }
 
 - (void)formRequestWithParams:(NSDictionary *)params {
-    [[self.infoViewModel.submitFormCmd execute:params] subscribeNext:^(id  _Nullable x) {
-        WLMMoreTaxationInfoVC *VC = [[WLMMoreTaxationInfoVC alloc] initWithViewModel:self.infoViewModel.moreInfoViewModel];
-        [self.navigationController pushViewController:VC animated:YES];
-    }];
+//    [[self.infoViewModel.submitFormCmd execute:params] subscribeNext:^(id  _Nullable x) {
+//        WLMMoreTaxationInfoVC *VC = [[WLMMoreTaxationInfoVC alloc] initWithViewModel:self.infoViewModel.moreInfoViewModel];
+//        [self.navigationController pushViewController:VC animated:YES];
+//    }];
+    WLMMoreTaxationInfoVC *VC = [[WLMMoreTaxationInfoVC alloc] initWithViewModel:self.infoViewModel.moreInfoViewModel];
+    [self.navigationController pushViewController:VC animated:YES];
 }
 
 - (void)alertMsg:(NSString *)msg title:(NSString *)title {
@@ -209,13 +203,13 @@
 }
     
 - (void)renderModal {
-    WLModal *alertView = [[WLModal alloc] init];
-    WLPurchaseInvoiceStepModal *modal = [[WLPurchaseInvoiceStepModal alloc] init];
-    modal.closeModalActionBlock = ^{
-        [alertView close];
+    WLModal *modal = [[WLModal alloc] init];
+    WLPurchaseInvoiceStepModal *view = [[WLPurchaseInvoiceStepModal alloc] init];
+    view.closeModalActionBlock = ^{
+        [modal close];
     };
-    [alertView addContentView:modal];
-    [alertView show];
+    [modal addContentView:view];
+    [modal show];
 }
 
 @end

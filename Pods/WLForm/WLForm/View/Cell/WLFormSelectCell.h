@@ -13,5 +13,4 @@
 @property (nonatomic, strong) UILabel *leftLable;
 @property (nonatomic, strong) UILabel *rightLable;
 @property (nonatomic, copy) NSString *rightTitle;
-@property (nonatomic, assign) BOOL hasSelected;
 @end

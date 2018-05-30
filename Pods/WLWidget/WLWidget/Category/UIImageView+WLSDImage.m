@@ -10,8 +10,8 @@
 
 @implementation UIImageView (WLSDImage)
 
-//- (void)setImageViewWithUrlStr:(NSString *)urlStr placeholderImage:(UIImage *)placeholderImage {
-//    [self sd_setImageWithURL:[NSURL URLWithString:urlStr] placeholderImage:placeholderImage options:SDWebImageLowPriority | SDWebImageRetryFailed];
+//- (void)setImageViewWithUrl:(NSString *)url placeholderImage:(UIImage *)placeholderImage {
+//    [self sd_setImageWithURL:[NSURL URLWithString:url] placeholderImage:placeholderImage];
 //}
 
 @end

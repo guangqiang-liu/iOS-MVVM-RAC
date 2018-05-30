@@ -14,6 +14,7 @@
 
 #import "MacroHeader.h"
 #import "CategoryHeader.h"
+#import "SComponentHeader.h"
 #import "UIView+WLSize.h"
 #import "UIButton+WLContentExtention.h"
 #import "UIView+WLGestureBlock.h"

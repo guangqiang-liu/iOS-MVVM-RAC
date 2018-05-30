@@ -38,9 +38,11 @@
 /// 设计规范
 #define bgColor HexRGB(0xFAF9F9)
 #define sepLineColor HexRGB(0xEEEEEE)
-#define themeColor  HexRGB(0x7442ea)
+#define themeColor  HexRGB(0xFF4B4A)
 #define textGrayColor HexRGB(0x999999)
 #define textDarkGrayColor HexRGB(0x666666)
 #define textBlackColor HexRGB(0x434343)
+#define placeHolderColor HexRGB(0xcfcfcf)
+
 
 #endif /* ColorConst_h */

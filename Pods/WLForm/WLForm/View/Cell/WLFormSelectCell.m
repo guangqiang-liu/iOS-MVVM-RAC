@@ -37,11 +37,6 @@
     self.rightLable.frame = CGRectMake(leftTitleSize.width + 30, (48 - leftTitleSize.height) / 2, SCREEN_WIDTH - (leftTitleSize.width + 30 + 15 + 20), leftTitleSize.height);
 }
 
-- (void)setHasSelected:(BOOL)hasSelected {
-    _hasSelected = hasSelected;
-    self.rightLable.textColor = HexRGB(0x434343);
-}
-
 - (UILabel *)leftLable {
     if (!_leftLable) {
         _leftLable = [[UILabel alloc] init];
@@ -65,7 +60,7 @@
         _rightLable = [[UILabel alloc] init];
         _rightLable.font = H14;
         _rightLable.textAlignment = NSTextAlignmentRight;
-        _rightLable.textColor = HexRGB(0xC7C7CD);
+        _rightLable.textColor = textBlackColor;
     }
     return _rightLable;
 }

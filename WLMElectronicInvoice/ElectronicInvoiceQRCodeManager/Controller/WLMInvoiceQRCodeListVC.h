@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface WLMInvoiceQRCodeListVC : UIViewController
+@interface WLMInvoiceQRCodeListVC : WLBaseViewController
 
 @end

@@ -12,7 +12,6 @@
 
 @property (nonatomic, strong, readwrite) WLMMoreTaxationInfoVM *moreInfoViewModel;
 @property (nonatomic, strong, readwrite) RACCommand *submitFormCmd;
-
 @end
 
 @implementation WLMFillTaxationInfoVM
@@ -26,17 +25,25 @@
 
 - (void)initialize {
     [super initialize];
+    
     self.moreInfoViewModel = [[WLMMoreTaxationInfoVM alloc] initWithService:self.service params:nil];
     
-    self.submitFormCmd = [[RACCommand alloc] initWithSignalBlock:^RACSignal * _Nonnull(id  _Nullable input) {
+    self.submitFormCmd = [[RACCommand alloc] initWithSignalBlock:^RACSignal * _Nonnull(NSDictionary *dic) {
         return [RACSignal createSignal:^RACDisposable * _Nullable(id<RACSubscriber>  _Nonnull subscriber) {
-            NSDictionary *dic = @{@"data":@"xx"};
-            NSArray *dataArr = dic[@"data"];
-            [subscriber sendNext:dataArr];
-            [subscriber sendCompleted];
+            NSMutableDictionary *params = [NSMutableDictionary dictionary];
+            [params setObject:@"2323232323" forKey:@"merchantNo"];
+            [params setObject:dic[@"税控盘类型"] forKey:@"diskType"];
+            [params setObject:dic[@"税控盘号"] forKey:@"diskNumber"];
+            [params setObject:dic[@"是否已至税务局开通电子发票业务"] forKey:@"taxBussinessStatus"];
+            [[[__NETWL configPostPathKey:@"net_ei_fill_tax_info" postParams:params] setLoadMode:RequestLoadShowLoading | RequestLoadShowErrorTips] requestCallBack:^(LRResponseModel *responseModel) {
+                if (responseModel.success) {
+                    [subscriber sendNext:responseModel];
+                    [subscriber sendCompleted];
+                } else {
+                    [subscriber sendCompleted];
+                }
+            }];
             return [RACDisposable disposableWithBlock:^{
-                // 信号被取消后的处理，这里可以cancle task
-                NSLog(@"信号被取消了！");
             }];
         }];
     }];

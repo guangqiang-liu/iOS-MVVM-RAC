@@ -15,6 +15,8 @@
 #import "WLMResendInvoiceVC.h"
 #import "WLMInvoiceManagerListVC.h"
 #import "WLMInvoiceDetailVC.h"
+#import "WLMMoreTaxationInfoVC.h"
+#import "WLMEInvoiceProtocolVC.h"
 
 @interface WLMSelectApplyMerchantVC()<UITableViewDelegate, UITableViewDataSource>
 
@@ -38,19 +40,25 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"请选择申请开通的门店";
+    [self setNavigationItemRightBarButtonItem:@selector(xx) withTitle:@"提交" withTitleColor:red_color];
+}
+
+- (void)xx {
+    WLMMoreTaxationInfoVC *VC = [[WLMMoreTaxationInfoVC alloc] init];
+    [self.navigationController pushViewController:VC animated:YES];
 }
 
 #pragma mark - public method
 - (void)renderViews {
     [super renderViews];
     [self.view addSubview:self.tableView];
-    [self setNavigationItemRightBarButtonItem:@selector(testAction) withTitle:@"电票管理" withTitleColor:red_color];
+//    [self setNavigationItemRightBarButtonItem:@selector(testAction) withTitle:@"电票管理" withTitleColor:red_color];
 }
 
 - (void)bindViewModel {
     [super bindViewModel];
-    [[[RACObserve(self.merchantViewModel, dataArray) skip:1] deliverOn:[RACScheduler mainThreadScheduler]] subscribeNext:^(NSArray *array) {
-        self.dataArray = array;
+    [[[self.merchantViewModel.merchantListCmd execute:nil] deliverOn:[RACScheduler mainThreadScheduler]] subscribeNext:^(NSArray *modelArr) {
+        self.dataArray = modelArr;
         [self.tableView reloadData];
     }];
 }
@@ -94,7 +102,7 @@
 
 #pragma private method
 - (void)testAction {
-//    WLMInvoiceManagerListVC *vc = [[WLMInvoiceManagerListVC alloc] init];
+//    WLMInvoiceManagerListVC *VC = [[WLMInvoiceManagerListVC alloc] init];
     WLMInvoiceDetailVC *VC = [[WLMInvoiceDetailVC alloc] init];
     [self.navigationController pushViewController:VC animated:YES];
 }

@@ -17,7 +17,12 @@ typedef NS_ENUM(NSUInteger, WLMerchantState) {
 
 @interface WLMSelectedApplyMerchantModel : WLBaseModel
 
+@property (nonatomic, copy) NSString *merchantNo;
 @property (nonatomic, copy) NSString *merchantName;
-@property (nonatomic, copy) NSString *merchantAddress;
+@property (nonatomic, copy) NSString *provinceName;
+@property (nonatomic, copy) NSString *cityName;
+@property (nonatomic, copy) NSString *areaName;
+@property (nonatomic, copy) NSString *invoiceBusinessDesc;
+@property (nonatomic, copy) NSString *invoiceBusinessStatus;
 @property (nonatomic, assign) WLMerchantState merchantState;
 @end

@@ -11,6 +11,10 @@
 #import "WLMSelectApplyMerchantVC.h"
 #import "WLBViewModelServiceImp.h"
 
+#import "WLNetServer.h"
+#import "WLNetTips.h"
+#import "WLNetDebug.h"
+
 @interface AppDelegate ()
 
 @property (nonatomic, strong) WLBViewModelServiceImp *viewModelService;
@@ -30,6 +34,14 @@
     self.window.backgroundColor = [UIColor whiteColor];
     self.window.rootViewController = navVC;
     [self.window makeKeyAndVisible];
+    
+    [WLNetServer configWithHost:Host_Develop];
+    [WLNetDebug debug];
+    
+    [NetWL configInitInfo:^(LRNet *net) {
+        [net resetTimeout:10];
+        [net resetTipsConfig:[WLNetTips sharedInstance]];
+    }];
     return YES;
 }
 

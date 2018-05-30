@@ -9,6 +9,8 @@
 #ifndef FormConst_h
 #define FormConst_h
 
+#import "ColorConst.h"
+
 #define WLCellHeight 44
 #define WLMarginLeft 10
 #define WLMarginTop 8
@@ -19,7 +21,7 @@
 #define WLSectionHeaderHeight 0
 #define WLSectionFooterHeight 0
 
-#define WLLeftTitleFont [UIFont systemFontOfSize:14]
+#define WLLeftTitleFont [UIFont systemFontOfSize:16]
 #define WLRightTitleFont [UIFont systemFontOfSize:14]
 #define WLSectionTitleFont [UIFont systemFontOfSize:14]
 
@@ -30,7 +32,7 @@
 #define WLRightArrowWidth 30
 #define WLRightArrowHeight 30
 
-#define WLLeftTitleColor [UIColor blackColor]
+#define WLLeftTitleColor HexRGB(0x434343)
 #define WLRightTitleColor [UIColor blackColor]
 
 #define WLSectionHeaderBgColor [UIColor whiteColor]

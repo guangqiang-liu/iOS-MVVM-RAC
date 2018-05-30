@@ -51,6 +51,7 @@
             [self renderDotsWithSuperView:boxDot];
         }
     }
+    
     self.frame = CGRectMake(15, 15, SCREEN_WIDTH - 30, MaxY(tempView) + 24);
 }
 
@@ -79,10 +80,7 @@
     [view addSubview:stateLable];
     
     UIView *line = [[UIView alloc] init];
-    line.frame = CGRectMake(0, 0, 112, 2);
     [view addSubview:line];
-    line.center = CGPointMake(view.bounds.size.width / 2, view.bounds.size.height / 2);
-    [line drawDashLineWithLineHeight:1 dashLineWidth:@4 dashLineSpace:@5 lineColor:HexRGB(0xDEDEDE)];
     
     UILabel *timeLable = [[UILabel alloc] init];
     timeLable.frame = CGRectMake(WIDTH(view) - 94, 0, 94, 18);
@@ -90,6 +88,9 @@
     timeLable.textColor = textGrayColor;
     timeLable.font = H14;
     [view addSubview:timeLable];
+    
+    line.frame = CGRectMake(MaxX(stateLable) + 10, (HEIGHT(view) - 2) / 2, SCREEN_WIDTH - 265, 2);
+    [line drawDashLineWithLineHeight:1 dashLineWidth:@4 dashLineSpace:@5 lineColor:HexRGB(0xDEDEDE)];
 }
 
 @end

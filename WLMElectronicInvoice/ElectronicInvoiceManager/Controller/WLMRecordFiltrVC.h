@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface WLMRecordFiltrVC : UIViewController
+@interface WLMRecordFiltrVC : WLBaseViewController
 
 @end

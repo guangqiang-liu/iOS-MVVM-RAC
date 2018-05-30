@@ -7,22 +7,20 @@
 //
 
 #import "WLMPackageInfoVC.h"
-#import "WLCircleProgressView.h"
 #import "WLMInvoiceQRCodeListVC.h"
 
 @interface WLMPackageInfoVC ()
 
 @property (nonatomic, strong) UIImageView *bgImgView;
 @property (nonatomic, strong) UILabel *typeLabel;   //套餐类型
-@property (nonatomic, strong) UIView *lineA;
+@property (nonatomic, strong) UIView *topLine;
 @property (nonatomic, strong) UILabel *amountLabel; //已开金额
-@property (nonatomic, strong) UIView *lineB;
+@property (nonatomic, strong) UIView *bottomLine;
 @property (nonatomic, strong) UIButton *invoiceBtn;
-@property (nonatomic, strong) WLCircleProgressView *progressView;
+@property (nonatomic, strong) UIView *whiteDot;
 @property (nonatomic, strong) UILabel *reminderLabel;
 @property (nonatomic, strong) UILabel *usedPaperLabel;
 @property (nonatomic, strong) UILabel *surplusPaperLabel;
-
 @end
 
 @implementation WLMPackageInfoVC
@@ -44,18 +42,25 @@
 
 - (void)setupSubViews {
     [self.view addSubview:self.bgImgView];
-    [self.view addSubview:self.invoiceBtn];
-    [self addInfoSubviews:@[self.typeLabel, self.lineA, self.amountLabel, self.lineB] type:@"imgView"];
-    
-    self.progressView = [[WLCircleProgressView alloc] initWithFrame:CGRectMake(SCREEN_WIDTH / 2 - 75, 135, 150, 150) circleWidth:10 gradientCGColors:@[(id)HexRGB(0x72D7FF).CGColor, (id)HexRGB(0x4B77FF).CGColor]];
+    [self.bgImgView addSubview:self.typeLabel];
+    [self.bgImgView addSubview:self.topLine];
+    [self.bgImgView addSubview:self.amountLabel];
+    [self.bgImgView addSubview:self.bottomLine];
+
     [self.view addSubview:self.progressView];
-    self.progressView.progress = @(0.8);
+    [self.view addSubview:self.whiteDot];
+    [self.progressView addSubview:self.reminderLabel];
+    [self.progressView addSubview:self.usedPaperLabel];
+    [self.progressView addSubview:self.surplusPaperLabel];
     
-    [self addInfoSubviews:@[self.reminderLabel, self.usedPaperLabel, self.surplusPaperLabel] type:@"progressView"];
+    [self.view addSubview:self.invoiceBtn];
+
+    [self.amountLabel setSpecificTextWithText:@"50,000" color:textBlackColor font:HB28];
+    
+//    self.progressView.progress = @(0.8);
 }
 
-#pragma mark -
-
+#pragma mark - getter\setter
 - (UIImageView *)bgImgView {
     if (_bgImgView == nil) {
         UIImage *image = UIImageName(@"einvoice_package_info");
@@ -76,35 +81,50 @@
     return _typeLabel;
 }
 
-- (UIView *)lineA {
-    if (_lineA == nil) {
-        _lineA = [[UIView alloc] init];
-        _lineA.backgroundColor = RGB(222, 222, 222);
-        _lineA.frame = CGRectMake(16, 55, SCREEN_WIDTH - 60, 0.5);
-//        [self drawRect:_lineA.frame];
+- (UIView *)topLine {
+    if (_topLine == nil) {
+        _topLine = [[UIView alloc] init];
+        _topLine.frame = CGRectMake(15, 55, WIDTH(self.bgImgView) - 30, 0.5);
+        [_topLine drawDashLineWithLineHeight:1 dashLineWidth:@4 dashLineSpace:@5 lineColor:HexRGB(0xDEDEDE)];
     }
-    return _lineA;
+    return _topLine;
 }
 
 - (UILabel *)amountLabel {
     if (_amountLabel == nil) {
         _amountLabel = [[UILabel alloc] init];
-        _amountLabel.frame = CGRectMake(SCREEN_WIDTH / 3, 70, 200, 30);
+        _amountLabel.frame = CGRectMake((WIDTH(self.bgImgView) - 200) / 2, 70, 200, 30);
         _amountLabel.textColor = RGB(67, 67, 67);
         _amountLabel.font = FONT_PingFang_Regular(16);
-        _amountLabel.text = @"已开金额：50,000元";
+        _amountLabel.text = @"已开金额：50,000 元";
     }
     return _amountLabel;
 }
 
-- (UIView *)lineB {
-    if (_lineB == nil) {
-        _lineB = [[UIView alloc] init];
-        _lineB.backgroundColor = RGB(222, 222, 222);
-        _lineB.frame = CGRectMake(16, 115, SCREEN_WIDTH - 60, 0.5);
-//        [self drawRect:_lineA.frame];
+- (UIView *)bottomLine {
+    if (_bottomLine == nil) {
+        _bottomLine = [[UIView alloc] init];
+        _bottomLine.frame = CGRectMake(15, 115, WIDTH(self.bgImgView) - 30, 0.5);
+        [_bottomLine drawDashLineWithLineHeight:1 dashLineWidth:@4 dashLineSpace:@5 lineColor:HexRGB(0xDEDEDE)];
     }
-    return _lineB;
+    return _bottomLine;
+}
+
+- (WLCircleProgressView *)progressView {
+    if (!_progressView) {
+        _progressView = [[WLCircleProgressView alloc] initWithFrame:CGRectMake(SCREEN_WIDTH / 2 - 75, 135, 150, 150) circleWidth:10 gradientCGColors:@[(id)HexRGB(0x72D7FF).CGColor, (id)HexRGB(0x4B77FF).CGColor]];
+    }
+    return _progressView;
+}
+
+- (UIView *)whiteDot {
+    if (!_whiteDot) {
+        _whiteDot = [[UIView alloc] init];
+        _whiteDot.frame = CGRectMake((WIDTH(self.bgImgView) + 10) / 2, 137, 6, 6);
+        _whiteDot.layer.cornerRadius = 3;
+        _whiteDot.backgroundColor = white_color;
+    }
+    return _whiteDot;
 }
 
 - (UILabel *)reminderLabel {
@@ -154,8 +174,9 @@
         [_invoiceBtn setTitle:@"绑定开票码" forState:UIControlStateNormal];
         [_invoiceBtn createGradientButtonWithSize:CGSizeMake(SCREEN_WIDTH, 44) colorArray:@[HexRGB(0xFF7E4A), HexRGB(0xFF4A4A)] gradientType:GradientFromLeftToRight];
         [_invoiceBtn whenTapped:^{
+            UIViewController *currentVC = [self.view getCurrentViewController];
             WLMInvoiceQRCodeListVC *vc = [[WLMInvoiceQRCodeListVC alloc] init];
-            [self.navigationController pushViewController:vc animated:YES];
+            [currentVC.navigationController pushViewController:vc animated:YES];
         }];
     }
     return _invoiceBtn;

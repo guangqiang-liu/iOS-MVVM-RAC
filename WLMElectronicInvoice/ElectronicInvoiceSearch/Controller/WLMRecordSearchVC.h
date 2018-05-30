@@ -10,9 +10,8 @@
 
 typedef void (^WLMEInvoiceRecordSearchBlock) (NSString *);
 
-@interface WLMRecordSearchVC : UIViewController
+@interface WLMRecordSearchVC : WLBaseViewController
 
 @property (nonatomic, copy) NSString *searchContent;
 @property (nonatomic, copy) WLMEInvoiceRecordSearchBlock invoiceRecordSearchBlock;
-
 @end

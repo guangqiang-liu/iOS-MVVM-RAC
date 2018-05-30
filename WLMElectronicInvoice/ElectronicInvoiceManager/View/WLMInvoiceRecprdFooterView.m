@@ -7,46 +7,55 @@
 //
 
 #import "WLMInvoiceRecprdFooterView.h"
+#import "WLMRecordFiltrVC.h"
 
 @interface WLMInvoiceRecprdFooterView ()
 
 @property (nonatomic, strong) UIView *footView;
 @property (nonatomic, strong) UIButton *recordFilterBtn;
-
 @end
 
 @implementation WLMInvoiceRecprdFooterView
 
--(instancetype)initWithFootView {
-    self = [super initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 50)];
+- (instancetype)init {
+    self = [super init];
     if (self) {
-        [self addSubview:self.footView];
+        self.frame = CGRectMake(0, 0, SCREEN_WIDTH, 50);
+        [self renderViews];
     }
     return self;
 }
 
-#pragma mark - set get
+- (void)renderViews {
+    [self addSubview:self.footView];
+    [self.footView addSubview:self.recordFilterBtn];
+}
 
--(UIView *)footView {
+#pragma mark - getter\setter
+- (UIView *)footView {
     if (!_footView) {
         _footView = [[UIView alloc] init];
         _footView.frame = CGRectMake(0, 0, SCREEN_WIDTH, 50);
-        _footView.backgroundColor = clear_color;
-        
-        self.recordFilterBtn = [[UIButton alloc] init];
-        self.recordFilterBtn.frame = CGRectMake(SCREEN_WIDTH / 2 - 50, 16, 100, 18);
-//        self.recordFilterBtn.center = CGPointMake(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2);
-        [self.recordFilterBtn setTitle:@"查看更多 >" forState:UIControlStateNormal];
-        [self.recordFilterBtn setTitleColor:RGB(222, 222, 222) forState:UIControlStateNormal];
-        self.recordFilterBtn.titleLabel.font = FONT_PingFang_Light(14);
-        [self.recordFilterBtn addTarget:self action:@selector(recordFilterClicked:) forControlEvents:UIControlEventTouchUpInside];
-        [_footView addSubview:self.recordFilterBtn];
     }
     return _footView;
 }
 
+- (UIButton *)recordFilterBtn {
+    if (!_recordFilterBtn) {
+        _recordFilterBtn = [[UIButton alloc] init];
+        _recordFilterBtn.frame = CGRectMake(SCREEN_WIDTH / 2 - 50, 16, 100, 18);
+        [_recordFilterBtn setTitle:@"查看更多" forState:UIControlStateNormal];
+        [_recordFilterBtn setTitleColor:textGrayColor forState:UIControlStateNormal];
+        _recordFilterBtn.titleLabel.font = FONT_PingFang_Light(14);
+        [_recordFilterBtn setImage:[WLIcon iconWithName:@"right_arrow_o" size:15 color:HexRGB(0xdedede)] forState:UIControlStateNormal];
+        [_recordFilterBtn layoutButtonWithEdgeInsetsStyle:MKButtonEdgeInsetsStyleRight imageTitleSpace:5];
+        [_recordFilterBtn addTarget:self action:@selector(recordFilterClicked:) forControlEvents:UIControlEventTouchUpInside];
+    }
+    return _recordFilterBtn;
+}
+
 - (void)recordFilterClicked:(UIButton *)button {
-    [self.delegate didRecordFilterButton:button];
+    !self.footerButtonCallback ?: self.footerButtonCallback();
 }
 
 @end

@@ -1,0 +1,116 @@
+{
+  "name": "WLConst",
+  "version": "1.0.7",
+  "summary": "WLConst : 钱包常量",
+  "description": "提供钱包常量，通过配置WLC，WLL，WLM来配置对应的常量",
+  "homepage": "https://gitlab.qianbaocard.org/iOS/WLConst",
+  "license": "MIT",
+  "authors": {
+    "leo": "work.mileo@gmail.com"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source": {
+    "git": "git@gitlab.qianbaocard.org:iOS/WLConst.git",
+    "tag": "1.0.7"
+  },
+  "requires_arc": true,
+  "default_subspecs": "Const",
+  "subspecs": [
+    {
+      "name": "Const",
+      "source_files": "WLConst/Const/*.{h,m}"
+    },
+    {
+      "name": "WLL",
+      "resources": "WLConst/WLL/*",
+      "dependencies": {
+        "WLConst/Const": [
+
+        ]
+      }
+    },
+    {
+      "name": "WLM",
+      "resources": "WLConst/WLM/*",
+      "dependencies": {
+        "WLConst/Const": [
+
+        ]
+      }
+    },
+    {
+      "name": "WLC",
+      "resources": "WLConst/WLC/*",
+      "dependencies": {
+        "WLConst/Const": [
+
+        ]
+      }
+    },
+    {
+      "name": "WLQB",
+      "resources": "WLConst/WLQB/*",
+      "dependencies": {
+        "WLConst/Const": [
+
+        ]
+      }
+    },
+    {
+      "name": "WLPS",
+      "resources": "WLConst/WLPS/*",
+      "dependencies": {
+        "WLConst/Const": [
+
+        ]
+      }
+    },
+    {
+      "name": "WLImage",
+      "resources": "WLConst/WLImage/*",
+      "dependencies": {
+        "WLConst/Const": [
+
+        ]
+      }
+    },
+    {
+      "name": "WLZCD",
+      "resources": "WLConst/WLZCD/*",
+      "dependencies": {
+        "WLConst/Const": [
+
+        ]
+      }
+    },
+    {
+      "name": "WLH5",
+      "resources": "WLConst/WLH5/*",
+      "dependencies": {
+        "WLConst/Const": [
+
+        ]
+      }
+    },
+    {
+      "name": "WLHT",
+      "resources": "WLConst/WLHT/*",
+      "dependencies": {
+        "WLConst/Const": [
+
+        ]
+      }
+    },
+    {
+      "name": "WLVinci",
+      "resources": "WLConst/WLVinci/*",
+      "dependencies": {
+        "WLConst/Const": [
+
+        ]
+      }
+    }
+  ]
+}

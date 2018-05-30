@@ -28,5 +28,6 @@
 #import "UINavigationItem+WLFixedSpace.h"
 #import "NSObject+WLRunTime.h"
 #import "UIBarButtonItem+WLButtonItem.h"
+#import "UITextView+WLTextView.h"
 
 #endif /* CategoryHeader_h */

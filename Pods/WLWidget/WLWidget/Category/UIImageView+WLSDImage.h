@@ -11,10 +11,10 @@
 @interface UIImageView (WLSDImage)
 
 /**
- 设置imageView的image
- 
- @param urlStr image url
- @param placeholderImage 占位图
+ 设置image的url
+
+ @param url url
+ @param placeholderImage placeholderImage
  */
-- (void)setImageViewWithUrlStr:(NSString *)urlStr placeholderImage:(UIImage *)placeholderImage;
+- (void)setImageViewWithUrl:(NSString *)url placeholderImage:(UIImage *)placeholderImage;
 @end

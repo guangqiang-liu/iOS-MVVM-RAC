@@ -13,12 +13,11 @@ typedef NS_ENUM(NSInteger, ImageLocation) {
     ImageLocationRight
 };
 
-@interface ImageTextField()
-{
+@interface ImageTextField() {
     UIImage *_leftImage;
     UIImage *_rightImage;
-    CGSize   _sizeLeft;
-    CGSize   _sizeRight;
+    CGSize _sizeLeft;
+    CGSize _sizeRight;
 }
 @end
 
@@ -40,16 +39,16 @@ typedef NS_ENUM(NSInteger, ImageLocation) {
         _sizeLeft = size1;
         _sizeRight = size2;
         self.contentMode = UIViewContentModeCenter;
-        self.backgroundColor = [UIColor whiteColor];
+        self.backgroundColor = HexRGB(0xF4F4F4);
         self.font = H14;
         self.tintColor = themeColor;
-        self.textColor = lightGray_color;
+        self.textColor = textBlackColor;
         self.clearButtonMode = UITextFieldViewModeAlways;
-        [self resetCornerRadius:4];
+        [self resetCornerRadius:15];
         self.inputAccessoryView = [UIView new];
         
-        self.leftViewMode = (_leftImage==nil) ? UITextFieldViewModeNever:UITextFieldViewModeAlways;
-        self.rightViewMode = (_rightImage==nil) ? UITextFieldViewModeNever:UITextFieldViewModeAlways;
+        self.leftViewMode = (_leftImage == nil) ? UITextFieldViewModeNever:UITextFieldViewModeAlways;
+        self.rightViewMode = (_rightImage == nil) ? UITextFieldViewModeNever:UITextFieldViewModeAlways;
         
         self.leftView = [self imageInLocation:ImageLocationLeft];
         self.rightView = [self imageInLocation:ImageLocationRight];
@@ -75,7 +74,6 @@ typedef NS_ENUM(NSInteger, ImageLocation) {
     imageView.image = tempImage;
     imageView.center = bgView.center;
     [bgView addSubview:imageView];
-    
     return bgView;
 }
 

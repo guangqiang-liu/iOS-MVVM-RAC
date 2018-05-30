@@ -63,8 +63,8 @@
 - (void)setModel:(WLMSelectedApplyMerchantModel *)model {
     _model = model;
     self.title.text = model.merchantName;
-    self.subTitle.text = model.merchantAddress;
-    switch (model.merchantState) {
+    self.subTitle.text = [NSString stringWithFormat:@"%@-%@-%@",model.provinceName, model.cityName, model.areaName];
+    switch ([model.invoiceBusinessStatus integerValue]) {
         case WLMerchantStateNotOpen:
             self.stateLable.text = @"未开通";
             self.stateLable.textColor = textGrayColor;

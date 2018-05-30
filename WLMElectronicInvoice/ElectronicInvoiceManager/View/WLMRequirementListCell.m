@@ -95,9 +95,8 @@ static const CGFloat kRequirementHeight = 156.f;
 - (UIView *)lineView {
     if (!_lineView) {
         _lineView = [[UIView alloc] init];
-        _lineView.backgroundColor = RGB(222, 222, 222);
         _lineView.frame = CGRectMake(16, 76, SCREEN_WIDTH - 62, 0.5);
-        [self drawRect:_lineView.frame];
+        [_lineView drawDashLineWithLineHeight:1 dashLineWidth:@4 dashLineSpace:@5 lineColor:HexRGB(0xDEDEDE)];
     }
     return _lineView;
 }
@@ -139,17 +138,6 @@ static const CGFloat kRequirementHeight = 156.f;
         _RequirementImg.image = UIImageName(@"einvoice_mange_sample");
     }
     return _RequirementImg;
-}
-
-- (void)awakeFromNib {
-    [super awakeFromNib];
-    // Initialization code
-}
-
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
 }
 
 @end
