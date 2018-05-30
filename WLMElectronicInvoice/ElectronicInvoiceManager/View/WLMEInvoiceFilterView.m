@@ -18,22 +18,16 @@
 @property (nonatomic, strong) UIButton *cancelBtn;
 @property (nonatomic, strong) UIButton *confirmBtn;
 
-@property (nonatomic, copy) NSArray *stateDatas;
+@property (nonatomic, copy) NSArray *itemDates;
+@property (nonatomic, copy) NSArray *itemTags;  //按键tag
+@property (nonatomic, copy) NSArray *selectArray;
+@property (nonatomic, strong) NSMutableDictionary *itemSelect;    //已选择的筛选项
 @property (nonatomic, strong) WLMEInvoiceCustomFilterButton *tempState;
 @property (nonatomic, strong) WLMEInvoiceCustomFilterButton *tempType;
 
 @end
 
 @implementation WLMEInvoiceFilterView
-
-- (id)init {
-    self = [super init];
-    if (self) {
-        [self dataInit];
-        [self setUpViews];
-    }
-    return self;
-}
 
 - (id)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
@@ -45,18 +39,34 @@
 }
 
 - (void)dataInit {
-    self.stateDatas = @[@{@"title":@"全部",@"tag":@(1)},
-                       @{@"title":@"已开票",@"tag":@(2)},
-                       @{@"title":@"作废中",@"tag":@(3)},
-                       @{@"title":@"已作废",@"tag":@(4)},
-                       @{@"title":@"作废失败",@"tag":@(5)},
-                       @{@"title":@"开票失败",@"tag":@(6)},
+    self.itemDates = @[@{@"title":@"全部", @"tag":@(1)},
+                       @{@"title":@"已开票", @"tag":@(2)},
+                       @{@"title":@"作废中", @"tag":@(3)},
+                       @{@"title":@"已作废", @"tag":@(4)},
+                       @{@"title":@"作废失败", @"tag":@(5)},
+                       @{@"title":@"开票失败", @"tag":@(6)},
                        ];
+    
+    //按键tag数组
+    self.itemTags = [NSArray array];
+    NSMutableArray *array = [NSMutableArray array];
+    for (int i = 0; i < self.itemDates.count; i++) {
+        [array addObject:[self.itemDates[i] valueForKey:@"tag"]];
+    }
+    self.itemTags = [NSArray arrayWithArray:array];
+    
+    //状态数组
+    self.selectArray = [NSArray array];
+    NSMutableArray *muArr = [NSMutableArray array];
+    for (int i = 0; i < self.itemTags.count; i++) {
+        [muArr addObject:@{@"tag":self.itemTags[i], @"isSelect":@"0"}];
+    }
+    self.selectArray = [muArr copy];
 }
 
 - (void)setUpViews {
     self.backgroundColor = [UIColor colorWithWhite:0.2 alpha:0.4];
-    self.frame = CGRectMake(0, 64+0.5, SCREEN_WIDTH, SCREEN_HEIGHT);
+    self.frame = CGRectMake(0, 64 + 0.5, SCREEN_WIDTH, SCREEN_HEIGHT);
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismiss)];
     [self addGestureRecognizer:tap];
     
@@ -65,8 +75,8 @@
     [self addFilterSubviews:@[self.cancelBtn, self.confirmBtn] bgType:@"action"];
     
     WLMEInvoiceCustomFilterButton *tempStateBtn = [WLMEInvoiceCustomFilterButton buttonWithType:UIButtonTypeCustom];
-    for (int i = 0; i < self.stateDatas.count; i ++) {
-        NSDictionary *dic = self.stateDatas[i];
+    for (int i = 0; i < self.itemDates.count; i ++) {
+        NSDictionary *dic = self.itemDates[i];
         WLMEInvoiceCustomFilterButton *button = [WLMEInvoiceCustomFilterButton buttonWithType:UIButtonTypeCustom];
         
         button.tag = [dic[@"tag"] integerValue];
@@ -109,8 +119,34 @@
 }
 
 - (void)stateItemClick:(WLMEInvoiceCustomFilterButton *)sender {
+    [self.itemTags enumerateObjectsUsingBlock:^(id _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        NSString *selectTag = [NSString stringWithFormat:@"%ld", (long)sender.tag];
+        NSString *tag = [NSString stringWithFormat:@"%@", obj];
+        
+        NSMutableArray *array = [NSMutableArray arrayWithArray:self.selectArray];
+        NSDictionary *mutDic = [NSDictionary dictionary];
+        if ([tag isEqualToString:selectTag]) {
+            NSString *status = @"0";
+            NSDictionary *dic = self.selectArray[idx];
+            status = [dic valueForKey:@"isSelect"];
+            NSString *selectStr = [status isEqualToString:@"0"] ? @"1" : @"0";
+            
+            mutDic = @{@"tag":tag, @"isSelect":selectStr};
+            [array replaceObjectAtIndex:idx withObject:mutDic];
+            self.selectArray = [array copy];
+            sender.selected = [selectStr isEqualToString:@"0"] ? NO : YES;
+            
+            UIColor *titleColor = sender.selected ? RGB(255, 75, 74) : RGB(153, 153, 153);
+            [sender setTitleColor:titleColor forState:UIControlStateNormal];
+            UIImage *image = sender.selected ? UIImageName(@"filter_state_selected") : UIImageName(@"filter_state_normal");
+            [sender setBackgroundImage:image forState:UIControlStateNormal];
+            
+            //已选择的筛选项
+            self.itemSelect = [array copy];
+        }
+    }];
+    
     self.tempState.selected = NO;
-    sender.selected = YES;
     self.tempState = sender;
 }
 
@@ -121,6 +157,8 @@
 - (void)confirmItemClick:(UIButton *)sender {
     [self dismiss];
     if (self.clickedItemCallback) {
+        //根据业务需求修改
+        //self.itemSelect
         self.clickedItemCallback(122);
     }
 }
@@ -205,6 +243,13 @@
     return _confirmBtn;
 }
 
+- (NSMutableDictionary *)itemSelect {
+    if (_itemSelect == nil) {
+        _itemSelect = [NSMutableDictionary dictionary];
+    }
+    return _itemSelect;
+}
+
 #pragma mark - funciton
 
 - (void)addFilterSubviews:(NSArray *)subviews bgType:(NSString *)type{
@@ -237,11 +282,12 @@
 
 - (void)setSelected:(BOOL)selected {
     [super setSelected:selected];
-    
+    /*
     UIColor *titleColor = selected ? RGB(255, 75, 74) : RGB(153, 153, 153);
     [self setTitleColor:titleColor forState:UIControlStateNormal];
     UIImage *image = selected ? UIImageName(@"filter_state_selected") : UIImageName(@"filter_state_normal");
     [self setBackgroundImage:image forState:UIControlStateNormal];
+     */
 }
 
 @end

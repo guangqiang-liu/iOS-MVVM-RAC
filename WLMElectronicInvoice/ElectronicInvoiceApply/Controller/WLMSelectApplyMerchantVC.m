@@ -17,6 +17,7 @@
 #import "WLMInvoiceDetailVC.h"
 #import "WLMMoreTaxationInfoVC.h"
 #import "WLMEInvoiceProtocolVC.h"
+#import "WLMRecordFiltrVC.h"
 
 @interface WLMSelectApplyMerchantVC()<UITableViewDelegate, UITableViewDataSource>
 
