@@ -29,6 +29,5 @@
 #import "WLBaseTableViewHeaderFooterView.h"
 #import "WLBaseView.h"
 #import "WLBaseViewProtocol.h"
-#import "UIViewController+WLNavigationItem.h"
 
 #endif /* WLBaseViewHeader_h */

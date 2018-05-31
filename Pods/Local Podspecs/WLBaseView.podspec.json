@@ -1,6 +1,6 @@
 {
   "name": "WLBaseView",
-  "version": "0.2.4",
+  "version": "0.2.5",
   "summary": "常用View的基础base类",
   "description": "TODO: Add long description of the pod here.",
   "homepage": "git@gitlab.qianbaocard.org:iOS/base/WLBaseView.git",
@@ -10,7 +10,7 @@
   },
   "source": {
     "git": "git@gitlab.qianbaocard.org:iOS/base/WLBaseView.git",
-    "tag": "0.2.4"
+    "tag": "0.2.5"
   },
   "platforms": {
     "ios": "8.0"

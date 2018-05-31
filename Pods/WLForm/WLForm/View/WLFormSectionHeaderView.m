@@ -36,7 +36,7 @@
 - (UIView *)topSepLine {
     if (!_topSepLine) {
         _topSepLine = [[UIView alloc] init];
-        _topSepLine.frame = CGRectMake(0, 0, SCREEN_WIDTH, self.viewModel.headerTopSepLineHeight);
+        _topSepLine.frame = CGRectMake(0, 0, SCREEN_WIDTH, self.viewModel.headerHeight > 1 ? self.viewModel.headerTopSepLineHeight : 0);
         _topSepLine.backgroundColor = self.viewModel.headerTopSepLineColor;
     }
     return _topSepLine;

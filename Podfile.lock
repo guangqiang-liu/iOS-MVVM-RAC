@@ -39,25 +39,25 @@ PODS:
   - SimpleView/SimpleAnimation (1.0.7)
   - SimpleView/SimpleView (1.0.7):
     - SimpleView/Simple
-  - WLBase/Alert (2.1.10):
+  - WLBase/Alert (2.1.11):
     - WLBase/Category
-  - WLBase/Base (2.1.10):
+  - WLBase/Base (2.1.11):
     - LRModel
     - NSTimer-Blocks
     - ReactiveObjC
     - SDWebImage
     - SimpleView
-  - WLBase/Category (2.1.10):
+  - WLBase/Category (2.1.11):
     - WLBase/Base
-  - WLBase/Component (2.1.10):
+  - WLBase/Component (2.1.11):
     - WLBase/Base
-  - WLBase/Device (2.1.10):
+  - WLBase/Device (2.1.11):
     - OpenUDID
     - WLBase/Base
-  - WLBaseView (0.2.5):
+  - WLBaseView (0.2.6):
     - ReactiveObjC
-    - WLBaseView/Code (= 0.2.5)
-  - WLBaseView/Code (0.2.5):
+    - WLBaseView/Code (= 0.2.6)
+  - WLBaseView/Code (0.2.6):
     - ReactiveObjC
   - WLConst (1.1.8):
     - WLConst/Const (= 1.1.8)
@@ -66,27 +66,27 @@ PODS:
     - WLConst/Const
   - WLConst/WLM (1.1.8):
     - WLConst/Const
-  - WLForm (0.1.5):
+  - WLForm (0.1.6):
     - IQKeyboardManager
     - Masonry
     - WLBaseView
-    - WLForm/Code (= 0.1.5)
+    - WLForm/Code (= 0.1.6)
     - WLIconFont
     - WLWidget
-  - WLForm/Code (0.1.5):
+  - WLForm/Code (0.1.6):
     - IQKeyboardManager
     - Masonry
     - WLBaseView
     - WLIconFont
     - WLWidget
   - WLIconFont (0.1.8)
-  - WLModal (0.0.4):
+  - WLModal (0.0.5):
     - Masonry
     - SDWebImage
     - WLIconFont
-    - WLModal/Modal (= 0.0.4)
+    - WLModal/Modal (= 0.0.5)
     - WLWidget
-  - WLModal/Modal (0.0.4):
+  - WLModal/Modal (0.0.5):
     - Masonry
     - SDWebImage
     - WLIconFont
@@ -105,16 +105,16 @@ PODS:
   - WLPickerView (0.0.2):
     - WLPickerView/Code (= 0.0.2)
   - WLPickerView/Code (0.0.2)
-  - WLWidget (0.0.18):
+  - WLWidget (0.0.20):
     - SDWebImage
-    - WLWidget/Category (= 0.0.18)
-    - WLWidget/Macro (= 0.0.18)
-    - WLWidget/SComponent (= 0.0.18)
-  - WLWidget/Category (0.0.18):
+    - WLWidget/Category (= 0.0.20)
+    - WLWidget/Macro (= 0.0.20)
+    - WLWidget/SComponent (= 0.0.20)
+  - WLWidget/Category (0.0.20):
     - SDWebImage
-  - WLWidget/Macro (0.0.18):
+  - WLWidget/Macro (0.0.20):
     - SDWebImage
-  - WLWidget/SComponent (0.0.18):
+  - WLWidget/SComponent (0.0.20):
     - SDWebImage
 
 DEPENDENCIES:
@@ -147,16 +147,16 @@ SPEC CHECKSUMS:
   ReactiveObjC: 2a38ea15335de4119d8b17caf1db1484f61db902
   SDWebImage: de4d90b5bff3571eae7bd16202b1f43135409fa5
   SimpleView: 8aee70e59ebdb8e501360394a10fb0a8634151c4
-  WLBase: 4708e84860404b7f44a8cded5d331ebee665b8d2
-  WLBaseView: 1d22c3534d4fbe5866c4359771eaa16236f26327
+  WLBase: cd9624a33d0615938dde7d061ed33a55c4090c8c
+  WLBaseView: 9a763be5ea833bb2e28fdabea9d6ab252b0d802c
   WLConst: 01afecc926534f7e4b8e8928077ded78d1105aca
-  WLForm: e5afc12cabda80e7a1b15bda31823a10add06f70
+  WLForm: 1119f15ba026fb9d25046cf5974fca709de6d48b
   WLIconFont: 0f8495a59e7c3b16afb27fb5b74de62ec7b44984
-  WLModal: 05bc84e2ad8b17348319128683310465a1641da6
+  WLModal: 99ff8e1c285451c38d951eee3f2b511cfff63163
   WLNet: 7a4b63a58f949b23f4a7cf6f0bbde891ce578b96
   WLPickerView: 980fa23885fcaf4dddadbcb1fba98f742a316b7c
-  WLWidget: 32f6bb7d07557593c27624db85753f6adcf8aa27
+  WLWidget: 63605441031e3d5d609cd0783a8d8b00f31b17d6
 
-PODFILE CHECKSUM: 0dfffba3e6620cc075fb24ef36c91c8d369c1e93
+PODFILE CHECKSUM: 7c08d4dcab50b3f1fb99bf070ea0cfa889aafc59
 
 COCOAPODS: 1.4.0

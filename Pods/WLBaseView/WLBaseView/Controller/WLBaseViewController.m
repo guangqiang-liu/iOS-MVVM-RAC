@@ -42,16 +42,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self initialize];
-    
-    if (!self.leftBarBtnHidden) {
-        [self setNavigationItemBackItem];
-    }
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     self.navigationController.toolbarHidden = self.toolbarHidden;
     self.navigationController.navigationBarHidden = self.navigationBarHidden;
+    if (!self.leftBarBtnHidden) {
+        [self setNavigationItemBackItem];
+    }
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -69,7 +68,9 @@
     self.navigationBarHidden = NO;
     self.toolbarHidden = YES;
     self.titleColor = kNavTitleColor;
-    self.view.backgroundColor = HexRGB(0xFAF9F9);
+    self.view.backgroundColor = kBgColor;
+    self.navigationController.navigationBar.translucent = NO;
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
 }
 
 - (void)setTitleColor:(UIColor *)titleColor {

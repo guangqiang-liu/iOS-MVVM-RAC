@@ -63,11 +63,11 @@
 }
 
 - (CGFloat)footerHeight {
-    return _footerHeight != 0 ? _footerHeight : 0;
+    return _footerHeight > 2.0f ? _footerHeight : 0.01f;
 }
 
 - (CGFloat)headerHeight {
-    return _headerHeight != 0 ? _headerHeight : 0;
+    return _headerHeight > 2.0f ? _headerHeight : 0.01f;
 }
 
 - (NSMutableArray<WLFormItemViewModel *> *)itemArray {

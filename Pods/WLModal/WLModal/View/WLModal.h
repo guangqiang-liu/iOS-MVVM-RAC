@@ -10,15 +10,7 @@
 
 @interface WLModal : UIView
 
-@property (nonatomic, strong) UIView *dialogView;
-
-@property (nonatomic, strong) UIView *containerView;
-
-/**
- alert按钮的集合
- */
 @property (nonatomic, copy) NSArray *buttonTitles;
-
 @property (nonatomic, copy) void (^onButtonTouchUpInside)(WLModal *alertView, NSInteger buttonIndex);
 
 - (id)init;
@@ -33,5 +25,4 @@
 
 - (void)deviceOrientationDidChange:(NSNotification *)notification;
 
-- (void)dealloc;
 @end

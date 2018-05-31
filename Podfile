@@ -23,7 +23,7 @@ target 'WLMElectronicInvoice' do
   pod 'WLModal'
   pod 'WLWidget'
   pod 'WLPickerView'
-  
+
   pod 'Masonry'
   pod 'ReactiveObjC'
   pod 'MJExtension'

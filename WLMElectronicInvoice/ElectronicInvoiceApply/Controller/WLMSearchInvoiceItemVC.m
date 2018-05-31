@@ -34,6 +34,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.navigationItem setHidesBackButton:YES];
+    self.leftBarBtnHidden = YES;
     [self setNavigationItemRightBarButtonItem:@selector(cancelClicked) withTitle:@"取消" withTitleColor:textGrayColor];
 }
 

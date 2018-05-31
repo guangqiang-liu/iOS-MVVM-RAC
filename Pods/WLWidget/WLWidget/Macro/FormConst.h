@@ -18,8 +18,8 @@
 
 #define WLTitleWidthLimit 200
 
-#define WLSectionHeaderHeight 0
-#define WLSectionFooterHeight 0
+#define WLSectionHeaderHeight 0.01f
+#define WLSectionFooterHeight 0.01f
 
 #define WLLeftTitleFont [UIFont systemFontOfSize:16]
 #define WLRightTitleFont [UIFont systemFontOfSize:14]

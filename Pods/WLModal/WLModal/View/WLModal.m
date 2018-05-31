@@ -9,54 +9,43 @@
 #import "WLModal.h"
 #import <QuartzCore/QuartzCore.h>
 
-const static CGFloat kCustomIOSAlertViewDefaultButtonHeight = 50; // 按钮高度
-const static CGFloat kCustomIOSAlertViewDefaultButtonSpacerHeight = 1; // 分隔线宽度
-const static CGFloat kCustomIOSAlertViewCornerRadius = 12; // 圆角半径
+static const CGFloat kCustomIOSAlertViewDefaultButtonHeight = 50;
+static const CGFloat kCustomIOSAlertViewDefaultButtonSpacerHeight = 1;
+CGFloat buttonHeight = 1;
+CGFloat buttonSpacerHeight = 1;
 
 @interface WLModal()
 
+@property (nonatomic, strong) UIView *dialogView;
+@property (nonatomic, strong) UIView *containerView;
 @property (nonatomic, copy) NSArray *buttonTitleColorArray;
 @end
 
 @implementation WLModal
 
-CGFloat buttonHeight = 1;
-CGFloat buttonSpacerHeight = 1;
-
-@synthesize containerView, dialogView, onButtonTouchUpInside;
-@synthesize buttonTitles;
-
 - (id)init {
     self = [super init];
     if (self) {
         self.frame = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
-        // 必须调用此方法监听设备旋转才有效
         [[UIDevice currentDevice] beginGeneratingDeviceOrientationNotifications];
-        // 监听设备旋转
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(deviceOrientationDidChange:) name:UIDeviceOrientationDidChangeNotification object:nil];
-        // 监听键盘出现
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
-        // 监听键盘消失
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
         self.buttonTitleColorArray = @[HexRGB(0x999999), HexRGB(0xFF4B4A)];
     }
     return self;
 }
 
-// 创建并显示提示视图
 - (void)show {
-    // 创建提示视图
-    dialogView = [self createContainerView];
-    // layer光栅化，提高性能
-    dialogView.layer.shouldRasterize = YES;
-    dialogView.layer.rasterizationScale = [[UIScreen mainScreen] scale];
+    self.dialogView = [self createContainerView];
+    self.dialogView.layer.shouldRasterize = YES;
+    self.dialogView.layer.rasterizationScale = [[UIScreen mainScreen] scale];
     
     self.layer.shouldRasterize = YES;
     self.layer.rasterizationScale = [[UIScreen mainScreen] scale];
     self.backgroundColor = RGBAlpha(0, 0, 0, 0);
-    [self addSubview:dialogView];
+    [self addSubview:self.dialogView];
     
-    // iOS7, 旋转方向调整
     if (floor(NSFoundationVersionNumber) <= NSFoundationVersionNumber_iOS_7_1) {
         UIInterfaceOrientation interfaceOrientation = [[UIApplication sharedApplication] statusBarOrientation];
         switch (interfaceOrientation) {
@@ -72,54 +61,45 @@ CGFloat buttonSpacerHeight = 1;
             default:
                 break;
         }
-        [self setFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)];
-        // iOS8, 仅把提示视图居中即可
+        self.frame = CGRectMake(0, 0, self.frame.size.width, self.frame.size.height);
     } else {
         CGSize screenSize = [self countScreenSize];
         CGSize dialogSize = [self countDialogSize];
         CGSize keyboardSize = CGSizeMake(0, 0);
-        dialogView.frame = CGRectMake((screenSize.width - dialogSize.width) / 2, (screenSize.height - keyboardSize.height - dialogSize.height) / 2, dialogSize.width, dialogSize.height);
+        self.dialogView.frame = CGRectMake((screenSize.width - dialogSize.width) / 2, (screenSize.height - keyboardSize.height - dialogSize.height) / 2, dialogSize.width, dialogSize.height);
     }
     
-//    [[[[UIApplication sharedApplication] windows] firstObject] addSubview:self];
-    
+    //    [[[[UIApplication sharedApplication] windows] firstObject] addSubview:self];
     [[[UIApplication sharedApplication] keyWindow] addSubview:self];
     
-    dialogView.layer.opacity = 0.5f;
-    dialogView.layer.transform = CATransform3DMakeScale(1.3f, 1.3f, 1.0);
+    self.dialogView.layer.opacity = 0.5f;
+    self.dialogView.layer.transform = CATransform3DMakeScale(1.3f, 1.3f, 1.0);
     [UIView animateWithDuration:0.2f delay:0.0 options:UIViewAnimationOptionCurveEaseInOut
                      animations:^{
                          self.backgroundColor = RGBAlpha(0, 0, 0, 0.3);
-                         dialogView.layer.opacity = 1.0f;
-                         dialogView.layer.transform = CATransform3DMakeScale(1, 1, 1);
+                         self.dialogView.layer.opacity = 1.0f;
+                         self.dialogView.layer.transform = CATransform3DMakeScale(1, 1, 1);
                      }
                      completion:NULL
      ];
 }
 
-- (void)buttonAction:(id)sender {
-    if (onButtonTouchUpInside != NULL) {
-        onButtonTouchUpInside(self, (NSInteger)[sender tag]);
-    }
-}
-
-// 提示视图关闭并移除
 - (void)close {
-    CATransform3D currentTransform = dialogView.layer.transform;
+    CATransform3D currentTransform = self.dialogView.layer.transform;
     if (floor(NSFoundationVersionNumber) <= NSFoundationVersionNumber_iOS_7_1) {
-        CGFloat startRotation = [[dialogView valueForKeyPath:@"layer.transform.rotation.z"] floatValue];
+        CGFloat startRotation = [[self.dialogView valueForKeyPath:@"layer.transform.rotation.z"] floatValue];
         CATransform3D rotation = CATransform3DMakeRotation(-startRotation + M_PI * 270.0 / 180.0, 0.0f, 0.0f, 0.0f);
-        dialogView.layer.transform = CATransform3DConcat(rotation, CATransform3DMakeScale(1, 1, 1));
+        self.dialogView.layer.transform = CATransform3DConcat(rotation, CATransform3DMakeScale(1, 1, 1));
     }
-    dialogView.layer.opacity = 1.0f;
+    self.dialogView.layer.opacity = 1.0f;
     [UIView animateWithDuration:0.2f delay:0.0 options:UIViewAnimationOptionTransitionNone
      animations:^{
          self.backgroundColor = [UIColor colorWithRed:0.0f green:0.0f blue:0.0f alpha:0.0f];
-         dialogView.layer.transform = CATransform3DConcat(currentTransform, CATransform3DMakeScale(0.6f, 0.6f, 1.0));
-         dialogView.layer.opacity = 0.0f;
+         self.dialogView.layer.transform = CATransform3DConcat(currentTransform, CATransform3DMakeScale(0.6f, 0.6f, 1.0));
+         self.dialogView.layer.opacity = 0.0f;
      } completion:^(BOOL finished) {
-         for (UIView *v in [self subviews]) {
-             [v removeFromSuperview];
+         for (UIView *views in [self subviews]) {
+             [views removeFromSuperview];
          }
          [self removeFromSuperview];
      }
@@ -127,19 +107,17 @@ CGFloat buttonSpacerHeight = 1;
 }
 
 - (void)addContentView:(UIView *)subView {
-    containerView = subView;
+    self.containerView = subView;
 }
 
-// 创建提示视图
 - (UIView *)createContainerView {
-    if (containerView == NULL) {
-        containerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 300, 150)];
+    if (self.containerView == NULL) {
+        self.containerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 300, 150)];
     }
     CGSize screenSize = [self countScreenSize];
     CGSize dialogSize = [self countDialogSize];
-    [self setFrame:CGRectMake(0, 0, screenSize.width, screenSize.height)];
+    self.frame = CGRectMake(0, 0, screenSize.width, screenSize.height);
     
-    // 提示视图
     UIView *dialogContainer = [[UIView alloc] initWithFrame:CGRectMake((screenSize.width - dialogSize.width) / 2, (screenSize.height - dialogSize.height) / 2, dialogSize.width, dialogSize.height)];
     
     // 设置阴影和圆角
@@ -161,43 +139,39 @@ CGFloat buttonSpacerHeight = 1;
 //    dialogContainer.layer.shadowColor = [UIColor blackColor].CGColor;
 //    dialogContainer.layer.shadowPath = [UIBezierPath bezierPathWithRoundedRect:dialogContainer.bounds cornerRadius:dialogContainer.layer.cornerRadius].CGPath;
     
-    // 分隔线
     UIView *lineView = [[UIView alloc] initWithFrame:CGRectMake(0, dialogContainer.bounds.size.height - buttonHeight - buttonSpacerHeight, dialogContainer.bounds.size.width, buttonSpacerHeight)];
     lineView.backgroundColor = sepLineColor;
     [dialogContainer addSubview:lineView];
-    // 添加内容视图
-    [dialogContainer addSubview:containerView];
+    [dialogContainer addSubview:self.containerView];
     
     [self addButtonsToView:dialogContainer];
     
     return dialogContainer;
 }
 
-// 添加按钮
-- (void)addButtonsToView: (UIView *)container {
-    if (buttonTitles == NULL) return;
-    CGFloat buttonWidth = container.bounds.size.width / buttonTitles.count;
-    for (int i = 0; i < buttonTitles.count; i++) {
+- (void)addButtonsToView:(UIView *)container {
+    if (!self.buttonTitles.count) return;
+    CGFloat buttonWidth = container.bounds.size.width / self.buttonTitles.count;
+    for (NSInteger i = 0; i < self.buttonTitles.count; i++) {
         UIButton *closeButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        [closeButton setFrame:CGRectMake(i * buttonWidth, container.bounds.size.height - buttonHeight, buttonWidth, buttonHeight)];
-        [closeButton addTarget:self action:@selector(buttonAction:) forControlEvents:UIControlEventTouchUpInside];
-        [closeButton setTag:i];
-        [closeButton setTitle:buttonTitles[i] forState:UIControlStateNormal];
+        closeButton.frame = CGRectMake(i * buttonWidth, container.bounds.size.height - buttonHeight, buttonWidth, buttonHeight);
+        [closeButton setTitle:self.buttonTitles[i] forState:UIControlStateNormal];
         [closeButton setTitleColor:self.buttonTitleColorArray[i] forState:UIControlStateNormal];
         closeButton.titleLabel.font = H16;
         closeButton.backgroundColor = white_color;
-        
+        [closeButton whenTapped:^{
+            !self.onButtonTouchUpInside ?: self.onButtonTouchUpInside(self, i);
+        }];
         // 设置第一个和最后一个按钮的圆角
-        if (buttonTitles.count > 1) {
+        if (self.buttonTitles.count > 1) {
             if (i == 0) {
                 [closeButton drawCornersWithCorners:UIRectCornerBottomLeft cornerRadii:CGSizeMake(12, 12)];
-            } else if (i == buttonTitles.count - 1) {
+            } else if (i == self.buttonTitles.count - 1) {
                 [closeButton drawCornersWithCorners:UIRectCornerBottomRight cornerRadii:CGSizeMake(12, 12)];
             }
         } else {
             [closeButton drawCornersWithCorners:UIRectCornerBottomLeft | UIRectCornerBottomRight cornerRadii:CGSizeMake(12, 12)];
         }
-    
         [container addSubview:closeButton];
         if (i > 0) {
             UIView *lineView = [[UIView alloc] initWithFrame:CGRectMake(i * buttonWidth, container.bounds.size.height - buttonHeight, kCustomIOSAlertViewDefaultButtonSpacerHeight, buttonHeight)];
@@ -207,24 +181,22 @@ CGFloat buttonSpacerHeight = 1;
     }
 }
 
-// 提示视图的size
 - (CGSize)countDialogSize {
-    CGFloat dialogWidth = containerView.frame.size.width;
-    CGFloat dialogHeight = containerView.frame.size.height + buttonHeight + buttonSpacerHeight;
+    CGFloat dialogWidth = self.containerView.frame.size.width;
+    CGFloat dialogHeight = self.containerView.frame.size.height + buttonHeight + buttonSpacerHeight;
     return CGSizeMake(dialogWidth, dialogHeight);
 }
 
-// 屏幕的size
 - (CGSize)countScreenSize {
-    if (buttonTitles != NULL && [buttonTitles count] > 0) {
+    if (self.buttonTitles != NULL && [self.buttonTitles count] > 0) {
         buttonHeight = kCustomIOSAlertViewDefaultButtonHeight;
         buttonSpacerHeight = kCustomIOSAlertViewDefaultButtonSpacerHeight;
     } else {
         buttonHeight = 0;
         buttonSpacerHeight = 0;
     }
-    CGFloat screenWidth = [UIScreen mainScreen].bounds.size.width;
-    CGFloat screenHeight = [UIScreen mainScreen].bounds.size.height;
+    CGFloat screenWidth = SCREEN_WIDTH;
+    CGFloat screenHeight = SCREEN_HEIGHT;
     // iOS7, 屏幕的宽高不会随着方向自动调整
     if (floor(NSFoundationVersionNumber) <= NSFoundationVersionNumber_iOS_7_1) {
         UIInterfaceOrientation interfaceOrientation = [[UIApplication sharedApplication] statusBarOrientation];
@@ -237,8 +209,7 @@ CGFloat buttonSpacerHeight = 1;
     return CGSizeMake(screenWidth, screenHeight);
 }
 
-// 设备旋转
-- (void)deviceOrientationDidChange: (NSNotification *)notification {
+- (void)deviceOrientationDidChange:(NSNotification *)notification {
     if (floor(NSFoundationVersionNumber) <= NSFoundationVersionNumber_iOS_7_1) {
         [self changeOrientationForIOS7];
     } else {
@@ -246,7 +217,6 @@ CGFloat buttonSpacerHeight = 1;
     }
 }
 
-// 设备旋转（iOS7）
 - (void)changeOrientationForIOS7 {
     UIInterfaceOrientation interfaceOrientation = [[UIApplication sharedApplication] statusBarOrientation];
     CGFloat startRotation = [[self valueForKeyPath:@"layer.transform.rotation.z"] floatValue];
@@ -267,29 +237,27 @@ CGFloat buttonSpacerHeight = 1;
     }
     [UIView animateWithDuration:0.2f delay:0.0 options:UIViewAnimationOptionTransitionNone
                      animations:^{
-                         dialogView.transform = rotation;
+                         self.dialogView.transform = rotation;
                      }
                      completion:nil
      ];
 }
 
-// 设备旋转（iOS8）
-- (void)changeOrientationForIOS8: (NSNotification *)notification {
-    CGFloat screenWidth = [UIScreen mainScreen].bounds.size.width;
-    CGFloat screenHeight = [UIScreen mainScreen].bounds.size.height;
+- (void)changeOrientationForIOS8:(NSNotification *)notification {
+    CGFloat screenWidth = SCREEN_WIDTH;
+    CGFloat screenHeight = SCREEN_HEIGHT;
     [UIView animateWithDuration:0.2f delay:0.0 options:UIViewAnimationOptionTransitionNone
                      animations:^{
                          CGSize dialogSize = [self countDialogSize];
                          CGSize keyboardSize = [[[notification userInfo] objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
                          self.frame = CGRectMake(0, 0, screenWidth, screenHeight);
-                         dialogView.frame = CGRectMake((screenWidth - dialogSize.width) / 2, (screenHeight - keyboardSize.height - dialogSize.height) / 2, dialogSize.width, dialogSize.height);
+                         self.dialogView.frame = CGRectMake((screenWidth - dialogSize.width) / 2, (screenHeight - keyboardSize.height - dialogSize.height) / 2, dialogSize.width, dialogSize.height);
                      }
                      completion:nil
      ];
 }
 
-// 键盘出现
-- (void)keyboardWillShow: (NSNotification *)notification {
+- (void)keyboardWillShow:(NSNotification *)notification {
     CGSize screenSize = [self countScreenSize];
     CGSize dialogSize = [self countDialogSize];
     CGSize keyboardSize = [[[notification userInfo] objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
@@ -301,19 +269,18 @@ CGFloat buttonSpacerHeight = 1;
     }
     [UIView animateWithDuration:0.2f delay:0.0 options:UIViewAnimationOptionTransitionNone
                      animations:^{
-                         dialogView.frame = CGRectMake((screenSize.width - dialogSize.width) / 2, (screenSize.height - keyboardSize.height - dialogSize.height) / 2, dialogSize.width, dialogSize.height);
+                         self.dialogView.frame = CGRectMake((screenSize.width - dialogSize.width) / 2, (screenSize.height - keyboardSize.height - dialogSize.height) / 2, dialogSize.width, dialogSize.height);
                      }
                      completion:nil
      ];
 }
 
-// 键盘消失
-- (void)keyboardWillHide: (NSNotification *)notification {
+- (void)keyboardWillHide:(NSNotification *)notification {
     CGSize screenSize = [self countScreenSize];
     CGSize dialogSize = [self countDialogSize];
     [UIView animateWithDuration:0.2f delay:0.0 options:UIViewAnimationOptionTransitionNone
                      animations:^{
-                         dialogView.frame = CGRectMake((screenSize.width - dialogSize.width) / 2, (screenSize.height - dialogSize.height) / 2, dialogSize.width, dialogSize.height);
+                         self.dialogView.frame = CGRectMake((screenSize.width - dialogSize.width) / 2, (screenSize.height - dialogSize.height) / 2, dialogSize.width, dialogSize.height);
                      }
                      completion:nil
      ];

@@ -149,7 +149,8 @@ NSInteger waitingTime = 0;
 +(void)showToastTextTips:(NSString *)tips{
     //商家提示需要3秒   其他客户端提示1.5秒
     NSString *bundleId = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleIdentifier"];
-    if ([bundleId isEqualToString:@"com.qianbao.merchantappfortest"] || [bundleId isEqualToString:@"com.qianbao.merchantApp"]) {
+    if ([bundleId isEqualToString:@"com.qianbao.merchantappfortest"] || [bundleId isEqualToString:@"com.qianbao.merchantApp"]||
+        [bundleId isEqualToString:@"com.qianbao.merchantApp.pro"]) {
         [self showToastTextTips:tips time:3];
     } else {
         [self showToastTextTips:tips time:1.5];

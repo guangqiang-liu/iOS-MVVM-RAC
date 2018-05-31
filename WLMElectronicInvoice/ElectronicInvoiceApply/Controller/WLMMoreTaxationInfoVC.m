@@ -34,8 +34,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"填写税务信息";
-    self.tableView.frame = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT - 48);
-     self.automaticallyAdjustsScrollViewInsets = NO;
+    self.tableView.frame = CGRectMake(0, 0, SCREEN_WIDTH, SAFE_AREA - 48);
 }
 
 -(void)renderViews {
@@ -337,7 +336,7 @@
 - (UIButton *)bottomButton {
     if (!_bottomButton) {
         _bottomButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        _bottomButton.frame = CGRectMake(0, SCREEN_HEIGHT - 48, SCREEN_WIDTH, 48);
+        _bottomButton.frame = CGRectMake(0, SAFE_AREA - 48, SCREEN_WIDTH, 48);
         [_bottomButton setTitleColor:white_color forState:UIControlStateNormal];
         [_bottomButton setTitle:@"下一步" forState:UIControlStateNormal];
         _bottomButton.titleLabel.font = H18;
@@ -353,8 +352,8 @@
 }
 
 - (void)nextAction {
-//    WLMPackageSelectVC *VC = [[WLMPackageSelectVC alloc] initWithViewModel:self.moreInfoViewModel.packageSelectViewModel];
-//    [self.navigationController pushViewController:VC animated:YES];
+    WLMPackageSelectVC *VC = [[WLMPackageSelectVC alloc] initWithViewModel:self.moreInfoViewModel.packageSelectViewModel];
+    [self.navigationController pushViewController:VC animated:YES];
     NSDictionary *dic = [self.form validateItems];
     if (![dic[kValidateRetKey] boolValue]) {
 //        [self alertMsg:dic[kValidateMsgKey]];
