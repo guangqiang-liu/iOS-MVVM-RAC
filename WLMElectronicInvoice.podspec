@@ -15,10 +15,10 @@ Pod::Spec.new do |s|
                        TODO: Add long description of the pod here.
                        DESC
 
-  s.homepage         = 'https://gitlab.qianbaocard.org/iOS/business/invoice/WLMElectronicInvoice'
+  s.homepage         = 'https://github.com/guangqiang-liu/GQ-MVVM-RAC'
   s.license          = "MIT"
   s.author           = { 'guangqiang' => '1126756952@qq.com' }
-  s.source           = { :git => 'git@gitlab.qianbaocard.org:iOS/business/invoice/WLMElectronicInvoice.git', :tag => s.version.to_s }
+  s.source           = { :git => 'git@github.com:guangqiang-liu/GQ-MVVM-RAC.git', :tag => s.version.to_s }
 
   s.platform         = :ios, "8.0"
 
