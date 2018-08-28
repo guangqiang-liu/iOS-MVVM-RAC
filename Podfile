@@ -4,7 +4,7 @@ platform :ios, '8.0'
 use_frameworks!
 
 source 'https://github.com/CocoaPods/Specs.git'
-source 'git@gitlab.qianbaocard.org:iOS/WLSpecs.git'
+source 'https://github.com/guangqiang-liu/GQSpec.git'
 
 target 'WLMElectronicInvoice' do
   
