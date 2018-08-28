@@ -45,7 +45,7 @@
 - (UIButton *)bottomButton {
     if (!_bottomButton) {
         _bottomButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        _bottomButton.frame = CGRectMake(0, SCREEN_HEIGHT - 48, SCREEN_WIDTH, 48);
+        _bottomButton.frame = CGRectMake(0, SCREEN_HEIGHT - 48 - 64, SCREEN_WIDTH, 48);
         [_bottomButton setTitle:@"申请开通" forState:UIControlStateNormal];
         [_bottomButton setTitleColor:white_color forState:UIControlStateNormal];
         _bottomButton.titleLabel.font = H18;

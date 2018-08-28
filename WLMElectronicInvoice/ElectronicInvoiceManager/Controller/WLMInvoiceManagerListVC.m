@@ -41,7 +41,7 @@
 }
 
 - (void)dataInitialize {
-    self.isShowNotice = YES;
+    self.isShowNotice = NO;
 }
 
 - (void)bindViewModel {
@@ -49,7 +49,7 @@
 }
 
 - (void)segmentLaunch {
-    self.segmentedControl = [[HMSegmentedControl alloc] initWithFrame:CGRectMake(0, 64, SCREEN_WIDTH, 44)];
+    self.segmentedControl = [[HMSegmentedControl alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 44)];
     self.segmentedControl.sectionTitles = @[@"开票请求", @"开票记录", @"套餐情况"];
     self.segmentedControl.selectedSegmentIndex = 1;
     self.segmentedControl.autoresizingMask = UIViewAutoresizingFlexibleRightMargin;
@@ -133,7 +133,7 @@
 - (UIView *)noticeBoard {
     if (!_noticeBoard) {
         _noticeBoard = [[UIView alloc] init];
-        _noticeBoard.frame = CGRectMake(0, MAIN_NAV_HEIGHT + 44, SCREEN_WIDTH, 34);
+        _noticeBoard.frame = CGRectMake(0, MAIN_NAV_HEIGHT, SCREEN_WIDTH, 34);
         _noticeBoard.backgroundColor = HexRGB(0xFFF0D1);
     }
     return _noticeBoard;

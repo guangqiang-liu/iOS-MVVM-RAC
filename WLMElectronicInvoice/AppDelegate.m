@@ -14,6 +14,7 @@
 #import "WLNetServer.h"
 #import "WLNetTips.h"
 #import "WLNetDebug.h"
+#import "WLMInvoiceManagerListVC.h"
 
 @interface AppDelegate ()
 
@@ -29,6 +30,7 @@
     self.viewModelService = [[WLBViewModelServiceImp alloc] init];
     WLMSelectedApplyMerchantVM *viewModel = [[WLMSelectedApplyMerchantVM alloc] initWithService:self.viewModelService params:nil];
     WLMSelectApplyMerchantVC *VC = [[WLMSelectApplyMerchantVC alloc] initWithViewModel:viewModel];
+//    WLMInvoiceManagerListVC *VC = [[WLMInvoiceManagerListVC alloc] init];
     UINavigationController *navVC = [[UINavigationController alloc] initWithRootViewController:VC];
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];

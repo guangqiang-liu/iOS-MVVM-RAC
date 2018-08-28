@@ -28,7 +28,6 @@
 		9C1C0EE620B2B1D000FD6857 /* WLMInvoiceResultModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C1C0EE520B2B1D000FD6857 /* WLMInvoiceResultModel.m */; };
 		9C1C0EF420B2BE4900FD6857 /* WLMInvoiceResultVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C1C0EF220B2BE4900FD6857 /* WLMInvoiceResultVM.m */; };
 		9C239E9020BEDF0900F2C3AD /* line@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C239E8F20BEDF0900F2C3AD /* line@3x.png */; };
-		9C239E9220BEDF4E00F2C3AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C239E9120BEDF4E00F2C3AD /* Assets.xcassets */; };
 		9C239E9420BEDF7800F2C3AD /* pick_bg@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C239E9320BEDF7700F2C3AD /* pick_bg@3x.png */; };
 		9C2518FC20AAE1FB00E0B93B /* invoice_apply_success@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C2518FA20AAE1FB00E0B93B /* invoice_apply_success@2x.png */; };
 		9C2518FD20AAE1FB00E0B93B /* invoice_apply_success@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C2518FB20AAE1FB00E0B93B /* invoice_apply_success@3x.png */; };
@@ -135,7 +134,6 @@
 		9C1C0EF220B2BE4900FD6857 /* WLMInvoiceResultVM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WLMInvoiceResultVM.m; sourceTree = "<group>"; };
 		9C1C0EF320B2BE4900FD6857 /* WLMInvoiceResultVM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WLMInvoiceResultVM.h; sourceTree = "<group>"; };
 		9C239E8F20BEDF0900F2C3AD /* line@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "line@3x.png"; sourceTree = "<group>"; };
-		9C239E9120BEDF4E00F2C3AD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../../../../.Trash/Assets.xcassets; sourceTree = "<group>"; };
 		9C239E9320BEDF7700F2C3AD /* pick_bg@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pick_bg@3x.png"; sourceTree = "<group>"; };
 		9C2518FA20AAE1FB00E0B93B /* invoice_apply_success@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "invoice_apply_success@2x.png"; sourceTree = "<group>"; };
 		9C2518FB20AAE1FB00E0B93B /* invoice_apply_success@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "invoice_apply_success@3x.png"; sourceTree = "<group>"; };
@@ -352,7 +350,6 @@
 				9C2646DB209994C8004A4551 /* ViewController.h */,
 				9C2646DC209994C8004A4551 /* ViewController.m */,
 				9C2646DE209994C8004A4551 /* Main.storyboard */,
-				9C239E9120BEDF4E00F2C3AD /* Assets.xcassets */,
 				9C2646E3209994C8004A4551 /* LaunchScreen.storyboard */,
 				9C2646E6209994C8004A4551 /* Info.plist */,
 				9C2646E7209994C8004A4551 /* main.m */,
@@ -753,7 +750,6 @@
 				9C2518FD20AAE1FB00E0B93B /* invoice_apply_success@3x.png in Resources */,
 				9C2646E5209994C8004A4551 /* LaunchScreen.storyboard in Resources */,
 				9C50230720B518600024BF01 /* filter_state_normal@3x.png in Resources */,
-				9C239E9220BEDF4E00F2C3AD /* Assets.xcassets in Resources */,
 				9C5022EB20B5180D0024BF01 /* einvoice_mange_sample@3x.png in Resources */,
 				9C25190120AAE29600E0B93B /* invoice_apply_shadow@2x.png in Resources */,
 				9CC4FF0120A2FADD00232074 /* big@2x.png in Resources */,
@@ -1067,7 +1063,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 8EC5F3AAC5E149448B9054F5 /* Pods-WLMElectronicInvoice.debug.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9J6JH9B3QM;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/WLMElectronicInvoice/WLMElectronicInvoice.pch";
@@ -1084,7 +1079,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0C58E3E41CE2B24BB6F43768 /* Pods-WLMElectronicInvoice.release.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9J6JH9B3QM;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/WLMElectronicInvoice/WLMElectronicInvoice.pch";

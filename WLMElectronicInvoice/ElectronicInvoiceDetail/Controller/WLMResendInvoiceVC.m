@@ -9,6 +9,8 @@
 #import "WLMResendInvoiceVC.h"
 #import "WLMPackageSelectVC.h"
 #import "WLMResendInvoiceVM.h"
+#import "WLMInvoiceDetailVC.h"
+
 @interface WLMResendInvoiceVC ()
 
 @property (nonatomic, strong) WLMResendInvoiceVM *invoiceViewModel;
@@ -28,7 +30,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.title = @"重发电子发票";
+    self.title = @"重开电子发票";
 }
 
 - (void)renderViews {
@@ -128,7 +130,7 @@
         [cell.button setTitle:info[kLeftKey] forState:UIControlStateNormal];
         RAC(cell.button, enabled) = RACObserve(self, buttonEnabled);
         [cell.button whenTapped:^{
-            WLMPackageSelectVC *VC = [[WLMPackageSelectVC alloc] init];
+            WLMInvoiceDetailVC *VC = [[WLMInvoiceDetailVC alloc] init];
             [self.navigationController pushViewController:VC animated:YES];
         }];
     };

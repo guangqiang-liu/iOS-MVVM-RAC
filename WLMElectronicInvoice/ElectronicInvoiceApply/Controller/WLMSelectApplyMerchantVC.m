@@ -40,7 +40,7 @@
 #pragma mark - lifeCycle
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"请选择申请开通的门店";
+    self.title = @"请选择申请开通门店";
     [self setNavigationItemRightBarButtonItem:@selector(xx) withTitle:@"提交" withTitleColor:red_color];
 }
 
