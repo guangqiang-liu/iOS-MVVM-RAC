@@ -337,7 +337,6 @@
 		9C2646D7209994C8004A4551 /* WLMElectronicInvoice */ = {
 			isa = PBXGroup;
 			children = (
-				9C9C474720A91F130023F02E /* Categorys */,
 				9C264744209AEEFA004A4551 /* ElectronicInvoiceApply */,
 				9C26473A209AEEFA004A4551 /* ElectronicInvoiceDetail */,
 				9C264749209AEEFA004A4551 /* ElectronicInvoiceManager */,
@@ -597,13 +596,6 @@
 				9C5022C620B428010024BF01 /* WLMElectronicInvoiceRouter.m */,
 			);
 			path = WLRouter;
-			sourceTree = "<group>";
-		};
-		9C9C474720A91F130023F02E /* Categorys */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Categorys;
 			sourceTree = "<group>";
 		};
 		9CA4036E20AEE0BE00E4AA51 /* ImageTextField */ = {
