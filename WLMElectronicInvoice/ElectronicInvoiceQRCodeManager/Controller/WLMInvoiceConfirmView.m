@@ -43,7 +43,7 @@
         _titleLable = [[UILabel alloc] init];
         _titleLable.frame = CGRectMake(0, 8, WIDTH(self), 20);
         _titleLable.text = @"Y900 013 893";
-        _titleLable.font = FONT_PingFang_Light(12);
+        _titleLable.font = SYS_FONT(12);
         _titleLable.textAlignment = NSTextAlignmentCenter;
         _titleLable.textColor = HexRGB(0x434343);
     }
@@ -65,7 +65,7 @@
         _cancelBtn.frame = CGRectMake(16, 226, WIDTH(self) / 2 - 20, 38);
         [_cancelBtn setTitle:@"取消绑定" forState:UIControlStateNormal];
         [_cancelBtn setTitleColor:HexRGB(0x999999) forState:UIControlStateNormal];
-        _cancelBtn.titleLabel.font = FONT_PingFang_Light(14);
+        _cancelBtn.titleLabel.font = SYS_FONT(14);
         _cancelBtn.layer.cornerRadius = 4;
         _cancelBtn.layer.masksToBounds = YES;
         _cancelBtn.layer.borderColor = HexRGB(0x999999).CGColor;
@@ -83,7 +83,7 @@
         _submitBtn.frame = CGRectMake(WIDTH(self) / 2 + 4, 226, WIDTH(self) / 2 - 20, 38);
         [_submitBtn setTitle:@"确认绑定" forState:UIControlStateNormal];
         [_submitBtn setTitleColor:HexRGB(0xFF4B4A) forState:UIControlStateNormal];
-        _submitBtn.titleLabel.font = FONT_PingFang_Light(14);
+        _submitBtn.titleLabel.font = SYS_FONT(14);
         _submitBtn.layer.cornerRadius = 4;
         _submitBtn.layer.masksToBounds = YES;
         _submitBtn.layer.borderColor = HexRGB(0xFF4B4A).CGColor;

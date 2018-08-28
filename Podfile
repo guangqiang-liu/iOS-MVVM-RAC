@@ -23,16 +23,11 @@ target 'WLMElectronicInvoice' do
   pod 'WLModal'
   pod 'WLWidget'
   pod 'WLPickerView'
+  
 
   pod 'Masonry'
   pod 'ReactiveObjC'
   pod 'MJExtension'
   pod 'DZNEmptyDataSet'
-  
-  pod 'WLNet', :subspecs => ['Debug', 'NetWL']
-  
-#  pod 'WLConst', :subspecs => ['WLM', 'WLImage'], :path => '/Users/liuguangqiang/Desktop/companyRepo/WLPLib/WLConst/WLConst.podspec'
-  pod 'WLConst', :subspecs => ['WLM', 'WLImage']
-
 
 end

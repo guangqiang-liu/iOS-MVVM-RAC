@@ -2,7 +2,7 @@
 //  WLMRequirementListCell.m
 //  WLMElectronicInvoice
 //
-//  Created by Qianbao on 2018/5/10.
+//  Created by 刘光强 on 2018/5/10.
 //  Copyright © 2018年 quangqiang. All rights reserved.
 //
 
@@ -73,7 +73,7 @@ static const CGFloat kRequirementHeight = 156.f;
         _invoiceTitle = [[UILabel alloc] init];
         _invoiceTitle.frame = CGRectMake(16, 16, 240, 22);
         _invoiceTitle.textColor = RGB(67, 67, 67);
-        _invoiceTitle.font = FONT_PingFang_Light(14);
+        _invoiceTitle.font = SYS_FONT(14);
         _invoiceTitle.textAlignment = NSTextAlignmentLeft;
         _invoiceTitle.text = @"钱包生活(平潭)科技有限公司上分公司";
     }
@@ -85,7 +85,7 @@ static const CGFloat kRequirementHeight = 156.f;
         _invoicePrice = [[UILabel alloc] init];
         _invoicePrice.frame = CGRectMake(16, 46, 240, 18);
         _invoicePrice.textColor = RGB(153, 153, 153);
-        _invoicePrice.font = FONT_PingFang_Light(14);
+        _invoicePrice.font = SYS_FONT(14);
         _invoicePrice.textAlignment = NSTextAlignmentLeft;
         _invoicePrice.text = @"申请时间：2018.4.18";
     }
@@ -105,7 +105,7 @@ static const CGFloat kRequirementHeight = 156.f;
     if (!_rejectBtn) {
         _rejectBtn = [UIButton buttonWithType:UIButtonTypeCustom];
         _rejectBtn.frame = CGRectMake(16, 94, 102, 38);
-        _rejectBtn.titleLabel.font = FONT_PingFang_Regular(14);
+        _rejectBtn.titleLabel.font = SYS_FONT(14);
         [_rejectBtn setTitle:@"驳回" forState:UIControlStateNormal];
         [_rejectBtn setTitleColor:RGB(153, 153, 153) forState:UIControlStateNormal];
         
@@ -120,7 +120,7 @@ static const CGFloat kRequirementHeight = 156.f;
     if (!_invoiceBtn) {
         _invoiceBtn = [UIButton buttonWithType:UIButtonTypeCustom];
         _invoiceBtn.frame = CGRectMake(126, 94, SCREEN_WIDTH - 172, 38);
-        _invoiceBtn.titleLabel.font = FONT_PingFang_Regular(14);
+        _invoiceBtn.titleLabel.font = SYS_FONT(14);
         [_invoiceBtn setTitle:@"开票" forState:UIControlStateNormal];
         [_invoiceBtn setTitleColor:RGB(153, 153, 153) forState:UIControlStateNormal];
         

@@ -932,7 +932,7 @@
 
 - (NSDictionary *)resultingTitleTextAttributes {
     NSDictionary *defaults = @{
-                               NSFontAttributeName : FONT_PingFang_Light(16),
+                               NSFontAttributeName : SYS_FONT(16),
                                NSForegroundColorAttributeName : [UIColor redColor],
                                };
     

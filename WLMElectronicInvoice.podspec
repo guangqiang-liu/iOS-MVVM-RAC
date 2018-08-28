@@ -44,9 +44,4 @@ Pod::Spec.new do |s|
   s.dependency 'ReactiveObjC'
   s.dependency 'MJExtension'
 
-  s.dependency 'WLNet/Debug'
-  s.dependency 'WLNet/NetWL'
-  s.dependency 'WLConst/WLM'
-  s.dependency 'WLConst/WLImage'
-
 end

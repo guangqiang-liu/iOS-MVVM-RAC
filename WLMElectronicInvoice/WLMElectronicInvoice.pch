@@ -21,7 +21,6 @@
 #import "WLBaseViewHeader.h"
 #import "ModalHeader.h"
 #import "WLPickerViewManager.h"
-#import "NetWL.h"
 #import "MJExtension.h"
 
 #endif /* WLMElectronicInvoice_pch */

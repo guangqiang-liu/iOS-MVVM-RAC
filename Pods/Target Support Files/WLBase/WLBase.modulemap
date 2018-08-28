@@ -1,6 +1,0 @@
-framework module WLBase {
-  umbrella header "WLBase-umbrella.h"
-
-  export *
-  module * { export * }
-}

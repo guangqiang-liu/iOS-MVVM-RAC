@@ -2,7 +2,7 @@
 //  WLMInvoiceQRCodeListVC.m
 //  WLMElectronicInvoice
 //
-//  Created by Qianbao on 2018/5/17.
+//  Created by 刘光强 on 2018/5/17.
 //  Copyright © 2018年 quangqiang. All rights reserved.
 //
 
@@ -111,7 +111,7 @@
         _scanButton.frame = CGRectMake(16, 16, SCREEN_WIDTH - 32, 44);
         _scanButton.layer.cornerRadius = 4;
         _scanButton.layer.masksToBounds = YES;
-        _scanButton.titleLabel.font = FONT_PingFang_Light(18);
+        _scanButton.titleLabel.font = SYS_FONT(18);
         [_scanButton setTitle:@"扫码绑定" forState:UIControlStateNormal];
         [_scanButton setImage:[WLIcon iconWithName:@"scan_rect_o" size:22 color:white_color] forState:UIControlStateNormal];
         [_scanButton setTitleEdgeInsets:UIEdgeInsetsMake(14, 60, 14, 50)];

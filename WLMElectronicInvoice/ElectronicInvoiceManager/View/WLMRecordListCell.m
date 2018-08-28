@@ -2,7 +2,7 @@
 //  WLMRecordListCell.m
 //  WLMElectronicInvoice
 //
-//  Created by Qianbao on 2018/5/10.
+//  Created by 刘光强 on 2018/5/10.
 //  Copyright © 2018年 quangqiang. All rights reserved.
 //
 
@@ -75,7 +75,7 @@ static const CGFloat kRecordHeight = 140.f;
         _invoicePrice = [[UILabel alloc] init];
         _invoicePrice.frame = CGRectMake(16, 16, 160, 22);
         _invoicePrice.textColor = RGB(67, 67, 67);
-        _invoicePrice.font = FONT_PingFang_Regular(18);
+        _invoicePrice.font = SYS_FONT(18);
         _invoicePrice.textAlignment = NSTextAlignmentLeft;
         _invoicePrice.text = @"发票金额：32.50元";
     }
@@ -87,7 +87,7 @@ static const CGFloat kRecordHeight = 140.f;
         _invoiceTitle = [[UILabel alloc] init];
         _invoiceTitle.frame = CGRectMake(16, 46, 240, 18);
         _invoiceTitle.textColor = RGB(102, 102, 102);
-        _invoiceTitle.font = FONT_PingFang_Light(14);
+        _invoiceTitle.font = SYS_FONT(14);
         _invoiceTitle.textAlignment = NSTextAlignmentLeft;
         _invoiceTitle.text = @"钱包生活(平潭)科技有限公司上分公司";
     }
@@ -108,7 +108,7 @@ static const CGFloat kRecordHeight = 140.f;
         _applyTime = [[UILabel alloc] init];
         _applyTime.frame = CGRectMake(16, 98, SCREEN_WIDTH / 3, 18);
         _applyTime.textColor = HexRGB(0x999999);
-        _applyTime.font = FONT_PingFang_Light(14);
+        _applyTime.font = SYS_FONT(14);
         _applyTime.textAlignment = NSTextAlignmentLeft;
         _applyTime.text = @"申请时间：2018.4.18";
     }
@@ -120,7 +120,7 @@ static const CGFloat kRecordHeight = 140.f;
         _invoiceStatus = [[UILabel alloc] init];
         _invoiceStatus.frame = CGRectMake(SCREEN_WIDTH - 98, 98, SCREEN_WIDTH / 3, 18);
         _invoiceStatus.textColor = HexRGB(0x999999);
-        _invoiceStatus.font = FONT_PingFang_Light(14);
+        _invoiceStatus.font = SYS_FONT(14);
         _invoiceStatus.textAlignment = NSTextAlignmentLeft;
         _invoiceStatus.text = @"待开票";
     }

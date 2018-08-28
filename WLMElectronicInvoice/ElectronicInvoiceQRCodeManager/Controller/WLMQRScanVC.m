@@ -2,7 +2,7 @@
 //  WLMQRScanVC.m
 //  WLMElectronicInvoice
 //
-//  Created by Qianbao on 2018/5/21.
+//  Created by 刘光强 on 2018/5/21.
 //  Copyright © 2018年 quangqiang. All rights reserved.
 //
 
@@ -200,7 +200,7 @@
     if (!_infoLabel) {
         _infoLabel = [[UILabel alloc] init];
         _infoLabel.frame = CGRectMake(15, TOP + 236, SCREEN_WIDTH - 30, 20);
-        _infoLabel.font = FONT_PingFang_Regular(12);
+        _infoLabel.font = SYS_FONT(12);
         _infoLabel.textColor = HexRGB(0xDEDEDE);
         _infoLabel.text = @"将二维码/条码放入框内，即可自动扫描";
         _infoLabel.textAlignment = NSTextAlignmentCenter;

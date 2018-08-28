@@ -1,6 +1,0 @@
-framework module LRRouter {
-  umbrella header "LRRouter-umbrella.h"
-
-  export *
-  module * { export * }
-}

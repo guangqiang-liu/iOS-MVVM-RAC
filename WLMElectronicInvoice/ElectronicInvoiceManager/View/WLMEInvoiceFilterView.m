@@ -2,7 +2,7 @@
 //  WLMEInvoiceFilterView.m
 //  WLMElectronicInvoice
 //
-//  Created by Qianbao on 2018/5/15.
+//  Created by 刘光强 on 2018/5/15.
 //  Copyright © 2018年 quangqiang. All rights reserved.
 //
 
@@ -179,7 +179,7 @@
         _stateLabel = [[UILabel alloc] init];
         _stateLabel.frame = CGRectMake(16, 24, 56, 18);
         _stateLabel.textColor = RGB(67, 67, 67);
-        _stateLabel.font = FONT_PingFang_Light(14);
+        _stateLabel.font = SYS_FONT(14);
         _stateLabel.textAlignment = NSTextAlignmentLeft;
         _stateLabel.text = @"开票状态";
     }
@@ -221,7 +221,7 @@
         _cancelBtn.frame = CGRectMake(0, 0, SCREEN_WIDTH / 2, 44);
         [_cancelBtn setTitleColor:RGB(102, 102, 102) forState:UIControlStateNormal];
         [_cancelBtn setTitle:@"取消" forState:UIControlStateNormal];
-        _cancelBtn.titleLabel.font = FONT_PingFang_Light(16);
+        _cancelBtn.titleLabel.font = SYS_FONT(16);
         [_cancelBtn whenTapped:^{
             [self dismiss];
         }];
@@ -236,7 +236,7 @@
         _confirmBtn.frame = CGRectMake(SCREEN_WIDTH / 2, 0, SCREEN_WIDTH / 2, 44);
         [_confirmBtn setTitleColor:white_color forState:UIControlStateNormal];
         [_confirmBtn setTitle:@"确认" forState:UIControlStateNormal];
-        _confirmBtn.titleLabel.font = FONT_PingFang_Light(16);
+        _confirmBtn.titleLabel.font = SYS_FONT(16);
         [_confirmBtn createGradientButtonWithSize:CGSizeMake(SCREEN_WIDTH, 44) colorArray:@[HexRGB(0xFF7E4A), HexRGB(0xFF4A4A)] gradientType:GradientFromLeftToRight];
         [_confirmBtn addTarget:self action:@selector(confirmItemClick:) forControlEvents:UIControlEventTouchUpInside];
     }
@@ -275,7 +275,7 @@
     button.frame = CGRectMake(0, 0, btnWidth, 28);
     button.backgroundColor = clear_color;
     [button setTitleColor:RGB(153, 153, 153) forState:UIControlStateNormal];
-    button.titleLabel.font = FONT_PingFang_Light(14);
+    button.titleLabel.font = SYS_FONT(14);
     [button setBackgroundImage:UIImageName(@"filter_state_normal") forState:UIControlStateNormal];
     return button;
 }

@@ -2,7 +2,7 @@
 //  WLMRecordSearchVC.m
 //  WLMElectronicInvoice
 //
-//  Created by Qianbao on 2018/5/16.
+//  Created by 刘光强 on 2018/5/16.
 //  Copyright © 2018年 quangqiang. All rights reserved.
 //
 

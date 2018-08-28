@@ -2,12 +2,14 @@
 //  WLMPackageInfoVC.m
 //  WLMElectronicInvoice
 //
-//  Created by Qianbao on 2018/5/10.
+//  Created by 刘光强 on 2018/5/10.
 //  Copyright © 2018年 quangqiang. All rights reserved.
 //
 
 #import "WLMPackageInfoVC.h"
 #import "WLMInvoiceQRCodeListVC.h"
+
+#define SYS_FONT(x) [UIFont systemFontOfSize:x]
 
 @interface WLMPackageInfoVC ()
 
@@ -75,7 +77,7 @@
         _typeLabel = [[UILabel alloc] init];
         _typeLabel.frame = CGRectMake(SCREEN_WIDTH / 3, 15, 200, 30);
         _typeLabel.textColor = RGB(67, 67, 67);
-        _typeLabel.font = FONT_PingFang_Regular(16);
+        _typeLabel.font = SYS_FONT(16);
         _typeLabel.text = @"套餐类型：套餐A";
     }
     return _typeLabel;
@@ -95,7 +97,7 @@
         _amountLabel = [[UILabel alloc] init];
         _amountLabel.frame = CGRectMake((WIDTH(self.bgImgView) - 200) / 2, 70, 200, 30);
         _amountLabel.textColor = RGB(67, 67, 67);
-        _amountLabel.font = FONT_PingFang_Regular(16);
+        _amountLabel.font = SYS_FONT(16);
         _amountLabel.text = @"已开金额：50,000 元";
     }
     return _amountLabel;
@@ -132,7 +134,7 @@
         _reminderLabel = [[UILabel alloc] init];
         _reminderLabel.frame = CGRectMake(self.progressView.frame.size.width / 2 - 40, 50, 80, 10);
         _reminderLabel.textColor = RGB(67, 67, 67);
-        _reminderLabel.font = FONT_PingFang_Regular(12);
+        _reminderLabel.font = SYS_FONT(12);
         _reminderLabel.textAlignment = NSTextAlignmentCenter;
         _reminderLabel.text = @"已开票(张)";
     }
@@ -144,7 +146,7 @@
         _usedPaperLabel = [[UILabel alloc] init];
         _usedPaperLabel.frame = CGRectMake(self.progressView.frame.size.width / 2 - 40, 70, 80, 10);
         _usedPaperLabel.textColor = RGB(67, 67, 67);
-        _usedPaperLabel.font = FONT_PingFang_Regular(12);
+        _usedPaperLabel.font = SYS_FONT(12);
         _usedPaperLabel.textAlignment = NSTextAlignmentCenter;
         _usedPaperLabel.text = @"52,500";
     }
@@ -156,7 +158,7 @@
         _surplusPaperLabel = [[UILabel alloc] init];
         _surplusPaperLabel.frame = CGRectMake(self.progressView.frame.size.width / 2 - 40, 90, 80, 10);
         _surplusPaperLabel.textColor = RGB(67, 67, 67);
-        _surplusPaperLabel.font = FONT_PingFang_Regular(14);
+        _surplusPaperLabel.font = SYS_FONT(14);
         _surplusPaperLabel.textAlignment = NSTextAlignmentCenter;
         _surplusPaperLabel.text = @"剩余17500";
     }
@@ -167,7 +169,7 @@
     if (_invoiceBtn == nil) {
         _invoiceBtn = [UIButton buttonWithType:UIButtonTypeCustom];
         _invoiceBtn.frame = CGRectMake(16, 330, SCREEN_WIDTH - 32, 44);
-        _invoiceBtn.titleLabel.font = FONT_PingFang_Light(18);
+        _invoiceBtn.titleLabel.font = SYS_FONT(18);
         _invoiceBtn.layer.cornerRadius = 2;
         _invoiceBtn.layer.masksToBounds = YES;
         [_invoiceBtn setTitleColor:RGB(255, 255, 255) forState:UIControlStateNormal];

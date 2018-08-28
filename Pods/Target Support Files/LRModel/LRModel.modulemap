@@ -1,6 +1,0 @@
-framework module LRModel {
-  umbrella header "LRModel-umbrella.h"
-
-  export *
-  module * { export * }
-}

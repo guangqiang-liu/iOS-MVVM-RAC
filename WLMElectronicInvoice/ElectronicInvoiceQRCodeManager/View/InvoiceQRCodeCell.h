@@ -2,7 +2,7 @@
 //  InvoiceQRCodeCell.h
 //  WLMElectronicInvoice
 //
-//  Created by Qianbao on 2018/5/17.
+//  Created by 刘光强 on 2018/5/17.
 //  Copyright © 2018年 quangqiang. All rights reserved.
 //
 

@@ -153,7 +153,7 @@
         _noticeLabel = [[UILabel alloc] init];
         _noticeLabel.frame = CGRectMake(40, 8, SCREEN_WIDTH - 56, 18);
         _noticeLabel.textColor = HexRGB(0xFFA800);
-        _noticeLabel.font = FONT_PingFang_Light(12);
+        _noticeLabel.font = SYS_FONT(12);
         _noticeLabel.textAlignment = NSTextAlignmentLeft;
         _noticeLabel.text = @"功能开通中，我们会派专人与您联系。";
         _noticeLabel.hidden = !self.isShowNotice;

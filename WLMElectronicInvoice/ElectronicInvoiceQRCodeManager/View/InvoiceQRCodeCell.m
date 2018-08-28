@@ -2,7 +2,7 @@
 //  InvoiceQRCodeCell.m
 //  WLMElectronicInvoice
 //
-//  Created by Qianbao on 2018/5/17.
+//  Created by 刘光强 on 2018/5/17.
 //  Copyright © 2018年 quangqiang. All rights reserved.
 //
 
@@ -47,7 +47,7 @@
         _invoiceId.frame = CGRectMake(0, 16, 120, 16);
         _invoiceId.center = CGPointMake(self.contentView.frame.size.width / 2, 16);
         _invoiceId.textColor = HexRGB(0x434343);
-        _invoiceId.font = FONT_PingFang_Light(12);
+        _invoiceId.font = SYS_FONT(12);
         _invoiceId.textAlignment = NSTextAlignmentCenter;
         _invoiceId.text = @"Y900 013 893";
     }
@@ -67,7 +67,7 @@
     if (!_unbindBtn) {
         _unbindBtn = [UIButton buttonWithType:UIButtonTypeCustom];
         _unbindBtn.frame = CGRectMake(16, self.frame.size.width + 24, 60, 24);
-        _unbindBtn.titleLabel.font = FONT_PingFang_Light(14);
+        _unbindBtn.titleLabel.font = SYS_FONT(14);
         [_unbindBtn setTitle:@"解绑" forState:UIControlStateNormal];
         [_unbindBtn setTitleColor:HexRGB(0x999999) forState:UIControlStateNormal];
         _unbindBtn.layer.cornerRadius = 4;
@@ -81,7 +81,7 @@
     if (!_saveBtn) {
         _saveBtn = [UIButton buttonWithType:UIButtonTypeCustom];
         _saveBtn.frame = CGRectMake(self.frame.size.width - 76, self.frame.size.width + 24, 60, 24);
-        _saveBtn.titleLabel.font = FONT_PingFang_Light(14);
+        _saveBtn.titleLabel.font = SYS_FONT(14);
         [_saveBtn setTitle:@"保存" forState:UIControlStateNormal];
         [_saveBtn setTitleColor:HexRGB(0xFF4B4A) forState:UIControlStateNormal];
         _saveBtn.layer.cornerRadius = 4;

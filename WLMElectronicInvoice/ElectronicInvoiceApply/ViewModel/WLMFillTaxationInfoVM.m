@@ -35,14 +35,17 @@
             [params setObject:dic[@"税控盘类型"] forKey:@"diskType"];
             [params setObject:dic[@"税控盘号"] forKey:@"diskNumber"];
             [params setObject:dic[@"是否已至税务局开通电子发票业务"] forKey:@"taxBussinessStatus"];
-            [[[__NETWL configPostPathKey:@"net_ei_fill_tax_info" postParams:params] setLoadMode:RequestLoadShowLoading | RequestLoadShowErrorTips] requestCallBack:^(LRResponseModel *responseModel) {
-                if (responseModel.success) {
-                    [subscriber sendNext:responseModel];
-                    [subscriber sendCompleted];
-                } else {
-                    [subscriber sendCompleted];
-                }
-            }];
+            [subscriber sendNext:nil];
+            [subscriber sendCompleted];
+            
+//            [[[__NETWL configPostPathKey:@"net_ei_fill_tax_info" postParams:params] setLoadMode:RequestLoadShowLoading | RequestLoadShowErrorTips] requestCallBack:^(LRResponseModel *responseModel) {
+//                if (responseModel.success) {
+//                    [subscriber sendNext:responseModel];
+//                    [subscriber sendCompleted];
+//                } else {
+//                    [subscriber sendCompleted];
+//                }
+//            }];
             return [RACDisposable disposableWithBlock:^{
             }];
         }];

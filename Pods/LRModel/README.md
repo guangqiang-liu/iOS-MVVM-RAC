@@ -1,2 +1,0 @@
-# SimpleProperty
-SimpleProperty

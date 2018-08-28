@@ -1,79 +1,25 @@
 PODS:
-  - AFNetworking (3.2.1):
-    - AFNetworking/NSURLSession (= 3.2.1)
-    - AFNetworking/Reachability (= 3.2.1)
-    - AFNetworking/Security (= 3.2.1)
-    - AFNetworking/Serialization (= 3.2.1)
-    - AFNetworking/UIKit (= 3.2.1)
-  - AFNetworking/NSURLSession (3.2.1):
-    - AFNetworking/Reachability
-    - AFNetworking/Security
-    - AFNetworking/Serialization
-  - AFNetworking/Reachability (3.2.1)
-  - AFNetworking/Security (3.2.1)
-  - AFNetworking/Serialization (3.2.1)
-  - AFNetworking/UIKit (3.2.1):
-    - AFNetworking/NSURLSession
   - DZNEmptyDataSet (1.8.1)
-  - IQKeyboardManager (6.0.3)
-  - LRModel (0.2.2)
-  - LRNet (1.3.7):
-    - AFNetworking
-  - LRRouter (0.0.9)
+  - IQKeyboardManager (6.1.1)
   - Masonry (1.1.0)
-  - MJExtension (3.0.13)
-  - NSTimer-Blocks (0.0.1)
-  - OpenUDID (1.0.0)
+  - MJExtension (3.0.15.1)
   - ReactiveObjC (3.1.0)
-  - SDWebImage (4.3.3):
-    - SDWebImage/Core (= 4.3.3)
-  - SDWebImage/Core (4.3.3)
-  - SimpleView (1.0.7):
-    - SimpleView/NavStyle (= 1.0.7)
-    - SimpleView/Simple (= 1.0.7)
-    - SimpleView/SimpleAnimation (= 1.0.7)
-    - SimpleView/SimpleView (= 1.0.7)
-  - SimpleView/NavStyle (1.0.7):
-    - SimpleView/SimpleView
-  - SimpleView/Simple (1.0.7)
-  - SimpleView/SimpleAnimation (1.0.7)
-  - SimpleView/SimpleView (1.0.7):
-    - SimpleView/Simple
-  - WLBase/Alert (2.1.11):
-    - WLBase/Category
-  - WLBase/Base (2.1.11):
-    - LRModel
-    - NSTimer-Blocks
-    - ReactiveObjC
-    - SDWebImage
-    - SimpleView
-  - WLBase/Category (2.1.11):
-    - WLBase/Base
-  - WLBase/Component (2.1.11):
-    - WLBase/Base
-  - WLBase/Device (2.1.11):
-    - OpenUDID
-    - WLBase/Base
+  - SDWebImage (4.4.2):
+    - SDWebImage/Core (= 4.4.2)
+  - SDWebImage/Core (4.4.2)
   - WLBaseView (0.2.6):
     - ReactiveObjC
     - WLBaseView/Code (= 0.2.6)
   - WLBaseView/Code (0.2.6):
     - ReactiveObjC
-  - WLConst (1.1.8):
-    - WLConst/Const (= 1.1.8)
-  - WLConst/Const (1.1.8)
-  - WLConst/WLImage (1.1.8):
-    - WLConst/Const
-  - WLConst/WLM (1.1.8):
-    - WLConst/Const
-  - WLForm (0.1.6):
+  - WLForm (0.1.7):
     - IQKeyboardManager
     - Masonry
     - WLBaseView
-    - WLForm/Code (= 0.1.6)
+    - WLForm/Code (= 0.1.7)
     - WLIconFont
     - WLWidget
-  - WLForm/Code (0.1.6):
+  - WLForm/Code (0.1.7):
     - IQKeyboardManager
     - Masonry
     - WLBaseView
@@ -91,17 +37,6 @@ PODS:
     - SDWebImage
     - WLIconFont
     - WLWidget
-  - WLNet/Debug (3.0.0):
-    - WLNet/Net
-  - WLNet/Net (3.0.0):
-    - LRNet
-    - LRRouter
-    - WLBase/Alert
-    - WLConst
-  - WLNet/NetWL (3.0.0):
-    - WLBase/Component
-    - WLBase/Device
-    - WLNet/Net
   - WLPickerView (0.0.2):
     - WLPickerView/Code (= 0.0.2)
   - WLPickerView/Code (0.0.2)
@@ -123,40 +58,26 @@ DEPENDENCIES:
   - MJExtension
   - ReactiveObjC
   - WLBaseView
-  - WLConst/WLImage
-  - WLConst/WLM
   - WLForm
   - WLIconFont
   - WLModal
-  - WLNet/Debug
-  - WLNet/NetWL
   - WLPickerView
   - WLWidget
 
 SPEC CHECKSUMS:
-  AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
   DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
-  IQKeyboardManager: c390e612f4b98c8fd748016470138537dc163ead
-  LRModel: 83f1265e6829fc65389c15c0fe10a2033e607acd
-  LRNet: 10b227ae0973eaf7daa17f6795e91058f2835b12
-  LRRouter: 8ddf59f80e4261ac922a74ecb96e0373829b8861
+  IQKeyboardManager: 79c57795f5c2408d259d37b9da2ed07efcbb5225
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
-  MJExtension: 5932755f451458eefa24239358817f8d291240c7
-  NSTimer-Blocks: 88faf9aef5f250ead087f3f67ae642517083bf36
-  OpenUDID: e7cb6984c7304906ad20f3a36bf087b025896b6b
+  MJExtension: 19bc33ce2eee2d319760f5622562cf581a6ff756
   ReactiveObjC: 2a38ea15335de4119d8b17caf1db1484f61db902
-  SDWebImage: de4d90b5bff3571eae7bd16202b1f43135409fa5
-  SimpleView: 8aee70e59ebdb8e501360394a10fb0a8634151c4
-  WLBase: cd9624a33d0615938dde7d061ed33a55c4090c8c
+  SDWebImage: 624d6e296c69b244bcede364c72ae0430ac14681
   WLBaseView: 9a763be5ea833bb2e28fdabea9d6ab252b0d802c
-  WLConst: 01afecc926534f7e4b8e8928077ded78d1105aca
-  WLForm: 1119f15ba026fb9d25046cf5974fca709de6d48b
+  WLForm: 63bbea6b3bbea0402f84075423b1cbfb8adc3848
   WLIconFont: 0f8495a59e7c3b16afb27fb5b74de62ec7b44984
   WLModal: 99ff8e1c285451c38d951eee3f2b511cfff63163
-  WLNet: 7a4b63a58f949b23f4a7cf6f0bbde891ce578b96
   WLPickerView: 980fa23885fcaf4dddadbcb1fba98f742a316b7c
   WLWidget: 63605441031e3d5d609cd0783a8d8b00f31b17d6
 
-PODFILE CHECKSUM: 7c08d4dcab50b3f1fb99bf070ea0cfa889aafc59
+PODFILE CHECKSUM: 3d5c54ea09a204962d2f8cee3110ca3877bc9fff
 
 COCOAPODS: 1.4.0
