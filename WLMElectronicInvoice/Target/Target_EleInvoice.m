@@ -7,12 +7,12 @@
 //
 
 #import "Target_EleInvoice.h"
-#import "ViewController.h"
+#import "TargetViewContainer.h"
 
 @implementation Target_EleInvoice
 
 - (UIViewController *)Action_viewController:(NSDictionary *)params {
-    ViewController *VC = [[ViewController alloc] init];
+    TargetViewContainer *VC = [[TargetViewContainer alloc] init];
     return VC;
 }
 
