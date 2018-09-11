@@ -44,6 +44,7 @@
 		9C264753209AF037004A4551 /* WLMInvoiceApplyVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C264752209AF037004A4551 /* WLMInvoiceApplyVM.m */; };
 		9C26476E209BF10D004A4551 /* WLMInvoiceDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C26476D209BF10D004A4551 /* WLMInvoiceDetailVC.m */; };
 		9C269801214820E6004DA3E5 /* Target_EleInvoice.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C269800214820E6004DA3E5 /* Target_EleInvoice.m */; };
+		9C26980421482889004DA3E5 /* TargetViewContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C26980321482889004DA3E5 /* TargetViewContainer.m */; };
 		9C5022C720B428010024BF01 /* WLMElectronicInvoiceRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C5022C620B428010024BF01 /* WLMElectronicInvoiceRouter.m */; };
 		9C5022EA20B5180D0024BF01 /* einvoice_mange_sample@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C5022E820B5180D0024BF01 /* einvoice_mange_sample@2x.png */; };
 		9C5022EB20B5180D0024BF01 /* einvoice_mange_sample@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C5022E920B5180D0024BF01 /* einvoice_mange_sample@3x.png */; };
@@ -160,6 +161,8 @@
 		9C26476D209BF10D004A4551 /* WLMInvoiceDetailVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WLMInvoiceDetailVC.m; sourceTree = "<group>"; };
 		9C2697FF214820E6004DA3E5 /* Target_EleInvoice.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Target_EleInvoice.h; sourceTree = "<group>"; };
 		9C269800214820E6004DA3E5 /* Target_EleInvoice.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Target_EleInvoice.m; sourceTree = "<group>"; };
+		9C26980221482889004DA3E5 /* TargetViewContainer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TargetViewContainer.h; sourceTree = "<group>"; };
+		9C26980321482889004DA3E5 /* TargetViewContainer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TargetViewContainer.m; sourceTree = "<group>"; };
 		9C5022C520B428010024BF01 /* WLMElectronicInvoiceRouter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WLMElectronicInvoiceRouter.h; sourceTree = "<group>"; };
 		9C5022C620B428010024BF01 /* WLMElectronicInvoiceRouter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WLMElectronicInvoiceRouter.m; sourceTree = "<group>"; };
 		9C5022E820B5180D0024BF01 /* einvoice_mange_sample@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "einvoice_mange_sample@2x.png"; sourceTree = "<group>"; };
@@ -350,6 +353,8 @@
 				9C2646EE20999B35004A4551 /* Tools */,
 				9C2646D8209994C8004A4551 /* AppDelegate.h */,
 				9C2646D9209994C8004A4551 /* AppDelegate.m */,
+				9C2646DB209994C8004A4551 /* ViewController.h */,
+				9C2646DC209994C8004A4551 /* ViewController.m */,
 				9C2646DE209994C8004A4551 /* Main.storyboard */,
 				9C2646E3209994C8004A4551 /* LaunchScreen.storyboard */,
 				9C2646E6209994C8004A4551 /* Info.plist */,
@@ -596,8 +601,8 @@
 			children = (
 				9C2697FF214820E6004DA3E5 /* Target_EleInvoice.h */,
 				9C269800214820E6004DA3E5 /* Target_EleInvoice.m */,
-				9C2646DB209994C8004A4551 /* ViewController.h */,
-				9C2646DC209994C8004A4551 /* ViewController.m */,
+				9C26980221482889004DA3E5 /* TargetViewContainer.h */,
+				9C26980321482889004DA3E5 /* TargetViewContainer.m */,
 			);
 			path = Target;
 			sourceTree = "<group>";
@@ -901,6 +906,7 @@
 				9CC4FF0A20A318FD00232074 /* WLMInvoiceApplyResultView.m in Sources */,
 				9C269801214820E6004DA3E5 /* Target_EleInvoice.m in Sources */,
 				9C140ABD20AC4ECB006E6747 /* WLMSelectedApplyMerchantVM.m in Sources */,
+				9C26980421482889004DA3E5 /* TargetViewContainer.m in Sources */,
 				9C2646DA209994C8004A4551 /* AppDelegate.m in Sources */,
 				9CA4039920AEE0E300E4AA51 /* WLMRecordListCell.m in Sources */,
 				9C264753209AF037004A4551 /* WLMInvoiceApplyVM.m in Sources */,
