@@ -350,8 +350,6 @@
 				9C2646EE20999B35004A4551 /* Tools */,
 				9C2646D8209994C8004A4551 /* AppDelegate.h */,
 				9C2646D9209994C8004A4551 /* AppDelegate.m */,
-				9C2646DB209994C8004A4551 /* ViewController.h */,
-				9C2646DC209994C8004A4551 /* ViewController.m */,
 				9C2646DE209994C8004A4551 /* Main.storyboard */,
 				9C2646E3209994C8004A4551 /* LaunchScreen.storyboard */,
 				9C2646E6209994C8004A4551 /* Info.plist */,
@@ -598,6 +596,8 @@
 			children = (
 				9C2697FF214820E6004DA3E5 /* Target_EleInvoice.h */,
 				9C269800214820E6004DA3E5 /* Target_EleInvoice.m */,
+				9C2646DB209994C8004A4551 /* ViewController.h */,
+				9C2646DC209994C8004A4551 /* ViewController.m */,
 			);
 			path = Target;
 			sourceTree = "<group>";
