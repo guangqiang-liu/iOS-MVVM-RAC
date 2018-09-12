@@ -26,6 +26,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
+    self.title = @"这是电子发票业务组件模块";
     self.viewModelService = [[WLBViewModelServiceImp alloc] init];
     WLMSelectedApplyMerchantVM *viewModel = [[WLMSelectedApplyMerchantVM alloc] initWithService:self.viewModelService params:nil];
     self.VC = [[WLMSelectApplyMerchantVC alloc] initWithViewModel:viewModel];
