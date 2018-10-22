@@ -158,4 +158,8 @@
     return row;
 }
 
+- (void)dealloc {
+    NSLog(@"WLMOpenInvoiceVC");
+}
+
 @end

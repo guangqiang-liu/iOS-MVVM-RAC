@@ -212,4 +212,8 @@
     [modal show];
 }
 
+- (void)dealloc {
+    NSLog(@"WLMFillTaxationInfoVC");
+}
+
 @end

@@ -1,8 +1,11 @@
 PODS:
   - DZNEmptyDataSet (1.8.1)
+  - FBRetainCycleDetector (0.1.4)
   - IQKeyboardManager (6.1.1)
   - Masonry (1.1.0)
   - MJExtension (3.0.15.1)
+  - MLeaksFinder (1.0.0):
+    - FBRetainCycleDetector
   - ReactiveObjC (3.1.0)
   - SDWebImage (4.4.2):
     - SDWebImage/Core (= 4.4.2)
@@ -58,6 +61,7 @@ DEPENDENCIES:
   - DZNEmptyDataSet
   - Masonry
   - MJExtension
+  - MLeaksFinder
   - ReactiveObjC
   - WLBaseView
   - WLForm
@@ -68,9 +72,11 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
+  FBRetainCycleDetector: 46f8179bbb1c587deee3ea838a1a3ee02acf5015
   IQKeyboardManager: 79c57795f5c2408d259d37b9da2ed07efcbb5225
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MJExtension: 19bc33ce2eee2d319760f5622562cf581a6ff756
+  MLeaksFinder: 8c435bd2f6d070af18cff082b503b21adc130fc0
   ReactiveObjC: 2a38ea15335de4119d8b17caf1db1484f61db902
   SDWebImage: 624d6e296c69b244bcede364c72ae0430ac14681
   WLBaseView: 781dd67e3f2384271350545d08ba119fc97abe89
@@ -80,6 +86,6 @@ SPEC CHECKSUMS:
   WLPickerView: 7e6c0d7794e00ed406b3a7509df393f01cdfd8f5
   WLWidget: d046a5165612a9bc9fe9a1a8fd75f0261bef1838
 
-PODFILE CHECKSUM: 53cd77a6ddb0c2f62d89aa002a7bac5334e40d22
+PODFILE CHECKSUM: 4b4414da4579f134aa4323bfc05e0d128c3a4958
 
 COCOAPODS: 1.4.0

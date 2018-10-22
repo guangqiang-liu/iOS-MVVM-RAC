@@ -126,10 +126,13 @@
     row = [[WLFormItemViewModel alloc] initFormItemWithStyle:UITableViewCellStyleValue1 reuseIdentifier:@"WLFormBottomButtonCell"];
     row.cellClass = [WLFormBottomButtonCell class];
     row.itemHeight = 78.f;
+    @weakify(self);
     row.itemConfigBlock = ^(WLFormBottomButtonCell *cell, id value, NSIndexPath *indexPath) {
         [cell.button setTitle:info[kLeftKey] forState:UIControlStateNormal];
         RAC(cell.button, enabled) = RACObserve(self, buttonEnabled);
+        @strongify(self);
         [cell.button whenTapped:^{
+            @strongify(self);
             WLMInvoiceDetailVC *VC = [[WLMInvoiceDetailVC alloc] init];
             [self.navigationController pushViewController:VC animated:YES];
         }];
@@ -140,6 +143,10 @@
 - (void)changeSubmitButtonState {
     NSDictionary *validateParams = [self.form validateItems];
     [validateParams[kValidateRetKey] boolValue] ? (self.buttonEnabled = YES) : (self.buttonEnabled = NO);
+}
+
+- (void)dealloc {
+    NSLog(@"WLMResendInvoiceVC");
 }
 
 @end
