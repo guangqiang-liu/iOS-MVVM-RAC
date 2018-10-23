@@ -90,12 +90,13 @@
     row.itemHeight = 48;
     row.cellClass = [WLFormTextInputCell class];
     row.value = userInfo.mutableCopy;
+    @weakify(self);
     row.itemConfigBlock = ^(WLFormTextInputCell *cell, id value, NSIndexPath *indexPath) {
+        @strongify(self);
         cell.leftlabel.text = value[kLeftKey];
         cell.rightField.text = value[kRightKey];
         cell.rightField.enabled = ![value[kDisableKey] boolValue];
         cell.rightField.placeholder = value[kPlaceholder];
-        @weakify(self);
         cell.textChangeBlock = ^(NSString *text) {
             @strongify(self);
             value[kRightKey] = text;
@@ -128,9 +129,9 @@
     row.itemHeight = 78.f;
     @weakify(self);
     row.itemConfigBlock = ^(WLFormBottomButtonCell *cell, id value, NSIndexPath *indexPath) {
+        @strongify(self);
         [cell.button setTitle:info[kLeftKey] forState:UIControlStateNormal];
         RAC(cell.button, enabled) = RACObserve(self, buttonEnabled);
-        @strongify(self);
         [cell.button whenTapped:^{
             @strongify(self);
             WLMInvoiceDetailVC *VC = [[WLMInvoiceDetailVC alloc] init];
@@ -146,6 +147,7 @@
 }
 
 - (void)dealloc {
+    // 调试内存泄漏，可以使用`WLMResendInvoiceVC` 来处理
     NSLog(@"WLMResendInvoiceVC");
 }
 
